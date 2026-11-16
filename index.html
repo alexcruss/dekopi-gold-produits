@@ -53,18 +53,33 @@ header{position:sticky;top:0;z-index:20;background:rgba(246,238,226,.92);backdro
 .btn-ligne:hover{background:var(--encre);color:var(--creme)}
 
 /* hero */
-.hero{padding:72px 0 56px}
-.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
-.kicker{display:inline-block;font-size:.8rem;font-weight:600;color:var(--violet);background:var(--lait);padding:5px 12px;border-radius:999px;margin-bottom:18px}
-.hero p.lead{font-size:1.1rem;color:var(--muted);margin:20px 0 28px;max-width:34em}
+.hero{position:relative;overflow:hidden;color:var(--blanc);padding:72px 0 80px;border-radius:0 0 40px 40px;
+  background:
+    radial-gradient(640px 420px at 88% 8%, rgba(227,185,85,.38), transparent 62%),
+    radial-gradient(520px 420px at 6% 100%, rgba(139,76,190,.45), transparent 65%),
+    linear-gradient(135deg,#241535 0%,#3E2260 52%,#5A2D6E 100%)}
+.hero::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.07;
+  background-image:linear-gradient(rgba(255,255,255,.9) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.9) 1px,transparent 1px);background-size:44px 44px;
+  -webkit-mask-image:radial-gradient(ellipse at 70% 40%,#000 0%,transparent 70%);mask-image:radial-gradient(ellipse at 70% 40%,#000 0%,transparent 70%)}
+.hero-grid{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+.kicker{display:inline-block;font-size:.8rem;font-weight:600;color:var(--or-clair);background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);padding:5px 12px;border-radius:999px;margin-bottom:18px}
+.hero h1{color:var(--blanc)}
+.hero p.lead{font-size:1.1rem;color:#DCCFEA;margin:20px 0 28px;max-width:34em}
 .hero-cta{display:flex;flex-wrap:wrap;gap:12px}
-.hero-card{background:var(--encre);color:var(--creme);border-radius:24px;padding:28px;position:relative;overflow:hidden}
-.hero-card::after{content:"";position:absolute;right:-60px;top:-60px;width:180px;height:180px;border-radius:50%;background:var(--or);opacity:.18}
-.hero-card .big{font-family:Fraunces,serif;font-size:2.6rem;color:var(--or-clair);line-height:1}
-.hero-card p{margin-top:8px;color:#D9CCE6;font-size:.95rem}
-.hero-card hr{border:0;border-top:1px solid #4A3563;margin:20px 0}
-.hero-card .row{display:flex;justify-content:space-between;font-size:.88rem;gap:12px}
-.hero-card .row span:last-child{color:var(--or-clair);font-weight:600;text-align:right}
+.hero .btn-ligne{border-color:rgba(255,255,255,.55);color:var(--blanc)}
+.hero .btn-ligne:hover{background:var(--blanc);color:var(--encre);border-color:var(--blanc)}
+/* visuel : fenêtres des produits + chiffre clé */
+.vitrine{position:relative;height:420px}
+.fen{position:absolute;margin:0;background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 28px 56px rgba(8,2,20,.5),0 4px 12px rgba(8,2,20,.25)}
+.fen .bar{height:26px;background:#EFE6D8;display:flex;align-items:center;gap:6px;padding:0 11px}
+.fen .bar i{width:8px;height:8px;border-radius:50%}
+.fen .bar i:nth-child(1){background:#E8887A}.fen .bar i:nth-child(2){background:#E7C36B}.fen .bar i:nth-child(3){background:#8CC48A}
+.fen img{display:block;width:100%;height:auto}
+.f1{left:0;top:6px;width:80%;transform:rotate(-3deg)}
+.f2{right:0;top:112px;width:62%;transform:rotate(3deg)}
+.hero-card{position:absolute;left:-14px;bottom:2px;width:min(330px,78%);background:linear-gradient(135deg,#EAC76A,#C4922A);color:var(--encre);border-radius:20px;padding:20px 22px;box-shadow:0 22px 44px rgba(8,2,20,.45);transform:rotate(-1.5deg)}
+.hero-card .big{font-family:Fraunces,serif;font-weight:700;font-size:2.1rem;color:var(--encre);line-height:1}
+.hero-card p{margin-top:8px;color:#3A2A18;font-size:.88rem;line-height:1.45}
 
 /* sections */
 section{padding:64px 0}
@@ -185,7 +200,13 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
   .form{padding:20px}
   .form .duo{grid-template-columns:1fr}
   .nav ul{display:none}
-  .hero{padding:44px 0 36px}
+  .hero{padding:44px 0 56px;border-radius:0 0 28px 28px}
+  .vitrine{height:300px;margin-top:8px}
+  .f1{width:84%}
+  .f2{width:60%;top:84px}
+  .hero-card{left:-6px;width:min(300px,80%);padding:14px 16px}
+  .hero-card .big{font-size:1.6rem}
+  .hero-card p{font-size:.78rem}
   .preuves{padding:34px 22px}
   section{padding:46px 0}
 }
@@ -220,13 +241,14 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
         <a class="btn btn-ligne" href="#besoin" data-fr="Décrire mon besoin" data-en="Describe my need">Décrire mon besoin</a>
       </div>
     </div>
-    <aside class="hero-card" aria-label="Chiffre clé">
-      <div class="big">2 jours → 1 h</div>
-      <p data-fr="C'est le temps gagné sur la régénération en lot de PDF d'imposition, après automatisation." data-en="Time saved regenerating tax PDFs in batch, once automated.">C'est le temps gagné sur la régénération en lot de PDF d'imposition, après automatisation.</p>
-      <hr>
-      <div class="row"><span data-fr="Fonctionne hors ligne" data-en="Works offline">Fonctionne hors ligne</span><span>CimentStock</span></div>
-      <div class="row" style="margin-top:8px"><span data-fr="Installable sur téléphone" data-en="Installs on your phone">Installable sur téléphone</span><span>ASSIMETO</span></div>
-    </aside>
+    <div class="vitrine">
+      <figure class="fen f1"><div class="bar"><i></i><i></i><i></i></div><img src="cimentstock.jpg" width="960" height="600" alt="CimentStock : tableau de bord des ventes et du stock"></figure>
+      <figure class="fen f2"><div class="bar"><i></i><i></i><i></i></div><img src="assimeto.jpg" width="960" height="600" alt="ASSIMETO : liste de courses, plats réalisables et fiche recette"></figure>
+      <aside class="hero-card" aria-label="Chiffre clé">
+        <div class="big">2 jours → 1 h</div>
+        <p data-fr="Temps gagné sur la régénération en lot de PDF d'imposition, après automatisation." data-en="Time saved regenerating tax PDFs in batch, once automated.">Temps gagné sur la régénération en lot de PDF d'imposition, après automatisation.</p>
+      </aside>
+    </div>
   </div>
 </div>
 
