@@ -159,11 +159,24 @@ a.carte{text-decoration:none;color:inherit}
 .etape p{color:var(--muted);font-size:.92rem;margin-top:6px}
 
 /* preuves */
-.preuves{background:var(--encre);color:var(--creme);border-radius:28px;padding:48px 40px}
+.preuves{position:relative;overflow:hidden;background:linear-gradient(135deg,#2A1A3C 0%,#3A2158 100%);color:var(--creme);border-radius:28px;padding:48px 40px}
+.preuves::before{content:"";position:absolute;right:-120px;top:-140px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(227,185,85,.34),transparent 68%);pointer-events:none;animation:lueur 9s ease-in-out infinite alternate}
+@keyframes lueur{to{transform:translate(-70px,50px) scale(1.15)}}
+.preuves>*{position:relative}
 .preuves h2{color:var(--creme)}
-.chiffres{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px;margin:28px 0 32px}
-.chiffres .n{font-family:Fraunces,serif;font-size:2.2rem;color:var(--or-clair);line-height:1.1}
+.chiffres{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px;margin:28px 0 0}
+.chiffres .n{font-family:Fraunces,serif;font-size:2.8rem;font-weight:700;color:var(--or-clair);line-height:1.1;font-variant-numeric:tabular-nums}
 .chiffres p{font-size:.88rem;color:#D9CCE6;margin-top:4px}
+.chiffres>div::after{content:"";display:block;width:48px;height:3px;margin-top:14px;border-radius:2px;background:linear-gradient(90deg,#C4922A,#E3B955)}
+/* animation : active seulement quand le script est là (sans script, tout reste visible) */
+.anim .chiffres>div{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease;transition-delay:calc(var(--i)*.18s)}
+.anim .chiffres>div::after{width:0;transition:width 1s ease;transition-delay:calc(var(--i)*.18s + .5s)}
+.anim.vu .chiffres>div{opacity:1;transform:none}
+.anim.vu .chiffres>div::after{width:48px}
+@media (prefers-reduced-motion:reduce){
+  .preuves::before{animation:none}
+  .anim .chiffres>div,.anim .chiffres>div::after{transition:none}
+}
 .clients{display:flex;flex-wrap:wrap;gap:10px;padding-top:22px;border-top:1px solid #4A3563}
 .clients span{border:1px solid #6A4E8A;padding:7px 15px;border-radius:999px;font-size:.85rem}
 
@@ -429,9 +442,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
     <div class="preuves">
       <h2 data-fr="Déjà utilisé, déjà livré" data-en="Already in use, already delivered">Déjà utilisé, déjà livré</h2>
       <div class="chiffres">
-        <div><div class="n">5+</div><p data-fr="ans d'expérience en informatique" data-en="years of IT experience">ans d'expérience en informatique</p></div>
-        <div><div class="n">6</div><p data-fr="automatisations Excel / VBA / Access en service" data-en="Excel / VBA / Access automations in service">automatisations Excel / VBA / Access en service</p></div>
-        <div><div class="n">4</div><p data-fr="sites clients publiés à Lomé" data-en="client websites live in Lomé">sites clients publiés à Lomé</p></div>
+        <div style="--i:0"><div class="n" data-to="5" data-suffix="+">5+</div><p data-fr="ans d'expérience en informatique" data-en="years of IT experience">ans d'expérience en informatique</p></div>
+        <div style="--i:1"><div class="n" data-to="6">6</div><p data-fr="automatisations Excel / VBA / Access en service" data-en="Excel / VBA / Access automations in service">automatisations Excel / VBA / Access en service</p></div>
+        <div style="--i:2"><div class="n" data-to="4">4</div><p data-fr="sites clients publiés à Lomé" data-en="client websites live in Lomé">sites clients publiés à Lomé</p></div>
       </div>
     </div>
   </div>
@@ -572,6 +585,36 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
       });
     }
     document.getElementById("defile").classList.add("anime");
+  })();
+
+  /* bloc de chiffres : apparition décalée + compteurs, une seule fois, quand le bloc entre à l'écran */
+  (function(){
+    var bloc = document.querySelector(".preuves");
+    if(!bloc || !("IntersectionObserver" in window)) return;
+    var reduit = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var nombres = Array.prototype.slice.call(bloc.querySelectorAll(".n[data-to]"));
+    if(reduit){ return; }
+    bloc.classList.add("anim");
+    nombres.forEach(function(n){ n.textContent = "0" + (n.getAttribute("data-suffix") || ""); });
+    function compter(n, delai){
+      var fin = parseInt(n.getAttribute("data-to"), 10), suf = n.getAttribute("data-suffix") || "", duree = 1400, debut = null;
+      function pas(t){
+        if(debut === null) debut = t;
+        var p = Math.min(1, (t - debut) / duree), e = 1 - Math.pow(1 - p, 3);
+        n.textContent = Math.round(fin * e) + suf;
+        if(p < 1) requestAnimationFrame(pas);
+      }
+      setTimeout(function(){ requestAnimationFrame(pas); }, delai);
+    }
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(!en.isIntersecting) return;
+        bloc.classList.add("vu");
+        nombres.forEach(function(n, i){ compter(n, i * 180); });
+        obs.disconnect();
+      });
+    }, {threshold:0.35});
+    obs.observe(bloc);
   })();
 
   /* formulaire de besoin : le message part vers WhatsApp ou la messagerie, rien n'est stocké */
