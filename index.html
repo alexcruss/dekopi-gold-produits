@@ -9,7 +9,7 @@
 <link rel="apple-touch-icon" href="logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Poppins:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Cormorant+Garant:wght@600&display=swap" rel="stylesheet">
 <style>
 :root{
   --creme:#F6EEE2;      /* café au lait clair */
@@ -68,6 +68,30 @@ header{position:sticky;top:0;z-index:20;background:rgba(246,238,226,.92);backdro
 
 /* sections */
 section{padding:64px 0}
+/* carrousel de logos */
+.bande{padding:8px 0 28px}
+.bande-titre{text-align:center;font-size:.82rem;font-weight:600;color:var(--muted);margin-bottom:16px}
+.defile{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.piste{display:flex;width:max-content;list-style:none;padding:0;margin:0}
+.piste li{margin-right:16px;flex:none}
+.defile.anime .piste{animation:defile 40s linear infinite}
+.defile.anime:hover .piste,.defile.anime:focus-within .piste{animation-play-state:paused}
+@keyframes defile{to{transform:translateX(-25%)}}
+.tuile{display:grid;place-items:center;width:210px;height:88px;border-radius:14px;border:1px solid var(--lait);text-decoration:none;transition:transform .2s, box-shadow .2s;overflow:hidden}
+.tuile:hover,.tuile:focus-visible{transform:translateY(-3px);box-shadow:0 10px 24px rgba(42,26,60,.15)}
+.tuile img{height:50px;width:auto;max-width:170px;object-fit:contain}
+.t-clair{background:#fff}
+.t-jonas,.t-brenda{display:flex;align-items:center;justify-content:center;white-space:nowrap}
+.t-jonas{background:#0c0c0e;font-family:'Cormorant Garant',Georgia,serif;font-weight:600;font-size:1.55rem;letter-spacing:.2em;color:#fff}
+.t-jonas span{color:#c9a96e}
+.t-brenda{background:#1a0a12;font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:2rem;color:#fff;line-height:1}
+.t-brenda span{font-style:italic;color:#e8839a}
+.t-brenda small{font:400 .5rem Poppins,sans-serif;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.75);margin-left:.6rem;vertical-align:middle}
+@media (prefers-reduced-motion:reduce){
+  .defile.anime .piste{animation:none}
+  .defile{overflow-x:auto;-webkit-mask-image:none;mask-image:none}
+  .piste li[aria-hidden="true"]{display:none}
+}
 .entete{max-width:620px;margin-bottom:36px}
 .entete p{color:var(--muted);margin-top:10px}
 
@@ -182,6 +206,19 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
     </aside>
   </div>
 </div>
+
+<!-- LOGOS DES SITES CREES -->
+<section class="bande" aria-label="Sites créés">
+  <p class="bande-titre" data-fr="Sites créés pour des commerces et PME de Lomé" data-en="Websites built for shops and small businesses in Lomé">Sites créés pour des commerces et PME de Lomé</p>
+  <div class="defile" id="defile">
+    <ul class="piste" id="piste">
+      <li><a class="tuile t-clair" href="https://alexcruss.github.io/ELIXIRDUTERROIR/" target="_blank" rel="noopener" aria-label="Élixir du Terroir"><img src="logo-elixir.png" width="356" height="128" alt="" loading="lazy"></a></li>
+      <li><a class="tuile t-brenda" href="https://alexcruss.github.io/BRENDASHOP/" target="_blank" rel="noopener" aria-label="BrendaSTYLE">Brenda<span>STYLE</span><small>Lomé</small></a></li>
+      <li><a class="tuile t-clair" href="https://alexcruss.github.io/dongshoes/" target="_blank" rel="noopener" aria-label="Dongshoes"><img src="logo-dong.png" width="494" height="138" alt="" loading="lazy"></a></li>
+      <li><a class="tuile t-jonas" href="https://alexcruss.github.io/JONASCLEAN/" target="_blank" rel="noopener" aria-label="JonasClean">Jonas<span>Clean</span></a></li>
+    </ul>
+  </div>
+</section>
 
 <!-- CATALOGUE -->
 <section id="produits">
@@ -395,6 +432,22 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
       });
     });
   });
+
+  /* carrousel : on duplique la série 3 fois pour une boucle sans coupure */
+  (function(){
+    var piste = document.getElementById("piste");
+    if(!piste) return;
+    var base = Array.prototype.slice.call(piste.children);
+    for(var k=0;k<3;k++){
+      base.forEach(function(li){
+        var c = li.cloneNode(true);
+        c.setAttribute("aria-hidden","true");
+        c.querySelector("a").setAttribute("tabindex","-1");
+        piste.appendChild(c);
+      });
+    }
+    document.getElementById("defile").classList.add("anime");
+  })();
 
   setWA(); apply();
 })();
