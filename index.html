@@ -150,6 +150,23 @@ a.carte{text-decoration:none;color:inherit}
 .clients span{border:1px solid #6A4E8A;padding:7px 15px;border-radius:999px;font-size:.85rem}
 
 /* contact */
+/* formulaire de besoin */
+.besoin-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:40px;align-items:start}
+.besoin-texte ul{list-style:none;padding:0;margin:22px 0 0;display:grid;gap:14px}
+.besoin-texte li{display:flex;gap:12px;font-size:.95rem;color:var(--muted)}
+.besoin-texte li b{flex:none;display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--or);color:var(--encre);font-size:.85rem}
+.form{background:var(--blanc);border:1px solid var(--lait);border-radius:20px;padding:28px;display:grid;gap:16px}
+.form .duo{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form label{display:grid;gap:6px;font-size:.85rem;font-weight:600}
+.form label span.req{color:var(--violet)}
+.form input,.form select,.form textarea{font:400 .95rem Poppins,sans-serif;color:var(--encre);background:#fff;border:2px solid var(--lait);border-radius:12px;padding:11px 14px;width:100%}
+.form textarea{min-height:130px;resize:vertical}
+.form input:focus,.form select:focus,.form textarea:focus{outline:none;border-color:var(--violet);box-shadow:0 0 0 3px rgba(91,42,134,.15)}
+.form .compteur{font-weight:400;font-size:.75rem;color:var(--muted);text-align:right}
+.form .actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.form button.btn{cursor:pointer;font-family:inherit}
+.form .note{font-size:.8rem;color:var(--muted)}
+.form .statut{font-size:.9rem;font-weight:600;color:var(--violet);min-height:1.2em}
 .contact{text-align:center}
 .contact .btn{margin-top:18px}
 .contact .liens{margin-top:20px;display:flex;justify-content:center;gap:20px;flex-wrap:wrap;color:var(--muted);font-size:.92rem}
@@ -161,6 +178,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
 
 @media (max-width:820px){
   .hero-grid{grid-template-columns:1fr}
+  .besoin-grid{grid-template-columns:1fr;gap:24px}
+  .form{padding:20px}
+  .form .duo{grid-template-columns:1fr}
   .nav ul{display:none}
   .hero{padding:44px 0 36px}
   .preuves{padding:34px 22px}
@@ -194,7 +214,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
       <p class="lead" data-fr="Gestion de stock, courses et recettes, sites vitrines, automatisation Excel. Chaque produit est pensé pour un besoin précis, et vous le commandez par WhatsApp." data-en="Stock management, shopping and recipes, showcase websites, Excel automation. Each product solves one specific need, and you order it on WhatsApp.">Gestion de stock, courses et recettes, sites vitrines, automatisation Excel. Chaque produit est pensé pour un besoin précis, et vous le commandez par WhatsApp.</p>
       <div class="hero-cta">
         <a class="btn btn-or" href="#produits" data-fr="Voir les produits" data-en="See the products">Voir les produits</a>
-        <a class="btn btn-ligne" data-wa="Bonjour DEKOPI GOLD, j'aimerais un diagnostic gratuit de 30 minutes." href="#" data-fr="Diagnostic gratuit (30 min)" data-en="Free 30-min diagnosis">Diagnostic gratuit (30 min)</a>
+        <a class="btn btn-ligne" href="#besoin" data-fr="Décrire mon besoin" data-en="Describe my need">Décrire mon besoin</a>
       </div>
     </div>
     <aside class="hero-card" aria-label="Chiffre clé">
@@ -379,6 +399,61 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
   </div>
 </section>
 
+<!-- FORMULAIRE DE BESOIN -->
+<section id="besoin">
+  <div class="wrap besoin-grid">
+    <div class="besoin-texte">
+      <h2 data-fr="Décrivez votre besoin" data-en="Describe your need">Décrivez votre besoin</h2>
+      <p style="color:var(--muted);margin-top:10px" data-fr="Quelques lignes suffisent. Le diagnostic de 30 minutes est gratuit." data-en="A few lines are enough. The 30-minute diagnosis is free.">Quelques lignes suffisent. Le diagnostic de 30 minutes est gratuit.</p>
+      <ul>
+        <li><b>1</b><span data-fr="Vous remplissez le formulaire et il s’envoie sur WhatsApp ou par e-mail." data-en="You fill in the form and it is sent on WhatsApp or by e-mail.">Vous remplissez le formulaire et il s’envoie sur WhatsApp ou par e-mail.</span></li>
+        <li><b>2</b><span data-fr="Je vous réponds en général sous 24 heures, pour préciser votre besoin." data-en="I usually reply within 24 hours, to clarify your need.">Je vous réponds en général sous 24 heures, pour préciser votre besoin.</span></li>
+        <li><b>3</b><span data-fr="Vous recevez un devis écrit, avec le prix et le délai." data-en="You receive a written quote, with the price and the timeline.">Vous recevez un devis écrit, avec le prix et le délai.</span></li>
+      </ul>
+    </div>
+
+    <form class="form" id="form-besoin" novalidate>
+      <div class="duo">
+        <label><span class="lib"><span data-fr="Votre nom" data-en="Your name">Votre nom</span> <span class="req">*</span></span>
+          <input name="nom" type="text" autocomplete="name" required maxlength="80"></label>
+        <label><span data-fr="Votre commerce ou entreprise" data-en="Your shop or company">Votre commerce ou entreprise</span>
+          <input name="entreprise" type="text" autocomplete="organization" maxlength="80"></label>
+      </div>
+      <div class="duo">
+        <label><span data-fr="Votre numéro de téléphone" data-en="Your phone number">Votre numéro de téléphone</span>
+          <input name="tel" type="tel" inputmode="tel" autocomplete="tel" placeholder="+228 …" maxlength="30"></label>
+        <label><span class="lib"><span data-fr="Ce dont vous avez besoin" data-en="What you need">Ce dont vous avez besoin</span> <span class="req">*</span></span>
+          <select name="type" required>
+            <option value="" data-fr="Choisir…" data-en="Choose…">Choisir…</option>
+            <option data-fr="Gérer mon stock, mes ventes ou mes achats" data-en="Manage my stock, sales or purchases">Gérer mon stock, mes ventes ou mes achats</option>
+            <option data-fr="Automatiser une tâche Excel" data-en="Automate an Excel task">Automatiser une tâche Excel</option>
+            <option data-fr="Un site pour mon commerce" data-en="A website for my business">Un site pour mon commerce</option>
+            <option data-fr="Une application sur mesure" data-en="A custom application">Une application sur mesure</option>
+            <option data-fr="Un diagnostic gratuit de 30 minutes" data-en="A free 30-minute diagnosis">Un diagnostic gratuit de 30 minutes</option>
+            <option data-fr="Autre" data-en="Other">Autre</option>
+          </select></label>
+      </div>
+      <label><span class="lib"><span data-fr="Décrivez votre besoin" data-en="Describe your need">Décrivez votre besoin</span> <span class="req">*</span></span>
+        <textarea name="message" id="f-message" required minlength="10" maxlength="1000" data-ph-fr="Ex. : je tiens mon stock de ciment dans un cahier et je voudrais suivre mes ventes et mes crédits clients." data-ph-en="E.g. I keep my cement stock in a notebook and I would like to track my sales and customer credit."></textarea>
+        <span class="compteur"><span id="f-compte">0</span> / 1000</span>
+      </label>
+      <label><span data-fr="Délai souhaité" data-en="Desired timeline">Délai souhaité</span>
+        <select name="delai">
+          <option value="" data-fr="Pas de date précise" data-en="No specific date">Pas de date précise</option>
+          <option data-fr="Dès que possible" data-en="As soon as possible">Dès que possible</option>
+          <option data-fr="Dans le mois" data-en="Within the month">Dans le mois</option>
+          <option data-fr="Dans les 3 mois" data-en="Within 3 months">Dans les 3 mois</option>
+        </select></label>
+      <div class="actions">
+        <button class="btn btn-or" type="submit" name="canal" value="wa" data-fr="Envoyer sur WhatsApp" data-en="Send on WhatsApp">Envoyer sur WhatsApp</button>
+        <button class="btn btn-ligne" type="submit" name="canal" value="mail" data-fr="Envoyer par e-mail" data-en="Send by e-mail">Envoyer par e-mail</button>
+      </div>
+      <p class="statut" id="f-statut" role="status" aria-live="polite"></p>
+      <p class="note" data-fr="Rien n’est enregistré sur ce site : votre message part directement vers WhatsApp ou votre messagerie, et vous pouvez le relire avant de l’envoyer." data-en="Nothing is stored on this site: your message goes straight to WhatsApp or your mail app, and you can read it again before sending.">Rien n’est enregistré sur ce site : votre message part directement vers WhatsApp ou votre messagerie, et vous pouvez le relire avant de l’envoyer.</p>
+    </form>
+  </div>
+</section>
+
 <!-- CONTACT -->
 <section id="contact" class="contact">
   <div class="wrap">
@@ -420,6 +495,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
     document.querySelectorAll("[data-fr]").forEach(function(el){
       el.textContent = el.getAttribute("data-"+lang);
     });
+    document.querySelectorAll("[data-ph-fr]").forEach(function(el){
+      el.placeholder = el.getAttribute("data-ph-"+lang);
+    });
     document.getElementById("lang").textContent = lang==="fr" ? "EN" : "FR";
     document.title = lang==="fr"
       ? "DEKOPI GOLD | Logiciels et automatisation pour commerces et PME"
@@ -456,6 +534,46 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
       });
     }
     document.getElementById("defile").classList.add("anime");
+  })();
+
+  /* formulaire de besoin : le message part vers WhatsApp ou la messagerie, rien n'est stocké */
+  (function(){
+    var form = document.getElementById("form-besoin");
+    if(!form) return;
+    var statut = document.getElementById("f-statut");
+    var msg = document.getElementById("f-message");
+    var compte = document.getElementById("f-compte");
+    var MAIL = "pierredegboevi@gmail.com";
+    var T = {
+      fr:{hello:"Bonjour DEKOPI GOLD, voici mon besoin :", nom:"Nom", ent:"Entreprise", tel:"Téléphone", type:"Besoin", delai:"Délai", msg:"Description", src:"Envoyé depuis produits.pierredegboevi.com", subj:"Demande de devis", ok_wa:"WhatsApp s’ouvre : relisez votre message puis envoyez-le.", ok_mail:"Votre messagerie s’ouvre : relisez votre message puis envoyez-le.", bad:"Merci de remplir les champs marqués d’une étoile."},
+      en:{hello:"Hello DEKOPI GOLD, here is what I need:", nom:"Name", ent:"Company", tel:"Phone", type:"Need", delai:"Timeline", msg:"Description", src:"Sent from produits.pierredegboevi.com", subj:"Quote request", ok_wa:"WhatsApp is opening: read your message, then send it.", ok_mail:"Your mail app is opening: read your message, then send it.", bad:"Please fill in the fields marked with a star."}
+    };
+    function txt(sel){ return sel.selectedIndex > 0 ? sel.options[sel.selectedIndex].textContent : ""; }
+    function update(){ compte.textContent = msg.value.length; }
+    msg.addEventListener("input", update); update();
+
+    form.addEventListener("submit", function(e){
+      e.preventDefault();
+      var t = T[lang] || T.fr;
+      if(!form.checkValidity()){ statut.textContent = t.bad; form.reportValidity(); return; }
+      var f = form.elements;
+      var lignes = [t.hello, ""];
+      lignes.push(t.nom+" : "+f.nom.value.trim());
+      if(f.entreprise.value.trim()) lignes.push(t.ent+" : "+f.entreprise.value.trim());
+      if(f.tel.value.trim()) lignes.push(t.tel+" : "+f.tel.value.trim());
+      lignes.push(t.type+" : "+txt(f.type));
+      if(txt(f.delai)) lignes.push(t.delai+" : "+txt(f.delai));
+      lignes.push("", t.msg+" :", f.message.value.trim(), "", "("+t.src+")");
+      var canal = (e.submitter && e.submitter.value) || "wa";
+      if(canal === "mail"){
+        var sujet = t.subj+" — "+txt(f.type);
+        location.href = "mailto:"+MAIL+"?subject="+encodeURIComponent(sujet)+"&body="+encodeURIComponent(lignes.join("\r\n"));
+        statut.textContent = t.ok_mail;
+      } else {
+        window.open("https://wa.me/"+NUM+"?text="+encodeURIComponent(lignes.join("\n")), "_blank", "noopener");
+        statut.textContent = t.ok_wa;
+      }
+    });
   })();
 
   setWA(); apply();
