@@ -159,10 +159,16 @@ a.carte{text-decoration:none;color:inherit}
 .etape p{color:var(--muted);font-size:.92rem;margin-top:6px}
 
 /* preuves */
-.preuves{position:relative;overflow:hidden;background:linear-gradient(135deg,#2A1A3C 0%,#3A2158 100%);color:var(--creme);border-radius:28px;padding:48px 40px}
+.preuves{position:relative;overflow:hidden;color:var(--creme);border-radius:28px;padding:48px 40px;
+  background:
+    radial-gradient(520px 340px at 6% 100%, rgba(139,76,190,.45), transparent 65%),
+    linear-gradient(135deg,#241535 0%,#3E2260 52%,#5A2D6E 100%)}
+.preuves::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.07;
+  background-image:linear-gradient(rgba(255,255,255,.9) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.9) 1px,transparent 1px);background-size:44px 44px;
+  -webkit-mask-image:radial-gradient(ellipse at 70% 40%,#000 0%,transparent 70%);mask-image:radial-gradient(ellipse at 70% 40%,#000 0%,transparent 70%)}
 .preuves::before{content:"";position:absolute;right:-120px;top:-140px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(227,185,85,.34),transparent 68%);pointer-events:none;animation:lueur 9s ease-in-out infinite alternate}
 @keyframes lueur{to{transform:translate(-70px,50px) scale(1.15)}}
-.preuves>*{position:relative}
+.preuves>*{position:relative;z-index:1}
 .preuves h2{color:var(--creme)}
 .chiffres{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px;margin:28px 0 0}
 .chiffres .n{font-family:Fraunces,serif;font-size:2.8rem;font-weight:700;color:var(--or-clair);line-height:1.1;font-variant-numeric:tabular-nums}
