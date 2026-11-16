@@ -81,6 +81,9 @@ section{padding:64px 0}
 .vignette{height:170px;background:var(--lait);display:grid;place-items:center;padding:18px}
 .vignette.photo{padding:0;height:auto;aspect-ratio:8/5;background:var(--lait)}
 .vignette.photo img{width:100%;height:100%;object-fit:cover;object-position:top left}
+a.carte{text-decoration:none;color:inherit}
+.carte .voir{font-weight:600;font-size:.88rem;color:var(--violet);margin-top:6px}
+.carte.lien:hover .voir{text-decoration:underline}
 .carte .corps{padding:20px;display:flex;flex-direction:column;gap:8px;flex:1}
 .tag{font-size:.72rem;font-weight:600;color:var(--violet);text-transform:none}
 .carte p{font-size:.9rem;color:var(--muted);flex:1}
@@ -150,7 +153,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
     <ul>
       <li><a href="#produits" data-fr="Produits" data-en="Products">Produits</a></li>
       <li><a href="#commande" data-fr="Commander" data-en="How to order">Commander</a></li>
-      <li><a href="#preuves" data-fr="Références" data-en="Track record">Références</a></li>
+      <li><a href="#realisations" data-fr="Sites livrés" data-en="Delivered sites">Sites livrés</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <button class="lang" id="lang" aria-label="Changer de langue / Switch language">EN</button>
@@ -241,15 +244,63 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
       </article>
 
       <article class="carte" data-cat="guide">
-        <div class="vignette"><div class="m-livre" aria-hidden="true"><span>Garde la flamme, même à distance</span><small>5 leçons · 2 bonus</small></div></div>
+        <div class="vignette photo"><img src="garde-la-flamme.jpg" width="960" height="600" loading="lazy" alt="Affiche du guide « Garde la flamme, même à distance » : guide PDF, 5 leçons et 2 bonus"></div>
         <div class="corps">
           <span class="tag" data-fr="Guide PDF" data-en="PDF guide">Guide PDF</span>
           <h3 data-fr="Garde la flamme, même à distance" data-en="Keep the flame alive, even from afar">Garde la flamme, même à distance</h3>
-          <p data-fr="5 leçons et 2 bonus pour entretenir une relation à distance. Téléchargement immédiat après paiement." data-en="5 lessons and 2 bonuses to nurture a long-distance relationship. Instant download after payment.">5 leçons et 2 bonus pour entretenir une relation à distance. Téléchargement immédiat après paiement.</p>
+          <p data-fr="Un guide pour les hommes en relation à distance : 5 leçons et 2 bonus. Lisible sur téléphone, accès immédiat après paiement." data-en="A guide for men in a long-distance relationship: 5 lessons and 2 bonuses. Readable on a phone, instant access after payment.">Un guide pour les hommes en relation à distance : 5 leçons et 2 bonus. Lisible sur téléphone, accès immédiat après paiement.</p>
           <div class="prix" data-fr="Prix sur Chariow" data-en="Price on Chariow">Prix sur Chariow</div>
-          <a class="btn btn-or" href="https://jftpryir.mychariow.co/prd_hcqm7ikp?draft=true" target="_blank" rel="noopener" data-fr="Acheter sur Chariow" data-en="Buy on Chariow">Acheter sur Chariow</a>
+          <a class="btn btn-or" href="https://jftpryir.mychariow.co/prd_hcqm7ikp" target="_blank" rel="noopener" data-fr="Acheter sur Chariow" data-en="Buy on Chariow">Acheter sur Chariow</a>
         </div>
       </article>
+    </div>
+  </div>
+</section>
+
+<!-- SITES REALISES -->
+<section id="realisations" style="padding-top:24px">
+  <div class="wrap">
+    <div class="entete">
+      <h2 data-fr="Sites déjà livrés" data-en="Websites already delivered">Sites déjà livrés</h2>
+      <p data-fr="Quatre commerces et PME de Lomé ont leur site, avec commande par WhatsApp. Cliquez pour les visiter." data-en="Four shops and small businesses in Lomé have their website, with ordering on WhatsApp. Click to visit them.">Quatre commerces et PME de Lomé ont leur site, avec commande par WhatsApp. Cliquez pour les visiter.</p>
+    </div>
+    <div class="grille">
+      <a class="carte lien" href="https://alexcruss.github.io/ELIXIRDUTERROIR/" target="_blank" rel="noopener">
+        <div class="vignette photo"><img src="elixirduterroir.jpg" width="960" height="600" loading="lazy" alt="Site Élixir du Terroir : logo, slogan et photo des préparations de la marque"></div>
+        <div class="corps">
+          <span class="tag" data-fr="Herboristerie · Lomé" data-en="Herbal shop · Lomé">Herboristerie · Lomé</span>
+          <h3>Élixir du Terroir</h3>
+          <p data-fr="Produits à commander sur WhatsApp, une fiche par plante avec sa vidéo, et les reportages de la boutique dans les villages et les marchés." data-en="Products ordered on WhatsApp, one guide per plant with its video, and the shop’s field trips to villages and markets.">Produits à commander sur WhatsApp, une fiche par plante avec sa vidéo, et les reportages de la boutique dans les villages et les marchés.</p>
+          <span class="voir" data-fr="Voir le site →" data-en="View the site →">Voir le site →</span>
+        </div>
+      </a>
+      <a class="carte lien" href="https://alexcruss.github.io/BRENDASHOP/" target="_blank" rel="noopener">
+        <div class="vignette photo"><img src="brendastyle.jpg" width="960" height="600" loading="lazy" alt="Site BrendaSTYLE : portrait de Brenda, titre « La femme qui rayonne » et boutons Voir la collection et Notre histoire"></div>
+        <div class="corps">
+          <span class="tag" data-fr="Tissus wax et press-on nails · Lomé" data-en="Wax fabrics and press-on nails · Lomé">Tissus wax et press-on nails · Lomé</span>
+          <h3>BrendaSTYLE</h3>
+          <p data-fr="Une sélection d’articles à filtrer, et un panier qui prépare la commande sur WhatsApp en un clic." data-en="A selection of items to filter, and a cart that prepares the order on WhatsApp in one click.">Une sélection d’articles à filtrer, et un panier qui prépare la commande sur WhatsApp en un clic.</p>
+          <span class="voir" data-fr="Voir le site →" data-en="View the site →">Voir le site →</span>
+        </div>
+      </a>
+      <a class="carte lien" href="https://alexcruss.github.io/dongshoes/" target="_blank" rel="noopener">
+        <div class="vignette photo"><img src="dongshoes.jpg" width="960" height="600" loading="lazy" alt="Site Dongshoes : logo, mocassins en cuir et bouton Commander sur WhatsApp"></div>
+        <div class="corps">
+          <span class="tag" data-fr="Chaussures en cuir pour homme · Lomé" data-en="Men’s leather shoes · Lomé">Chaussures en cuir pour homme · Lomé</span>
+          <h3>Dongshoes</h3>
+          <p data-fr="Les modèles à parcourir par catégorie, les vidéos de la boutique, et un bouton Commander qui prépare le message WhatsApp avec le modèle choisi." data-en="Models to browse by category, the shop’s videos, and an Order button that prepares the WhatsApp message with the chosen model.">Les modèles à parcourir par catégorie, les vidéos de la boutique, et un bouton Commander qui prépare le message WhatsApp avec le modèle choisi.</p>
+          <span class="voir" data-fr="Voir le site →" data-en="View the site →">Voir le site →</span>
+        </div>
+      </a>
+      <a class="carte lien" href="https://alexcruss.github.io/JONASCLEAN/" target="_blank" rel="noopener">
+        <div class="vignette photo"><img src="jonasclean.jpg" width="960" height="600" loading="lazy" alt="Site JonasClean, entreprise de ménage haut de gamme"></div>
+        <div class="corps">
+          <span class="tag" data-fr="Ménage haut de gamme · Lomé" data-en="Premium cleaning · Lomé">Ménage haut de gamme · Lomé</span>
+          <h3>JonasClean</h3>
+          <p data-fr="Site vitrine bilingue : services, tarifs, témoignages et demande de devis, en français et en anglais." data-en="Bilingual showcase site: services, pricing, testimonials and quote request, in French and English.">Site vitrine bilingue : services, tarifs, témoignages et demande de devis, en français et en anglais.</p>
+          <span class="voir" data-fr="Voir le site →" data-en="View the site →">Voir le site →</span>
+        </div>
+      </a>
     </div>
   </div>
 </section>
@@ -277,9 +328,6 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
         <div><div class="n">5+</div><p data-fr="ans d'expérience en informatique" data-en="years of IT experience">ans d'expérience en informatique</p></div>
         <div><div class="n">6</div><p data-fr="automatisations Excel / VBA / Access en service" data-en="Excel / VBA / Access automations in service">automatisations Excel / VBA / Access en service</p></div>
         <div><div class="n">4</div><p data-fr="sites clients publiés à Lomé" data-en="client websites live in Lomé">sites clients publiés à Lomé</p></div>
-      </div>
-      <div class="clients" aria-label="Sites clients">
-        <span>Élixir du Terroir</span><span>BrendaSTYLE</span><span>Dongshoes</span><span>JonasClean</span>
       </div>
     </div>
   </div>
