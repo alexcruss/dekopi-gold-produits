@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- CSP : le script de la page est autorisé par son empreinte SHA-256 (une pour les fins de ligne LF en ligne, une pour CRLF en local).
-     Si le contenu du <script> change, recalculer les deux empreintes. -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-2cV3h91USo/sqXDb/qCQMBJRp6nzx8ZPQQVsN16kDXs=' 'sha256-25Ism2qkaN4HCUvhzFcr4ZF/XtAJazu4RxnJ4CixH6U='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'">
+     Si le contenu du bloc script change, recalculer les deux empreintes. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-asyx0FxFmtI785MmJvbDjAFI2PqOCX/pcS1l49aK68w=' 'sha256-ze572hultpMfTr8rW2ik4HZjl/tfyOshWCS2OXLzCmc='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <title>DEKOPI GOLD | Logiciels et automatisation pour commerces et PME</title>
 <meta name="description" content="DEKOPI GOLD crée des logiciels simples pour les commerces et PME de Lomé : gestion de stock, courses et recettes, automatisation Excel. Commande par WhatsApp.">
@@ -247,6 +247,23 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
   section{padding:46px 0}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+/* Invitation affichée après 5 secondes */
+#invite{margin:auto;border:0;padding:0;border-radius:var(--rayon);background:var(--creme);color:var(--encre);width:min(420px,calc(100% - 32px));box-shadow:0 20px 50px rgba(42,26,60,.35);font-family:Poppins,sans-serif}
+#invite::backdrop{background:rgba(42,26,60,.55)}
+#invite .inv{padding:28px 26px 22px}
+#invite h2{font-family:Fraunces,serif;font-size:1.45rem;line-height:1.25;margin:0 0 10px}
+#invite p{margin:0 0 18px;color:var(--muted);font-size:.95rem}
+#invite .inv-choix{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+#invite .btn{justify-content:center;cursor:pointer;font-family:inherit;background:none;color:var(--encre)}
+#invite .btn-or{background:var(--or)}
+#invite .btn-or:hover{background:var(--or-clair)}
+#invite .btn-ligne:hover{background:var(--encre);color:var(--creme)}
+#invite .inv-wa{width:100%}
+#invite .inv-plus{display:block;margin:16px auto 0;background:none;border:0;color:var(--muted);font:inherit;font-size:.85rem;text-decoration:underline;cursor:pointer}
+#invite[open]{animation:inv-in .25s ease-out}
+@keyframes inv-in{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){#invite[open]{animation:none}}
 </style>
 </head>
 <body>
@@ -573,6 +590,24 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
 
 <a class="wa" data-wa="Bonjour DEKOPI GOLD, j'ai vu votre site." href="#" aria-label="WhatsApp">WhatsApp</a>
 
+<dialog id="invite" aria-labelledby="inv-titre">
+  <div class="inv" id="inv-q">
+    <h2 id="inv-titre" data-fr="Avez-vous besoin d’un service ou d’une formation ?" data-en="Do you need a service or training?">Avez-vous besoin d’un service ou d’une formation ?</h2>
+    <p data-fr="Choisissez, puis dites-nous le reste sur WhatsApp." data-en="Pick one, then tell us the rest on WhatsApp.">Choisissez, puis dites-nous le reste sur WhatsApp.</p>
+    <div class="inv-choix">
+      <button class="btn btn-ligne" type="button" data-choix="service" data-fr="Un service" data-en="A service">Un service</button>
+      <button class="btn btn-ligne" type="button" data-choix="formation" data-fr="Une formation" data-en="Training">Une formation</button>
+    </div>
+    <button class="inv-plus" type="button" data-fermer data-fr="Plus tard" data-en="Maybe later">Plus tard</button>
+  </div>
+  <div class="inv" id="inv-wa" hidden>
+    <h2 id="inv-titre2" data-fr="Laissez-nous un message sur WhatsApp" data-en="Leave us a message on WhatsApp">Laissez-nous un message sur WhatsApp</h2>
+    <p data-fr="Décrivez votre besoin en une phrase. Réponse en général sous 24 heures." data-en="Describe what you need in one sentence. Usually a reply within 24 hours.">Décrivez votre besoin en une phrase. Réponse en général sous 24 heures.</p>
+    <a class="btn btn-or inv-wa" id="inv-lien" data-wa="Bonjour DEKOPI GOLD, j'ai vu votre site." href="#" data-fr="Écrire sur WhatsApp" data-en="Message on WhatsApp">Écrire sur WhatsApp</a>
+    <button class="inv-plus" type="button" data-fermer data-fr="Fermer" data-en="Close">Fermer</button>
+  </div>
+</dialog>
+
 <script>
 (function(){
   var NUM = "22891512041";
@@ -699,6 +734,45 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
         statut.textContent = t.ok_wa;
       }
     });
+  })();
+
+  /* Invitation : après 5 secondes, service ou formation, puis message WhatsApp.
+     Une fois fermée ou répondue, elle ne revient pas pendant 7 jours. */
+  (function(){
+    var dlg = document.getElementById("invite");
+    if(!dlg || typeof dlg.showModal !== "function") return;
+    var CLE = "dg-invite", DUREE = 7*24*3600*1000;
+    var MSG = {
+      service:   {fr:"Bonjour DEKOPI GOLD, j'ai besoin d'un service.", en:"Hello DEKOPI GOLD, I need a service."},
+      formation: {fr:"Bonjour DEKOPI GOLD, je voudrais une formation.", en:"Hello DEKOPI GOLD, I would like some training."}
+    };
+    var q = document.getElementById("inv-q"), r = document.getElementById("inv-wa"), lien = document.getElementById("inv-lien");
+
+    function dejaVu(){ try{ var t = +localStorage.getItem(CLE); return !!t && Date.now()-t < DUREE; }catch(e){ return false; } }
+    function noter(){ try{ localStorage.setItem(CLE, String(Date.now())); }catch(e){} }
+    function etape(n){
+      q.hidden = n !== 1; r.hidden = n !== 2;
+      dlg.setAttribute("aria-labelledby", n === 1 ? "inv-titre" : "inv-titre2");
+    }
+    function ouvrir(){
+      if(dejaVu() || dlg.open) return;
+      var a = document.activeElement;
+      if(a && /^(INPUT|TEXTAREA|SELECT)$/.test(a.tagName)){ setTimeout(ouvrir, 5000); return; } /* pas pendant la saisie */
+      etape(1); dlg.showModal();
+    }
+
+    dlg.addEventListener("click", function(e){
+      if(e.target === dlg){ dlg.close(); return; }          /* clic sur le fond */
+      var c = e.target.closest("[data-choix]");
+      if(c){
+        lien.setAttribute("data-wa", MSG[c.getAttribute("data-choix")][lang]);
+        setWA(); etape(2); lien.focus(); return;
+      }
+      if(e.target.closest("[data-fermer]") || e.target.closest("#inv-lien")) dlg.close();
+    });
+    dlg.addEventListener("close", noter);                    /* Échap, bouton ou lien */
+
+    setTimeout(ouvrir, 5000);
   })();
 
   setWA(); apply();
