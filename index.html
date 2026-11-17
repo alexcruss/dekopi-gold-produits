@@ -263,14 +263,19 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
 .carte-solimi:hover .parrain,.carte-solimi:focus-within .parrain{opacity:1;visibility:visible}
 .carte-solimi:hover .sol-badge,.carte-solimi:focus-within .sol-badge{opacity:0}
 
-/* Carte CGI + LPF */
-.vignette.docs{display:grid;place-items:center;background:var(--violet)}
-.doc-visuel{display:flex;gap:16px;align-items:center}
-.doc{width:92px;aspect-ratio:.74;background:var(--blanc);border-radius:8px;border-top:6px solid var(--or);padding:12px 10px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 8px 20px rgba(0,0,0,.3)}
-.doc b{font-family:Fraunces,serif;font-size:1.6rem;color:var(--encre);line-height:1}
-.doc span{font-size:.78rem;font-weight:600;color:var(--violet)}
+/* Carte CGI + LPF : image du Cahier fiscal, les prix apparaissent au survol, au focus clavier ou au toucher */
+.vignette.cahier{position:relative;overflow:hidden;outline-offset:-3px;background:#0a4f8f}
+.vignette.cahier>img{position:absolute;inset:0;width:100%;height:100%}
+.vignette.cahier .cah-fond{object-fit:cover;object-position:center;filter:blur(14px);transform:scale(1.15)}
+.vignette.cahier .cah-image{object-fit:contain;object-position:center}
 .duo-btn{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .duo-btn .btn{padding:9px 10px;font-size:.82rem}
+.carte-cgi .sol-badge{bottom:auto;top:12px}
+.carte-cgi:hover .parrain,.carte-cgi:focus-within .parrain{opacity:1;visibility:visible}
+.carte-cgi:hover .sol-badge,.carte-cgi:focus-within .sol-badge{opacity:0}
+.parrain .prix-ligne{display:flex;justify-content:space-between;gap:12px;font-size:.9rem;color:var(--creme)}
+.parrain .prix-ligne b{font-family:Poppins,sans-serif;font-size:.9rem;color:var(--or-clair)}
+.parrain .prix-ligne.total{border-top:1px solid rgba(255,255,255,.25);padding-top:6px;margin-top:2px}
 
 /* Invitation affichée après 5 secondes */
 #invite{margin:auto;border:0;padding:0;border-radius:var(--rayon);background:var(--creme);color:var(--encre);width:min(420px,calc(100% - 32px));box-shadow:0 20px 50px rgba(42,26,60,.35);font-family:Poppins,sans-serif}
@@ -459,22 +464,27 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
         </div>
       </article>
 
-      <article class="carte" data-cat="guide">
-        <div class="vignette photo docs">
-          <div class="doc-visuel" aria-hidden="true">
-            <div class="doc"><b>CGI</b><span>2025</span></div>
-            <div class="doc"><b>LPF</b><span>2025</span></div>
+      <article class="carte carte-cgi" data-cat="guide">
+        <div class="vignette photo cahier" tabindex="0" role="group" aria-label="Carte CGI et LPF">
+          <img class="cah-fond" src="cahier-fiscal.webp" width="560" height="494" alt="" aria-hidden="true" loading="lazy">
+          <img class="cah-image" src="cahier-fiscal.webp" width="560" height="494" loading="lazy" alt="Cahier fiscal : principales dispositions de la loi de finances 2026">
+          <span class="sol-badge" data-fr="Prix au survol" data-en="Prices on hover">Prix au survol</span>
+          <div class="parrain">
+            <b data-fr="Nos prix" data-en="Our prices">Nos prix</b>
+            <div class="prix-ligne"><span>CGI 2025</span><b data-fr="500 FCFA" data-en="500 FCFA">500 FCFA</b></div>
+            <div class="prix-ligne"><span>LPF 2025</span><b data-fr="500 FCFA" data-en="500 FCFA">500 FCFA</b></div>
+            <div class="prix-ligne total"><span data-fr="Les deux" data-en="Both">Les deux</span><b data-fr="1 000 FCFA" data-en="1,000 FCFA">1 000 FCFA</b></div>
           </div>
         </div>
         <div class="corps">
           <span class="tag" data-fr="Documents PDF · version 2025" data-en="PDF documents · 2025 version">Documents PDF · version 2025</span>
           <h3 data-fr="CGI et LPF du Togo, à jour 2025" data-en="Togo CGI and LPF, updated for 2025">CGI et LPF du Togo, à jour 2025</h3>
           <p data-fr="Le Code général des impôts (CGI) et le Livre des procédures fiscales (LPF) en PDF, version 2025. Vous les recevez sur WhatsApp." data-en="The General Tax Code (CGI) and the Tax Procedures Book (LPF) as PDFs, 2025 version. You receive them on WhatsApp.">Le Code général des impôts (CGI) et le Livre des procédures fiscales (LPF) en PDF, version 2025. Vous les recevez sur WhatsApp.</p>
-          <div class="prix" data-fr="500 FCFA chacun · 1 000 FCFA les deux" data-en="500 FCFA each · 1,000 FCFA for both">500 FCFA chacun · 1 000 FCFA les deux</div>
-          <a class="btn btn-or" href="#" data-wa="Bonjour DEKOPI GOLD, je veux le CGI et le LPF du Togo, version 2025 (PDF, 1 000 FCFA les deux)." data-fr="Recevoir les deux (1 000 FCFA)" data-en="Get both (1,000 FCFA)">Recevoir les deux (1 000 FCFA)</a>
+          <div class="prix" data-fr="Survolez la carte pour voir les prix" data-en="Hover over the card to see the prices">Survolez la carte pour voir les prix</div>
+          <a class="btn btn-or" href="#" data-wa="Bonjour DEKOPI GOLD, je veux le CGI et le LPF du Togo, version 2025 (PDF, 1 000 FCFA les deux)." data-fr="Recevoir les deux" data-en="Get both">Recevoir les deux</a>
           <div class="duo-btn">
-            <a class="btn btn-ligne" href="#" data-wa="Bonjour DEKOPI GOLD, je veux le CGI du Togo, version 2025 (PDF, 500 FCFA)." data-fr="CGI · 500 FCFA" data-en="CGI · 500 FCFA">CGI · 500 FCFA</a>
-            <a class="btn btn-ligne" href="#" data-wa="Bonjour DEKOPI GOLD, je veux le LPF du Togo, version 2025 (PDF, 500 FCFA)." data-fr="LPF · 500 FCFA" data-en="LPF · 500 FCFA">LPF · 500 FCFA</a>
+            <a class="btn btn-ligne" href="#" data-wa="Bonjour DEKOPI GOLD, je veux le CGI du Togo, version 2025 (PDF, 500 FCFA)." data-fr="CGI seul" data-en="CGI only">CGI seul</a>
+            <a class="btn btn-ligne" href="#" data-wa="Bonjour DEKOPI GOLD, je veux le LPF du Togo, version 2025 (PDF, 500 FCFA)." data-fr="LPF seul" data-en="LPF only">LPF seul</a>
           </div>
         </div>
       </article>
