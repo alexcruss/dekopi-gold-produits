@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- CSP : le script de la page est autorisé par son empreinte SHA-256 (une pour les fins de ligne LF en ligne, une pour CRLF en local).
      Si le contenu du bloc script change, recalculer les deux empreintes. -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-asyx0FxFmtI785MmJvbDjAFI2PqOCX/pcS1l49aK68w=' 'sha256-ze572hultpMfTr8rW2ik4HZjl/tfyOshWCS2OXLzCmc='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-LxbV5hxMZAfa0mpPoRutm5uvJOOKTcgMLlB5ouTCGWc=' 'sha256-pOxr5mqx3sCr+9OGAqPioSPCTGZm5t3InxGh6LZmKbA='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <title>DEKOPI GOLD | Logiciels et automatisation pour commerces et PME</title>
 <meta name="description" content="DEKOPI GOLD crée des logiciels simples pour les commerces et PME de Lomé : gestion de stock, courses et recettes, automatisation Excel. Commande par WhatsApp.">
@@ -826,25 +826,22 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
   })();
 
   /* Invitation : après 5 secondes, service ou formation, puis message WhatsApp.
-     Une fois fermée ou répondue, elle ne revient pas pendant 7 jours. */
+     Elle revient à chaque visite (chaque chargement de la page). */
   (function(){
     var dlg = document.getElementById("invite");
     if(!dlg || typeof dlg.showModal !== "function") return;
-    var CLE = "dg-invite", DUREE = 7*24*3600*1000;
     var MSG = {
       service:   {fr:"Bonjour DEKOPI GOLD, j'ai besoin d'un service.", en:"Hello DEKOPI GOLD, I need a service."},
       formation: {fr:"Bonjour DEKOPI GOLD, je voudrais une formation.", en:"Hello DEKOPI GOLD, I would like some training."}
     };
     var q = document.getElementById("inv-q"), r = document.getElementById("inv-wa"), lien = document.getElementById("inv-lien");
 
-    function dejaVu(){ try{ var t = +localStorage.getItem(CLE); return !!t && Date.now()-t < DUREE; }catch(e){ return false; } }
-    function noter(){ try{ localStorage.setItem(CLE, String(Date.now())); }catch(e){} }
     function etape(n){
       q.hidden = n !== 1; r.hidden = n !== 2;
       dlg.setAttribute("aria-labelledby", n === 1 ? "inv-titre" : "inv-titre2");
     }
     function ouvrir(){
-      if(dejaVu() || dlg.open) return;
+      if(dlg.open) return;
       var a = document.activeElement;
       if(a && /^(INPUT|TEXTAREA|SELECT)$/.test(a.tagName)){ setTimeout(ouvrir, 5000); return; } /* pas pendant la saisie */
       etape(1); dlg.showModal();
@@ -859,7 +856,6 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
       }
       if(e.target.closest("[data-fermer]") || e.target.closest("#inv-lien")) dlg.close();
     });
-    dlg.addEventListener("close", noter);                    /* Échap, bouton ou lien */
 
     setTimeout(ouvrir, 5000);
   })();
