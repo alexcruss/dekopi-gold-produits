@@ -271,6 +271,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
 .duo-btn{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .duo-btn .btn{padding:9px 10px;font-size:.82rem}
 .carte-cgi .sol-badge{bottom:auto;top:12px}
+/* Carte Garde la flamme : le lien d'achat apparaît au survol, au focus clavier ou au toucher */
+.vignette.flamme{position:relative;overflow:hidden;outline-offset:-3px}
+.carte-flamme .sol-badge{bottom:auto;top:12px}
+.carte-flamme:hover .parrain,.carte-flamme:focus-within .parrain{opacity:1;visibility:visible}
+.carte-flamme:hover .sol-badge,.carte-flamme:focus-within .sol-badge{opacity:0}
 .carte-cgi:hover .parrain,.carte-cgi:focus-within .parrain{opacity:1;visibility:visible}
 .carte-cgi:hover .sol-badge,.carte-cgi:focus-within .sol-badge{opacity:0}
 .parrain .prix-ligne{display:flex;justify-content:space-between;gap:12px;font-size:.9rem;color:var(--creme)}
@@ -421,8 +426,16 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
         </div>
       </article>
 
-      <article class="carte" data-cat="guide">
-        <div class="vignette photo"><img src="garde-la-flamme.jpg" width="960" height="600" loading="lazy" alt="Affiche du guide « Garde la flamme, même à distance » : guide PDF, 5 leçons et 2 bonus"></div>
+      <article class="carte carte-flamme" data-cat="guide">
+        <div class="vignette photo flamme" tabindex="0" role="group" aria-label="Carte Garde la flamme">
+          <img src="garde-la-flamme.jpg" width="960" height="600" loading="lazy" alt="Affiche du guide « Garde la flamme, même à distance » : guide PDF, 5 leçons et 2 bonus">
+          <span class="sol-badge" data-fr="Lien au survol" data-en="Link on hover">Lien au survol</span>
+          <div class="parrain">
+            <b data-fr="Garde la flamme" data-en="Keep the flame alive">Garde la flamme</b>
+            <p data-fr="Guide PDF de 5 leçons et 2 bonus. Paiement sécurisé sur Chariow, accès immédiat." data-en="PDF guide with 5 lessons and 2 bonuses. Secure payment on Chariow, instant access.">Guide PDF de 5 leçons et 2 bonus. Paiement sécurisé sur Chariow, accès immédiat.</p>
+            <a class="btn btn-or" href="https://jftpryir.mychariow.co/prd_hcqm7ikp" target="_blank" rel="noopener" data-fr="Ouvrir le lien d'achat" data-en="Open the purchase link">Ouvrir le lien d'achat</a>
+          </div>
+        </div>
         <div class="corps">
           <span class="tag" data-fr="Guide PDF" data-en="PDF guide">Guide PDF</span>
           <h3 data-fr="Garde la flamme, même à distance" data-en="Keep the flame alive, even from afar">Garde la flamme, même à distance</h3>
