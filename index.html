@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- CSP : le script de la page est autorisé par son empreinte SHA-256 (une pour les fins de ligne LF en ligne, une pour CRLF en local).
      Si le contenu du bloc script change, recalculer les deux empreintes. -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-LxbV5hxMZAfa0mpPoRutm5uvJOOKTcgMLlB5ouTCGWc=' 'sha256-pOxr5mqx3sCr+9OGAqPioSPCTGZm5t3InxGh6LZmKbA='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-MyviLRvLDgZlb2NshocyLVKiX9mpV49aAHiPj9AQ/6k=' 'sha256-nX3dyC0MDTLi3IXlWWkWTaQDGFYiLuJUKY6/CPb9wCA='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <title>DEKOPI GOLD | Logiciels et automatisation pour commerces et PME</title>
 <meta name="description" content="DEKOPI GOLD crée des logiciels simples pour les commerces et PME de Lomé : gestion de stock, courses et recettes, automatisation Excel. Commande par WhatsApp.">
@@ -282,6 +282,23 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
 .parrain .prix-ligne b{font-family:Poppins,sans-serif;font-size:.9rem;color:var(--or-clair)}
 .parrain .prix-ligne.total{border-top:1px solid rgba(255,255,255,.25);padding-top:6px;margin-top:2px}
 
+/* Espace publicité : offres d'autres entreprises, par affiliation. La section reste cachée tant qu'elle n'a aucune carte. */
+.reco{padding-top:24px}
+.reco:not(:has(.carte)){display:none}
+.reco .cadre{background:var(--lait);border-radius:var(--rayon);padding:30px 26px 34px}
+.reco .mention{font-size:.82rem;color:var(--muted);max-width:620px;margin-top:10px}
+.etiq-pub{align-self:flex-start;font-size:.68rem;font-weight:600;letter-spacing:.02em;color:var(--encre);background:var(--lait);border:1px solid var(--or);padding:3px 9px;border-radius:999px}
+/* carrousel des offres */
+.car{position:relative}
+.car-piste{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:4px 2px 10px;-webkit-overflow-scrolling:touch}
+.car-piste::-webkit-scrollbar{display:none}
+.car-piste .carte{flex:0 0 min(320px,82%);scroll-snap-align:start}
+.car-btn{position:absolute;top:42%;z-index:2;width:40px;height:40px;border-radius:50%;border:0;background:var(--encre);color:var(--creme);font:600 1.3rem/1 Poppins,sans-serif;cursor:pointer;box-shadow:0 4px 12px rgba(42,26,60,.3);display:grid;place-items:center;padding:0 0 3px}
+.car-btn:hover{background:var(--violet)}
+.car-btn[hidden]{display:none}
+.car-prev{left:-12px}.car-next{right:-12px}
+@media (max-width:640px){.reco .cadre{padding:22px 16px 26px}.car-prev{left:-8px}.car-next{right:-8px}}
+
 /* Invitation affichée après 5 secondes */
 #invite{margin:auto;border:0;padding:0;border-radius:var(--rayon);background:var(--creme);color:var(--encre);width:min(420px,calc(100% - 32px));box-shadow:0 20px 50px rgba(42,26,60,.35);font-family:Poppins,sans-serif}
 #invite::backdrop{background:rgba(42,26,60,.55)}
@@ -501,6 +518,40 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
           </div>
         </div>
       </article>
+    </div>
+  </div>
+</section>
+
+<!-- ESPACE PUBLICITE (affiliation) : cachée tant qu'il n'y a aucune carte dans la grille
+     Pour ajouter une offre, copier le modèle ci-dessous DANS la div id="car-piste" (le carrousel), puis le remplir.
+     Les images doivent être dans le dépôt (la CSP bloque les images d'autres sites).
+     Tout lien d'affiliation porte rel="sponsored nofollow noopener" et l'étiquette Publicité.
+
+<article class="carte">
+  <div class="vignette photo"><img src="IMAGE.jpg" width="960" height="600" loading="lazy" alt="Description de l'image"></div>
+  <div class="corps">
+    <span class="etiq-pub" data-fr="Publicité · lien d'affiliation" data-en="Ad · affiliate link">Publicité · lien d'affiliation</span>
+    <h3 data-fr="Nom de l'offre" data-en="Offer name">Nom de l'offre</h3>
+    <p data-fr="Une phrase qui explique l'offre." data-en="One sentence explaining the offer.">Une phrase qui explique l'offre.</p>
+    <div class="prix" data-fr="Prix ou « Gratuit »" data-en="Price or “Free”">Prix ou « Gratuit »</div>
+    <a class="btn btn-or" href="LIEN_D_AFFILIATION" target="_blank" rel="sponsored nofollow noopener" data-fr="Découvrir l'offre" data-en="See the offer">Découvrir l'offre</a>
+  </div>
+</article>
+-->
+<section id="recommandes" class="reco">
+  <div class="wrap">
+    <div class="cadre">
+      <div class="entete">
+        <h2 data-fr="Recommandés par DEKOPI GOLD" data-en="Recommended by DEKOPI GOLD">Recommandés par DEKOPI GOLD</h2>
+        <p data-fr="Des produits et services d'autres entreprises que nous recommandons." data-en="Products and services from other companies that we recommend.">Des produits et services d'autres entreprises que nous recommandons.</p>
+        <p class="mention" data-fr="Publicité : ce sont des liens d'affiliation. Nous touchons une commission si vous achetez, sans frais en plus pour vous." data-en="Advertisement: these are affiliate links. We earn a commission if you buy, at no extra cost to you.">Publicité : ce sont des liens d'affiliation. Nous touchons une commission si vous achetez, sans frais en plus pour vous.</p>
+      </div>
+      <div class="car" id="car-pub" role="region" aria-roledescription="carrousel" aria-label="Offres recommandées">
+        <div class="car-piste" id="car-piste">
+        </div>
+        <button class="car-btn car-prev" type="button" aria-label="Offre précédente" hidden>&#8249;</button>
+        <button class="car-btn car-next" type="button" aria-label="Offre suivante" hidden>&#8250;</button>
+      </div>
     </div>
   </div>
 </section>
@@ -733,7 +784,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
       document.querySelectorAll(".filtres button").forEach(function(x){ x.classList.remove("on"); });
       b.classList.add("on");
       var f = b.getAttribute("data-f");
-      document.querySelectorAll(".carte").forEach(function(c){
+      document.querySelectorAll("#produits .carte").forEach(function(c){
         c.hidden = !(f==="tous" || c.getAttribute("data-cat")===f);
       });
     });
@@ -858,6 +909,38 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
     });
 
     setTimeout(ouvrir, 5000);
+  })();
+
+  /* Carrousel des offres recommandées : glisser, flèches, défilement automatique toutes les 5 s (en pause au survol) */
+  (function(){
+    var car = document.getElementById("car-pub");
+    if(!car) return;
+    var piste = document.getElementById("car-piste"), prev = car.querySelector(".car-prev"), next = car.querySelector(".car-next");
+    var pause = false, reprise = null;
+    function pas(){
+      var c = piste.querySelector(".carte");
+      return (c ? c.getBoundingClientRect().width : 300) + (parseFloat(getComputedStyle(piste).columnGap) || 0);
+    }
+    function boutons(){ var trop = piste.scrollWidth > piste.clientWidth + 4; prev.hidden = next.hidden = !trop; }
+    function aller(d){
+      var fin = piste.scrollLeft + piste.clientWidth >= piste.scrollWidth - 4;
+      if(d > 0 && fin) piste.scrollTo({left:0, behavior:"auto"});
+      else if(d < 0 && piste.scrollLeft <= 4) piste.scrollTo({left:piste.scrollWidth, behavior:"auto"});
+      else piste.scrollBy({left:d*pas(), behavior:"smooth"});
+    }
+    prev.addEventListener("click", function(){ aller(-1); });
+    next.addEventListener("click", function(){ aller(1); });
+    car.addEventListener("mouseenter", function(){ pause = true; });
+    car.addEventListener("mouseleave", function(){ pause = false; });
+    car.addEventListener("focusin", function(){ pause = true; });
+    car.addEventListener("focusout", function(){ pause = false; });
+    car.addEventListener("touchstart", function(){ pause = true; clearTimeout(reprise); }, {passive:true});
+    car.addEventListener("touchend", function(){ clearTimeout(reprise); reprise = setTimeout(function(){ pause = false; }, 6000); }, {passive:true});
+    if(!window.matchMedia("(prefers-reduced-motion:reduce)").matches){
+      setInterval(function(){ if(!pause && !document.hidden && !next.hidden) aller(1); }, 5000);
+    }
+    window.addEventListener("resize", boutons);
+    boutons();
   })();
 
   setWA(); apply();
