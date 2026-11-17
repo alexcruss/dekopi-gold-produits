@@ -250,14 +250,15 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
 
 /* Carte formation Solimi : le parrainage apparaît au survol, au focus clavier ou au toucher */
 .vignette.solimi{position:relative;overflow:hidden;outline-offset:-3px}
-.sol-visuel{position:absolute;inset:0;display:grid;place-items:center;background:var(--violet)}
-.sol-carte{width:58%;aspect-ratio:1.586;border-radius:12px;background:var(--encre);border:1px solid rgba(255,255,255,.18);padding:12px 14px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 10px 24px rgba(0,0,0,.3)}
-.sol-puce{width:30px;height:22px;border-radius:5px;background:var(--or-clair)}
-.sol-nom{font-family:Fraunces,serif;font-weight:700;font-size:1.3rem;color:var(--blanc)}
+.vignette.solimi{background:#0a6bb3}
+.vignette.solimi>img{position:absolute;inset:0;width:100%;height:100%}
+.vignette.solimi .sol-fond{object-fit:cover;object-position:center;filter:blur(14px);transform:scale(1.15)}
+.vignette.solimi .sol-affiche{object-fit:contain;object-position:center}
+.vignette.photo .parrain .sol-logo{position:absolute;top:12px;right:14px;width:64px;height:auto;object-fit:contain;background:#fff;border-radius:6px;padding:3px 6px;box-sizing:border-box}
 .sol-badge{position:absolute;left:12px;bottom:12px;background:var(--or);color:var(--encre);font-size:.75rem;font-weight:600;padding:5px 11px;border-radius:999px;transition:opacity .2s}
-.parrain{position:absolute;inset:0;background:var(--encre);color:var(--creme);padding:18px 20px;display:flex;flex-direction:column;justify-content:center;gap:8px;opacity:0;visibility:hidden;transition:opacity .2s,visibility .2s}
+.parrain{position:absolute;inset:0;background:var(--encre);color:var(--creme);padding:12px 18px;display:flex;flex-direction:column;justify-content:center;gap:6px;opacity:0;visibility:hidden;transition:opacity .2s,visibility .2s}
 .parrain b{font-family:Fraunces,serif;font-size:1.15rem;color:var(--or-clair)}
-.carte .parrain p{flex:none;color:var(--creme);font-size:.88rem}
+.carte .parrain p{flex:none;color:var(--creme);font-size:.85rem;margin:0}
 .parrain .btn{align-self:flex-start;margin-top:4px}
 .carte-solimi:hover .parrain,.carte-solimi:focus-within .parrain{opacity:1;visibility:visible}
 .carte-solimi:hover .sol-badge,.carte-solimi:focus-within .sol-badge{opacity:0}
@@ -439,11 +440,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
 
       <article class="carte carte-solimi" data-cat="formation">
         <div class="vignette photo solimi" tabindex="0" role="group" aria-label="Carte Solimi">
-          <div class="sol-visuel" aria-hidden="true">
-            <div class="sol-carte"><span class="sol-puce"></span><span class="sol-nom">Solimi</span></div>
-          </div>
+          <img class="sol-fond" src="solimi-affiche.webp" width="219" height="234" alt="" aria-hidden="true" loading="lazy">
+          <img class="sol-affiche" src="solimi-affiche.webp" width="219" height="234" loading="lazy" alt="Affiche Solimi : votre carte prépayée Solimi est enfin disponible">
           <span class="sol-badge" data-fr="Parrainage disponible" data-en="Referral available">Parrainage disponible</span>
           <div class="parrain">
+            <img class="sol-logo" src="logo-solimi.webp" width="345" height="166" loading="lazy" alt="Solimi">
             <b data-fr="Parrainage Solimi" data-en="Solimi referral">Parrainage Solimi</b>
             <p data-fr="Obtenez votre code de parrainage Solimi pour 300 FCFA. Il vous est remis sur WhatsApp." data-en="Get your Solimi referral code for 300 FCFA. It is sent to you on WhatsApp.">Obtenez votre code de parrainage Solimi pour 300 FCFA. Il vous est remis sur WhatsApp.</p>
             <a class="btn btn-or" href="#" data-wa="Bonjour DEKOPI GOLD, je voudrais obtenir un code de parrainage Solimi (300 FCFA)." data-fr="Obtenir mon code (300 FCFA)" data-en="Get my code (300 FCFA)">Obtenir mon code (300 FCFA)</a>
