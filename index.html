@@ -248,6 +248,20 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 
+/* Carte formation Solimi : le parrainage apparaît au survol, au focus clavier ou au toucher */
+.vignette.solimi{position:relative;overflow:hidden;outline-offset:-3px}
+.sol-visuel{position:absolute;inset:0;display:grid;place-items:center;background:var(--violet)}
+.sol-carte{width:58%;aspect-ratio:1.586;border-radius:12px;background:var(--encre);border:1px solid rgba(255,255,255,.18);padding:12px 14px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 10px 24px rgba(0,0,0,.3)}
+.sol-puce{width:30px;height:22px;border-radius:5px;background:var(--or-clair)}
+.sol-nom{font-family:Fraunces,serif;font-weight:700;font-size:1.3rem;color:var(--blanc)}
+.sol-badge{position:absolute;left:12px;bottom:12px;background:var(--or);color:var(--encre);font-size:.75rem;font-weight:600;padding:5px 11px;border-radius:999px;transition:opacity .2s}
+.parrain{position:absolute;inset:0;background:var(--encre);color:var(--creme);padding:18px 20px;display:flex;flex-direction:column;justify-content:center;gap:8px;opacity:0;visibility:hidden;transition:opacity .2s,visibility .2s}
+.parrain b{font-family:Fraunces,serif;font-size:1.15rem;color:var(--or-clair)}
+.carte .parrain p{flex:none;color:var(--creme);font-size:.88rem}
+.parrain .btn{align-self:flex-start;margin-top:4px}
+.carte-solimi:hover .parrain,.carte-solimi:focus-within .parrain{opacity:1;visibility:visible}
+.carte-solimi:hover .sol-badge,.carte-solimi:focus-within .sol-badge{opacity:0}
+
 /* Invitation affichée après 5 secondes */
 #invite{margin:auto;border:0;padding:0;border-radius:var(--rayon);background:var(--creme);color:var(--encre);width:min(420px,calc(100% - 32px));box-shadow:0 20px 50px rgba(42,26,60,.35);font-family:Poppins,sans-serif}
 #invite::backdrop{background:rgba(42,26,60,.55)}
@@ -325,7 +339,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
   <div class="wrap">
     <div class="entete">
       <h2 data-fr="Le catalogue" data-en="The catalogue">Le catalogue</h2>
-      <p data-fr="Sept offres, chacune avec un prix clair ou un devis. Cliquez sur « Commander » : WhatsApp s'ouvre avec le message déjà écrit." data-en="Seven offers, each with a clear price or a quote. Click “Order”: WhatsApp opens with the message already written.">Sept offres, chacune avec un prix clair ou un devis. Cliquez sur « Commander » : WhatsApp s'ouvre avec le message déjà écrit.</p>
+      <p data-fr="Huit offres, chacune avec un prix clair ou un devis. Cliquez sur « Commander » : WhatsApp s'ouvre avec le message déjà écrit." data-en="Eight offers, each with a clear price or a quote. Click “Order”: WhatsApp opens with the message already written.">Huit offres, chacune avec un prix clair ou un devis. Cliquez sur « Commander » : WhatsApp s'ouvre avec le message déjà écrit.</p>
     </div>
 
     <div class="filtres" role="group" aria-label="Filtres">
@@ -411,6 +425,27 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
           <p data-fr="Installer l'application, la passer en anglais, ajouter l'adresse du transitaire, préparer une carte virtuelle puis passer la commande." data-en="Install the app, switch it to English, add the freight forwarder’s address, prepare a virtual card, then place the order.">Installer l'application, la passer en anglais, ajouter l'adresse du transitaire, préparer une carte virtuelle puis passer la commande.</p>
           <div class="prix" data-fr="Gratuite sur YouTube" data-en="Free on YouTube">Gratuite sur YouTube</div>
           <a class="btn btn-or" href="https://youtu.be/lXn75UIGjFI" target="_blank" rel="noopener" data-fr="Voir la vidéo sur YouTube" data-en="Watch on YouTube">Voir la vidéo sur YouTube</a>
+        </div>
+      </article>
+
+      <article class="carte carte-solimi" data-cat="formation">
+        <div class="vignette photo solimi" tabindex="0" role="group" aria-label="Carte Solimi">
+          <div class="sol-visuel" aria-hidden="true">
+            <div class="sol-carte"><span class="sol-puce"></span><span class="sol-nom">Solimi</span></div>
+          </div>
+          <span class="sol-badge" data-fr="Parrainage disponible" data-en="Referral available">Parrainage disponible</span>
+          <div class="parrain">
+            <b data-fr="Parrainage Solimi" data-en="Solimi referral">Parrainage Solimi</b>
+            <p data-fr="Obtenez votre code de parrainage Solimi pour 300 FCFA. Il vous est remis sur WhatsApp." data-en="Get your Solimi referral code for 300 FCFA. It is sent to you on WhatsApp.">Obtenez votre code de parrainage Solimi pour 300 FCFA. Il vous est remis sur WhatsApp.</p>
+            <a class="btn btn-or" href="#" data-wa="Bonjour DEKOPI GOLD, je voudrais obtenir un code de parrainage Solimi (300 FCFA)." data-fr="Obtenir mon code (300 FCFA)" data-en="Get my code (300 FCFA)">Obtenir mon code (300 FCFA)</a>
+          </div>
+        </div>
+        <div class="corps">
+          <span class="tag" data-fr="Formation · YouTube et visio" data-en="Training · YouTube and video call">Formation · YouTube et visio</span>
+          <h3 data-fr="Savoir utiliser la carte Solimi" data-en="How to use the Solimi card">Savoir utiliser la carte Solimi</h3>
+          <p data-fr="Une formation pour prendre en main la carte prépayée Solimi, pas à pas. Suivez-la sur YouTube ou en visioconférence." data-en="A training to get started with the Solimi prepaid card, step by step. Follow it on YouTube or by video call.">Une formation pour prendre en main la carte prépayée Solimi, pas à pas. Suivez-la sur YouTube ou en visioconférence.</p>
+          <div class="prix" data-fr="500 FCFA · YouTube ou visio" data-en="500 FCFA · YouTube or video call">500 FCFA · YouTube ou visio</div>
+          <a class="btn btn-or" href="#" data-wa="Bonjour DEKOPI GOLD, je veux suivre la formation sur la carte Solimi (500 FCFA). Je préfère YouTube ou visio : " data-fr="S'inscrire sur WhatsApp" data-en="Sign up on WhatsApp">S'inscrire sur WhatsApp</a>
         </div>
       </article>
     </div>
