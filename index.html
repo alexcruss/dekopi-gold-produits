@@ -262,6 +262,15 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
 .carte-solimi:hover .parrain,.carte-solimi:focus-within .parrain{opacity:1;visibility:visible}
 .carte-solimi:hover .sol-badge,.carte-solimi:focus-within .sol-badge{opacity:0}
 
+/* Carte CGI + LPF */
+.vignette.docs{display:grid;place-items:center;background:var(--violet)}
+.doc-visuel{display:flex;gap:16px;align-items:center}
+.doc{width:92px;aspect-ratio:.74;background:var(--blanc);border-radius:8px;border-top:6px solid var(--or);padding:12px 10px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 8px 20px rgba(0,0,0,.3)}
+.doc b{font-family:Fraunces,serif;font-size:1.6rem;color:var(--encre);line-height:1}
+.doc span{font-size:.78rem;font-weight:600;color:var(--violet)}
+.duo-btn{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.duo-btn .btn{padding:9px 10px;font-size:.82rem}
+
 /* Invitation affichée après 5 secondes */
 #invite{margin:auto;border:0;padding:0;border-radius:var(--rayon);background:var(--creme);color:var(--encre);width:min(420px,calc(100% - 32px));box-shadow:0 20px 50px rgba(42,26,60,.35);font-family:Poppins,sans-serif}
 #invite::backdrop{background:rgba(42,26,60,.55)}
@@ -339,7 +348,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
   <div class="wrap">
     <div class="entete">
       <h2 data-fr="Le catalogue" data-en="The catalogue">Le catalogue</h2>
-      <p data-fr="Huit offres, chacune avec un prix clair ou un devis. Cliquez sur « Commander » : WhatsApp s'ouvre avec le message déjà écrit." data-en="Eight offers, each with a clear price or a quote. Click “Order”: WhatsApp opens with the message already written.">Huit offres, chacune avec un prix clair ou un devis. Cliquez sur « Commander » : WhatsApp s'ouvre avec le message déjà écrit.</p>
+      <p data-fr="Neuf offres, chacune avec un prix clair ou un devis. Cliquez sur « Commander » : WhatsApp s'ouvre avec le message déjà écrit." data-en="Nine offers, each with a clear price or a quote. Click “Order”: WhatsApp opens with the message already written.">Neuf offres, chacune avec un prix clair ou un devis. Cliquez sur « Commander » : WhatsApp s'ouvre avec le message déjà écrit.</p>
     </div>
 
     <div class="filtres" role="group" aria-label="Filtres">
@@ -446,6 +455,26 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
           <p data-fr="Une formation pour prendre en main la carte prépayée Solimi, pas à pas. Suivez-la sur YouTube ou en visioconférence." data-en="A training to get started with the Solimi prepaid card, step by step. Follow it on YouTube or by video call.">Une formation pour prendre en main la carte prépayée Solimi, pas à pas. Suivez-la sur YouTube ou en visioconférence.</p>
           <div class="prix" data-fr="500 FCFA · YouTube ou visio" data-en="500 FCFA · YouTube or video call">500 FCFA · YouTube ou visio</div>
           <a class="btn btn-or" href="#" data-wa="Bonjour DEKOPI GOLD, je veux suivre la formation sur la carte Solimi (500 FCFA). Je préfère YouTube ou visio : " data-fr="S'inscrire sur WhatsApp" data-en="Sign up on WhatsApp">S'inscrire sur WhatsApp</a>
+        </div>
+      </article>
+
+      <article class="carte" data-cat="guide">
+        <div class="vignette photo docs">
+          <div class="doc-visuel" aria-hidden="true">
+            <div class="doc"><b>CGI</b><span>2025</span></div>
+            <div class="doc"><b>LPF</b><span>2025</span></div>
+          </div>
+        </div>
+        <div class="corps">
+          <span class="tag" data-fr="Documents PDF · version 2025" data-en="PDF documents · 2025 version">Documents PDF · version 2025</span>
+          <h3 data-fr="CGI et LPF du Togo, à jour 2025" data-en="Togo CGI and LPF, updated for 2025">CGI et LPF du Togo, à jour 2025</h3>
+          <p data-fr="Le Code général des impôts (CGI) et le Livre des procédures fiscales (LPF) en PDF, version 2025. Vous les recevez sur WhatsApp." data-en="The General Tax Code (CGI) and the Tax Procedures Book (LPF) as PDFs, 2025 version. You receive them on WhatsApp.">Le Code général des impôts (CGI) et le Livre des procédures fiscales (LPF) en PDF, version 2025. Vous les recevez sur WhatsApp.</p>
+          <div class="prix" data-fr="500 FCFA chacun · 1 000 FCFA les deux" data-en="500 FCFA each · 1,000 FCFA for both">500 FCFA chacun · 1 000 FCFA les deux</div>
+          <a class="btn btn-or" href="#" data-wa="Bonjour DEKOPI GOLD, je veux le CGI et le LPF du Togo, version 2025 (PDF, 1 000 FCFA les deux)." data-fr="Recevoir les deux (1 000 FCFA)" data-en="Get both (1,000 FCFA)">Recevoir les deux (1 000 FCFA)</a>
+          <div class="duo-btn">
+            <a class="btn btn-ligne" href="#" data-wa="Bonjour DEKOPI GOLD, je veux le CGI du Togo, version 2025 (PDF, 500 FCFA)." data-fr="CGI · 500 FCFA" data-en="CGI · 500 FCFA">CGI · 500 FCFA</a>
+            <a class="btn btn-ligne" href="#" data-wa="Bonjour DEKOPI GOLD, je veux le LPF du Togo, version 2025 (PDF, 500 FCFA)." data-fr="LPF · 500 FCFA" data-en="LPF · 500 FCFA">LPF · 500 FCFA</a>
+          </div>
         </div>
       </article>
     </div>
