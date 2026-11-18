@@ -271,16 +271,20 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
 .vignette.cahier .cah-image{object-fit:contain;object-position:center}
 .vignette.en-cours{position:relative}
 .vignette.en-cours .sol-badge{bottom:auto;top:12px}
-/* témoignages */
+/* avis clients : panneau sombre, cartes avec grand guillemet doré */
 .temoignages:not(:has(.avis)){display:none}
-.avis-grille{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:22px}
-.avis{max-width:560px;background:var(--blanc);border:1px solid var(--lait);border-radius:var(--rayon);padding:26px;display:flex;flex-direction:column;gap:16px}
-.avis>p{font-family:Fraunces,Georgia,serif;font-size:1.2rem;line-height:1.4;color:var(--encre)}
-.avis-qui{display:flex;align-items:center;gap:12px;margin-top:auto}
-.avis-qui b{display:block;font-weight:600;font-size:.95rem}
-.avis-qui a{font-size:.85rem;color:var(--violet);text-decoration:none}
+.avis-panel{border-radius:28px;padding:48px 40px;color:var(--creme);background:radial-gradient(480px 320px at 96% 0%,rgba(227,185,85,.22),transparent 65%),linear-gradient(135deg,#241535 0%,#3E2260 52%,#5A2D6E 100%)}
+.avis-panel h2{color:var(--creme);text-align:center;margin-bottom:30px}
+.avis-grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.avis{background:rgba(20,10,36,.55);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:24px;display:flex;flex-direction:column;gap:14px}
+.avis-q{display:block;font:700 4.2rem/.7 Fraunces,Georgia,serif;height:34px;color:var(--or-clair)}
+.avis>p{font-size:1.02rem;line-height:1.55;color:var(--creme)}
+.avis-qui{display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:16px;border-top:1px solid rgba(255,255,255,.14)}
+.avis-qui b{display:block;font-weight:600;font-size:.95rem;color:#fff}
+.avis-qui a{font-size:.82rem;color:var(--or-clair);text-decoration:none}
 .avis-qui a:hover{text-decoration:underline}
-.avis-ini{flex:none;display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:var(--or);color:var(--encre);font:700 1.1rem Fraunces,serif}
+.avis-ini{flex:none;display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:var(--creme);color:var(--encre);font:700 1.1rem Fraunces,serif}
+@media (max-width:640px){.avis-panel{padding:34px 18px}}
 .duo-btn{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .duo-btn .btn{padding:9px 10px;font-size:.82rem}
 .carte-cgi .sol-badge{bottom:auto;top:12px}
@@ -725,20 +729,19 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
      Pour en ajouter un, copier une carte .avis dans .avis-grille. Ne jamais mettre de guillemets autour d'une phrase qui n'est pas la citation exacte du client. -->
 <section id="temoignages" class="temoignages" style="padding-top:24px">
   <div class="wrap">
-    <div class="entete">
-      <h2 data-fr="Ce que disent nos clients" data-en="What our clients say">Ce que disent nos clients</h2>
-    </div>
+    <div class="avis-panel">
+    <h2 data-fr="Avis clients" data-en="Client reviews">Avis clients</h2>
     <div class="avis-grille">
       <article class="avis">
-        <span class="etiq-pub" data-fr="Retour client" data-en="Client feedback">Retour client</span>
+        <span class="avis-q" aria-hidden="true">&ldquo;</span>
         <p data-fr="Emmanuel trouve le site bien réussi et à son goût." data-en="Emmanuel finds the website very well done and to his taste.">Emmanuel trouve le site bien réussi et à son goût.</p>
         <div class="avis-qui">
           <span class="avis-ini" aria-hidden="true">E</span>
-          <div><b>Emmanuel</b><a href="https://alexcruss.github.io/fiscogef/" target="_blank" rel="noopener">FISCOGEF Expertise · Lomé</a></div>
+          <div><b>Emmanuel</b><a href="https://alexcruss.github.io/fiscogef/" target="_blank" rel="noopener" data-fr="FISCOGEF Expertise · Lomé" data-en="FISCOGEF Expertise · Lomé">FISCOGEF Expertise · Lomé</a></div>
         </div>
       </article>
       <article class="avis">
-        <span class="etiq-pub" data-fr="Retour client" data-en="Client feedback">Retour client</span>
+        <span class="avis-q" aria-hidden="true">&ldquo;</span>
         <p data-fr="Élixir du Terroir trouve son site web intéressant." data-en="Élixir du Terroir finds its website interesting.">Élixir du Terroir trouve son site web intéressant.</p>
         <div class="avis-qui">
           <span class="avis-ini" aria-hidden="true">É</span>
@@ -746,13 +749,14 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
         </div>
       </article>
       <article class="avis">
-        <span class="etiq-pub" data-fr="Retour client" data-en="Client feedback">Retour client</span>
+        <span class="avis-q" aria-hidden="true">&ldquo;</span>
         <p data-fr="Brenda trouve son site web intéressant." data-en="Brenda finds her website interesting.">Brenda trouve son site web intéressant.</p>
         <div class="avis-qui">
           <span class="avis-ini" aria-hidden="true">B</span>
-          <div><b>Brenda</b><a href="https://alexcruss.github.io/BRENDASHOP/" target="_blank" rel="noopener">BrendaSTYLE · Lomé</a></div>
+          <div><b>Brenda</b><a href="https://alexcruss.github.io/BRENDASHOP/" target="_blank" rel="noopener" data-fr="BrendaSTYLE · Lomé" data-en="BrendaSTYLE · Lomé">BrendaSTYLE · Lomé</a></div>
         </div>
       </article>
+    </div>
     </div>
   </div>
 </section>
