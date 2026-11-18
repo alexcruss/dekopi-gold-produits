@@ -294,7 +294,15 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
 .car{position:relative}
 .car-piste{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:4px 2px 10px;-webkit-overflow-scrolling:touch}
 .car-piste::-webkit-scrollbar{display:none}
-.car-piste .carte{flex:0 0 min(320px,82%);scroll-snap-align:start}
+.car-piste .carte{flex:0 0 min(320px,82%);scroll-snap-align:start;position:relative}
+/* cartes de pub : l'image seule au repos ; texte et boutons en surimpression au survol, au focus clavier ou au toucher */
+.car-piste .carte .vignette.photo{aspect-ratio:1/1}
+.car-piste .carte .corps{position:absolute;inset:0;z-index:1;padding:14px 16px;justify-content:center;gap:7px;overflow-y:auto;scrollbar-width:none;background:rgba(36,21,53,.8);color:var(--creme);opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s}
+.car-piste .carte:hover .corps,.car-piste .carte:focus-within .corps{opacity:1;visibility:visible}
+.car-piste .carte:focus-visible{outline:3px solid var(--or);outline-offset:-3px}
+.car-piste .carte .corps h3{color:var(--creme);font-size:1.1rem}
+.car-piste .carte .corps p{flex:none;color:#E9DFF2;font-size:.84rem;line-height:1.45}
+.car-piste .carte .corps .prix{color:var(--or-clair);font-size:.88rem}
 .car-btn{position:absolute;top:42%;z-index:2;width:40px;height:40px;border-radius:50%;border:0;background:var(--encre);color:var(--creme);font:600 1.3rem/1 Poppins,sans-serif;cursor:pointer;box-shadow:0 4px 12px rgba(42,26,60,.3);display:grid;place-items:center;padding:0 0 3px}
 .car-btn:hover{background:var(--violet)}
 .car-btn[hidden]{display:none}
@@ -529,7 +537,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
      Les images doivent être dans le dépôt (la CSP bloque les images d'autres sites).
      Tout lien d'affiliation porte rel="sponsored nofollow noopener" et l'étiquette Publicité.
 
-<article class="carte">
+<article class="carte" tabindex="0">
   <div class="vignette photo"><img src="IMAGE.jpg" width="960" height="600" loading="lazy" alt="Description de l'image"></div>
   <div class="corps">
     <span class="etiq-pub" data-fr="Publicité · lien d'affiliation" data-en="Ad · affiliate link">Publicité · lien d'affiliation</span>
@@ -550,7 +558,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
       </div>
       <div class="car" id="car-pub" role="region" aria-roledescription="carrousel" aria-label="Offres recommandées">
         <div class="car-piste" id="car-piste">
-          <article class="carte">
+          <article class="carte" tabindex="0">
             <div class="vignette photo solimi" role="img" aria-label="Affiche Solimi : votre carte prépayée Solimi est enfin disponible">
               <img class="sol-fond" src="solimi-affiche.webp" width="219" height="234" alt="" aria-hidden="true" loading="lazy">
               <img class="sol-affiche" src="solimi-affiche.webp" width="219" height="234" alt="" aria-hidden="true" loading="lazy">
@@ -566,7 +574,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
               </div>
             </div>
           </article>
-          <article class="carte">
+          <article class="carte" tabindex="0">
             <div class="vignette photo solimi lepdv" role="img" aria-label="Page d'accueil de lepdv : la caisse gratuite de votre boutique">
               <img class="sol-fond" src="lepdv.webp" width="518" height="478" alt="" aria-hidden="true" loading="lazy">
               <img class="sol-affiche" src="lepdv.webp" width="518" height="478" alt="" aria-hidden="true" loading="lazy">
@@ -582,7 +590,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
               </div>
             </div>
           </article>
-          <article class="carte">
+          <article class="carte" tabindex="0">
             <div class="vignette photo solimi fac" role="img" aria-label="Page d'accueil de First Air Cargo : gardez le contrôle sur toutes vos marchandises">
               <img class="sol-fond" src="first-air-cargo.webp" width="828" height="744" alt="" aria-hidden="true" loading="lazy">
               <img class="sol-affiche" src="first-air-cargo.webp" width="828" height="744" alt="" aria-hidden="true" loading="lazy">
