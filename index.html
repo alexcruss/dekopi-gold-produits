@@ -8,7 +8,7 @@
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-MyviLRvLDgZlb2NshocyLVKiX9mpV49aAHiPj9AQ/6k=' 'sha256-nX3dyC0MDTLi3IXlWWkWTaQDGFYiLuJUKY6/CPb9wCA='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <title>DEKOPI GOLD | Logiciels et automatisation pour commerces et PME</title>
-<meta name="description" content="DEKOPI GOLD crée des logiciels simples pour les commerces et PME de Lomé : gestion de stock, courses et recettes, automatisation Excel. Commande par WhatsApp.">
+<meta name="description" content="CimentStock, ASSIMETO, sites vitrines et automatisation Excel pour les commerces et PME de Lomé. Je réponds sur WhatsApp.">
 <link rel="canonical" href="https://produits.pierredegboevi.com/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="DEKOPI GOLD">
@@ -19,7 +19,7 @@
 <meta property="og:image" content="https://produits.pierredegboevi.com/apercu.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="600">
-<meta property="og:image:alt" content="Page d'accueil DEKOPI GOLD : des outils simples pour les commerces et PME de Lomé">
+<meta property="og:image:alt" content="Page d'accueil DEKOPI GOLD : des outils pour les commerces et PME de Lomé">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://produits.pierredegboevi.com/apercu.jpg">
 <link rel="icon" type="image/png" href="logo.png">
@@ -37,7 +37,7 @@
   --or-clair:#E3B955;
   --blanc:#FFFBF5;
   --muted:#6B5B78;
-  --rayon:16px;
+  --rayon:12px;
 }
 *{box-sizing:border-box;margin:0}
 html{scroll-behavior:smooth}
@@ -58,45 +58,28 @@ header{position:sticky;top:0;z-index:20;background:rgba(246,238,226,.92);backdro
 .nav ul{display:flex;gap:26px;list-style:none;padding:0;font-size:.92rem}
 .nav ul a{text-decoration:none;color:var(--muted)}
 .nav ul a:hover{color:var(--violet)}
-.lang{border:1px solid var(--encre);background:none;border-radius:999px;padding:5px 12px;font:500 .8rem Poppins;cursor:pointer;color:var(--encre)}
+.lang{border:1px solid var(--encre);background:none;border-radius:8px;padding:5px 12px;font:500 .8rem Poppins;cursor:pointer;color:var(--encre)}
 .lang:hover{background:var(--encre);color:var(--creme)}
 
 /* boutons */
-.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:999px;font-weight:600;font-size:.95rem;text-decoration:none;border:2px solid transparent;transition:transform .15s, background .15s}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:10px;font-weight:600;font-size:.95rem;text-decoration:none;border:2px solid transparent;transition:transform .15s, background .15s}
 .btn:hover{transform:translateY(-2px)}
 .btn-or{background:var(--or);color:var(--encre)}
 .btn-or:hover{background:var(--or-clair)}
 .btn-ligne{border-color:var(--encre)}
 .btn-ligne:hover{background:var(--encre);color:var(--creme)}
 
-/* hero */
-.hero{position:relative;overflow:hidden;color:var(--blanc);padding:72px 0 80px;border-radius:0 0 40px 40px;
-  background:
-    radial-gradient(640px 420px at 88% 8%, rgba(227,185,85,.38), transparent 62%),
-    radial-gradient(520px 420px at 6% 100%, rgba(139,76,190,.45), transparent 65%),
-    linear-gradient(135deg,#241535 0%,#3E2260 52%,#5A2D6E 100%)}
-.hero::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.07;
-  background-image:linear-gradient(rgba(255,255,255,.9) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.9) 1px,transparent 1px);background-size:44px 44px;
-  -webkit-mask-image:radial-gradient(ellipse at 70% 40%,#000 0%,transparent 70%);mask-image:radial-gradient(ellipse at 70% 40%,#000 0%,transparent 70%)}
-.hero-grid{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
-.kicker{display:inline-block;font-size:.8rem;font-weight:600;color:var(--or-clair);background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);padding:5px 12px;border-radius:999px;margin-bottom:18px}
-.hero h1{color:var(--blanc)}
-.hero p.lead{font-size:1.1rem;color:#DCCFEA;margin:20px 0 28px;max-width:34em}
+/* hero : fond crème, titre à gauche, une capture réelle à droite */
+.hero{padding:56px 0 64px;border-bottom:1px solid var(--lait)}
+.hero-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:48px;align-items:center}
+.hero h1{font-size:clamp(1.9rem,4.2vw,2.8rem)}
+.kicker{display:block;font-size:.85rem;font-weight:500;color:var(--muted);margin-bottom:16px}
+.hero p.lead{font-size:1.08rem;color:var(--muted);margin:20px 0 28px;max-width:34em}
 .hero-cta{display:flex;flex-wrap:wrap;gap:12px}
-.hero .btn-ligne{border-color:rgba(255,255,255,.55);color:var(--blanc)}
-.hero .btn-ligne:hover{background:var(--blanc);color:var(--encre);border-color:var(--blanc)}
-/* visuel : fenêtres des produits + chiffre clé */
-.vitrine{position:relative;height:420px}
-.fen{position:absolute;margin:0;background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 28px 56px rgba(8,2,20,.5),0 4px 12px rgba(8,2,20,.25)}
-.fen .bar{height:26px;background:#EFE6D8;display:flex;align-items:center;gap:6px;padding:0 11px}
-.fen .bar i{width:8px;height:8px;border-radius:50%}
-.fen .bar i:nth-child(1){background:#E8887A}.fen .bar i:nth-child(2){background:#E7C36B}.fen .bar i:nth-child(3){background:#8CC48A}
+.hero-note{margin-top:28px;padding-top:16px;border-top:1px solid var(--lait);font-size:.88rem;color:var(--muted);max-width:34em}
+.fen{margin:0;background:var(--blanc);border:1px solid var(--lait);border-radius:12px;overflow:hidden;box-shadow:0 10px 28px rgba(42,26,60,.1)}
 .fen img{display:block;width:100%;height:auto}
-.f1{left:0;top:6px;width:80%;transform:rotate(-3deg)}
-.f2{right:0;top:112px;width:62%;transform:rotate(3deg)}
-.hero-card{position:absolute;left:-14px;bottom:2px;width:min(330px,78%);background:linear-gradient(135deg,#EAC76A,#C4922A);color:var(--encre);border-radius:20px;padding:20px 22px;box-shadow:0 22px 44px rgba(8,2,20,.45);transform:rotate(-1.5deg)}
-.hero-card .big{font-family:Fraunces,serif;font-weight:700;font-size:2.1rem;color:var(--encre);line-height:1}
-.hero-card p{margin-top:8px;color:#3A2A18;font-size:.88rem;line-height:1.45}
+.fen figcaption{padding:10px 14px;font-size:.8rem;color:var(--muted);border-top:1px solid var(--lait)}
 
 /* sections */
 section{padding:64px 0}
@@ -132,9 +115,9 @@ section{padding:64px 0}
 
 /* catalogue */
 .filtres{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:26px}
-.filtres button{border:1px solid var(--lait);background:var(--blanc);padding:8px 16px;border-radius:999px;font:500 .85rem Poppins;cursor:pointer;color:var(--encre)}
+.filtres button{border:1px solid var(--lait);background:var(--blanc);padding:8px 16px;border-radius:8px;font:500 .85rem Poppins;cursor:pointer;color:var(--encre)}
 .filtres button.on{background:var(--encre);color:var(--creme);border-color:var(--encre)}
-.grille{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:22px}
+.grille{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:22px;grid-auto-flow:dense}
 .carte{background:var(--blanc);border-radius:var(--rayon);border:1px solid var(--lait);overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .2s, transform .2s}
 .carte:hover{box-shadow:0 12px 30px rgba(42,26,60,.12);transform:translateY(-3px)}
 .vignette{height:170px;background:var(--lait);display:grid;place-items:center;padding:18px}
@@ -149,6 +132,15 @@ a.carte{text-decoration:none;color:inherit}
 .prix{font-weight:600;color:var(--encre);font-size:.95rem}
 .carte .btn{padding:10px 16px;font-size:.88rem;justify-content:center;margin-top:6px}
 .carte[hidden]{display:none}
+/* prix : une étiquette de marché, trou à gauche */
+.carte .corps .prix{align-self:flex-start;position:relative;background:var(--lait);border-radius:4px 8px 8px 4px;padding:3px 12px 3px 28px;font-size:.88rem;line-height:1.5}
+.carte .corps .prix::before{content:"";position:absolute;left:10px;top:50%;width:9px;height:9px;margin-top:-4.5px;border-radius:50%;background:var(--blanc);box-shadow:inset 0 0 0 1.5px rgba(42,26,60,.35)}
+/* offre la plus récente : pleine largeur, image à gauche */
+.carte-grande{grid-column:1/-1;flex-direction:row}
+.carte-grande .vignette.photo{flex:0 0 58%;aspect-ratio:8/5}
+.carte-grande .corps{justify-content:center;padding:32px;gap:10px}
+.carte-grande h3{font-size:1.6rem}
+.carte-grande p{font-size:1rem;flex:none}
 
 /* mini-écrans */
 .m-table{width:100%;background:#fff;border-radius:10px;padding:10px;font-size:.62rem;box-shadow:0 4px 12px rgba(0,0,0,.08)}
@@ -175,31 +167,12 @@ a.carte{text-decoration:none;color:inherit}
 .etape::before{content:counter(e);display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--or);color:var(--encre);font-weight:600;margin-bottom:12px}
 .etape p{color:var(--muted);font-size:.92rem;margin-top:6px}
 
-/* preuves */
-.preuves{position:relative;overflow:hidden;color:var(--creme);border-radius:28px;padding:48px 40px;
-  background:
-    radial-gradient(520px 340px at 6% 100%, rgba(139,76,190,.45), transparent 65%),
-    linear-gradient(135deg,#241535 0%,#3E2260 52%,#5A2D6E 100%)}
-.preuves::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.07;
-  background-image:linear-gradient(rgba(255,255,255,.9) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.9) 1px,transparent 1px);background-size:44px 44px;
-  -webkit-mask-image:radial-gradient(ellipse at 70% 40%,#000 0%,transparent 70%);mask-image:radial-gradient(ellipse at 70% 40%,#000 0%,transparent 70%)}
-.preuves::before{content:"";position:absolute;right:-120px;top:-140px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(227,185,85,.34),transparent 68%);pointer-events:none;animation:lueur 9s ease-in-out infinite alternate}
-@keyframes lueur{to{transform:translate(-70px,50px) scale(1.15)}}
-.preuves>*{position:relative;z-index:1}
-.preuves h2{color:var(--creme)}
-.chiffres{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px;margin:28px 0 0}
-.chiffres .n{font-family:Fraunces,serif;font-size:2.8rem;font-weight:700;color:var(--or-clair);line-height:1.1;font-variant-numeric:tabular-nums}
-.chiffres p{font-size:.88rem;color:#D9CCE6;margin-top:4px}
-.chiffres>div::after{content:"";display:block;width:48px;height:3px;margin-top:14px;border-radius:2px;background:linear-gradient(90deg,#C4922A,#E3B955)}
-/* animation : active seulement quand le script est là (sans script, tout reste visible) */
-.anim .chiffres>div{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease;transition-delay:calc(var(--i)*.18s)}
-.anim .chiffres>div::after{width:0;transition:width 1s ease;transition-delay:calc(var(--i)*.18s + .5s)}
-.anim.vu .chiffres>div{opacity:1;transform:none}
-.anim.vu .chiffres>div::after{width:48px}
-@media (prefers-reduced-motion:reduce){
-  .preuves::before{animation:none}
-  .anim .chiffres>div,.anim .chiffres>div::after{transition:none}
-}
+/* en chiffres : une bande calme, deux filets */
+.preuves{border-top:1px solid var(--lait);border-bottom:1px solid var(--lait);padding:36px 0}
+.preuves h2{margin-bottom:4px}
+.chiffres{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px;margin:20px 0 0}
+.chiffres .n{font-family:Fraunces,serif;font-size:2.6rem;font-weight:700;color:var(--violet);line-height:1.1;font-variant-numeric:tabular-nums}
+.chiffres p{font-size:.9rem;color:var(--muted);margin-top:4px}
 .clients{display:flex;flex-wrap:wrap;gap:10px;padding-top:22px;border-top:1px solid #4A3563}
 .clients span{border:1px solid #6A4E8A;padding:7px 15px;border-radius:999px;font-size:.85rem}
 
@@ -236,14 +209,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
   .form{padding:20px}
   .form .duo{grid-template-columns:1fr}
   .nav ul{display:none}
-  .hero{padding:44px 0 56px;border-radius:0 0 28px 28px}
-  .vitrine{height:300px;margin-top:8px}
-  .f1{width:84%}
-  .f2{width:60%;top:84px}
-  .hero-card{left:-6px;width:min(300px,80%);padding:14px 16px}
-  .hero-card .big{font-size:1.6rem}
-  .hero-card p{font-size:.78rem}
-  .preuves{padding:34px 22px}
+  .hero{padding:36px 0 44px}
+  .preuves{padding:28px 0}
+  .carte-grande{flex-direction:column}
+  .carte-grande .vignette.photo{flex:none;width:100%}
   section{padding:46px 0}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
@@ -256,7 +225,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
 /* l'affiche garde sa taille réelle (jamais agrandie) et reste centrée sur le fond flouté */
 .vignette.solimi .sol-affiche{inset:auto;top:50%;left:50%;width:auto;height:auto;max-width:100%;max-height:100%;transform:translate(-50%,-50%);object-fit:contain}
 .vignette.photo .parrain .sol-logo{position:absolute;top:12px;right:14px;width:64px;height:auto;object-fit:contain;background:#fff;border-radius:6px;padding:3px 6px;box-sizing:border-box}
-.sol-badge{position:absolute;left:12px;bottom:12px;background:var(--or);color:var(--encre);font-size:.75rem;font-weight:600;padding:5px 11px;border-radius:999px;transition:opacity .2s}
+.sol-badge{position:absolute;left:12px;bottom:12px;background:var(--or);color:var(--encre);font-size:.75rem;font-weight:600;padding:5px 11px;border-radius:6px;transition:opacity .2s}
 .parrain{position:absolute;inset:0;background:var(--encre);color:var(--creme);padding:12px 18px;display:flex;flex-direction:column;justify-content:center;gap:6px;opacity:0;visibility:hidden;transition:opacity .2s,visibility .2s}
 .parrain b{font-family:Fraunces,serif;font-size:1.15rem;color:var(--or-clair)}
 .carte .parrain p{flex:none;color:var(--creme);font-size:.85rem;margin:0}
@@ -271,19 +240,20 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
 .vignette.cahier .cah-image{object-fit:contain;object-position:center}
 .vignette.en-cours{position:relative}
 .vignette.en-cours .sol-badge{bottom:auto;top:12px}
-/* avis clients : fond clair, cartes blanches, guillemet et avatar en or */
+/* avis clients : trois retours, un filet doré à gauche */
 .temoignages:not(:has(.avis)){display:none}
-.avis-panel h2{text-align:center;margin-bottom:30px}
-.avis-grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
-.avis{background:var(--blanc);border:1px solid var(--lait);border-radius:20px;padding:24px;display:flex;flex-direction:column;gap:14px;box-shadow:0 6px 18px rgba(42,26,60,.06);transition:box-shadow .2s,transform .2s}
-.avis:hover{box-shadow:0 12px 30px rgba(42,26,60,.12);transform:translateY(-3px)}
-.avis-q{display:block;font:700 4.2rem/.7 Fraunces,Georgia,serif;height:34px;color:var(--or)}
-.avis>p{font-size:1.02rem;line-height:1.55;color:var(--encre)}
-.avis-qui{display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:16px;border-top:1px solid var(--lait)}
-.avis-qui b{display:block;font-weight:600;font-size:.95rem;color:var(--encre)}
-.avis-qui a{font-size:.82rem;color:var(--violet);text-decoration:none}
+.avis-grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:28px}
+.avis{border-left:3px solid var(--or);padding:2px 0 2px 18px;display:flex;flex-direction:column;gap:10px}
+.avis>p{font-size:1.1rem;line-height:1.5;color:var(--encre)}
+.avis-qui{margin-top:auto;font-size:.88rem}
+.avis-qui b{font-weight:600;color:var(--encre)}
+.avis-qui a{color:var(--violet);text-decoration:none}
 .avis-qui a:hover{text-decoration:underline}
-.avis-ini{flex:none;display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:var(--or);color:var(--encre);font:700 1.1rem Fraunces,serif}
+/* qui je suis */
+.apropos-grille{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.apropos p{color:var(--muted);margin-top:12px;max-width:36em}
+.apropos p a{color:var(--violet)}
+@media (max-width:820px){.apropos-grille{grid-template-columns:1fr;gap:16px}}
 .duo-btn{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .duo-btn .btn{padding:9px 10px;font-size:.82rem}
 .carte-cgi .sol-badge{bottom:auto;top:12px}
@@ -305,7 +275,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
 .reco .mention{font-size:.82rem;color:var(--muted);max-width:620px;margin-top:10px}
 .vignette.lepdv{background:#f3f6f2}
 .vignette.fac{background:#eef1f6}
-.etiq-pub{align-self:flex-start;font-size:.68rem;font-weight:600;letter-spacing:.02em;color:var(--encre);background:var(--lait);border:1px solid var(--or);padding:3px 9px;border-radius:999px}
+.etiq-pub{align-self:flex-start;font-size:.68rem;font-weight:600;letter-spacing:.02em;color:var(--encre);background:var(--lait);border:1px solid var(--or);padding:3px 9px;border-radius:6px}
 /* carrousel des offres */
 .car{position:relative}
 .car-piste{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:4px 2px 10px;-webkit-overflow-scrolling:touch}
@@ -318,7 +288,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
 .car-piste .carte:focus-visible{outline:3px solid var(--or);outline-offset:-3px}
 .car-piste .carte .corps h3{color:var(--creme);font-size:1.1rem}
 .car-piste .carte .corps p{flex:none;color:#E9DFF2;font-size:.84rem;line-height:1.45}
-.car-piste .carte .corps .prix{color:var(--or-clair);font-size:.88rem}
+.car-piste .carte .corps .prix{color:var(--or-clair);font-size:.88rem;background:rgba(255,255,255,.14)}
+.car-piste .carte .corps .prix::before{background:#2c1a42}
 .car-btn{position:absolute;top:42%;z-index:2;width:40px;height:40px;border-radius:50%;border:0;background:var(--encre);color:var(--creme);font:600 1.3rem/1 Poppins,sans-serif;cursor:pointer;box-shadow:0 4px 12px rgba(42,26,60,.3);display:grid;place-items:center;padding:0 0 3px}
 .car-btn:hover{background:var(--violet)}
 .car-btn[hidden]{display:none}
@@ -363,28 +334,25 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
 <div class="hero">
   <div class="wrap hero-grid">
     <div>
-      <span class="kicker" data-fr="Lomé, Togo · Livraison à distance possible" data-en="Lomé, Togo · Remote delivery available">Lomé, Togo · Livraison à distance possible</span>
-      <h1 data-fr="Des outils simples pour les commerces et PME de Lomé" data-en="Simple tools for shops and small businesses in Lomé">Des outils simples pour les commerces et PME de Lomé</h1>
-      <p class="lead" data-fr="Gestion de stock, courses et recettes, sites vitrines, automatisation Excel. Chaque produit est pensé pour un besoin précis, et vous le commandez par WhatsApp." data-en="Stock management, shopping and recipes, showcase websites, Excel automation. Each product solves one specific need, and you order it on WhatsApp.">Gestion de stock, courses et recettes, sites vitrines, automatisation Excel. Chaque produit est pensé pour un besoin précis, et vous le commandez par WhatsApp.</p>
+      <span class="kicker" data-fr="Lomé, Togo · livraison à distance possible" data-en="Lomé, Togo · remote delivery available">Lomé, Togo · livraison à distance possible</span>
+      <h1 data-fr="Je crée des outils pour les commerces de Lomé : stock, courses, sites web, Excel" data-en="I build tools for shops in Lomé: stock, shopping lists, websites, Excel">Je crée des outils pour les commerces de Lomé : stock, courses, sites web, Excel</h1>
+      <p class="lead" data-fr="CimentStock suit les achats, les ventes et le stock d'un dépôt de ciment, même sans internet. ASSIMETO range la liste de courses et propose des plats togolais. Je fais aussi des sites vitrines et des automatisations Excel. On se parle sur WhatsApp." data-en="CimentStock tracks the purchases, sales and stock of a cement depot, even without internet. ASSIMETO keeps the shopping list and suggests Togolese dishes. I also build showcase websites and Excel automations. We talk on WhatsApp.">CimentStock suit les achats, les ventes et le stock d'un dépôt de ciment, même sans internet. ASSIMETO range la liste de courses et propose des plats togolais. Je fais aussi des sites vitrines et des automatisations Excel. On se parle sur WhatsApp.</p>
       <div class="hero-cta">
         <a class="btn btn-or" href="#produits" data-fr="Voir les produits" data-en="See the products">Voir les produits</a>
         <a class="btn btn-ligne" href="#besoin" data-fr="Décrire mon besoin" data-en="Describe my need">Décrire mon besoin</a>
       </div>
+      <p class="hero-note" data-fr="Une automatisation Excel a ramené la régénération en lot de PDF d'imposition de 2 jours à 1 heure." data-en="One Excel automation cut the batch regeneration of tax PDFs from 2 days to 1 hour.">Une automatisation Excel a ramené la régénération en lot de PDF d'imposition de 2 jours à 1 heure.</p>
     </div>
-    <div class="vitrine">
-      <figure class="fen f1"><div class="bar"><i></i><i></i><i></i></div><img src="cimentstock.jpg" width="960" height="600" alt="CimentStock : tableau de bord des ventes et du stock"></figure>
-      <figure class="fen f2"><div class="bar"><i></i><i></i><i></i></div><img src="assimeto.jpg" width="960" height="600" alt="ASSIMETO : liste de courses, plats réalisables et fiche recette"></figure>
-      <aside class="hero-card" aria-label="Chiffre clé">
-        <div class="big">2 jours → 1 h</div>
-        <p data-fr="Temps gagné sur la régénération en lot de PDF d'imposition, après automatisation." data-en="Time saved regenerating tax PDFs in batch, once automated.">Temps gagné sur la régénération en lot de PDF d'imposition, après automatisation.</p>
-      </aside>
-    </div>
+    <figure class="fen">
+      <img src="cimentstock.jpg" width="960" height="600" alt="CimentStock : tableau de bord des ventes et du stock">
+      <figcaption data-fr="CimentStock : ventes du jour, stock disponible, dernières ventes" data-en="CimentStock: sales of the day, available stock, latest sales">CimentStock : ventes du jour, stock disponible, dernières ventes</figcaption>
+    </figure>
   </div>
 </div>
 
 <!-- LOGOS DES SITES CREES -->
 <section class="bande" aria-label="Sites créés">
-  <p class="bande-titre" data-fr="Les sites de nos clients à Lomé" data-en="Our clients’ websites in Lomé">Les sites de nos clients à Lomé</p>
+  <p class="bande-titre" data-fr="Les sites de mes clients à Lomé" data-en="My clients' websites in Lomé">Les sites de mes clients à Lomé</p>
   <div class="defile" id="defile">
     <ul class="piste" id="piste">
       <li><a class="tuile t-clair" href="https://alexcruss.github.io/ELIXIRDUTERROIR/" target="_blank" rel="noopener" aria-label="Élixir du Terroir"><img src="logo-elixir.png" width="356" height="128" alt="" loading="lazy"></a></li>
@@ -401,8 +369,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
 <section id="produits">
   <div class="wrap">
     <div class="entete">
-      <h2 data-fr="Le catalogue" data-en="The catalogue">Le catalogue</h2>
-      <p data-fr="Neuf offres, chacune avec un prix clair ou un devis. Cliquez sur « Commander » : WhatsApp s'ouvre avec le message déjà écrit." data-en="Nine offers, each with a clear price or a quote. Click “Order”: WhatsApp opens with the message already written.">Neuf offres, chacune avec un prix clair ou un devis. Cliquez sur « Commander » : WhatsApp s'ouvre avec le message déjà écrit.</p>
+      <h2 data-fr="Ce que je propose" data-en="What I offer">Ce que je propose</h2>
+      <p data-fr="Neuf offres. Quand le prix est fixé, il est affiché ; sinon je fais un devis. Le bouton « Commander » ouvre WhatsApp avec le message déjà écrit." data-en="Nine offers. When the price is set, it is shown; otherwise I give a quote. The “Order” button opens WhatsApp with the message already written.">Neuf offres. Quand le prix est fixé, il est affiché ; sinon je fais un devis. Le bouton « Commander » ouvre WhatsApp avec le message déjà écrit.</p>
     </div>
 
     <div class="filtres" role="group" aria-label="Filtres">
@@ -414,6 +382,17 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
     </div>
 
     <div class="grille">
+      <article class="carte carte-grande" data-cat="formation">
+        <div class="vignette photo"><img src="formation-alibaba-pinduoduo.jpg" width="1600" height="1000" loading="lazy" alt="Affiche de la formation Alibaba et Pinduoduo : cours pratique 100 % terrain, 10 000 F seulement"></div>
+        <div class="corps">
+          <span class="tag" data-fr="Formation pratique · Alibaba et Pinduoduo" data-en="Hands-on training · Alibaba and Pinduoduo">Formation pratique · Alibaba et Pinduoduo</span>
+          <h3 data-fr="Commander sur Alibaba et Pinduoduo" data-en="Ordering on Alibaba and Pinduoduo">Commander sur Alibaba et Pinduoduo</h3>
+          <p data-fr="Apprenez à commander moins cher et à lancer votre business. Cours pratique 100 % terrain, accompagnement personnalisé et suivi jusqu'à la réception du colis. Lieu : Adidogomé (Amadahomé)." data-en="Learn to order for less and launch your business. 100% hands-on course, personal coaching and follow-up until your parcel arrives. Location: Adidogomé (Amadahomé).">Apprenez à commander moins cher et à lancer votre business. Cours pratique 100 % terrain, accompagnement personnalisé et suivi jusqu'à la réception du colis. Lieu : Adidogomé (Amadahomé).</p>
+          <div class="prix" data-fr="10 000 FCFA" data-en="10,000 FCFA">10 000 FCFA</div>
+          <a class="btn btn-or" href="#" data-wa="Bonjour DEKOPI GOLD, je veux m'inscrire à la formation Alibaba et Pinduoduo (10 000 FCFA)." data-fr="S'inscrire sur WhatsApp" data-en="Sign up on WhatsApp">S'inscrire sur WhatsApp</a>
+          <a class="btn btn-ligne" href="https://youtu.be/lXn75UIGjFI" target="_blank" rel="noopener" data-fr="Voir la vidéo gratuite sur YouTube" data-en="Watch the free video on YouTube">Voir la vidéo gratuite sur YouTube</a>
+        </article>
+
       <article class="carte" data-cat="logiciel">
         <div class="vignette photo"><img src="cimentstock.jpg" width="960" height="600" loading="lazy" alt="Tableau de bord de CimentStock : ventes du jour, stock disponible, dernières ventes"></div>
         <div class="corps">
@@ -452,7 +431,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
         <div class="corps">
           <span class="tag" data-fr="Service · Excel, VBA, Access" data-en="Service · Excel, VBA, Access">Service · Excel, VBA, Access</span>
           <h3 data-fr="Automatisation sur mesure" data-en="Custom automation">Automatisation sur mesure</h3>
-          <p data-fr="Une tâche répétitive qui vous prend des heures ? On l'automatise : rapports, PDF en lot, tableaux de suivi, extraction de données." data-en="A repetitive task eating up your hours? We automate it: reports, batch PDFs, tracking tables, data extraction.">Une tâche répétitive qui vous prend des heures ? On l'automatise : rapports, PDF en lot, tableaux de suivi, extraction de données.</p>
+          <p data-fr="Une tâche répétitive qui vous prend des heures ? Je l'automatise : rapports, PDF en lot, tableaux de suivi, extraction de données." data-en="A repetitive task eating up your hours? I automate it: reports, batch PDFs, tracking tables, data extraction.">Une tâche répétitive qui vous prend des heures ? Je l'automatise : rapports, PDF en lot, tableaux de suivi, extraction de données.</p>
           <div class="prix" data-fr="Diagnostic gratuit, puis devis" data-en="Free diagnosis, then quote">Diagnostic gratuit, puis devis</div>
           <a class="btn btn-or" href="#" data-wa="Bonjour DEKOPI GOLD, j'ai une tâche à automatiser. Pouvons-nous en parler ?" data-fr="Commander sur WhatsApp" data-en="Order on WhatsApp">Commander sur WhatsApp</a>
         </div>
@@ -488,16 +467,6 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
         </div>
       </article>
 
-      <article class="carte" data-cat="formation">
-        <div class="vignette photo"><img src="formation-alibaba-pinduoduo.jpg" width="1600" height="1000" loading="lazy" alt="Affiche de la formation Alibaba et Pinduoduo : cours pratique 100 % terrain, 10 000 F seulement"></div>
-        <div class="corps">
-          <span class="tag" data-fr="Formation pratique · Alibaba et Pinduoduo" data-en="Hands-on training · Alibaba and Pinduoduo">Formation pratique · Alibaba et Pinduoduo</span>
-          <h3 data-fr="Commander sur Alibaba et Pinduoduo" data-en="Ordering on Alibaba and Pinduoduo">Commander sur Alibaba et Pinduoduo</h3>
-          <p data-fr="Apprenez à commander moins cher et à lancer votre business. Cours pratique 100 % terrain, accompagnement personnalisé et suivi jusqu'à la réception du colis. Lieu : Adidogomé (Amadahomé)." data-en="Learn to order for less and launch your business. 100% hands-on course, personal coaching and follow-up until your parcel arrives. Location: Adidogomé (Amadahomé).">Apprenez à commander moins cher et à lancer votre business. Cours pratique 100 % terrain, accompagnement personnalisé et suivi jusqu'à la réception du colis. Lieu : Adidogomé (Amadahomé).</p>
-          <div class="prix" data-fr="10 000 FCFA" data-en="10,000 FCFA">10 000 FCFA</div>
-          <a class="btn btn-or" href="#" data-wa="Bonjour DEKOPI GOLD, je veux m'inscrire à la formation Alibaba et Pinduoduo (10 000 FCFA)." data-fr="S'inscrire sur WhatsApp" data-en="Sign up on WhatsApp">S'inscrire sur WhatsApp</a>
-          <a class="btn btn-ligne" href="https://youtu.be/lXn75UIGjFI" target="_blank" rel="noopener" data-fr="Voir la vidéo gratuite sur YouTube" data-en="Watch the free video on YouTube">Voir la vidéo gratuite sur YouTube</a>
-        </article>
 
       <article class="carte carte-solimi" data-cat="formation">
         <div class="vignette photo solimi" tabindex="0" role="group" aria-label="Carte Solimi">
@@ -569,8 +538,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
     <div class="cadre">
       <div class="entete">
         <h2 data-fr="Recommandés par DEKOPI GOLD" data-en="Recommended by DEKOPI GOLD">Recommandés par DEKOPI GOLD</h2>
-        <p data-fr="Des produits et services d'autres entreprises que nous recommandons." data-en="Products and services from other companies that we recommend.">Des produits et services d'autres entreprises que nous recommandons.</p>
-        <p class="mention" data-fr="Publicité : ces offres sont celles d'autres entreprises. Certains liens sont des liens d'affiliation : nous pouvons toucher une commission si vous achetez, sans frais en plus pour vous." data-en="Advertisement: these offers are from other companies. Some links are affiliate links: we may earn a commission if you buy, at no extra cost to you.">Publicité : ces offres sont celles d'autres entreprises. Certains liens sont des liens d'affiliation : nous pouvons toucher une commission si vous achetez, sans frais en plus pour vous.</p>
+        <p data-fr="Des produits et services d'autres entreprises que je recommande." data-en="Products and services from other companies that I recommend.">Des produits et services d'autres entreprises que je recommande.</p>
+        <p class="mention" data-fr="Publicité : ces offres sont celles d'autres entreprises. Certains liens sont des liens d'affiliation : je peux toucher une commission si vous achetez, sans frais en plus pour vous." data-en="Advertisement: these offers are from other companies. Some links are affiliate links: I may earn a commission if you buy, at no extra cost to you.">Publicité : ces offres sont celles d'autres entreprises. Certains liens sont des liens d'affiliation : je peux toucher une commission si vous achetez, sans frais en plus pour vous.</p>
       </div>
       <div class="car" id="car-pub" role="region" aria-roledescription="carrousel" aria-label="Offres recommandées">
         <div class="car-piste" id="car-piste">
@@ -635,7 +604,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
   <div class="wrap">
     <div class="entete">
       <h2 data-fr="Sites déjà livrés" data-en="Websites already delivered">Sites déjà livrés</h2>
-      <p data-fr="Trois commerces et PME de Lomé ont leur site, avec contact et commande par WhatsApp. Deux autres sont en cours, et le portfolio du fondateur complète la liste. Cliquez pour les visiter." data-en="Three shops and small businesses in Lomé have their website, with contact and ordering on WhatsApp. Two more are in progress, and the founder’s portfolio completes the list. Click to visit them.">Trois commerces et PME de Lomé ont leur site, avec contact et commande par WhatsApp. Deux autres sont en cours, et le portfolio du fondateur complète la liste. Cliquez pour les visiter.</p>
+      <p data-fr="Trois commerces et PME de Lomé ont leur site, avec contact et commande par WhatsApp. Deux autres sont en cours, et le portfolio du fondateur complète la liste. Cliquez pour les visiter." data-en="Three shops and small businesses in Lomé have their website, with contact and ordering on WhatsApp. Two more are in progress, and the founder's portfolio completes the list. Click to visit them.">Trois commerces et PME de Lomé ont leur site, avec contact et commande par WhatsApp. Deux autres sont en cours, et le portfolio du fondateur complète la liste. Cliquez pour les visiter.</p>
     </div>
     <div class="grille">
       <a class="carte lien" href="https://alexcruss.github.io/ELIXIRDUTERROIR/" target="_blank" rel="noopener">
@@ -643,7 +612,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
         <div class="corps">
           <span class="tag" data-fr="Herboristerie · Lomé" data-en="Herbal shop · Lomé">Herboristerie · Lomé</span>
           <h3>Élixir du Terroir</h3>
-          <p data-fr="Produits à commander sur WhatsApp, une fiche par plante avec sa vidéo, et les reportages de la boutique dans les villages et les marchés." data-en="Products ordered on WhatsApp, one guide per plant with its video, and the shop’s field trips to villages and markets.">Produits à commander sur WhatsApp, une fiche par plante avec sa vidéo, et les reportages de la boutique dans les villages et les marchés.</p>
+          <p data-fr="Produits à commander sur WhatsApp, une fiche par plante avec sa vidéo, et les reportages de la boutique dans les villages et les marchés." data-en="Products ordered on WhatsApp, one guide per plant with its video, and the shop's field trips to villages and markets.">Produits à commander sur WhatsApp, une fiche par plante avec sa vidéo, et les reportages de la boutique dans les villages et les marchés.</p>
           <span class="voir" data-fr="Voir le site →" data-en="View the site →">Voir le site →</span>
         </div>
       </a>
@@ -652,16 +621,16 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
         <div class="corps">
           <span class="tag" data-fr="Tissus wax et press-on nails · Lomé" data-en="Wax fabrics and press-on nails · Lomé">Tissus wax et press-on nails · Lomé</span>
           <h3>BrendaSTYLE</h3>
-          <p data-fr="Une sélection d’articles à filtrer, et un panier qui prépare la commande sur WhatsApp en un clic." data-en="A selection of items to filter, and a cart that prepares the order on WhatsApp in one click.">Une sélection d’articles à filtrer, et un panier qui prépare la commande sur WhatsApp en un clic.</p>
+          <p data-fr="Une sélection d'articles à filtrer, et un panier qui prépare la commande sur WhatsApp en un clic." data-en="A selection of items to filter, and a cart that prepares the order on WhatsApp in one click.">Une sélection d'articles à filtrer, et un panier qui prépare la commande sur WhatsApp en un clic.</p>
           <span class="voir" data-fr="Voir le site →" data-en="View the site →">Voir le site →</span>
         </div>
       </a>
       <a class="carte lien" href="https://alexcruss.github.io/dongshoes/" target="_blank" rel="noopener">
         <div class="vignette photo en-cours"><img src="dongshoes.jpg" width="960" height="600" loading="lazy" alt="Site Dongshoes : logo, mocassins en cuir et bouton Commander sur WhatsApp"><span class="sol-badge" data-fr="En cours" data-en="In progress">En cours</span></div>
         <div class="corps">
-          <span class="tag" data-fr="Chaussures en cuir pour homme · Lomé" data-en="Men’s leather shoes · Lomé">Chaussures en cuir pour homme · Lomé</span>
+          <span class="tag" data-fr="Chaussures en cuir pour homme · Lomé" data-en="Men's leather shoes · Lomé">Chaussures en cuir pour homme · Lomé</span>
           <h3>Dongshoes</h3>
-          <p data-fr="Les modèles à parcourir par catégorie, les vidéos de la boutique, et un bouton Commander qui prépare le message WhatsApp avec le modèle choisi." data-en="Models to browse by category, the shop’s videos, and an Order button that prepares the WhatsApp message with the chosen model.">Les modèles à parcourir par catégorie, les vidéos de la boutique, et un bouton Commander qui prépare le message WhatsApp avec le modèle choisi.</p>
+          <p data-fr="Les modèles à parcourir par catégorie, les vidéos de la boutique, et un bouton Commander qui prépare le message WhatsApp avec le modèle choisi." data-en="Models to browse by category, the shop's videos, and an Order button that prepares the WhatsApp message with the chosen model.">Les modèles à parcourir par catégorie, les vidéos de la boutique, et un bouton Commander qui prépare le message WhatsApp avec le modèle choisi.</p>
           <span class="voir" data-fr="Voir le site →" data-en="View the site →">Voir le site →</span>
         </div>
       </a>
@@ -677,9 +646,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
       <a class="carte lien" href="https://alexcruss.github.io/fiscogef/" target="_blank" rel="noopener">
         <div class="vignette photo"><img src="fiscogef.jpg" width="960" height="600" loading="lazy" alt="Site FISCOGEF Expertise : « Confiez-nous vos états financiers et évitez les pénalités » et boutons WhatsApp et Appeler"></div>
         <div class="corps">
-          <span class="tag" data-fr="Cabinet d’états financiers · Lomé" data-en="Financial statements firm · Lomé">Cabinet d’états financiers · Lomé</span>
+          <span class="tag" data-fr="Cabinet d'états financiers · Lomé" data-en="Financial statements firm · Lomé">Cabinet d'états financiers · Lomé</span>
           <h3>FISCOGEF Expertise</h3>
-          <p data-fr="Site vitrine d’une page : engagements du cabinet, services, questions fréquentes, et un formulaire qui prépare le message WhatsApp." data-en="One-page showcase site: the firm’s commitments, services, FAQ, and a form that prepares the WhatsApp message.">Site vitrine d’une page : engagements du cabinet, services, questions fréquentes, et un formulaire qui prépare le message WhatsApp.</p>
+          <p data-fr="Site vitrine d'une page : engagements du cabinet, services, questions fréquentes, et un formulaire qui prépare le message WhatsApp." data-en="One-page showcase site: the firm's commitments, services, FAQ, and a form that prepares the WhatsApp message.">Site vitrine d'une page : engagements du cabinet, services, questions fréquentes, et un formulaire qui prépare le message WhatsApp.</p>
           <span class="voir" data-fr="Voir le site →" data-en="View the site →">Voir le site →</span>
         </div>
       </a>
@@ -687,7 +656,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
         <div class="vignette photo"><img src="portfolio.jpg" width="960" height="600" loading="lazy" alt="Portfolio de Pierre Kossi DEGBOEVI : « Des outils sur mesure pour que votre entreprise gagne du temps »"></div>
         <div class="corps">
           <span class="tag" data-fr="Portfolio · Pierre Kossi DEGBOEVI" data-en="Portfolio · Pierre Kossi DEGBOEVI">Portfolio · Pierre Kossi DEGBOEVI</span>
-          <h3 data-fr="Portfolio du fondateur" data-en="The founder’s portfolio">Portfolio du fondateur</h3>
+          <h3 data-fr="Portfolio du fondateur" data-en="The founder's portfolio">Portfolio du fondateur</h3>
           <p data-fr="Site personnel en français et en anglais : services, réalisations, parcours et compétences, avec un contact direct par WhatsApp." data-en="Personal website in French and English: services, projects, experience and skills, with direct contact on WhatsApp.">Site personnel en français et en anglais : services, réalisations, parcours et compétences, avec un contact direct par WhatsApp.</p>
           <span class="voir" data-fr="Voir le site →" data-en="View the site →">Voir le site →</span>
         </div>
@@ -703,9 +672,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
       <h2 data-fr="Comment commander" data-en="How to order">Comment commander</h2>
     </div>
     <div class="etapes">
-      <div class="etape"><h3 data-fr="Vous écrivez" data-en="You message us">Vous écrivez</h3><p data-fr="Un clic sur « Commander » ouvre WhatsApp. Vous précisez votre besoin." data-en="One click on “Order” opens WhatsApp. You describe your need.">Un clic sur « Commander » ouvre WhatsApp. Vous précisez votre besoin.</p></div>
-      <div class="etape"><h3 data-fr="Vous recevez un devis" data-en="You get a quote">Vous recevez un devis</h3><p data-fr="Prix et délai écrits noir sur blanc. Acompte de 50 % pour démarrer." data-en="Price and timeline in writing. 50% deposit to start.">Prix et délai écrits noir sur blanc. Acompte de 50 % pour démarrer.</p></div>
-      <div class="etape"><h3 data-fr="On livre" data-en="We deliver">On livre</h3><p data-fr="Installation, prise en main, puis un suivi si vous prenez la maintenance mensuelle." data-en="Setup, handover, then follow-up if you take the monthly maintenance plan.">Installation, prise en main, puis un suivi si vous prenez la maintenance mensuelle.</p></div>
+      <div class="etape"><h3 data-fr="Vous m'écrivez" data-en="You message me">Vous m'écrivez</h3><p data-fr="Le bouton « Commander » ouvre WhatsApp avec le message déjà écrit. Vous ajoutez ce qu'il faut." data-en="The “Order” button opens WhatsApp with the message already written. You add what is needed.">Le bouton « Commander » ouvre WhatsApp avec le message déjà écrit. Vous ajoutez ce qu'il faut.</p></div>
+      <div class="etape"><h3 data-fr="Je vous envoie un devis" data-en="I send you a quote">Je vous envoie un devis</h3><p data-fr="Prix et délai écrits noir sur blanc. Je demande un acompte de 50 % pour démarrer." data-en="Price and timeline in writing. I ask for a 50% deposit to start.">Prix et délai écrits noir sur blanc. Je demande un acompte de 50 % pour démarrer.</p></div>
+      <div class="etape"><h3 data-fr="Je livre" data-en="I deliver">Je livre</h3><p data-fr="J'installe l'outil et je vous montre comment l'utiliser. Un suivi est possible avec la maintenance mensuelle." data-en="I set the tool up and show you how to use it. Follow-up is possible with the monthly maintenance plan.">J'installe l'outil et je vous montre comment l'utiliser. Un suivi est possible avec la maintenance mensuelle.</p></div>
     </div>
   </div>
 </section>
@@ -714,7 +683,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
 <section id="preuves" style="padding-top:24px">
   <div class="wrap">
     <div class="preuves">
-      <h2 data-fr="Déjà utilisé, déjà livré" data-en="Already in use, already delivered">Déjà utilisé, déjà livré</h2>
+      <h2 data-fr="Ce que j'ai déjà fait" data-en="What I have already done">Ce que j'ai déjà fait</h2>
       <div class="chiffres">
         <div style="--i:0"><div class="n" data-to="5" data-suffix="+">5+</div><p data-fr="ans d'expérience en informatique" data-en="years of IT experience">ans d'expérience en informatique</p></div>
         <div style="--i:1"><div class="n" data-to="6">6</div><p data-fr="automatisations Excel / VBA / Access en service" data-en="Excel / VBA / Access automations in service">automatisations Excel / VBA / Access en service</p></div>
@@ -725,37 +694,36 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
 </section>
 
 <!-- TEMOIGNAGES : cachée tant qu'il n'y a aucune carte .avis
-     Pour en ajouter un, copier une carte .avis dans .avis-grille. Ne jamais mettre de guillemets autour d'une phrase qui n'est pas la citation exacte du client. -->
+     Pour en ajouter un, copier un bloc .avis dans .avis-grille. Ne jamais mettre de guillemets autour d'une phrase qui n'est pas la citation exacte du client. -->
 <section id="temoignages" class="temoignages" style="padding-top:24px">
   <div class="wrap">
-    <div class="avis-panel">
-    <h2 data-fr="Avis clients" data-en="Client reviews">Avis clients</h2>
+    <div class="entete">
+      <h2 data-fr="Ce que disent mes clients" data-en="What my clients say">Ce que disent mes clients</h2>
+    </div>
     <div class="avis-grille">
       <article class="avis">
-        <span class="avis-q" aria-hidden="true">&ldquo;</span>
         <p data-fr="Emmanuel trouve le site bien réussi et à son goût." data-en="Emmanuel finds the website very well done and to his taste.">Emmanuel trouve le site bien réussi et à son goût.</p>
-        <div class="avis-qui">
-          <span class="avis-ini" aria-hidden="true">E</span>
-          <div><b>Emmanuel</b><a href="https://alexcruss.github.io/fiscogef/" target="_blank" rel="noopener" data-fr="FISCOGEF Expertise · Lomé" data-en="FISCOGEF Expertise · Lomé">FISCOGEF Expertise · Lomé</a></div>
-        </div>
+        <div class="avis-qui"><b>Emmanuel</b> · <a href="https://alexcruss.github.io/fiscogef/" target="_blank" rel="noopener">FISCOGEF Expertise, Lomé</a></div>
       </article>
       <article class="avis">
-        <span class="avis-q" aria-hidden="true">&ldquo;</span>
         <p data-fr="Élixir du Terroir trouve son site web intéressant." data-en="Élixir du Terroir finds its website interesting.">Élixir du Terroir trouve son site web intéressant.</p>
-        <div class="avis-qui">
-          <span class="avis-ini" aria-hidden="true">É</span>
-          <div><b>Élixir du Terroir</b><a href="https://alexcruss.github.io/ELIXIRDUTERROIR/" target="_blank" rel="noopener" data-fr="Herboristerie · Lomé" data-en="Herbal shop · Lomé">Herboristerie · Lomé</a></div>
-        </div>
+        <div class="avis-qui"><b>Élixir du Terroir</b> · <a href="https://alexcruss.github.io/ELIXIRDUTERROIR/" target="_blank" rel="noopener" data-fr="Herboristerie, Lomé" data-en="Herbal shop, Lomé">Herboristerie, Lomé</a></div>
       </article>
       <article class="avis">
-        <span class="avis-q" aria-hidden="true">&ldquo;</span>
         <p data-fr="Brenda trouve son site web intéressant." data-en="Brenda finds her website interesting.">Brenda trouve son site web intéressant.</p>
-        <div class="avis-qui">
-          <span class="avis-ini" aria-hidden="true">B</span>
-          <div><b>Brenda</b><a href="https://alexcruss.github.io/BRENDASHOP/" target="_blank" rel="noopener" data-fr="BrendaSTYLE · Lomé" data-en="BrendaSTYLE · Lomé">BrendaSTYLE · Lomé</a></div>
-        </div>
+        <div class="avis-qui"><b>Brenda</b> · <a href="https://alexcruss.github.io/BRENDASHOP/" target="_blank" rel="noopener">BrendaSTYLE, Lomé</a></div>
       </article>
     </div>
+  </div>
+</section>
+
+<!-- QUI JE SUIS : seulement des faits déjà publiés. Pour ajouter une photo, la mettre dans le dépôt et l'insérer avant le texte. -->
+<section id="apropos" class="apropos" style="padding-top:24px">
+  <div class="wrap apropos-grille">
+    <h2 data-fr="Qui je suis" data-en="Who I am">Qui je suis</h2>
+    <div>
+      <p data-fr="Je m'appelle Pierre Kossi DEGBOEVI. Je travaille dans l'informatique depuis plus de cinq ans, à Lomé. DEKOPI GOLD est le nom sous lequel je vends mes logiciels et mes services : CimentStock, ASSIMETO, Sagesse, des sites pour des commerçants et des automatisations Excel." data-en="My name is Pierre Kossi DEGBOEVI. I have worked in IT for more than five years, in Lomé. DEKOPI GOLD is the name under which I sell my software and services: CimentStock, ASSIMETO, Sagesse, websites for shopkeepers and Excel automations.">Je m'appelle Pierre Kossi DEGBOEVI. Je travaille dans l'informatique depuis plus de cinq ans, à Lomé. DEKOPI GOLD est le nom sous lequel je vends mes logiciels et mes services : CimentStock, ASSIMETO, Sagesse, des sites pour des commerçants et des automatisations Excel.</p>
+      <p><a href="https://pierredegboevi.com" target="_blank" rel="noopener" data-fr="Mon parcours complet est sur pierredegboevi.com." data-en="My full background is on pierredegboevi.com.">Mon parcours complet est sur pierredegboevi.com.</a></p>
     </div>
   </div>
 </section>
@@ -767,7 +735,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
       <h2 data-fr="Décrivez votre besoin" data-en="Describe your need">Décrivez votre besoin</h2>
       <p style="color:var(--muted);margin-top:10px" data-fr="Quelques lignes suffisent. Le diagnostic de 30 minutes est gratuit." data-en="A few lines are enough. The 30-minute diagnosis is free.">Quelques lignes suffisent. Le diagnostic de 30 minutes est gratuit.</p>
       <ul>
-        <li><b>1</b><span data-fr="Vous remplissez le formulaire et il s’envoie sur WhatsApp ou par e-mail." data-en="You fill in the form and it is sent on WhatsApp or by e-mail.">Vous remplissez le formulaire et il s’envoie sur WhatsApp ou par e-mail.</span></li>
+        <li><b>1</b><span data-fr="Vous remplissez le formulaire et il s'envoie sur WhatsApp ou par e-mail." data-en="You fill in the form and it is sent on WhatsApp or by e-mail.">Vous remplissez le formulaire et il s'envoie sur WhatsApp ou par e-mail.</span></li>
         <li><b>2</b><span data-fr="Je vous réponds en général sous 24 heures, pour préciser votre besoin." data-en="I usually reply within 24 hours, to clarify your need.">Je vous réponds en général sous 24 heures, pour préciser votre besoin.</span></li>
         <li><b>3</b><span data-fr="Vous recevez un devis écrit, avec le prix et le délai." data-en="You receive a written quote, with the price and the timeline.">Vous recevez un devis écrit, avec le prix et le délai.</span></li>
       </ul>
@@ -810,7 +778,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
         <button class="btn btn-ligne" type="submit" name="canal" value="mail" data-fr="Envoyer par e-mail" data-en="Send by e-mail">Envoyer par e-mail</button>
       </div>
       <p class="statut" id="f-statut" role="status" aria-live="polite"></p>
-      <p class="note" data-fr="Rien n’est enregistré sur ce site : votre message part directement vers WhatsApp ou votre messagerie, et vous pouvez le relire avant de l’envoyer." data-en="Nothing is stored on this site: your message goes straight to WhatsApp or your mail app, and you can read it again before sending.">Rien n’est enregistré sur ce site : votre message part directement vers WhatsApp ou votre messagerie, et vous pouvez le relire avant de l’envoyer.</p>
+      <p class="note" data-fr="Rien n'est enregistré sur ce site : votre message part directement vers WhatsApp ou votre messagerie, et vous pouvez le relire avant de l'envoyer." data-en="Nothing is stored on this site: your message goes straight to WhatsApp or your mail app, and you can read it again before sending.">Rien n'est enregistré sur ce site : votre message part directement vers WhatsApp ou votre messagerie, et vous pouvez le relire avant de l'envoyer.</p>
     </form>
   </div>
 </section>
@@ -819,7 +787,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
 <section id="contact" class="contact">
   <div class="wrap">
     <h2 data-fr="Parlons de votre besoin" data-en="Let's talk about your need">Parlons de votre besoin</h2>
-    <p style="color:var(--muted);margin-top:10px" data-fr="Réponse en général sous 24 heures." data-en="Usually a reply within 24 hours.">Réponse en général sous 24 heures.</p>
+    <p style="color:var(--muted);margin-top:10px" data-fr="Je réponds en général sous 24 heures." data-en="I usually reply within 24 hours.">Je réponds en général sous 24 heures.</p>
     <a class="btn btn-or" data-wa="Bonjour DEKOPI GOLD, j'ai une question." href="#" data-fr="Écrire sur WhatsApp" data-en="Message on WhatsApp">Écrire sur WhatsApp</a>
     <div class="liens">
       <span>+228 91 51 20 41</span>
@@ -842,8 +810,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
 
 <dialog id="invite" aria-labelledby="inv-titre">
   <div class="inv" id="inv-q">
-    <h2 id="inv-titre" data-fr="Avez-vous besoin d’un service ou d’une formation ?" data-en="Do you need a service or training?">Avez-vous besoin d’un service ou d’une formation ?</h2>
-    <p data-fr="Choisissez, puis dites-nous le reste sur WhatsApp." data-en="Pick one, then tell us the rest on WhatsApp.">Choisissez, puis dites-nous le reste sur WhatsApp.</p>
+    <h2 id="inv-titre" data-fr="Avez-vous besoin d'un service ou d'une formation ?" data-en="Do you need a service or training?">Avez-vous besoin d'un service ou d'une formation ?</h2>
+    <p data-fr="Choisissez, puis dites-moi le reste sur WhatsApp." data-en="Pick one, then tell me the rest on WhatsApp.">Choisissez, puis dites-moi le reste sur WhatsApp.</p>
     <div class="inv-choix">
       <button class="btn btn-ligne" type="button" data-choix="service" data-fr="Un service" data-en="A service">Un service</button>
       <button class="btn btn-ligne" type="button" data-choix="formation" data-fr="Une formation" data-en="Training">Une formation</button>
@@ -851,8 +819,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
     <button class="inv-plus" type="button" data-fermer data-fr="Plus tard" data-en="Maybe later">Plus tard</button>
   </div>
   <div class="inv" id="inv-wa" hidden>
-    <h2 id="inv-titre2" data-fr="Laissez-nous un message sur WhatsApp" data-en="Leave us a message on WhatsApp">Laissez-nous un message sur WhatsApp</h2>
-    <p data-fr="Décrivez votre besoin en une phrase. Réponse en général sous 24 heures." data-en="Describe what you need in one sentence. Usually a reply within 24 hours.">Décrivez votre besoin en une phrase. Réponse en général sous 24 heures.</p>
+    <h2 id="inv-titre2" data-fr="Laissez-moi un message sur WhatsApp" data-en="Leave me a message on WhatsApp">Laissez-moi un message sur WhatsApp</h2>
+    <p data-fr="Décrivez votre besoin en une phrase. Je réponds en général sous 24 heures." data-en="Describe what you need in one sentence. I usually reply within 24 hours.">Décrivez votre besoin en une phrase. Je réponds en général sous 24 heures.</p>
     <a class="btn btn-or inv-wa" id="inv-lien" data-wa="Bonjour DEKOPI GOLD, j'ai vu votre site." href="#" data-fr="Écrire sur WhatsApp" data-en="Message on WhatsApp">Écrire sur WhatsApp</a>
     <button class="inv-plus" type="button" data-fermer data-fr="Fermer" data-en="Close">Fermer</button>
   </div>
