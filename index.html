@@ -271,20 +271,19 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
 .vignette.cahier .cah-image{object-fit:contain;object-position:center}
 .vignette.en-cours{position:relative}
 .vignette.en-cours .sol-badge{bottom:auto;top:12px}
-/* avis clients : panneau sombre, cartes avec grand guillemet doré */
+/* avis clients : fond clair, cartes blanches, guillemet et avatar en or */
 .temoignages:not(:has(.avis)){display:none}
-.avis-panel{border-radius:28px;padding:48px 40px;color:var(--creme);background:radial-gradient(480px 320px at 96% 0%,rgba(227,185,85,.22),transparent 65%),linear-gradient(135deg,#241535 0%,#3E2260 52%,#5A2D6E 100%)}
-.avis-panel h2{color:var(--creme);text-align:center;margin-bottom:30px}
+.avis-panel h2{text-align:center;margin-bottom:30px}
 .avis-grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
-.avis{background:rgba(20,10,36,.55);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:24px;display:flex;flex-direction:column;gap:14px}
-.avis-q{display:block;font:700 4.2rem/.7 Fraunces,Georgia,serif;height:34px;color:var(--or-clair)}
-.avis>p{font-size:1.02rem;line-height:1.55;color:var(--creme)}
-.avis-qui{display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:16px;border-top:1px solid rgba(255,255,255,.14)}
-.avis-qui b{display:block;font-weight:600;font-size:.95rem;color:#fff}
-.avis-qui a{font-size:.82rem;color:var(--or-clair);text-decoration:none}
+.avis{background:var(--blanc);border:1px solid var(--lait);border-radius:20px;padding:24px;display:flex;flex-direction:column;gap:14px;box-shadow:0 6px 18px rgba(42,26,60,.06);transition:box-shadow .2s,transform .2s}
+.avis:hover{box-shadow:0 12px 30px rgba(42,26,60,.12);transform:translateY(-3px)}
+.avis-q{display:block;font:700 4.2rem/.7 Fraunces,Georgia,serif;height:34px;color:var(--or)}
+.avis>p{font-size:1.02rem;line-height:1.55;color:var(--encre)}
+.avis-qui{display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:16px;border-top:1px solid var(--lait)}
+.avis-qui b{display:block;font-weight:600;font-size:.95rem;color:var(--encre)}
+.avis-qui a{font-size:.82rem;color:var(--violet);text-decoration:none}
 .avis-qui a:hover{text-decoration:underline}
-.avis-ini{flex:none;display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:var(--creme);color:var(--encre);font:700 1.1rem Fraunces,serif}
-@media (max-width:640px){.avis-panel{padding:34px 18px}}
+.avis-ini{flex:none;display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:var(--or);color:var(--encre);font:700 1.1rem Fraunces,serif}
 .duo-btn{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .duo-btn .btn{padding:9px 10px;font-size:.82rem}
 .carte-cgi .sol-badge{bottom:auto;top:12px}
