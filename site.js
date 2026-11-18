@@ -76,36 +76,6 @@
     document.getElementById("defile").classList.add("anime");
   })();
 
-  /* bloc de chiffres : apparition décalée + compteurs, une seule fois, quand le bloc entre à l'écran */
-  (function(){
-    var bloc = document.querySelector(".preuves");
-    if(!bloc || !("IntersectionObserver" in window)) return;
-    var reduit = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    var nombres = Array.prototype.slice.call(bloc.querySelectorAll(".n[data-to]"));
-    if(reduit){ return; }
-    bloc.classList.add("anim");
-    nombres.forEach(function(n){ n.textContent = "0" + (n.getAttribute("data-suffix") || ""); });
-    function compter(n, delai){
-      var fin = parseInt(n.getAttribute("data-to"), 10), suf = n.getAttribute("data-suffix") || "", duree = 1400, debut = null;
-      function pas(t){
-        if(debut === null) debut = t;
-        var p = Math.min(1, (t - debut) / duree), e = 1 - Math.pow(1 - p, 3);
-        n.textContent = Math.round(fin * e) + suf;
-        if(p < 1) requestAnimationFrame(pas);
-      }
-      setTimeout(function(){ requestAnimationFrame(pas); }, delai);
-    }
-    var obs = new IntersectionObserver(function(entries){
-      entries.forEach(function(en){
-        if(!en.isIntersecting) return;
-        bloc.classList.add("vu");
-        nombres.forEach(function(n, i){ compter(n, i * 180); });
-        obs.disconnect();
-      });
-    }, {threshold:0.35});
-    obs.observe(bloc);
-  })();
-
   /* formulaire de besoin : le message part vers WhatsApp ou la messagerie, rien n'est stocké */
   (function(){
     var form = document.getElementById("form-besoin");
