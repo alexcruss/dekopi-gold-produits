@@ -1,3 +1,14 @@
+/* anciens liens avec ancre (le site tenait sur une seule page) : on renvoie vers la bonne page */
+(function(){
+  var ANCIENNES = {
+    "#produits":"produits.html", "#recommandes":"recommandes.html", "#realisations":"realisations.html",
+    "#temoignages":"realisations.html#temoignages", "#commande":"contact.html#commande", "#besoin":"contact.html#besoin",
+    "#apropos":"a-propos.html#apropos", "#preuves":"a-propos.html#preuves"
+  };
+  var cible = ANCIENNES[location.hash];
+  if(cible && document.querySelector(".hero")) location.replace(cible);
+})();
+
 (function(){
   var NUM = "22891512041";
   var lang = "fr";
