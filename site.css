@@ -342,3 +342,29 @@ details.formulaire summary:hover{border-color:var(--or)}
   .etapes-courtes{grid-template-columns:1fr;gap:16px}
 }
 .page-contact .wa{display:none}
+
+/* ===== Anneau 3D des offres (accueil) : le défilement fait tourner les panneaux ===== */
+.anneau-offres{padding:0}
+.anneau-piste{position:relative;height:calc(100vh + 1200px);height:calc(100svh + 1200px)}
+.anneau-scene{position:sticky;top:64px;height:calc(100vh - 64px);height:calc(100svh - 64px);overflow:hidden;perspective:1200px;perspective-origin:50% 45%;background:var(--creme)}
+.anneau-tete{position:absolute;left:0;right:0;top:0;padding-top:28px;z-index:1;pointer-events:none}
+.anneau-tete h2{margin:0}
+.anneau-tete p{color:var(--muted);margin-top:6px;max-width:620px}
+.ring{position:absolute;left:50%;top:47%;width:var(--pw,260px);height:var(--ph,162px);margin:calc(var(--ph,162px) / -2) 0 0 calc(var(--pw,260px) / -2);transform-style:preserve-3d;will-change:transform}
+.ring .panneau{position:absolute;inset:0;display:block;border-radius:10px;overflow:hidden;background:var(--lait);border:1px solid var(--lait);box-shadow:0 14px 34px rgba(18,38,63,.14);backface-visibility:visible;-webkit-backface-visibility:visible}
+.ring .panneau img{display:block;width:100%;height:100%;object-fit:cover;object-position:top left}
+.ring .panneau-fond{background:#0a6bb3}
+.ring .panneau-fond .p-fond{position:absolute;inset:0;object-fit:cover;object-position:center;filter:blur(14px);transform:scale(1.15)}
+.ring .panneau-fond .p-img{position:absolute;inset:0;object-fit:contain;object-position:center}
+.anneau-legende{position:absolute;left:0;right:0;bottom:22px;z-index:2;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:4px 18px;padding:0 16px;text-align:center}
+.anneau-legende .a-num{font-size:.8rem;font-weight:600;letter-spacing:.08em;color:var(--violet);font-variant-numeric:tabular-nums}
+.anneau-legende h3{font-size:clamp(1.15rem,2.2vw,1.55rem);margin:0}
+.anneau-legende .a-type{flex-basis:100%;margin:0;font-size:.85rem;color:var(--muted)}
+.anneau-legende .a-prix{margin:0;font-size:.88rem;background:var(--lait);border-radius:4px 8px 8px 4px;padding:3px 12px}
+.anneau-legende .btn{padding:9px 16px;font-size:.88rem}
+.anneau-offres .suite{margin:0;padding:28px 0 40px}
+@media (max-width:640px){
+  .anneau-legende{bottom:76px}
+  .ring{top:44%}
+  .anneau-legende .a-type{display:none}
+}

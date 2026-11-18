@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="fr" data-title-fr="DEKOPI GOLD | Logiciels et automatisation pour commerces et PME" data-title-en="DEKOPI GOLD | Software and automation for shops and small businesses">
 <head>
 <meta charset="utf-8">
@@ -32,6 +32,7 @@
 <script defer src="vendor/ScrollTrigger.min.js"></script>
 <script defer src="site.js"></script>
 <script defer src="anim.js"></script>
+<script defer src="anneau-offres.js"></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -158,48 +159,27 @@
   </div>
 </section>
 
-<section id="produits" class="apercu-offres">
-  <div class="wrap">
-    <div class="entete">
-      <h2 data-fr="Ce que je propose" data-en="What I offer">Ce que je propose</h2>
-      <p data-fr="Trois des neuf offres. Les autres sont dans la page Produits." data-en="Three of the nine offers. The others are on the Products page.">Trois des neuf offres. Les autres sont dans la page Produits.</p>
-    </div>
-    <div class="grille">
-      <article class="carte">
-        <div class="vignette photo"><img src="cimentstock.webp" width="960" height="600" loading="lazy" alt="Tableau de bord de CimentStock : ventes du jour, stock disponible, dernières ventes"></div>
-        <div class="corps">
-          <span class="tag" data-fr="Logiciel · Commerce de ciment" data-en="Software · Cement shops">Logiciel · Commerce de ciment</span>
-          <h3>CimentStock</h3>
-          <p data-fr="Achats, ventes et stock d'un dépôt de ciment. Fonctionne sans internet, vos données restent sur votre ordinateur." data-en="Purchases, sales and stock for a cement depot. Works without internet; your data stays on your computer.">Achats, ventes et stock d'un dépôt de ciment. Fonctionne sans internet, vos données restent sur votre ordinateur.</p>
-          <div class="prix" data-fr="12 000 FCFA / mois" data-en="12,000 FCFA / month">12 000 FCFA / mois</div>
-          <a class="btn btn-or" href="cimentstock/" data-fr="Voir l'offre" data-en="See the offer">Voir l'offre</a>
-        </div>
-      </article>
+<section id="produits" class="anneau-offres" aria-labelledby="titre-offres">
+  <!-- Le défilement de cette zone fait tourner l'anneau (voir anneau-offres.js). -->
+  <div class="anneau-piste" id="anneau-piste">
+    <div class="anneau-scene">
+      <div class="wrap anneau-tete">
+        <h2 id="titre-offres" data-fr="Ce que je propose" data-en="What I offer">Ce que je propose</h2>
+        <p data-fr="Les neuf offres. Faites défiler la page pour les faire tourner." data-en="All nine offers. Scroll the page to spin them.">Les neuf offres. Faites défiler la page pour les faire tourner.</p>
+      </div>
 
-      <article class="carte">
-        <div class="vignette photo"><img src="assimeto.webp" width="960" height="600" loading="lazy" alt="Application ASSIMETO : courses, stock et plats togolais"></div>
-        <div class="corps">
-          <span class="tag" data-fr="Application · Cuisine et courses" data-en="App · Cooking and groceries">Application · Cuisine et courses</span>
-          <h3>ASSIMETO</h3>
-          <p data-fr="Votre liste de courses, votre stock de cuisine et des idées de plats togolais proposées par l'IA. S'installe sur le téléphone." data-en="Your shopping list, your kitchen stock and Togolese meal ideas suggested by AI. Installs on your phone.">Votre liste de courses, votre stock de cuisine et des idées de plats togolais proposées par l'IA. S'installe sur le téléphone.</p>
-          <div class="prix" data-fr="Abonnement Flooz / T-Money · prix à fixer" data-en="Flooz / T-Money subscription · price TBD">Abonnement Flooz / T-Money · prix à fixer</div>
-          <a class="btn btn-or" href="#" data-wa="Bonjour DEKOPI GOLD, je veux m'abonner à ASSIMETO." data-fr="Commander sur WhatsApp" data-en="Order on WhatsApp">Commander sur WhatsApp</a>
-        </div>
-      </article>
+      <div class="ring" id="ring"></div>
 
-      <article class="carte">
-        <div class="vignette photo"><img src="formation-alibaba-pinduoduo.webp" width="1300" height="813" loading="lazy" alt="Affiche de la formation Alibaba et Pinduoduo : cours pratique 100 % terrain, 10 000 F seulement"></div>
-        <div class="corps">
-          <span class="tag" data-fr="Formation pratique · Alibaba et Pinduoduo" data-en="Hands-on training · Alibaba and Pinduoduo">Formation pratique · Alibaba et Pinduoduo</span>
-          <h3 data-fr="Commander sur Alibaba et Pinduoduo" data-en="Ordering on Alibaba and Pinduoduo">Commander sur Alibaba et Pinduoduo</h3>
-          <p data-fr="Apprenez à commander moins cher et à lancer votre business. Cours pratique 100 % terrain, accompagnement personnalisé et suivi jusqu'à la réception du colis. Lieu : Adidogomé (Amadahomé)." data-en="Learn to order for less and launch your business. 100% hands-on course, personal coaching and follow-up until your parcel arrives. Location: Adidogomé (Amadahomé).">Apprenez à commander moins cher et à lancer votre business. Cours pratique 100 % terrain, accompagnement personnalisé et suivi jusqu'à la réception du colis. Lieu : Adidogomé (Amadahomé).</p>
-          <div class="prix" data-fr="10 000 FCFA" data-en="10,000 FCFA">10 000 FCFA</div>
-          <a class="btn btn-or" href="#" data-wa="Bonjour DEKOPI GOLD, je veux m'inscrire à la formation Alibaba et Pinduoduo (10 000 FCFA)." data-fr="S'inscrire sur WhatsApp" data-en="Sign up on WhatsApp">S'inscrire sur WhatsApp</a>
-          <a class="btn btn-ligne" href="https://youtu.be/lXn75UIGjFI" target="_blank" rel="noopener" data-fr="Voir la vidéo gratuite sur YouTube" data-en="Watch the free video on YouTube">Voir la vidéo gratuite sur YouTube</a>
-        </article>
+      <div class="anneau-legende">
+        <span class="a-num" id="a-num">01 / 09</span>
+        <h3 id="a-nom">CimentStock</h3>
+        <p class="a-type" id="a-type">Logiciel · Commerce de ciment</p>
+        <p class="a-prix" id="a-prix">12 000 FCFA / mois</p>
+        <a class="btn btn-or" id="a-lien" href="produits.html#cimentstock" data-fr="Voir l'offre" data-en="See the offer">Voir l'offre</a>
+      </div>
     </div>
-    <p class="suite"><a class="btn btn-ligne" href="produits.html" data-fr="Voir les neuf offres" data-en="See all nine offers">Voir les neuf offres</a></p>
   </div>
+  <p class="suite"><a class="btn btn-ligne" href="produits.html" data-fr="Voir les neuf offres" data-en="See all nine offers">Voir les neuf offres</a></p>
 </section>
 
 <!-- PREUVES -->
