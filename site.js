@@ -9,6 +9,17 @@
   if(cible && document.querySelector(".hero")) location.replace(cible);
 })();
 
+/* le formulaire de contact est replié : on l'ouvre quand le lien vise #besoin ou #formulaire */
+(function(){
+  var d = document.getElementById("formulaire");
+  if(!d) return;
+  function ouvrir(){
+    if(location.hash === "#besoin" || location.hash === "#formulaire"){ d.open = true; d.scrollIntoView(); }
+  }
+  ouvrir();
+  window.addEventListener("hashchange", ouvrir);
+})();
+
 (function(){
   var NUM = "22891512041";
   var lang = "fr";
