@@ -308,3 +308,37 @@ div.sag-phones>img.tel{position:absolute;width:31.25%;height:auto;max-width:none
 div.sag-phones>img.tel:nth-child(1){left:1.667%;top:13.333%}
 div.sag-phones>img.tel:nth-child(2){left:34.375%;top:7%}
 div.sag-phones>img.tel:nth-child(3){left:67.083%;top:13.333%}
+
+/* page contact : WhatsApp en premier, le reste en dessous */
+.contact-haut{padding:48px 0 8px}
+.contact-wa{display:grid;grid-template-columns:1.4fr 1fr;gap:24px;align-items:stretch}
+.carte-wa{background:var(--encre);color:#fff;border-radius:var(--rayon);padding:36px}
+.carte-wa h2{color:#fff}
+.carte-wa p{color:#D9E3EF;margin-top:8px}
+.carte-wa .btn{margin-top:22px;padding:16px 28px;font-size:1.05rem}
+.carte-wa .num{margin-top:16px;font-family:Fraunces,Georgia,serif;font-size:1.5rem;color:#fff}
+.autres{background:var(--blanc);border:1px solid var(--lait);border-radius:var(--rayon);padding:28px 30px}
+.autres h2{font-size:1.25rem}
+.autres ul{list-style:none;padding:0;margin:14px 0 0;display:grid;gap:4px}
+.autres li{display:grid;gap:2px;font-size:.95rem}
+.autres b{font-weight:500;color:var(--muted);font-size:.8rem}
+.autres a{display:inline-block;padding:10px 0;color:var(--violet);overflow-wrap:anywhere}
+#commande.commande-court{padding:36px 0 40px;margin:40px 0 0}
+.etapes-courtes{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:18px}
+.etapes-courtes>div{display:flex;gap:12px;align-items:flex-start}
+.etapes-courtes b{flex:none;display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--or);color:var(--encre);font-size:.9rem}
+.etapes-courtes p{font-size:.92rem;color:var(--muted)}
+#besoin{padding:40px 0 64px}
+details.formulaire summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 22px;background:var(--blanc);border:1px solid var(--lait);border-radius:var(--rayon);font-weight:600}
+details.formulaire summary::-webkit-details-marker{display:none}
+details.formulaire summary::after{content:"+";font-size:1.5rem;line-height:1;color:var(--violet);flex:none}
+details.formulaire[open] summary::after{content:"\2212"}
+details.formulaire summary:hover{border-color:var(--or)}
+.form-corps{margin-top:20px;max-width:760px}
+.form-intro{color:var(--muted);margin-bottom:16px}
+@media (max-width:820px){
+  .contact-wa{grid-template-columns:1fr}
+  .carte-wa{padding:28px 22px}
+  .etapes-courtes{grid-template-columns:1fr;gap:16px}
+}
+.page-contact .wa{display:none}
