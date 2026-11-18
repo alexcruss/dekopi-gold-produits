@@ -268,6 +268,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
 .vignette.cahier>img{position:absolute;inset:0;width:100%;height:100%}
 .vignette.cahier .cah-fond{object-fit:cover;object-position:center;filter:blur(14px);transform:scale(1.15)}
 .vignette.cahier .cah-image{object-fit:contain;object-position:center}
+.vignette.en-cours{position:relative}
+.vignette.en-cours .sol-badge{bottom:auto;top:12px}
 .duo-btn{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .duo-btn .btn{padding:9px 10px;font-size:.82rem}
 .carte-cgi .sol-badge{bottom:auto;top:12px}
@@ -368,7 +370,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
 
 <!-- LOGOS DES SITES CREES -->
 <section class="bande" aria-label="Sites créés">
-  <p class="bande-titre" data-fr="Les sites que nous avons créés à Lomé" data-en="Websites we have built in Lomé">Les sites que nous avons créés à Lomé</p>
+  <p class="bande-titre" data-fr="Les sites de nos clients à Lomé" data-en="Our clients’ websites in Lomé">Les sites de nos clients à Lomé</p>
   <div class="defile" id="defile">
     <ul class="piste" id="piste">
       <li><a class="tuile t-clair" href="https://alexcruss.github.io/ELIXIRDUTERROIR/" target="_blank" rel="noopener" aria-label="Élixir du Terroir"><img src="logo-elixir.png" width="356" height="128" alt="" loading="lazy"></a></li>
@@ -447,7 +449,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
         <div class="corps">
           <span class="tag" data-fr="Service · Site vitrine" data-en="Service · Showcase website">Service · Site vitrine</span>
           <h3 data-fr="Site vitrine pour votre commerce" data-en="Showcase website for your shop">Site vitrine pour votre commerce</h3>
-          <p data-fr="Vos produits en ligne, avec commande par WhatsApp. Déjà livré pour une herboristerie, une boutique de wax et une boutique de chaussures." data-en="Your products online, with ordering on WhatsApp. Already delivered for an herbalist, a wax fabric shop and a shoe shop.">Vos produits en ligne, avec commande par WhatsApp. Déjà livré pour une herboristerie, une boutique de wax et une boutique de chaussures.</p>
+          <p data-fr="Vos produits en ligne, avec commande par WhatsApp. Déjà livré pour une boutique de wax, une entreprise de ménage et un cabinet d'états financiers." data-en="Your products online, with ordering on WhatsApp. Already delivered for a wax fabric shop, a cleaning company and a financial statements firm.">Vos produits en ligne, avec commande par WhatsApp. Déjà livré pour une boutique de wax, une entreprise de ménage et un cabinet d'états financiers.</p>
           <div class="prix" data-fr="Sur devis · livré en 3 jours" data-en="On quote · delivered in 3 days">Sur devis · livré en 3 jours</div>
           <a class="btn btn-or" href="#" data-wa="Bonjour DEKOPI GOLD, je voudrais un site pour mon commerce." data-fr="Commander sur WhatsApp" data-en="Order on WhatsApp">Commander sur WhatsApp</a>
         </div>
@@ -619,11 +621,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
   <div class="wrap">
     <div class="entete">
       <h2 data-fr="Sites déjà livrés" data-en="Websites already delivered">Sites déjà livrés</h2>
-      <p data-fr="Cinq commerces et PME de Lomé ont leur site, avec contact et commande par WhatsApp, et le portfolio du fondateur complète la liste. Cliquez pour les visiter." data-en="Five shops and small businesses in Lomé have their website, with contact and ordering on WhatsApp, and the founder’s portfolio completes the list. Click to visit them.">Cinq commerces et PME de Lomé ont leur site, avec contact et commande par WhatsApp, et le portfolio du fondateur complète la liste. Cliquez pour les visiter.</p>
+      <p data-fr="Trois commerces et PME de Lomé ont leur site, avec contact et commande par WhatsApp. Deux autres sont en cours, et le portfolio du fondateur complète la liste. Cliquez pour les visiter." data-en="Three shops and small businesses in Lomé have their website, with contact and ordering on WhatsApp. Two more are in progress, and the founder’s portfolio completes the list. Click to visit them.">Trois commerces et PME de Lomé ont leur site, avec contact et commande par WhatsApp. Deux autres sont en cours, et le portfolio du fondateur complète la liste. Cliquez pour les visiter.</p>
     </div>
     <div class="grille">
       <a class="carte lien" href="https://alexcruss.github.io/ELIXIRDUTERROIR/" target="_blank" rel="noopener">
-        <div class="vignette photo"><img src="elixirduterroir.jpg" width="960" height="600" loading="lazy" alt="Site Élixir du Terroir : logo, slogan et photo des préparations de la marque"></div>
+        <div class="vignette photo en-cours"><img src="elixirduterroir.jpg" width="960" height="600" loading="lazy" alt="Site Élixir du Terroir : logo, slogan et photo des préparations de la marque"><span class="sol-badge" data-fr="En cours" data-en="In progress">En cours</span></div>
         <div class="corps">
           <span class="tag" data-fr="Herboristerie · Lomé" data-en="Herbal shop · Lomé">Herboristerie · Lomé</span>
           <h3>Élixir du Terroir</h3>
@@ -641,7 +643,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
         </div>
       </a>
       <a class="carte lien" href="https://alexcruss.github.io/dongshoes/" target="_blank" rel="noopener">
-        <div class="vignette photo"><img src="dongshoes.jpg" width="960" height="600" loading="lazy" alt="Site Dongshoes : logo, mocassins en cuir et bouton Commander sur WhatsApp"></div>
+        <div class="vignette photo en-cours"><img src="dongshoes.jpg" width="960" height="600" loading="lazy" alt="Site Dongshoes : logo, mocassins en cuir et bouton Commander sur WhatsApp"><span class="sol-badge" data-fr="En cours" data-en="In progress">En cours</span></div>
         <div class="corps">
           <span class="tag" data-fr="Chaussures en cuir pour homme · Lomé" data-en="Men’s leather shoes · Lomé">Chaussures en cuir pour homme · Lomé</span>
           <h3>Dongshoes</h3>
@@ -702,7 +704,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
       <div class="chiffres">
         <div style="--i:0"><div class="n" data-to="5" data-suffix="+">5+</div><p data-fr="ans d'expérience en informatique" data-en="years of IT experience">ans d'expérience en informatique</p></div>
         <div style="--i:1"><div class="n" data-to="6">6</div><p data-fr="automatisations Excel / VBA / Access en service" data-en="Excel / VBA / Access automations in service">automatisations Excel / VBA / Access en service</p></div>
-        <div style="--i:2"><div class="n" data-to="5">5</div><p data-fr="sites clients publiés à Lomé" data-en="client websites live in Lomé">sites clients publiés à Lomé</p></div>
+        <div style="--i:2"><div class="n" data-to="3">3</div><p data-fr="sites clients livrés à Lomé" data-en="client websites delivered in Lomé">sites clients livrés à Lomé</p></div>
       </div>
     </div>
   </div>
