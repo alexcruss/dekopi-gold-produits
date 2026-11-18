@@ -27,6 +27,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Poppins:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Cormorant+Garant:wght@600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="site.css">
+<script src="anim-tete.js"></script>
 </head>
 <body>
 
@@ -102,7 +103,7 @@
       </article>
 
       <article class="carte" data-cat="logiciel">
-        <div class="vignette photo"><img src="sagesse.jpg" width="960" height="600" loading="lazy" alt="Application Sagesse, trois écrans : une citation de Sénèque, la liste des auteurs et les citations favorites"></div>
+        <div class="vignette photo"><div class="sag-phones" role="img" aria-label="Application Sagesse, trois écrans : une citation de Sénèque, la liste des auteurs et les citations favorites"><img class="tel" src="sagesse-tel-1.webp" width="300" height="619" alt="" loading="lazy"><img class="tel" src="sagesse-tel-2.webp" width="300" height="619" alt="" loading="lazy"><img class="tel" src="sagesse-tel-3.webp" width="300" height="619" alt="" loading="lazy"></div></div>
         <div class="corps">
           <span class="tag" data-fr="Application mobile · Citations" data-en="Mobile app · Quotes">Application mobile · Citations</span>
           <h3>Sagesse</h3>
@@ -214,6 +215,9 @@
 
 <a class="wa" data-wa="Bonjour DEKOPI GOLD, j'ai vu votre site." href="#" aria-label="WhatsApp">WhatsApp</a>
 
+<script src="vendor/gsap.min.js"></script>
+<script src="vendor/ScrollTrigger.min.js"></script>
 <script src="site.js"></script>
+<script src="anim.js"></script>
 </body>
 </html>
