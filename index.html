@@ -25,9 +25,13 @@
 <link rel="apple-touch-icon" href="logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Poppins:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Cormorant+Garant:wght@600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="site.css">
 <script src="anim-tete.js"></script>
+<script defer src="vendor/gsap.min.js"></script>
+<script defer src="vendor/ScrollTrigger.min.js"></script>
+<script defer src="site.js"></script>
+<script defer src="anim.js"></script>
 </head>
 <body>
 
@@ -64,12 +68,12 @@
     </div>
     <div class="vitrine">
       <figure class="fen">
-        <img src="cimentstock.jpg" width="960" height="600" alt="CimentStock : tableau de bord des ventes et du stock">
+        <img src="cimentstock.webp" width="960" height="600" fetchpriority="high" alt="CimentStock : tableau de bord des ventes et du stock">
         <figcaption data-fr="CimentStock : ventes du jour, stock disponible, dernières ventes" data-en="CimentStock: sales of the day, available stock, latest sales">CimentStock : ventes du jour, stock disponible, dernières ventes</figcaption>
       </figure>
       <div class="fen-duo">
         <figure class="fen">
-          <img src="assimeto.jpg" width="960" height="600" alt="ASSIMETO : liste de courses, plats réalisables et fiche recette">
+          <img src="assimeto.webp" width="960" height="600" alt="ASSIMETO : liste de courses, plats réalisables et fiche recette">
           <figcaption data-fr="ASSIMETO : courses et plats togolais" data-en="ASSIMETO: shopping and Togolese dishes">ASSIMETO : courses et plats togolais</figcaption>
         </figure>
         <figure class="fen">
@@ -86,11 +90,11 @@
   <p class="bande-titre" data-fr="Les sites de mes clients à Lomé" data-en="My clients' websites in Lomé">Les sites de mes clients à Lomé</p>
   <div class="defile" id="defile">
     <ul class="piste" id="piste">
-      <li><a class="tuile t-clair" href="https://alexcruss.github.io/ELIXIRDUTERROIR/" target="_blank" rel="noopener" aria-label="Élixir du Terroir"><img src="logo-elixir.png" width="356" height="128" alt="" loading="lazy"></a></li>
-      <li><a class="tuile t-brenda" href="https://alexcruss.github.io/BRENDASHOP/" target="_blank" rel="noopener" aria-label="BrendaSTYLE">Brenda<span>STYLE</span><small>Lomé</small></a></li>
-      <li><a class="tuile t-clair" href="https://alexcruss.github.io/dongshoes/" target="_blank" rel="noopener" aria-label="Dongshoes"><img src="logo-dong.png" width="494" height="138" alt="" loading="lazy"></a></li>
-      <li><a class="tuile t-jonas" href="https://alexcruss.github.io/JONASCLEAN/" target="_blank" rel="noopener" aria-label="JonasClean">Jonas<span>Clean</span></a></li>
-      <li><a class="tuile t-clair" href="https://alexcruss.github.io/fiscogef/" target="_blank" rel="noopener" aria-label="FISCOGEF Expertise"><img src="logo-fiscogef.png" width="342" height="408" alt="" loading="lazy" style="height:72px"></a></li>
+      <li><a class="tuile t-clair" href="https://alexcruss.github.io/ELIXIRDUTERROIR/" target="_blank" rel="noopener" aria-label="Élixir du Terroir"><img src="logo-elixir.webp" width="312" height="112" alt="" loading="lazy"></a></li>
+      <li><a class="tuile t-plein" href="https://alexcruss.github.io/BRENDASHOP/" target="_blank" rel="noopener" aria-label="BrendaSTYLE"><img src="logo-brendastyle.webp" width="420" height="176" alt="" loading="lazy"></a></li>
+      <li><a class="tuile t-clair" href="https://alexcruss.github.io/dongshoes/" target="_blank" rel="noopener" aria-label="Dongshoes"><img src="logo-dong.webp" width="401" height="112" alt="" loading="lazy"></a></li>
+      <li><a class="tuile t-plein" href="https://alexcruss.github.io/JONASCLEAN/" target="_blank" rel="noopener" aria-label="JonasClean"><img src="logo-jonasclean.webp" width="420" height="176" alt="" loading="lazy"></a></li>
+      <li><a class="tuile t-clair" href="https://alexcruss.github.io/fiscogef/" target="_blank" rel="noopener" aria-label="FISCOGEF Expertise"><img src="logo-fiscogef.webp" width="141" height="168" alt="" loading="lazy" style="height:72px"></a></li>
       <li><a class="tuile t-clair t-pk" href="https://pierredegboevi.com" target="_blank" rel="noopener" aria-label="Portfolio de Pierre Kossi DEGBOEVI"><img src="logo.png" width="128" height="128" alt=""><span>Pierre Kossi<br>DEGBOEVI</span></a></li>
     </ul>
   </div>
@@ -104,7 +108,7 @@
     </div>
     <div class="grille">
       <article class="carte">
-        <div class="vignette photo"><img src="cimentstock.jpg" width="960" height="600" loading="lazy" alt="Tableau de bord de CimentStock : ventes du jour, stock disponible, dernières ventes"></div>
+        <div class="vignette photo"><img src="cimentstock.webp" width="960" height="600" loading="lazy" alt="Tableau de bord de CimentStock : ventes du jour, stock disponible, dernières ventes"></div>
         <div class="corps">
           <span class="tag" data-fr="Logiciel · Commerce de ciment" data-en="Software · Cement shops">Logiciel · Commerce de ciment</span>
           <h3>CimentStock</h3>
@@ -115,7 +119,7 @@
       </article>
 
       <article class="carte">
-        <div class="vignette photo"><img src="assimeto.jpg" width="960" height="600" loading="lazy" alt="Application ASSIMETO : courses, stock et plats togolais"></div>
+        <div class="vignette photo"><img src="assimeto.webp" width="960" height="600" loading="lazy" alt="Application ASSIMETO : courses, stock et plats togolais"></div>
         <div class="corps">
           <span class="tag" data-fr="Application · Cuisine et courses" data-en="App · Cooking and groceries">Application · Cuisine et courses</span>
           <h3>ASSIMETO</h3>
@@ -126,7 +130,7 @@
       </article>
 
       <article class="carte">
-        <div class="vignette photo"><img src="formation-alibaba-pinduoduo.jpg" width="1600" height="1000" loading="lazy" alt="Affiche de la formation Alibaba et Pinduoduo : cours pratique 100 % terrain, 10 000 F seulement"></div>
+        <div class="vignette photo"><img src="formation-alibaba-pinduoduo.webp" width="1300" height="813" loading="lazy" alt="Affiche de la formation Alibaba et Pinduoduo : cours pratique 100 % terrain, 10 000 F seulement"></div>
         <div class="corps">
           <span class="tag" data-fr="Formation pratique · Alibaba et Pinduoduo" data-en="Hands-on training · Alibaba and Pinduoduo">Formation pratique · Alibaba et Pinduoduo</span>
           <h3 data-fr="Commander sur Alibaba et Pinduoduo" data-en="Ordering on Alibaba and Pinduoduo">Commander sur Alibaba et Pinduoduo</h3>
@@ -198,9 +202,5 @@
   </div>
 </dialog>
 
-<script src="vendor/gsap.min.js"></script>
-<script src="vendor/ScrollTrigger.min.js"></script>
-<script src="site.js"></script>
-<script src="anim.js"></script>
 </body>
 </html>
