@@ -271,6 +271,16 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
 .vignette.cahier .cah-image{object-fit:contain;object-position:center}
 .vignette.en-cours{position:relative}
 .vignette.en-cours .sol-badge{bottom:auto;top:12px}
+/* témoignages */
+.temoignages:not(:has(.avis)){display:none}
+.avis-grille{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:22px}
+.avis{max-width:560px;background:var(--blanc);border:1px solid var(--lait);border-radius:var(--rayon);padding:26px;display:flex;flex-direction:column;gap:16px}
+.avis>p{font-family:Fraunces,Georgia,serif;font-size:1.2rem;line-height:1.4;color:var(--encre)}
+.avis-qui{display:flex;align-items:center;gap:12px;margin-top:auto}
+.avis-qui b{display:block;font-weight:600;font-size:.95rem}
+.avis-qui a{font-size:.85rem;color:var(--violet);text-decoration:none}
+.avis-qui a:hover{text-decoration:underline}
+.avis-ini{flex:none;display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:var(--or);color:var(--encre);font:700 1.1rem Fraunces,serif}
 .duo-btn{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .duo-btn .btn{padding:9px 10px;font-size:.82rem}
 .carte-cgi .sol-badge{bottom:auto;top:12px}
@@ -707,6 +717,42 @@ footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
         <div style="--i:1"><div class="n" data-to="6">6</div><p data-fr="automatisations Excel / VBA / Access en service" data-en="Excel / VBA / Access automations in service">automatisations Excel / VBA / Access en service</p></div>
         <div style="--i:2"><div class="n" data-to="3">3</div><p data-fr="sites clients livrés à Lomé" data-en="client websites delivered in Lomé">sites clients livrés à Lomé</p></div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEMOIGNAGES : cachée tant qu'il n'y a aucune carte .avis
+     Pour en ajouter un, copier une carte .avis dans .avis-grille. Ne jamais mettre de guillemets autour d'une phrase qui n'est pas la citation exacte du client. -->
+<section id="temoignages" class="temoignages" style="padding-top:24px">
+  <div class="wrap">
+    <div class="entete">
+      <h2 data-fr="Ce que disent nos clients" data-en="What our clients say">Ce que disent nos clients</h2>
+    </div>
+    <div class="avis-grille">
+      <article class="avis">
+        <span class="etiq-pub" data-fr="Retour client" data-en="Client feedback">Retour client</span>
+        <p data-fr="Emmanuel trouve le site bien réussi et à son goût." data-en="Emmanuel finds the website very well done and to his taste.">Emmanuel trouve le site bien réussi et à son goût.</p>
+        <div class="avis-qui">
+          <span class="avis-ini" aria-hidden="true">E</span>
+          <div><b>Emmanuel</b><a href="https://alexcruss.github.io/fiscogef/" target="_blank" rel="noopener">FISCOGEF Expertise · Lomé</a></div>
+        </div>
+      </article>
+      <article class="avis">
+        <span class="etiq-pub" data-fr="Retour client" data-en="Client feedback">Retour client</span>
+        <p data-fr="Élixir du Terroir trouve son site web intéressant." data-en="Élixir du Terroir finds its website interesting.">Élixir du Terroir trouve son site web intéressant.</p>
+        <div class="avis-qui">
+          <span class="avis-ini" aria-hidden="true">É</span>
+          <div><b>Élixir du Terroir</b><a href="https://alexcruss.github.io/ELIXIRDUTERROIR/" target="_blank" rel="noopener" data-fr="Herboristerie · Lomé" data-en="Herbal shop · Lomé">Herboristerie · Lomé</a></div>
+        </div>
+      </article>
+      <article class="avis">
+        <span class="etiq-pub" data-fr="Retour client" data-en="Client feedback">Retour client</span>
+        <p data-fr="Brenda trouve son site web intéressant." data-en="Brenda finds her website interesting.">Brenda trouve son site web intéressant.</p>
+        <div class="avis-qui">
+          <span class="avis-ini" aria-hidden="true">B</span>
+          <div><b>Brenda</b><a href="https://alexcruss.github.io/BRENDASHOP/" target="_blank" rel="noopener">BrendaSTYLE · Lomé</a></div>
+        </div>
+      </article>
     </div>
   </div>
 </section>
