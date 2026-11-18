@@ -8,28 +8,21 @@
   gsap.registerPlugin(ScrollTrigger);
   ScrollTrigger.config({ ignoreMobileResize: true });
 
-  /* 1. Entrée du haut de page : accueil (texte puis écrans) et titre des pages intérieures */
+  /* 1. Entrée du haut de page : le texte reste visible dès le premier affichage (c'est lui que Google
+        mesure pour le LCP), seuls les écrans montent doucement. Aucun fondu sur ce qui est déjà à l'écran. */
   var hero = document.querySelector(".hero");
   if(hero){
-    gsap.timeline({ defaults: { ease: "power3.out" } })
-      .fromTo(hero.querySelectorAll(".kicker, h1, .lead, .hero-cta, .hero-note"),
-        { autoAlpha: 0, y: 26 },
-        { autoAlpha: 1, y: 0, duration: 0.8, stagger: 0.12, clearProps: "transform" })
-      .fromTo(hero.querySelectorAll(".fen"),
-        { autoAlpha: 0, y: 40 },
-        { autoAlpha: 1, y: 0, duration: 0.9, stagger: 0.14, clearProps: "transform" }, 0.25);
-  }
-  var tete = document.querySelector(".page-tete");
-  if(tete){
-    gsap.fromTo(tete.querySelectorAll("h1, p"),
-      { autoAlpha: 0, y: 18 },
-      { autoAlpha: 1, y: 0, duration: 0.7, stagger: 0.1, ease: "power3.out", clearProps: "transform" });
+    gsap.fromTo(hero.querySelectorAll(".fen"),
+      { y: 34 },
+      { y: 0, duration: 0.9, ease: "power3.out", stagger: 0.12, clearProps: "transform" });
   }
 
-  /* 2. Apparition au défilement : les blocs montent doucement quand ils entrent à l'écran */
+  /* 2. Apparition au défilement : seulement les blocs qui sont sous la partie visible au chargement,
+        pour ne jamais retarder l'affichage de ce que la personne voit en arrivant */
+  var limite = window.innerHeight * 0.92;
   var cibles = gsap.utils.toArray(
     ".grille > .carte, .etape, .etapes-courtes > div, .avis, .entete, .apropos-grille, .carte-wa, .autres, .chiffres > div, .contact h2"
-  );
+  ).filter(function(e){ return e.getBoundingClientRect().top > limite; });
   if(cibles.length){
     gsap.set(cibles, { autoAlpha: 0, y: 28 });
     ScrollTrigger.batch(cibles, {

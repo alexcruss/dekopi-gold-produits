@@ -25,9 +25,13 @@
 <link rel="apple-touch-icon" href="logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Poppins:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Cormorant+Garant:wght@600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="site.css">
 <script src="anim-tete.js"></script>
+<script defer src="vendor/gsap.min.js"></script>
+<script defer src="vendor/ScrollTrigger.min.js"></script>
+<script defer src="site.js"></script>
+<script defer src="anim.js"></script>
 </head>
 <body>
 
@@ -61,7 +65,7 @@
   <div class="wrap">
     <div class="grille">
       <a class="carte lien" href="https://alexcruss.github.io/ELIXIRDUTERROIR/" target="_blank" rel="noopener">
-        <div class="vignette photo en-cours"><img src="elixirduterroir.jpg" width="960" height="600" loading="lazy" alt="Site Élixir du Terroir : logo, slogan et photo des préparations de la marque"><span class="sol-badge" data-fr="En cours" data-en="In progress">En cours</span></div>
+        <div class="vignette photo en-cours"><img src="elixirduterroir.webp" width="960" height="600" loading="lazy" alt="Site Élixir du Terroir : logo, slogan et photo des préparations de la marque"><span class="sol-badge" data-fr="En cours" data-en="In progress">En cours</span></div>
         <div class="corps">
           <span class="tag" data-fr="Herboristerie · Lomé" data-en="Herbal shop · Lomé">Herboristerie · Lomé</span>
           <h3>Élixir du Terroir</h3>
@@ -70,7 +74,7 @@
         </div>
       </a>
       <a class="carte lien" href="https://alexcruss.github.io/BRENDASHOP/" target="_blank" rel="noopener">
-        <div class="vignette photo"><img src="brendastyle.jpg" width="960" height="600" loading="lazy" alt="Site BrendaSTYLE : portrait de Brenda, titre « La femme qui rayonne » et boutons Voir la collection et Notre histoire"></div>
+        <div class="vignette photo"><img src="brendastyle.webp" width="960" height="600" loading="lazy" alt="Site BrendaSTYLE : portrait de Brenda, titre « La femme qui rayonne » et boutons Voir la collection et Notre histoire"></div>
         <div class="corps">
           <span class="tag" data-fr="Tissus wax et press-on nails · Lomé" data-en="Wax fabrics and press-on nails · Lomé">Tissus wax et press-on nails · Lomé</span>
           <h3>BrendaSTYLE</h3>
@@ -79,7 +83,7 @@
         </div>
       </a>
       <a class="carte lien" href="https://alexcruss.github.io/dongshoes/" target="_blank" rel="noopener">
-        <div class="vignette photo en-cours"><img src="dongshoes.jpg" width="960" height="600" loading="lazy" alt="Site Dongshoes : logo, mocassins en cuir et bouton Commander sur WhatsApp"><span class="sol-badge" data-fr="En cours" data-en="In progress">En cours</span></div>
+        <div class="vignette photo en-cours"><img src="dongshoes.webp" width="960" height="600" loading="lazy" alt="Site Dongshoes : logo, mocassins en cuir et bouton Commander sur WhatsApp"><span class="sol-badge" data-fr="En cours" data-en="In progress">En cours</span></div>
         <div class="corps">
           <span class="tag" data-fr="Chaussures en cuir pour homme · Lomé" data-en="Men's leather shoes · Lomé">Chaussures en cuir pour homme · Lomé</span>
           <h3>Dongshoes</h3>
@@ -88,7 +92,7 @@
         </div>
       </a>
       <a class="carte lien" href="https://alexcruss.github.io/JONASCLEAN/" target="_blank" rel="noopener">
-        <div class="vignette photo"><img src="jonasclean.jpg" width="960" height="600" loading="lazy" alt="Site JonasClean, entreprise de ménage haut de gamme"></div>
+        <div class="vignette photo"><img src="jonasclean.webp" width="960" height="600" loading="lazy" alt="Site JonasClean, entreprise de ménage haut de gamme"></div>
         <div class="corps">
           <span class="tag" data-fr="Ménage haut de gamme · Lomé" data-en="Premium cleaning · Lomé">Ménage haut de gamme · Lomé</span>
           <h3>JonasClean</h3>
@@ -97,7 +101,7 @@
         </div>
       </a>
       <a class="carte lien" href="https://alexcruss.github.io/fiscogef/" target="_blank" rel="noopener">
-        <div class="vignette photo"><img src="fiscogef.jpg" width="960" height="600" loading="lazy" alt="Site FISCOGEF Expertise : « Confiez-nous vos états financiers et évitez les pénalités » et boutons WhatsApp et Appeler"></div>
+        <div class="vignette photo"><img src="fiscogef.webp" width="960" height="600" loading="lazy" alt="Site FISCOGEF Expertise : « Confiez-nous vos états financiers et évitez les pénalités » et boutons WhatsApp et Appeler"></div>
         <div class="corps">
           <span class="tag" data-fr="Cabinet d'états financiers · Lomé" data-en="Financial statements firm · Lomé">Cabinet d'états financiers · Lomé</span>
           <h3>FISCOGEF Expertise</h3>
@@ -106,7 +110,7 @@
         </div>
       </a>
       <a class="carte lien" href="https://pierredegboevi.com" target="_blank" rel="noopener">
-        <div class="vignette photo"><img src="portfolio.jpg" width="960" height="600" loading="lazy" alt="Portfolio de Pierre Kossi DEGBOEVI : « Des outils sur mesure pour que votre entreprise gagne du temps »"></div>
+        <div class="vignette photo"><img src="portfolio.webp" width="960" height="600" loading="lazy" alt="Portfolio de Pierre Kossi DEGBOEVI : « Des outils sur mesure pour que votre entreprise gagne du temps »"></div>
         <div class="corps">
           <span class="tag" data-fr="Portfolio · Pierre Kossi DEGBOEVI" data-en="Portfolio · Pierre Kossi DEGBOEVI">Portfolio · Pierre Kossi DEGBOEVI</span>
           <h3 data-fr="Portfolio du fondateur" data-en="The founder's portfolio">Portfolio du fondateur</h3>
@@ -153,9 +157,5 @@
 
 <a class="wa" data-wa="Bonjour DEKOPI GOLD, j'ai vu votre site." href="#" aria-label="WhatsApp">WhatsApp</a>
 
-<script src="vendor/gsap.min.js"></script>
-<script src="vendor/ScrollTrigger.min.js"></script>
-<script src="site.js"></script>
-<script src="anim.js"></script>
 </body>
 </html>
