@@ -1,6 +1,6 @@
 # Politique de sécurité
 
-Ce dépôt contient le site vitrine de DEKOPI GOLD (https://produits.pierredegboevi.com/). C'est un site statique : une page HTML, des images, aucun serveur ni base de données. Le formulaire de contact n'envoie rien à un serveur, il prépare un message WhatsApp ou un e-mail dans l'application de la personne.
+Ce dépôt contient le site vitrine de DEKOPI GOLD (https://produits.pierredegboevi.com/). C'est un site statique : quelques pages HTML, un fichier de style, un script, des images, aucun serveur ni base de données. Le formulaire de contact n'envoie rien à un serveur, il prépare un message WhatsApp ou un e-mail dans l'application de la personne.
 
 ## Signaler une faille
 
@@ -29,6 +29,6 @@ Merci de ne pas ouvrir d'issue publique pour une faille : un message privé perm
 ## Protections en place
 
 - HTTPS imposé sur le domaine.
-- Politique de sécurité du contenu (CSP) dans `index.html` : le seul script autorisé est celui de la page, aucune connexion réseau sortante depuis le JavaScript.
+- Politique de sécurité du contenu (CSP) dans chaque page : le seul script autorisé est `site.js`, un fichier de ce même dépôt (aucun script en ligne, aucune adresse externe pour les scripts), et aucune connexion réseau sortante depuis le JavaScript.
 - Analyse des secrets et protection au push activées sur le dépôt.
 - Aucun secret, mot de passe ni clé d'API dans le code ni dans l'historique.

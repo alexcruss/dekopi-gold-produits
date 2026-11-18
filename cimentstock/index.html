@@ -18,14 +18,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --creme:#F6EEE2;
-  --lait:#EBDCC6;
-  --encre:#2A1A3C;
-  --violet:#5B2A86;
-  --or:#C4922A;
-  --or-clair:#E3B955;
-  --blanc:#FFFBF5;
-  --muted:#6B5B78;
+  --creme:#F5F3EE;
+  --lait:#E3E0D8;
+  --encre:#12263F;
+  --violet:#1F4E85;
+  --or:#F4A83A;
+  --or-clair:#F9C16B;
+  --blanc:#FFFFFF;
+  --muted:#55667A;
   --vert:#1E7A46;
   --rayon:16px;
 }
@@ -55,9 +55,9 @@ section{padding:64px 0}
 /* hero */
 .hero{color:var(--blanc);padding:44px 0 72px;border-radius:0 0 40px 40px;
   background:
-    radial-gradient(560px 380px at 92% 4%, rgba(227,185,85,.34), transparent 62%),
-    radial-gradient(480px 400px at 0% 100%, rgba(139,76,190,.42), transparent 65%),
-    linear-gradient(135deg,#241535 0%,#3E2260 52%,#5A2D6E 100%)}
+    radial-gradient(560px 380px at 92% 4%, rgba(244,168,58,.30), transparent 62%),
+    radial-gradient(480px 400px at 0% 100%, rgba(60,110,170,.40), transparent 65%),
+    linear-gradient(135deg,#0B1A2D 0%,#12263F 52%,#1B3A5E 100%)}
 .marque{display:flex;align-items:center;gap:10px;font-weight:600;letter-spacing:.02em;margin-bottom:40px;font-size:.95rem}
 .marque img{width:34px;height:34px;border-radius:50%;background:#fff}
 .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center}
@@ -68,8 +68,8 @@ section{padding:64px 0}
 .puces{display:flex;flex-wrap:wrap;gap:8px 18px;list-style:none;padding:0;margin-top:28px;font-size:.92rem}
 .puces li::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--or-clair);margin-right:8px}
 .fenetre{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.4)}
-.fenetre .barre{display:flex;gap:6px;padding:10px 12px;background:#E9E3EE}
-.fenetre .barre i{width:10px;height:10px;border-radius:50%;background:#B8AEC2}
+.fenetre .barre{display:flex;gap:6px;padding:10px 12px;background:#E3EAF2}
+.fenetre .barre i{width:10px;height:10px;border-radius:50%;background:#B5C2D1}
 .legende{font-size:.78rem;opacity:.75;margin-top:10px;text-align:center}
 
 /* problème */
@@ -100,7 +100,7 @@ section{padding:64px 0}
 .liste-etapes span{color:var(--muted)}
 
 /* offre */
-.offre{background:linear-gradient(135deg,#241535 0%,#3E2260 100%);color:var(--blanc);border-radius:40px}
+.offre{background:linear-gradient(135deg,#0B1A2D 0%,#12263F 100%);color:var(--blanc);border-radius:40px}
 .offre-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:start}
 .inclus{list-style:none;padding:0;display:grid;gap:12px}
 .inclus li{padding-left:30px;position:relative}
@@ -131,16 +131,16 @@ details[open] summary::after{content:"–"}
 details p{margin-top:10px;color:var(--muted)}
 
 /* appel final */
-.final{background:linear-gradient(135deg,#241535 0%,#3E2260 52%,#5A2D6E 100%);color:var(--blanc);text-align:center;border-radius:40px 40px 0 0;padding:72px 0}
+.final{background:linear-gradient(135deg,#0B1A2D 0%,#12263F 52%,#1B3A5E 100%);color:var(--blanc);text-align:center;border-radius:40px 40px 0 0;padding:72px 0}
 .final h2{max-width:20ch;margin:0 auto 18px}
-.final .places{display:inline-block;margin:6px 0 26px;padding:10px 18px;border-radius:999px;background:rgba(227,185,85,.18);border:1px solid var(--or-clair);font-weight:500}
+.final .places{display:inline-block;margin:6px 0 26px;padding:10px 18px;border-radius:999px;background:rgba(244,168,58,.18);border:1px solid var(--or-clair);font-weight:500}
 .final .places strong{color:var(--or-clair);font-size:1.15em}
 
 footer{padding:26px 0;font-size:.85rem;color:var(--muted);background:var(--creme)}
 footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
 
 /* barre collée en bas */
-.barre-bas{position:fixed;left:0;right:0;bottom:0;z-index:30;background:rgba(36,21,53,.97);color:var(--blanc);padding:12px 16px;box-shadow:0 -6px 20px rgba(0,0,0,.25)}
+.barre-bas{position:fixed;left:0;right:0;bottom:0;z-index:30;background:rgba(11,26,45,.97);color:var(--blanc);padding:12px 16px;box-shadow:0 -6px 20px rgba(0,0,0,.25)}
 .barre-bas .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px}
 .barre-bas span{font-size:.9rem;line-height:1.3}
 .barre-bas span b{display:block;font-size:1rem;color:var(--or-clair)}
