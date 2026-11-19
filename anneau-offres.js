@@ -8,11 +8,13 @@
   var piste = document.getElementById("anneau-piste");
   if (!ring || !piste) return;
 
-  // Les neuf offres, dans l'ordre de la page Produits (sauf CimentStock et ASSIMETO en tête).
+  // Les dix offres, dans l'ordre de la page Produits (sauf CimentStock et ASSIMETO en tête).
   // fond: true = image petite, affichée entière sur un fond flou plutôt que recadrée.
   var OFFRES = [
     { id: "cimentstock", img: "cimentstock.webp", alt: "CimentStock : tableau de bord des ventes et du stock",
       nom: ["CimentStock", "CimentStock"], type: ["Logiciel · Commerce de ciment", "Software · Cement shops"], prix: ["12 000 FCFA / mois", "12,000 FCFA / month"] },
+    { id: "lotusqs", img: "lotusqs.webp", alt: "Lotus QS : tableau de bord d'une quincaillerie",
+      nom: ["Lotus QS", "Lotus QS"], type: ["Logiciel · Quincaillerie", "Software · Hardware stores"], prix: ["Essai gratuit 30 jours", "Free 30-day trial"] },
     { id: "assimeto", img: "assimeto.webp", alt: "ASSIMETO : courses, stock et plats togolais",
       nom: ["ASSIMETO", "ASSIMETO"], type: ["Application · Cuisine et courses", "App · Cooking and groceries"], prix: ["Abonnement Flooz / T-Money · prix à fixer", "Flooz / T-Money subscription · price TBD"] },
     { id: "formation-alibaba-pinduoduo", img: "formation-alibaba-pinduoduo.webp", alt: "Affiche de la formation Alibaba et Pinduoduo : 10 000 F seulement",
@@ -25,13 +27,13 @@
       nom: ["Site vitrine pour votre commerce", "Showcase website for your shop"], type: ["Service · Site vitrine", "Service · Showcase website"], prix: ["Sur devis · livré en 3 jours", "On quote · delivered in 3 days"] },
     { id: "garde-la-flamme", img: "garde-la-flamme.webp", alt: "Affiche du guide Garde la flamme, même à distance",
       nom: ["Garde la flamme, même à distance", "Keep the flame alive, even from afar"], type: ["Guide PDF", "PDF guide"], prix: ["4 900 FCFA · paiement sur Chariow", "4,900 FCFA · payment on Chariow"] },
-    { id: "formation-solimi", img: "solimi-affiche.webp", alt: "Affiche Solimi : votre carte prépayée est enfin disponible", fond: true,
+    { id: "formation-solimi", img: "solimi-affiche.webp", alt: "Affiche Solimi : votre carte prépayée est enfin disponible", fond: "#0a6bb3",
       nom: ["Savoir utiliser la carte Solimi", "How to use the Solimi card"], type: ["Formation · YouTube et visio", "Training · YouTube and video call"], prix: ["500 FCFA · YouTube ou visio", "500 FCFA · YouTube or video call"] },
-    { id: "cgi-lpf", img: "cahier-fiscal.webp", alt: "Cahier fiscal : principales dispositions de la loi de finances 2026", fond: true,
+    { id: "cgi-lpf", img: "cahier-fiscal.webp", alt: "Cahier fiscal : principales dispositions de la loi de finances 2026", fond: "#12263F",
       nom: ["CGI et LPF du Togo, à jour 2025", "Togo CGI and LPF, updated for 2025"], type: ["Documents PDF · version 2025", "PDF documents · 2025 version"], prix: ["500 FCFA chacun · 1 000 FCFA les deux", "500 FCFA each · 1,000 FCFA for both"] }
   ];
 
-  var N = OFFRES.length;          // 9 panneaux : 40° chacun
+  var N = OFFRES.length;          // 10 panneaux : 36° chacun
   var pas = 360 / N;
   var DEG_PAR_PX = 0.3;           // le défilement fait tourner l'anneau de 0,3° par pixel : un tour = 1 200 px
   var rayon = 0, PW = 0, panneaux = [];

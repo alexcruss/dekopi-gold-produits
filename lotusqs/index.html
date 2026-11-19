@@ -1,0 +1,530 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- CSP : seuls les scripts de ce même site sont autorisés (GSAP en copie locale dans ../vendor, aucun script en ligne, aucun CDN). -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; connect-src 'none'; img-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; base-uri 'none'; form-action 'none'; object-src 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="theme-color" content="#1B1848">
+<title>Lotus QS | Le stock de votre quincaillerie, à l'article près</title>
+<meta name="description" content="Le stock, les ventes, les achats et les crédits clients de votre quincaillerie, même sans internet. Scan de code-barres, vente au mètre ou au kilo, import Excel de vos articles. Essai gratuit de 30 jours, installé chez vous à Lomé.">
+<link rel="canonical" href="https://produits.pierredegboevi.com/lotusqs/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DEKOPI GOLD">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:url" content="https://produits.pierredegboevi.com/lotusqs/">
+<meta property="og:title" content="Combien de boîtes de clous vous reste-t-il, là, maintenant ?">
+<meta property="og:description" content="Lotus QS compte chaque article de votre quincaillerie, au détail comme au mètre, même sans internet. 30 jours d'essai gratuit.">
+<meta property="og:image" content="https://produits.pierredegboevi.com/apercu-lq.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="600">
+<meta property="og:image:alt" content="Lotus QS : le tableau de bord d'une quincaillerie">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Combien de boîtes de clous vous reste-t-il, là, maintenant ?">
+<meta name="twitter:description" content="Lotus QS compte chaque article de votre quincaillerie, même sans internet. 30 jours d'essai gratuit.">
+<meta name="twitter:image" content="https://produits.pierredegboevi.com/apercu-lq.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "Lotus QS",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Windows",
+      "description": "Articles, ventes, achats, crédits clients et stock d'une quincaillerie. Fonctionne sans internet, les données restent sur l'ordinateur du magasin.",
+      "url": "https://produits.pierredegboevi.com/lotusqs/",
+      "image": "https://produits.pierredegboevi.com/lotusqs.webp",
+      "provider": {
+        "@type": "Organization",
+        "@id": "https://produits.pierredegboevi.com/#organisation",
+        "name": "DEKOPI GOLD",
+        "url": "https://produits.pierredegboevi.com/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "DEKOPI GOLD", "item": "https://produits.pierredegboevi.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Produits", "item": "https://produits.pierredegboevi.com/produits.html" },
+        { "@type": "ListItem", "position": 3, "name": "Lotus QS", "item": "https://produits.pierredegboevi.com/lotusqs/" }
+      ]
+    }
+  ]
+}
+</script>
+<link rel="icon" type="image/png" href="logo.png">
+<script src="../anim-tete.js"></script>
+<script defer src="../vendor/gsap.min.js"></script>
+<script defer src="../vendor/ScrollTrigger.min.js"></script>
+<script defer src="anim-lq.js?v=1"></script>
+<link rel="apple-touch-icon" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --creme:#F6F4FA;
+  --lait:#E4DFEE;
+  --brume:#ECE8F5;
+  --encre:#1B1848;
+  --bleu:#6A3DB0;
+  --or:#F4A83A;
+  --or-clair:#F9C16B;
+  --blanc:#FFFFFF;
+  --muted:#5A5775;
+  --rayon:12px;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:Poppins,system-ui,sans-serif;background:var(--creme);color:var(--encre);line-height:1.6;font-size:16px}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+.wrap{width:min(1120px,100% - 32px);margin-inline:auto}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.15;letter-spacing:-.01em}
+h1{font-size:clamp(2rem,5.5vw,3.4rem)}
+h2{font-size:clamp(1.6rem,3.5vw,2.3rem);margin-bottom:12px}
+h3{font-size:1.25rem}
+section{padding:64px 0}
+.intro{color:var(--muted);max-width:40em;margin-bottom:30px}
+:focus-visible{outline:3px solid var(--or);outline-offset:3px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.saut{position:absolute;left:16px;top:-60px;z-index:60;background:var(--blanc);color:var(--encre);padding:10px 16px;border-radius:8px;font-weight:600}
+.saut:focus{top:8px}
+
+/* bandeau qui défile : les trois promesses, répétées */
+.ruban{background:var(--or);color:var(--encre);overflow:hidden;font-weight:600;font-size:.9rem;white-space:nowrap}
+.ruban-piste{display:flex;width:max-content;animation:defile 40s linear infinite}
+.ruban-piste ul{display:flex;list-style:none;padding:0}
+.ruban-piste li{padding:9px 28px;display:flex;align-items:center;gap:28px}
+.ruban-piste li::after{content:"";width:6px;height:6px;border-radius:50%;background:var(--encre)}
+@keyframes defile{to{transform:translateX(-50%)}}
+.ruban:hover .ruban-piste{animation-play-state:paused}
+
+/* entête */
+header.haut{position:sticky;top:0;z-index:40;background:rgba(246,244,250,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--lait)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px}
+.logo{min-height:44px;display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:600;letter-spacing:.02em}
+.logo img{width:40px;height:40px;border-radius:50%;background:#fff}
+
+/* boutons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:13px 22px;border-radius:10px;font-weight:600;font-size:1rem;text-decoration:none;border:2px solid transparent;background:var(--or);color:var(--encre);transition:transform .15s, background .15s;text-align:center}
+.btn:hover{transform:translateY(-2px);background:var(--or-clair)}
+.btn-grand{font-size:1.08rem;padding:15px 28px}
+.btn-vert{background:#25D366;color:#073B1B}
+.btn-vert:hover{background:#3BE07C}
+.btn-ligne{background:transparent;border-color:var(--encre);color:var(--encre)}
+.btn-ligne:hover{background:var(--encre);color:var(--creme)}
+.micro{font-size:.9rem;margin-top:14px;color:#D6D3F0}
+.actions{display:flex;flex-wrap:wrap;gap:12px}
+.btn-clair{background:transparent;border-color:rgba(255,255,255,.55);color:#fff}
+.btn-clair:hover{background:rgba(255,255,255,.12)}
+.suite .telecharger{margin-top:28px;display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px}
+.suite .telecharger p{color:var(--muted);font-size:.92rem;max-width:34em}
+
+/* haut de page */
+.hero{background:var(--encre);color:var(--creme);padding:52px 0 60px}
+.hero-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:48px;align-items:center}
+.hero-grid>*{min-width:0}
+.hero h1{color:#fff}
+.hero h1 em{font-style:normal;color:var(--or-clair)}
+.sous{font-size:clamp(1.05rem,2.4vw,1.2rem);margin:18px 0 20px;max-width:30em;color:#D6D3F0}
+.sous strong{color:var(--or-clair)}
+.coches{list-style:none;padding:0;display:grid;gap:10px;margin-bottom:26px}
+.coches li{position:relative;padding-left:32px;color:#EFEDFA}
+.coches li::before{content:"";position:absolute;left:0;top:.3em;width:20px;height:20px;border-radius:50%;background:var(--or)}
+.coches li::after{content:"";position:absolute;left:7px;top:.46em;width:5px;height:10px;border:solid var(--encre);border-width:0 2px 2px 0;transform:rotate(45deg)}
+.garanties{display:flex;flex-wrap:wrap;gap:6px 20px;list-style:none;padding:0;margin-top:24px;padding-top:16px;border-top:1px solid rgba(255,255,255,.22);font-size:.9rem;color:#D6D3F0}
+.garanties li::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--or);margin-right:8px}
+.fen{margin:0;background:var(--blanc);border:1px solid rgba(255,255,255,.2);border-radius:var(--rayon);overflow:hidden}
+.fen figcaption{padding:8px 12px;font-size:.8rem;color:var(--muted);border-top:1px solid var(--lait)}
+
+/* choisir son problème */
+.choix{background:var(--creme)}
+.choix-grille{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.choix-carte{display:flex;flex-direction:column;justify-content:space-between;gap:18px;background:var(--blanc);border:1px solid var(--lait);border-top:4px solid var(--or);border-radius:var(--rayon);padding:24px;text-decoration:none;transition:transform .15s, box-shadow .15s}
+.choix-carte:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(27,24,72,.12)}
+.choix-carte h3{margin-bottom:8px}
+.choix-carte p{color:var(--muted)}
+.choix-carte .go{font-weight:600;color:var(--bleu)}
+
+/* ce que vous voyez */
+.voir{background:var(--blanc)}
+.voir-ligne{display:grid;grid-template-columns:1fr 1.15fr;gap:40px;align-items:center;padding:30px 0}
+.voir-ligne:nth-child(even) .voir-texte{order:2}
+.voir-ligne>*{min-width:0}
+.voir-texte h3{margin-bottom:10px;font-size:1.5rem}
+.voir-texte p{color:var(--muted)}
+.voir-texte .tag{display:inline-block;margin-bottom:10px;font-size:.8rem;font-weight:600;letter-spacing:.04em;color:var(--bleu);background:var(--brume);padding:4px 12px;border-radius:99px}
+.voir-img{margin:0;border:1px solid var(--lait);border-radius:var(--rayon);overflow:hidden;box-shadow:0 12px 30px rgba(27,24,72,.1);background:#fff}
+.voir-img figcaption{padding:8px 12px;font-size:.8rem;color:var(--muted);border-top:1px solid var(--lait)}
+.facture-img{max-width:430px;margin-inline:auto}
+
+/* chronologie : jour 1, semaine 1, mois 1 */
+.suite{background:var(--brume)}
+.etapes{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;list-style:none;padding:0}
+.etapes li{background:var(--blanc);border-radius:var(--rayon);padding:26px 24px;position:relative}
+.etapes .quand{display:inline-block;background:var(--encre);color:var(--or-clair);font-weight:600;font-size:.85rem;padding:4px 14px;border-radius:99px;margin-bottom:14px}
+.etapes strong{display:block;font-family:Fraunces,Georgia,serif;font-size:1.3rem;margin-bottom:8px}
+.etapes span.t{color:var(--muted)}
+
+/* tout ce que contient CimentStock */
+.contenu{background:var(--creme)}
+.fonctions{display:grid;grid-template-columns:repeat(2,1fr);gap:0 24px}
+details{background:var(--blanc);border:1px solid var(--lait);border-radius:10px;margin-bottom:10px}
+summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:52px;padding:12px 20px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:1.4rem;line-height:1;color:var(--bleu);flex:none}
+details[open] summary::after{content:"\2212"}
+details p{padding:0 20px 18px;color:var(--muted)}
+
+/* comparaison */
+.compare{background:var(--blanc)}
+.tableau{width:100%;border-collapse:separate;border-spacing:0;border:1px solid var(--lait);border-radius:var(--rayon);overflow:hidden;font-size:.98rem}
+.tableau th,.tableau td{padding:14px 18px;text-align:left;vertical-align:top;border-bottom:1px solid var(--lait)}
+.tableau tr:last-child th,.tableau tr:last-child td{border-bottom:0}
+.tableau thead th{background:var(--creme);font-family:Fraunces,Georgia,serif;font-size:1.1rem}
+.tableau thead th:last-child{background:var(--encre);color:var(--or-clair)}
+.tableau tbody th{font-weight:600;width:30%}
+.tableau td:last-child{background:#FBF4E6;font-weight:500}
+.tableau td:nth-child(2){color:var(--muted)}
+
+/* offre */
+.offre{background:var(--encre);color:var(--creme)}
+.offre h2{color:#fff}
+.offre-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:start}
+.offre-grid>*{min-width:0}
+.inclus{list-style:none;padding:0;display:grid;gap:12px}
+.inclus li{padding-left:30px;position:relative}
+.inclus li::before{content:"";position:absolute;left:0;top:.45em;width:16px;height:16px;border-radius:50%;background:var(--or)}
+.inclus li::after{content:"";position:absolute;left:5px;top:.6em;width:5px;height:9px;border:solid var(--encre);border-width:0 2px 2px 0;transform:rotate(45deg)}
+.ancre{margin-top:24px;padding:16px 18px;border-left:4px solid var(--or);background:rgba(255,255,255,.07);border-radius:0 10px 10px 0;color:#EFEDFA}
+.prix-carte{background:var(--blanc);color:var(--encre);border-radius:var(--rayon);padding:28px 24px}
+.prix{font-family:Fraunces,Georgia,serif;font-size:2.1rem;line-height:1.05;font-weight:700;color:var(--bleu)}
+.prix small{font-family:Poppins,sans-serif;font-size:1rem;font-weight:500;color:var(--muted)}
+.par-jour{font-weight:600;margin:6px 0 16px}
+.annuel{background:var(--creme);border-radius:10px;padding:14px 16px;margin:18px 0 12px;font-size:.95rem}
+.annuel strong{color:var(--bleu)}
+.prix-carte .btn{width:100%}
+.prix-carte .note{font-size:.85rem;color:var(--muted);margin-top:12px;text-align:center}
+
+.bande-garantie{background:var(--or);color:var(--encre);padding:48px 0}
+.bande-garantie p{font-family:Fraunces,Georgia,serif;font-size:clamp(1.2rem,2.6vw,1.6rem);line-height:1.35;max-width:36em}
+
+.faq{background:var(--creme)}
+.final{background:var(--encre);color:var(--creme);text-align:center;padding:64px 0}
+.final h2{color:#fff;max-width:22ch;margin:0 auto 14px}
+.final .places{margin:0 0 24px;color:#D6D3F0}
+
+footer{border-top:1px solid var(--lait);padding:12px 0;font-size:.85rem;color:var(--muted);background:var(--creme)}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:4px 16px}
+
+.barre-bas{display:none}
+
+@media (max-width:820px){
+  section{padding:46px 0}
+  .hero{padding:34px 0 42px}
+  .hero-grid,.offre-grid,.choix-grille,.etapes,.voir-ligne,.fonctions{grid-template-columns:1fr}
+  .voir-ligne{gap:18px;padding:22px 0}
+  .voir-ligne:nth-child(even) .voir-texte{order:0}
+  .hero .btn-grand{width:100%}
+  .actions{flex-direction:column}
+  .nav .btn{display:none}
+  .final{padding:48px 0}
+  .tableau{font-size:.9rem}
+  .tableau th,.tableau td{padding:10px 12px}
+  .tableau tbody th{width:34%}
+  body{padding-bottom:76px}
+  .barre-bas{display:block;position:fixed;left:0;right:0;bottom:0;z-index:50;background:var(--encre);color:var(--blanc);padding:10px 16px;border-top:1px solid rgba(255,255,255,.2)}
+  .barre-bas .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px}
+  .barre-bas span{font-size:.88rem;line-height:1.3}
+  .barre-bas span b{display:block;font-size:.98rem;color:var(--or-clair)}
+  .barre-bas .btn{min-height:44px;padding:10px 18px;font-size:.95rem;white-space:nowrap}
+}
+/* La barre du téléphone attend que les boutons du haut disparaissent (script). Filet de sécurité : sans script, elle apparaît toute seule au bout de 3 s. */
+@keyframes monter{0%,99%{transform:translateY(110%)}100%{transform:none}}
+@media (max-width:820px){html.anim .barre-bas{animation:monter 3s forwards}}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .btn,.choix-carte{transition:none}
+  .ruban{overflow-x:auto}
+  .ruban-piste{animation:none}
+  .ruban-piste ul[aria-hidden]{display:none}
+}
+</style>
+</head>
+<body>
+<a class="saut" href="#contenu">Aller au contenu</a>
+
+<div class="ruban">
+  <div class="ruban-piste">
+    <ul><li>Essai gratuit 30 jours</li><li>Marche sans internet</li><li>Scan de code-barres</li><li>Vente au mètre, au kilo, à la pièce</li></ul>
+    <ul aria-hidden="true"><li>Essai gratuit 30 jours</li><li>Marche sans internet</li><li>Scan de code-barres</li><li>Vente au mètre, au kilo, à la pièce</li></ul>
+  </div>
+</div>
+
+<header class="haut">
+  <div class="wrap nav">
+    <a class="logo" href="../index.html"><img src="logo.png" width="40" height="40" alt=""><span>DEKOPI GOLD</span></a>
+    <a class="btn" href="https://wa.me/22891512041?text=Bonjour%2C%20je%20veux%20voir%20Lotus%20QS%20dans%20ma%20quincaillerie%20%C3%A0%20...%20%28quartier%29.%20Quand%20pouvez-vous%20venir%20%3F" target="_blank" rel="noopener">WhatsApp<span class="sr"> (s'ouvre dans une nouvelle fenêtre)</span></a>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <h1>Combien de boîtes de clous vous reste-t-il, <em>là, maintenant&nbsp;?</em></h1>
+      <p class="sous">Lotus QS compte chaque article de votre quincaillerie, au détail comme au mètre, <strong>même sans internet.</strong></p>
+      <ul class="coches">
+        <li>Le stock se met à jour à chaque vente et chaque achat</li>
+        <li>Vous cherchez un article par son nom, sans accent, ou vous le scannez</li>
+        <li>Vous vendez au mètre, au kilo ou à la pièce, avec prix détail et prix gros</li>
+        <li>Votre liste d'articles Excel s'importe, avec le stock de départ</li>
+      </ul>
+      <div class="actions">
+        <a class="btn btn-grand" href="https://wa.me/22891512041?text=Bonjour%2C%20je%20veux%20voir%20Lotus%20QS%20dans%20ma%20quincaillerie%20%C3%A0%20...%20%28quartier%29.%20Quand%20pouvez-vous%20venir%20%3F" target="_blank" rel="noopener">Je veux l'essai gratuit de 30 jours<span class="sr"> (s'ouvre dans une nouvelle fenêtre)</span></a>
+      </div>
+      <p class="micro">Gratuit pendant 30 jours. Je viens l'installer sur l'ordinateur Windows de votre quincaillerie, j'importe vos articles et je forme votre vendeur.</p>
+      <ul class="garanties">
+        <li>Marche sans internet</li>
+        <li>30 jours gratuits</li>
+        <li>Vos données restent sur votre ordinateur</li>
+      </ul>
+    </div>
+    <figure class="fen">
+      <img src="tableau.webp" width="1280" height="575" fetchpriority="high" alt="Tableau de bord de Lotus QS : ventes du jour, argent encaissé, crédits clients, ventes du mois avec la marge, alerte de stock bas et dernières ventes">
+      <figcaption>Exemple avec des données de test</figcaption>
+    </figure>
+  </div>
+</div>
+
+<main id="contenu">
+
+<section class="choix" aria-labelledby="t-choix">
+  <div class="wrap">
+    <h2 id="t-choix">Qu'est-ce qui vous complique le plus la quincaillerie&nbsp;?</h2>
+    <p class="intro">Touchez le vôtre. Un message WhatsApp s'ouvre déjà rempli : vous n'avez plus qu'à ajouter votre quartier.</p>
+    <div class="choix-grille">
+      <a class="choix-carte" href="https://wa.me/22891512041?text=Bonjour%2C%20mon%20probl%C3%A8me%20%3A%20je%20ne%20sais%20pas%20ce%20qui%20va%20manquer%20en%20rayon.%20Montrez-moi%20Lotus%20QS%20pour%20ma%20quincaillerie%20%C3%A0%20...%20%28quartier%29." target="_blank" rel="noopener">
+        <div>
+          <h3>Je ne sais pas ce qui va manquer</h3>
+          <p>Un client demande un article, le rayon est vide. Vous le découvrez devant lui, et vous perdez la vente.</p>
+        </div>
+        <span class="go">Me montrer l'alerte de stock bas →<span class="sr"> (s'ouvre dans une nouvelle fenêtre)</span></span>
+      </a>
+      <a class="choix-carte" href="https://wa.me/22891512041?text=Bonjour%2C%20mon%20probl%C3%A8me%20%3A%20je%20vends%20au%20m%C3%A8tre%2C%20au%20kilo%20et%20%C3%A0%20la%20pi%C3%A8ce.%20Montrez-moi%20Lotus%20QS%20pour%20ma%20quincaillerie%20%C3%A0%20...%20%28quartier%29." target="_blank" rel="noopener">
+        <div>
+          <h3>Je vends au mètre, au kilo, à la pièce</h3>
+          <p>Deux mètres et demi de câble, un kilo de clous, trois robinets. Votre cahier ne sait pas compter les décimales.</p>
+        </div>
+        <span class="go">Me montrer une vente au mètre →<span class="sr"> (s'ouvre dans une nouvelle fenêtre)</span></span>
+      </a>
+      <a class="choix-carte" href="https://wa.me/22891512041?text=Bonjour%2C%20mon%20probl%C3%A8me%20%3A%20j%27ai%20des%20centaines%20d%27articles%20%C3%A0%20saisir.%20Montrez-moi%20Lotus%20QS%20pour%20ma%20quincaillerie%20%C3%A0%20...%20%28quartier%29." target="_blank" rel="noopener">
+        <div>
+          <h3>J'ai des centaines d'articles à saisir</h3>
+          <p>Retaper toute la quincaillerie prend des jours. Si la liste existe déjà dans Excel, elle peut entrer d'un coup.</p>
+        </div>
+        <span class="go">Me montrer l'import Excel →<span class="sr"> (s'ouvre dans une nouvelle fenêtre)</span></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="voir" aria-labelledby="t-voir">
+  <div class="wrap">
+    <h2 id="t-voir">Voilà ce que vous aurez sous les yeux</h2>
+    <p class="intro">De vraies pages du logiciel. Les noms et les chiffres sont des données de test.</p>
+
+    <div class="voir-ligne">
+      <div class="voir-texte">
+        <span class="tag">ARTICLES</span>
+        <h3>Chaque article, avec ses deux prix et sa marge</h3>
+        <p>Référence, code-barres, catégorie, unité, prix détail, prix gros, coût moyen et marge. Le coût moyen se met à jour tout seul à chaque achat, transport compris. Vous importez ou exportez la liste avec Excel.</p>
+      </div>
+      <figure class="voir-img">
+        <img src="articles.webp" width="1280" height="735" loading="lazy" alt="Page Articles et prix de Lotus QS : ciment, peinture, joint, robinet, clous et câble électrique avec catégorie, unité, prix détail, prix gros, coût moyen, marge et seuil d'alerte">
+        <figcaption>Articles et prix, données de test</figcaption>
+      </figure>
+    </div>
+
+    <div class="voir-ligne">
+      <div class="voir-texte">
+        <span class="tag">VENTE</span>
+        <h3>Une vente en quelques secondes, au mètre ou à la pièce</h3>
+        <p>Vous cherchez l'article ou vous scannez son code-barres. La quantité accepte les décimales : 2,5 mètres de câble, 2 boîtes de clous. Le stock restant s'affiche sous chaque ligne, et le total se calcule seul.</p>
+      </div>
+      <figure class="voir-img">
+        <img src="vente.webp" width="1280" height="700" loading="lazy" alt="Page Nouvelle vente : 2,5 mètres de câble électrique et 2 boîtes de clous, stock restant sous chaque ligne, total à payer 4 125 F, mode de paiement et bouton Valider la vente">
+        <figcaption>Nouvelle vente, données de test</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="suite" aria-labelledby="t-suite">
+  <div class="wrap">
+    <h2 id="t-suite">30 jours gratuits, puis la clé</h2>
+    <p class="intro">Vous essayez avec vos vrais articles et vos vraies ventes.</p>
+    <ol class="etapes">
+      <li><span class="quand">Jour 1</span><strong>Je viens, j'installe, j'importe</strong><span class="t">J'installe Lotus QS sur l'ordinateur de la quincaillerie. J'importe votre liste d'articles avec le stock de départ, et je forme votre vendeur à la vente et au scan.</span></li>
+      <li><span class="quand">Semaine 1</span><strong>Chaque vente compte</strong><span class="t">Chaque vente et chaque achat met le stock à jour. Le soir, vous ouvrez le tableau de bord : ventes du jour, argent encaissé, crédits clients, articles en stock bas.</span></li>
+      <li><span class="quand">Jour 30</span><strong>Vous demandez la clé</strong><span class="t">Dans le menu Licence, copiez le code de votre ordinateur et envoyez-le moi sur WhatsApp. Je vous réponds avec la clé. Vous la collez, vous cliquez sur Activer, et vous continuez.</span></li>
+    </ol>
+    <div class="telecharger">
+      <a class="btn btn-grand" href="https://wa.me/22891512041?text=Bonjour%2C%20je%20veux%20voir%20Lotus%20QS%20dans%20ma%20quincaillerie%20%C3%A0%20...%20%28quartier%29.%20Quand%20pouvez-vous%20venir%20%3F" target="_blank" rel="noopener">Demander l'essai gratuit<span class="sr"> (s'ouvre dans une nouvelle fenêtre)</span></a>
+      <p>Écrivez-moi votre quartier : je vous dis quand je peux venir.</p>
+    </div>
+  </div>
+</section>
+
+<section class="contenu" aria-labelledby="t-contenu">
+  <div class="wrap">
+    <h2 id="t-contenu">Tout ce que contient Lotus QS</h2>
+    <p class="intro">Une quincaillerie ne travaille pas comme un dépôt de ciment. Beaucoup d'articles, des références, des quantités qui ne tombent pas toujours juste : chaque fonction vient de là.</p>
+    <div class="fonctions">
+      <div><details><summary>Prix détail et prix gros</summary><p>Chaque article a un prix détail, un prix de gros et la quantité à partir de laquelle le gros s'applique. Le bon prix se met seul à la vente.</p></details><details><summary>Vente au mètre, au kilo, à la pièce</summary><p>Câble au mètre, clous au kilo, robinets à la pièce. Les quantités peuvent avoir des décimales, arrondies à trois chiffres.</p></details><details><summary>Recherche sans accent et scan de code-barres</summary><p>Tapez « robinet » ou « ROBINET », avec ou sans accent. Avec un lecteur de code-barres, vous scannez et l'article s'ajoute à la vente.</p></details><details><summary>Facture PDF avec le montant en lettres</summary><p>Une facture avec le client, les quantités, ce qui est payé et ce qui reste à payer. Prête à imprimer ou à envoyer.</p></details><details><summary>Vente comptant ou à crédit</summary><p>Le client paie tout de suite ou prend à crédit. Dans le second cas, la dette apparaît sur sa fiche, avec un plafond de crédit.</p></details><details><summary>TVA, remise et livraison</summary><p>La TVA de 18 % s'ajoute d'un clic quand il en faut une. Vous pouvez faire une remise et noter l'adresse ou le camion de livraison.</p></details></div>
+      <div><details><summary>Fiche article complète</summary><p>Désignation, référence, code-barres, catégorie, unité, seuil d'alerte. Vingt-deux catégories de quincaillerie sont proposées, et vous pouvez écrire les vôtres.</p></details><details><summary>Import et export Excel</summary><p>Vous avez déjà votre liste d'articles dans Excel&nbsp;? Vous l'importez avec le stock de départ. Vous pouvez aussi tout exporter pour votre comptable.</p></details><details><summary>Achats, fournisseurs et coût moyen</summary><p>À chaque achat, le transport est réparti et le coût moyen est recalculé. Vous voyez ce que vous devez à chaque fournisseur, et votre marge sur chaque article.</p></details><details><summary>Plusieurs magasins, mouvements de stock, inventaire</summary><p>Chaque magasin a son stock. Le stock est la somme des mouvements : achats, ventes, transferts, casse. Personne ne le tape à la main.</p></details><details><summary>Alerte de stock bas</summary><p>Le tableau de bord liste les articles passés sous leur seuil. Vous savez quoi commander avant que le rayon soit vide.</p></details><details><summary>Comptes administrateur et vendeur, sauvegarde chaque jour</summary><p>Chacun a son mot de passe. Une copie des données est faite chaque jour et les 30 dernières sont gardées.</p></details></div>
+    </div>
+  </div>
+</section>
+
+<section class="compare" aria-labelledby="t-compare">
+  <div class="wrap">
+    <h2 id="t-compare">Le cahier ou Excel, ou Lotus QS&nbsp;?</h2>
+    <p class="intro">Le cahier et Excel ont servi pendant des années. Voici ce qui change.</p>
+    <table class="tableau">
+      <thead><tr><th scope="col"><span class="sr">Question</span></th><th scope="col">Cahier ou Excel</th><th scope="col">Lotus QS</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Le stock d'un article</th><td>À recompter ou à recalculer</td><td>Calculé après chaque vente et chaque achat</td></tr>
+        <tr><th scope="row">Trouver un article</th><td>Feuilleter ou filtrer</td><td>Recherche sans accent, ou scan du code-barres</td></tr>
+        <tr><th scope="row">Vendre 2,5 m de câble</th><td>Calcul à la main</td><td>Quantité décimale, total automatique</td></tr>
+        <tr><th scope="row">Prix détail et prix gros</th><td>Deux colonnes à surveiller</td><td>Le bon prix s'applique selon la quantité</td></tr>
+        <tr><th scope="row">Ce qui va manquer</th><td>Vous le découvrez devant le client</td><td>Liste des articles sous leur seuil</td></tr>
+        <tr><th scope="row">La facture</th><td>À écrire à la main</td><td>PDF avec le montant en lettres</td></tr>
+        <tr><th scope="row">Sans internet</th><td>Oui</td><td>Oui</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="offre" aria-labelledby="t-offre">
+  <div class="wrap">
+    <h2 id="t-offre">Ce que vous avez avec Lotus QS</h2>
+    <div class="offre-grid">
+      <div>
+        <ul class="inclus">
+          <li>30 jours d'essai complet, sans rien payer</li>
+          <li>Installation chez vous, avec moi</li>
+          <li>Votre liste d'articles importée avec le stock de départ</li>
+          <li>Formation de votre vendeur</li>
+          <li>Fonctionne sans internet</li>
+          <li>Support par WhatsApp</li>
+          <li>Une copie de vos données chaque jour</li>
+          <li>Bilan à 30 jours avec moi, avant de décider</li>
+        </ul>
+        <p class="ancre">Retrouver une seule erreur de stock ou un seul crédit oublié peut déjà couvrir plusieurs mois de logiciel. Pendant l'essai, c'est ce que vous cherchez, sans rien risquer.</p>
+      </div>
+      <div class="prix-carte">
+        <div class="prix">Essai gratuit <small>30 jours</small></div>
+        <p class="par-jour">Puis un prix par ordinateur</p>
+        <a class="btn" href="https://wa.me/22891512041?text=Bonjour%2C%20je%20veux%20voir%20Lotus%20QS%20dans%20ma%20quincaillerie%20%C3%A0%20...%20%28quartier%29.%20Quand%20pouvez-vous%20venir%20%3F" target="_blank" rel="noopener">Je veux l'essai gratuit<span class="sr"> (s'ouvre dans une nouvelle fenêtre)</span></a>
+        <p class="annuel">Le prix vous est donné <strong>sur WhatsApp, avant l'installation</strong>. Vous savez ce que vous paierez avant de commencer.</p>
+        <a class="btn btn-ligne" href="https://wa.me/22891512041?text=Bonjour%2C%20quel%20est%20le%20prix%20de%20Lotus%20QS%20par%20ordinateur%20%3F%20Ma%20quincaillerie%20est%20%C3%A0%20...%20%28quartier%29." target="_blank" rel="noopener">Je demande le prix<span class="sr"> (s'ouvre dans une nouvelle fenêtre)</span></a>
+        <p class="note">Vous ne payez que si vous continuez après l'essai.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bande-garantie" aria-labelledby="t-garantie">
+  <div class="wrap">
+    <h2 id="t-garantie">Essayer ne coûte rien</h2>
+    <p>Pendant 30 jours, Lotus QS est complet et gratuit. Si au bout de ce temps il ne vous a montré ni une erreur de stock, ni un article qui allait manquer, ni un client qui vous devait de l'argent sans que vous le sachiez, vous ne me demandez pas la clé et vous ne payez rien.</p>
+  </div>
+</section>
+
+<!-- AVIS CLIENTS : absents par choix, aucun client réel pour l'instant. Dès qu'un gérant donne une phrase, ajouter une section avant les questions avec ses mots exacts, son prénom, sa quincaillerie et son quartier. -->
+
+<section class="faq" aria-labelledby="t-faq">
+  <div class="wrap">
+    <h2 id="t-faq">Les questions des gérants</h2>
+    <details>
+      <summary>Que se passe-t-il au bout de 30 jours&nbsp;?</summary>
+      <p>Un bandeau vous prévient. Dans le menu Licence, vous copiez le code de votre ordinateur et vous me l'envoyez sur WhatsApp. Je vous réponds avec une clé, vous la collez et vous cliquez sur Activer. La clé est liée à l'ordinateur du magasin.</p>
+    </details>
+    <details>
+      <summary>Je ne sais pas l'installer tout seul.</summary>
+      <p>Écrivez-moi sur WhatsApp : je viens chez vous, j'installe, j'importe votre liste d'articles et je forme votre vendeur.</p>
+    </details>
+    <details>
+      <summary>J'ai des centaines d'articles. Je dois tout retaper&nbsp;?</summary>
+      <p>Non. Si vous avez une liste dans Excel, elle s'importe avec le stock de départ. Sinon, je vous prépare un fichier modèle à remplir.</p>
+    </details>
+    <details>
+      <summary>Mon vendeur va refuser de s'en servir.</summary>
+      <p>Je le forme chez vous devant son poste. Une vente se fait en cherchant l'article ou en le scannant, puis en validant. S'il se bloque, il m'écrit sur WhatsApp.</p>
+    </details>
+    <details>
+      <summary>Il me faut un lecteur de code-barres&nbsp;?</summary>
+      <p>Non, ce n'est pas obligatoire. Sans lecteur, vous cherchez l'article par son nom ou sa référence. Si vous en avez un, vous scannez dans le champ prévu.</p>
+    </details>
+    <details>
+      <summary>Et s'il n'y a pas d'internet&nbsp;?</summary>
+      <p>Lotus QS n'en a pas besoin. Vos ventes continuent, et vos données restent sur l'ordinateur du magasin.</p>
+    </details>
+    <details>
+      <summary>Quel ordinateur me faut-il&nbsp;?</summary>
+      <p>Un ordinateur Windows dans la quincaillerie. Vos données restent dessus, pas sur internet.</p>
+    </details>
+    <details>
+      <summary>Si mon ordinateur tombe en panne&nbsp;?</summary>
+      <p>Une copie de vos données est faite chaque jour. Elle se récupère sur un autre ordinateur, et je vous montre comment.</p>
+    </details>
+    <details>
+      <summary>Si j'arrête de payer, je perds mes données&nbsp;?</summary>
+      <p>Non. Vos données restent sur votre ordinateur. Vous pouvez toujours les consulter, imprimer les factures et exporter vers Excel. Seules les nouvelles ventes, les nouveaux achats et les paiements ne s'enregistrent plus.</p>
+    </details>
+    <details>
+      <summary>C'est quoi, la différence avec CimentStock&nbsp;?</summary>
+      <p>CimentStock est fait pour un dépôt de ciment : peu de produits, vendus en sacs et en tonnes. Lotus QS est fait pour une quincaillerie : beaucoup d'articles, des références, des codes-barres et des quantités au mètre ou au kilo.</p>
+    </details>
+    <details>
+      <summary>Combien ça coûte&nbsp;?</summary>
+      <p>L'essai est gratuit pendant 30 jours. Ensuite, le prix se paie par ordinateur. Écrivez-moi sur WhatsApp, je vous le donne avant l'installation.</p>
+    </details>
+    
+  </div>
+</section>
+
+<section class="final" aria-labelledby="t-final">
+  <div class="wrap">
+    <h2 id="t-final">Chaque soir sans Lotus QS, vous ne savez pas.</h2>
+    <p class="places">Écrivez-moi votre quartier, je vous dis quand je viens.</p>
+    <div>
+      <div class="actions" style="justify-content:center">
+        <a class="btn btn-grand" href="https://wa.me/22891512041?text=Bonjour%2C%20je%20veux%20voir%20Lotus%20QS%20dans%20ma%20quincaillerie%20%C3%A0%20...%20%28quartier%29.%20Quand%20pouvez-vous%20venir%20%3F" target="_blank" rel="noopener">Je veux l'essai gratuit<span class="sr"> (s'ouvre dans une nouvelle fenêtre)</span></a>
+      </div>
+    </div>
+    <p class="micro">Gratuit pendant 30 jours. Le prix vous est donné avant l'installation.</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 DEKOPI GOLD · Lomé, Togo</span>
+    <a href="../produits.html" style="display:inline-flex;align-items:center;min-height:44px;color:var(--bleu)">Voir tous les produits</a>
+  </div>
+</footer>
+
+<div class="barre-bas">
+  <div class="wrap">
+    <span><b>Essai gratuit 30 jours</b>installé chez vous</span>
+    <a class="btn btn-vert" href="https://wa.me/22891512041?text=Bonjour%2C%20je%20veux%20voir%20Lotus%20QS%20dans%20ma%20quincaillerie%20%C3%A0%20...%20%28quartier%29.%20Quand%20pouvez-vous%20venir%20%3F" target="_blank" rel="noopener">WhatsApp<span class="sr"> (s'ouvre dans une nouvelle fenêtre)</span></a>
+  </div>
+</div>
+
+</body>
+</html>
