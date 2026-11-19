@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- Page sans aucun script : la politique de sécurité interdit tout JavaScript. -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; base-uri 'none'; form-action 'none'; object-src 'none'">
+<!-- CSP : seuls les scripts de ce même site sont autorisés (GSAP en copie locale dans ../vendor, aucun script en ligne, aucun CDN). -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; connect-src 'none'; img-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; base-uri 'none'; form-action 'none'; object-src 'none'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="theme-color" content="#12263F">
 <title>CimentStock | Le stock de votre dépôt de ciment, au sac près</title>
@@ -29,6 +29,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="../anim-tete.js"></script>
+<script defer src="../vendor/gsap.min.js"></script>
+<script defer src="../vendor/ScrollTrigger.min.js"></script>
+<script defer src="anim-cs.js?v=1"></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -75,6 +79,7 @@
 :root{
   --creme:#F5F3EE;
   --lait:#E3E0D8;
+  --brume:#E6EBF2;
   --encre:#12263F;
   --violet:#1F4E85;
   --or:#F4A83A;
@@ -146,11 +151,11 @@ header.haut{position:sticky;top:0;z-index:20;background:rgba(245,243,238,.94);ba
 .carte h3{margin-bottom:10px}
 .carte p{color:var(--muted)}
 
-/* étapes */
-.etapes{background:var(--creme)}
-.liste-etapes{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;list-style:none;padding:0;counter-reset:e}
-.liste-etapes li{counter-increment:e;padding-top:18px;border-top:3px solid var(--or)}
-.liste-etapes li::before{content:"Étape " counter(e);display:block;font-size:.82rem;font-weight:600;color:var(--violet);margin-bottom:6px}
+/* étapes : bande bleu très pâle, cartes blanches, pastille ambre numérotée (comme « Comment commander » des Produits) */
+.etapes{background:var(--brume)}
+.liste-etapes{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;list-style:none;padding:0;counter-reset:e}
+.liste-etapes li{counter-increment:e;background:var(--blanc);border-radius:var(--rayon);padding:24px}
+.liste-etapes li::before{content:counter(e);display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--or);color:var(--encre);font-weight:600;margin-bottom:12px}
 .liste-etapes strong{display:block;font-family:Fraunces,Georgia,serif;font-size:1.25rem;margin-bottom:6px}
 .liste-etapes span{color:var(--muted)}
 
@@ -163,8 +168,10 @@ header.haut{position:sticky;top:0;z-index:20;background:rgba(245,243,238,.94);ba
 .inclus li{padding-left:30px;position:relative}
 .inclus li::before{content:"";position:absolute;left:0;top:.45em;width:16px;height:16px;border-radius:50%;background:var(--or)}
 .inclus li::after{content:"";position:absolute;left:5px;top:.6em;width:5px;height:9px;border:solid var(--encre);border-width:0 2px 2px 0;transform:rotate(45deg)}
-.garantie{margin-top:26px;padding:18px 20px;border-radius:var(--rayon);border:1px solid rgba(255,255,255,.28);border-left:4px solid var(--or)}
-.garantie h3{font-size:1.1rem;color:var(--or-clair);margin-bottom:6px}
+/* garantie : bande ambre pleine largeur, comme la bande de chiffres des autres pages */
+.bande-garantie{background:var(--or);color:var(--encre);padding:48px 0}
+.bande-garantie h2{margin-bottom:10px}
+.bande-garantie p{font-family:Fraunces,Georgia,serif;font-size:clamp(1.2rem,2.6vw,1.6rem);line-height:1.35;max-width:36em}
 .prix-carte{background:var(--blanc);color:var(--encre);border-radius:var(--rayon);padding:28px 24px}
 .prix{font-family:Fraunces,Georgia,serif;font-size:2.6rem;line-height:1.05;font-weight:700;color:var(--violet)}
 .prix small{font-family:Poppins,sans-serif;font-size:1rem;font-weight:500;color:var(--muted)}
@@ -210,6 +217,10 @@ footer a{display:inline-flex;align-items:center;min-height:44px;color:var(--viol
   .barre-bas span b{display:block;font-size:.98rem;color:var(--or-clair)}
   .barre-bas .btn{min-height:44px;padding:10px 18px;font-size:.95rem;white-space:nowrap}
 }
+/* Animations (GSAP) : la barre du téléphone attend que le gros bouton du haut disparaisse.
+   Filet de sécurité : si le script ne démarre pas, elle apparaît toute seule au bout de 3 s. */
+@keyframes monter{0%,99%{transform:translateY(110%)}100%{transform:none}}
+@media (max-width:820px){html.anim .barre-bas{animation:monter 3s forwards}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
 </style>
 </head>
@@ -222,7 +233,7 @@ footer a{display:inline-flex;align-items:center;min-height:44px;color:var(--viol
     <nav class="fil" aria-label="Fil d'Ariane">
       <a href="../produits.html">Produits</a><span aria-hidden="true">/</span><span aria-current="page">CimentStock</span>
     </nav>
-    <a class="btn btn-vert" href="https://wa.me/22891512041?text=Bonjour%2C%20je%20veux%20CimentStock%20pour%20mon%20d%C3%A9p%C3%B4t%20%C3%A0%20...%20(quartier).%20Quand%20pouvez-vous%20venir%20%3F" target="_blank" rel="noopener">WhatsApp<span class="sr"> (s'ouvre dans une nouvelle fenêtre)</span></a>
+    <a class="btn" href="https://wa.me/22891512041?text=Bonjour%2C%20je%20veux%20CimentStock%20pour%20mon%20d%C3%A9p%C3%B4t%20%C3%A0%20...%20(quartier).%20Quand%20pouvez-vous%20venir%20%3F" target="_blank" rel="noopener">WhatsApp<span class="sr"> (s'ouvre dans une nouvelle fenêtre)</span></a>
   </div>
 </header>
 
@@ -232,7 +243,7 @@ footer a{display:inline-flex;align-items:center;min-height:44px;color:var(--viol
     <div>
       <h1>Combien de sacs de ciment <span style="white-space:nowrap">avez-vous</span> en stock <em>ce soir&nbsp;?</em></h1>
       <p class="sous">CimentStock vous le dit au sac près, même sans internet. <strong>400&nbsp;FCFA par jour.</strong></p>
-      <a class="btn btn-grand btn-vert" href="https://wa.me/22891512041?text=Bonjour%2C%20je%20veux%20CimentStock%20pour%20mon%20d%C3%A9p%C3%B4t%20%C3%A0%20...%20(quartier).%20Quand%20pouvez-vous%20venir%20%3F" target="_blank" rel="noopener">Je le veux dans mon dépôt, par WhatsApp<span class="sr"> (s'ouvre dans une nouvelle fenêtre)</span></a>
+      <a class="btn btn-grand" href="https://wa.me/22891512041?text=Bonjour%2C%20je%20veux%20CimentStock%20pour%20mon%20d%C3%A9p%C3%B4t%20%C3%A0%20...%20(quartier).%20Quand%20pouvez-vous%20venir%20%3F" target="_blank" rel="noopener">Je le veux dans mon dépôt, par WhatsApp<span class="sr"> (s'ouvre dans une nouvelle fenêtre)</span></a>
       <p class="micro">Je l'installe chez vous en une journée. Si le premier mois ne vous apprend rien, je vous rembourse.</p>
       <ul class="puces">
         <li>Marche sans internet</li>
@@ -310,19 +321,23 @@ footer a{display:inline-flex;align-items:center;min-height:44px;color:var(--viol
           <li>Une copie de vos données, et je vous montre comment la refaire</li>
           <li>Bilan à 30 jours, chez vous</li>
         </ul>
-        <div class="garantie">
-          <h3>Ma garantie</h3>
-          <p>Si au bout de 30 jours CimentStock ne vous a montré ni une erreur de stock, ni un client qui vous devait de l'argent sans que vous le sachiez, je vous rembourse le mois.</p>
-        </div>
       </div>
       <div class="prix-carte">
         <div class="prix">12&nbsp;000&nbsp;FCFA <small>par mois</small></div>
         <p class="par-jour">Soit 400&nbsp;FCFA par jour</p>
-        <a class="btn btn-vert" href="https://wa.me/22891512041?text=Bonjour%2C%20je%20veux%20CimentStock%20pour%20mon%20d%C3%A9p%C3%B4t%20%C3%A0%20...%20(quartier).%20Quand%20pouvez-vous%20venir%20%3F" target="_blank" rel="noopener">Réserver mon installation<span class="sr"> (s'ouvre dans une nouvelle fenêtre)</span></a>
+        <a class="btn" href="https://wa.me/22891512041?text=Bonjour%2C%20je%20veux%20CimentStock%20pour%20mon%20d%C3%A9p%C3%B4t%20%C3%A0%20...%20(quartier).%20Quand%20pouvez-vous%20venir%20%3F" target="_blank" rel="noopener">Réserver mon installation<span class="sr"> (s'ouvre dans une nouvelle fenêtre)</span></a>
         <p class="annuel"><strong>120&nbsp;000&nbsp;FCFA par an</strong> : vous payez 10 mois et vous en avez 12.</p>
         <a class="btn btn-ligne" href="https://wa.me/22891512041?text=Bonjour%2C%20je%20veux%20CimentStock%20%C3%A0%20l%27ann%C3%A9e%20(120%20000%20F)%20pour%20mon%20d%C3%A9p%C3%B4t%20%C3%A0%20...%20(quartier)." target="_blank" rel="noopener">Je prends l'année<span class="sr"> (s'ouvre dans une nouvelle fenêtre)</span></a>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ========== 5 bis. LA GARANTIE ========== -->
+<section class="bande-garantie" aria-labelledby="t-garantie">
+  <div class="wrap">
+    <h2 id="t-garantie">Ma garantie</h2>
+    <p>Si au bout de 30 jours CimentStock ne vous a montré ni une erreur de stock, ni un client qui vous devait de l'argent sans que vous le sachiez, je vous rembourse le mois.</p>
   </div>
 </section>
 
@@ -365,7 +380,7 @@ footer a{display:inline-flex;align-items:center;min-height:44px;color:var(--viol
     <!-- Le compteur « il en reste 5 » et sa date ont été retirés le 19/11/2026 : un chiffre qui doit être refait chaque lundi finit faux. À remettre seulement si Pierre le tient à jour. -->
     <p class="places">J'installe 5 dépôts par semaine.</p>
     <div>
-      <a class="btn btn-grand btn-vert" href="https://wa.me/22891512041?text=Bonjour%2C%20je%20veux%20CimentStock%20pour%20mon%20d%C3%A9p%C3%B4t%20%C3%A0%20...%20(quartier).%20Quand%20pouvez-vous%20venir%20%3F" target="_blank" rel="noopener">Réserver mon installation par WhatsApp<span class="sr"> (s'ouvre dans une nouvelle fenêtre)</span></a>
+      <a class="btn btn-grand" href="https://wa.me/22891512041?text=Bonjour%2C%20je%20veux%20CimentStock%20pour%20mon%20d%C3%A9p%C3%B4t%20%C3%A0%20...%20(quartier).%20Quand%20pouvez-vous%20venir%20%3F" target="_blank" rel="noopener">Réserver mon installation par WhatsApp<span class="sr"> (s'ouvre dans une nouvelle fenêtre)</span></a>
     </div>
     <p class="micro">12&nbsp;000&nbsp;FCFA par mois. Remboursé si le premier mois ne vous apprend rien.</p>
   </div>
