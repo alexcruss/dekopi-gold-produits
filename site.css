@@ -171,8 +171,8 @@ a.carte{text-decoration:none;color:inherit}
 .contact{text-align:center;background:var(--encre);color:var(--creme);padding:64px 0;margin-top:40px}
 .contact h2{color:#fff}
 .contact .btn{margin-top:18px}
-.contact .liens a{display:inline-block;padding:12px 4px}
-.contact .liens{margin-top:8px;display:flex;justify-content:center;gap:16px;flex-wrap:wrap;color:#C9D5E3;font-size:.92rem}
+.contact .liens a,.contact .liens span{display:inline-block;padding:12px 4px}
+.contact .liens{margin-top:8px;display:flex;justify-content:center;align-items:center;gap:16px;flex-wrap:wrap;color:#C9D5E3;font-size:.92rem}
 .contact p{color:#C9D5E3!important}
 footer a{display:inline-block;padding:12px 0}
 footer{border-top:1px solid var(--lait);padding:12px 0;font-size:.82rem;color:var(--muted)}
