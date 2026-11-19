@@ -14,7 +14,7 @@
     { id: "cimentstock", img: "cimentstock.webp", alt: "CimentStock : tableau de bord des ventes et du stock",
       nom: ["CimentStock", "CimentStock"], type: ["Logiciel · Commerce de ciment", "Software · Cement shops"], prix: ["12 000 FCFA / mois", "12,000 FCFA / month"] },
     { id: "lotusqs", img: "lotusqs.webp", alt: "Lotus QS : tableau de bord d'une quincaillerie",
-      nom: ["Lotus QS", "Lotus QS"], type: ["Logiciel · Quincaillerie", "Software · Hardware stores"], prix: ["Essai gratuit 30 jours", "Free 30-day trial"] },
+      nom: ["Lotus QS", "Lotus QS"], type: ["Logiciel · Quincaillerie", "Software · Hardware stores"], prix: ["15 000 FCFA / mois", "15,000 FCFA / month"] },
     { id: "assimeto", img: "assimeto.webp", alt: "ASSIMETO : courses, stock et plats togolais",
       nom: ["ASSIMETO", "ASSIMETO"], type: ["Application · Cuisine et courses", "App · Cooking and groceries"], prix: ["Abonnement Flooz / T-Money · prix à fixer", "Flooz / T-Money subscription · price TBD"] },
     { id: "formation-alibaba-pinduoduo", img: "formation-alibaba-pinduoduo.webp", alt: "Affiche de la formation Alibaba et Pinduoduo : 10 000 F seulement",
