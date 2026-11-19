@@ -4,24 +4,74 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Page sans aucun script : la politique de sécurité interdit tout JavaScript. -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; base-uri 'none'; form-action 'none'; object-src 'none'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="theme-color" content="#12263F">
 <title>CimentStock | Le stock de votre dépôt de ciment, au sac près</title>
-<meta name="description" content="CimentStock suit le stock, les ventes et les crédits clients de votre dépôt de ciment, sans internet. 400 F par jour, installé chez vous à Lomé, remboursé si le premier mois ne vous apprend rien.">
+<meta name="description" content="Le stock, les ventes et les crédits clients de votre dépôt de ciment, même sans internet. 12 000 FCFA par mois, installé chez vous à Lomé.">
+<link rel="canonical" href="https://produits.pierredegboevi.com/cimentstock/">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="DEKOPI GOLD">
 <meta property="og:locale" content="fr_FR">
+<meta property="og:url" content="https://produits.pierredegboevi.com/cimentstock/">
 <meta property="og:title" content="Combien de sacs de ciment avez-vous en stock ce soir ?">
-<meta property="og:description" content="CimentStock vous le dit au sac près. Même sans internet. 400 F par jour.">
+<meta property="og:description" content="CimentStock vous le dit au sac près, même sans internet. 400 FCFA par jour.">
 <meta property="og:image" content="https://produits.pierredegboevi.com/apercu-2.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="600">
+<meta property="og:image:alt" content="CimentStock : le stock d'un dépôt de ciment, au sac près">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Combien de sacs de ciment avez-vous en stock ce soir ?">
+<meta name="twitter:description" content="CimentStock vous le dit au sac près, même sans internet. 400 FCFA par jour.">
 <meta name="twitter:image" content="https://produits.pierredegboevi.com/apercu-2.jpg">
 <link rel="icon" type="image/png" href="logo.png">
+<link rel="apple-touch-icon" href="logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "CimentStock",
+      "applicationCategory": "BusinessApplication",
+      "description": "Achats, ventes, crédits clients et stock d'un dépôt de ciment. Fonctionne sans internet, les données restent sur l'ordinateur du dépôt.",
+      "url": "https://produits.pierredegboevi.com/cimentstock/",
+      "image": "https://produits.pierredegboevi.com/cimentstock.webp",
+      "provider": {
+        "@type": "Organization",
+        "@id": "https://produits.pierredegboevi.com/#organisation",
+        "name": "DEKOPI GOLD",
+        "url": "https://produits.pierredegboevi.com/"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "12000",
+        "priceCurrency": "XOF",
+        "availability": "https://schema.org/InStock",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "12000",
+          "priceCurrency": "XOF",
+          "unitCode": "MON"
+        }
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "DEKOPI GOLD", "item": "https://produits.pierredegboevi.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Produits", "item": "https://produits.pierredegboevi.com/produits.html" },
+        { "@type": "ListItem", "position": 3, "name": "CimentStock", "item": "https://produits.pierredegboevi.com/cimentstock/" }
+      ]
+    }
+  ]
+}
+</script>
 <style>
+/* Mêmes couleurs et mêmes réglages que le reste du site (site.css) : bleu nuit, ambre, fond crème. */
 :root{
   --creme:#F5F3EE;
   --lait:#E3E0D8;
@@ -31,216 +81,203 @@
   --or-clair:#F9C16B;
   --blanc:#FFFFFF;
   --muted:#55667A;
-  --vert:#1E7A46;
-  --rayon:16px;
+  --rayon:12px;
 }
 *{box-sizing:border-box;margin:0}
 html{scroll-behavior:smooth}
-body{font-family:Poppins,system-ui,sans-serif;background:var(--creme);color:var(--encre);line-height:1.6;font-size:16px;padding-bottom:84px}
+body{font-family:Poppins,system-ui,sans-serif;background:var(--creme);color:var(--encre);line-height:1.6;font-size:16px}
 img{max-width:100%;height:auto;display:block}
 a{color:inherit}
-.wrap{width:min(1040px,100% - 32px);margin-inline:auto}
-h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.12;letter-spacing:-.01em}
-h1{font-size:clamp(2.3rem,7.2vw,4.1rem)}
-h2{font-size:clamp(1.7rem,4.2vw,2.5rem)}
-h3{font-size:1.3rem}
+.wrap{width:min(1120px,100% - 32px);margin-inline:auto}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.15;letter-spacing:-.01em}
+h1{font-size:clamp(2rem,5.5vw,3.4rem)}
+h2{font-size:clamp(1.6rem,3.5vw,2.3rem)}
+h3{font-size:1.25rem}
 section{padding:64px 0}
-:focus-visible{outline:3px solid var(--or-clair);outline-offset:3px}
+:focus-visible{outline:3px solid var(--or);outline-offset:3px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.saut{position:absolute;left:16px;top:-60px;z-index:50;background:var(--blanc);color:var(--encre);padding:10px 16px;border-radius:8px;font-weight:600}
+.saut:focus{top:8px}
+
+/* entête */
+header.haut{position:sticky;top:0;z-index:20;background:rgba(245,243,238,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--lait)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px}
+.logo{min-height:44px;display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:600;letter-spacing:.02em}
+.logo img{width:40px;height:40px;border-radius:50%;background:#fff}
+.fil{display:flex;align-items:center;gap:8px;font-size:.9rem;color:var(--muted)}
+.fil a{display:inline-flex;align-items:center;min-height:44px;color:var(--violet);text-decoration:none}
+.fil a:hover{text-decoration:underline}
+.fil [aria-current]{color:var(--encre);font-weight:500}
 
 /* boutons */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 28px;border-radius:999px;font-weight:600;font-size:1.05rem;text-decoration:none;border:2px solid transparent;background:var(--or);color:var(--encre);transition:transform .15s, background .15s;text-align:center}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:13px 22px;border-radius:10px;font-weight:600;font-size:1rem;text-decoration:none;border:2px solid transparent;background:var(--or);color:var(--encre);transition:transform .15s, background .15s;text-align:center}
 .btn:hover{transform:translateY(-2px);background:var(--or-clair)}
-.btn-grand{font-size:1.15rem;padding:18px 32px}
+.btn-grand{font-size:1.08rem;padding:15px 28px}
 .btn-vert{background:#25D366;color:#073B1B}
 .btn-vert:hover{background:#3BE07C}
 .btn-ligne{background:transparent;border-color:var(--encre);color:var(--encre)}
 .btn-ligne:hover{background:var(--encre);color:var(--creme)}
-.micro{font-size:.88rem;opacity:.85;margin-top:12px}
+.micro{font-size:.9rem;margin-top:14px;color:#D9E3EF}
 
-/* hero */
-.hero{color:var(--blanc);padding:44px 0 72px;border-radius:0 0 40px 40px;
-  background:
-    radial-gradient(560px 380px at 92% 4%, rgba(244,168,58,.30), transparent 62%),
-    radial-gradient(480px 400px at 0% 100%, rgba(60,110,170,.40), transparent 65%),
-    linear-gradient(135deg,#0B1A2D 0%,#12263F 52%,#1B3A5E 100%)}
-.marque{display:flex;align-items:center;gap:10px;font-weight:600;letter-spacing:.02em;margin-bottom:40px;font-size:.95rem}
-.marque img{width:34px;height:34px;border-radius:50%;background:#fff}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center}
+/* haut de page : bleu nuit uni, titre à gauche, vrai écran à droite */
+.hero{background:var(--encre);color:var(--creme);padding:56px 0 64px}
+.hero-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:48px;align-items:center}
 .hero-grid>*{min-width:0}
+.hero h1{color:#fff}
 .hero h1 em{font-style:normal;color:var(--or-clair)}
-.sous{font-size:clamp(1.1rem,2.6vw,1.35rem);margin:22px 0 28px;max-width:34ch}
+.sous{font-size:clamp(1.05rem,2.4vw,1.25rem);margin:20px 0 28px;max-width:30em;color:#D9E3EF}
 .sous strong{color:var(--or-clair)}
-.puces{display:flex;flex-wrap:wrap;gap:8px 18px;list-style:none;padding:0;margin-top:28px;font-size:.92rem}
-.puces li::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--or-clair);margin-right:8px}
-.fenetre{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.4)}
-.fenetre .barre{display:flex;gap:6px;padding:10px 12px;background:#E3EAF2}
-.fenetre .barre i{width:10px;height:10px;border-radius:50%;background:#B5C2D1}
-.legende{font-size:.78rem;opacity:.75;margin-top:10px;text-align:center}
+.puces{display:flex;flex-wrap:wrap;gap:6px 20px;list-style:none;padding:0;margin-top:26px;padding-top:16px;border-top:1px solid rgba(255,255,255,.22);font-size:.92rem;color:#D9E3EF;max-width:34em}
+.puces li::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--or);margin-right:8px}
+.fen{margin:0;background:var(--blanc);border:1px solid rgba(255,255,255,.2);border-radius:var(--rayon);overflow:hidden}
+.fen figcaption{padding:8px 12px;font-size:.8rem;color:var(--muted);border-top:1px solid var(--lait)}
 
-/* problème */
-.probleme{background:var(--creme);padding:44px 0;overflow:hidden}
-.defile{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
-.piste{display:flex;width:max-content;animation:defile 48s linear infinite}
-.lot{display:flex;gap:20px;padding-right:20px}
-.defile:hover .piste,.defile:focus-within .piste{animation-play-state:paused}
-.bulle{flex:0 0 min(340px,78vw);margin:0;background:var(--blanc);border:1px solid var(--lait);border-top:4px solid var(--or);border-radius:var(--rayon);padding:26px 24px;font-family:Fraunces,Georgia,serif;font-size:clamp(1.25rem,2.2vw,1.55rem);line-height:1.3;color:var(--encre)}
-.bulle.fin{color:var(--violet);border-top-color:var(--violet)}
-@keyframes defile{to{transform:translateX(-50%)}}
+/* ce qui se passe en votre absence */
+.probleme{background:var(--creme)}
+.probleme h2,.benefices h2,.etapes h2,.offre h2,.faq h2{margin-bottom:30px}
+.situations{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;list-style:none;padding:0}
+.situations li{background:var(--blanc);border:1px solid var(--lait);border-left:4px solid var(--or);border-radius:var(--rayon);padding:20px 22px;font-family:Fraunces,Georgia,serif;font-size:1.2rem;line-height:1.3}
+.situations li:last-child{border-left-color:var(--violet);color:var(--violet)}
 
-/* bénéfices */
+/* ce que CimentStock montre */
 .benefices{background:var(--blanc)}
-.benefices h2,.etapes h2,.offre h2,.faq h2{margin-bottom:34px}
 .cartes{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.carte{background:var(--creme);border-radius:var(--rayon);padding:28px 24px;border:1px solid var(--lait)}
-.carte .n{font-family:Fraunces,Georgia,serif;font-size:3rem;line-height:1;color:var(--or);font-weight:700}
-.carte h3{margin:14px 0 10px}
+.carte{background:var(--creme);border-radius:var(--rayon);padding:26px 24px;border:1px solid var(--lait)}
+.carte h3{margin-bottom:10px}
 .carte p{color:var(--muted)}
 
 /* étapes */
 .etapes{background:var(--creme)}
 .liste-etapes{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;list-style:none;padding:0;counter-reset:e}
 .liste-etapes li{counter-increment:e;padding-top:18px;border-top:3px solid var(--or)}
-.liste-etapes li::before{content:"Étape " counter(e);display:block;font-size:.8rem;font-weight:600;color:var(--violet);margin-bottom:6px;text-transform:uppercase;letter-spacing:.06em}
+.liste-etapes li::before{content:"Étape " counter(e);display:block;font-size:.82rem;font-weight:600;color:var(--violet);margin-bottom:6px}
 .liste-etapes strong{display:block;font-family:Fraunces,Georgia,serif;font-size:1.25rem;margin-bottom:6px}
 .liste-etapes span{color:var(--muted)}
 
 /* offre */
-.offre{background:linear-gradient(135deg,#0B1A2D 0%,#12263F 100%);color:var(--blanc);border-radius:40px}
+.offre{background:var(--encre);color:var(--creme)}
+.offre h2{color:#fff}
 .offre-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:start}
+.offre-grid>*{min-width:0}
 .inclus{list-style:none;padding:0;display:grid;gap:12px}
 .inclus li{padding-left:30px;position:relative}
-.inclus li::before{content:"";position:absolute;left:0;top:.45em;width:16px;height:16px;border-radius:50%;background:var(--or-clair)}
-.inclus li::after{content:"";position:absolute;left:5px;top:.62em;width:5px;height:9px;border:solid var(--encre);border-width:0 2px 2px 0;transform:rotate(45deg)}
+.inclus li::before{content:"";position:absolute;left:0;top:.45em;width:16px;height:16px;border-radius:50%;background:var(--or)}
+.inclus li::after{content:"";position:absolute;left:5px;top:.6em;width:5px;height:9px;border:solid var(--encre);border-width:0 2px 2px 0;transform:rotate(45deg)}
+.garantie{margin-top:26px;padding:18px 20px;border-radius:var(--rayon);border:1px solid rgba(255,255,255,.28);border-left:4px solid var(--or)}
+.garantie h3{font-size:1.1rem;color:var(--or-clair);margin-bottom:6px}
 .prix-carte{background:var(--blanc);color:var(--encre);border-radius:var(--rayon);padding:28px 24px}
-.prix{font-family:Fraunces,Georgia,serif;font-size:3rem;line-height:1;font-weight:700;color:var(--violet)}
+.prix{font-family:Fraunces,Georgia,serif;font-size:2.6rem;line-height:1.05;font-weight:700;color:var(--violet)}
 .prix small{font-family:Poppins,sans-serif;font-size:1rem;font-weight:500;color:var(--muted)}
 .par-jour{font-weight:600;margin:6px 0 16px}
-.annuel{background:var(--creme);border-radius:12px;padding:14px 16px;margin:18px 0;font-size:.95rem}
+.annuel{background:var(--creme);border-radius:10px;padding:14px 16px;margin:18px 0 12px;font-size:.95rem}
 .annuel strong{color:var(--violet)}
-.garantie{margin-top:26px;padding:20px 22px;border-radius:var(--rayon);border:2px dashed var(--or-clair);font-size:1.02rem}
-.garantie strong{color:var(--or-clair)}
 .prix-carte .btn{width:100%}
 
-/* avis */
-.avis{background:var(--blanc)}
-.avis blockquote{background:var(--creme);border-radius:var(--rayon);padding:24px;border-left:5px solid var(--or);font-family:Fraunces,Georgia,serif;font-size:1.15rem;line-height:1.4}
-.avis cite{display:block;margin-top:14px;font:500 .9rem Poppins,sans-serif;color:var(--muted);font-style:normal}
+/* avis : section en commentaire plus bas, tant qu'aucun gérant n'a donné sa phrase */
 
-/* faq */
+/* questions */
 .faq{background:var(--creme)}
-details{background:var(--blanc);border:1px solid var(--lait);border-radius:12px;padding:16px 20px;margin-bottom:10px}
-summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:16px}
+details{background:var(--blanc);border:1px solid var(--lait);border-radius:10px;margin-bottom:10px}
+summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:52px;padding:12px 20px}
 summary::-webkit-details-marker{display:none}
-summary::after{content:"+";font-size:1.4rem;line-height:1;color:var(--violet)}
-details[open] summary::after{content:"–"}
-details p{margin-top:10px;color:var(--muted)}
+summary::after{content:"+";font-size:1.4rem;line-height:1;color:var(--violet);flex:none}
+details[open] summary::after{content:"\2212"}
+details p{padding:0 20px 18px;color:var(--muted)}
 
 /* appel final */
-.final{background:linear-gradient(135deg,#0B1A2D 0%,#12263F 52%,#1B3A5E 100%);color:var(--blanc);text-align:center;border-radius:40px 40px 0 0;padding:72px 0}
-.final h2{max-width:20ch;margin:0 auto 18px}
-.final .places{display:inline-block;margin:6px 0 26px;padding:10px 18px;border-radius:999px;background:rgba(244,168,58,.18);border:1px solid var(--or-clair);font-weight:500}
-.final .places strong{color:var(--or-clair);font-size:1.15em}
+.final{background:var(--encre);color:var(--creme);text-align:center;padding:64px 0}
+.final h2{color:#fff;max-width:22ch;margin:0 auto 14px}
+.final .places{margin:0 0 24px;color:#D9E3EF}
 
-footer{padding:26px 0;font-size:.85rem;color:var(--muted);background:var(--creme)}
-footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+footer{border-top:1px solid var(--lait);padding:12px 0;font-size:.85rem;color:var(--muted);background:var(--creme)}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:4px 16px}
+footer a{display:inline-flex;align-items:center;min-height:44px;color:var(--violet)}
 
-/* barre collée en bas */
-.barre-bas{position:fixed;left:0;right:0;bottom:0;z-index:30;background:rgba(11,26,45,.97);color:var(--blanc);padding:12px 16px;box-shadow:0 -6px 20px rgba(0,0,0,.25)}
-.barre-bas .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px}
-.barre-bas span{font-size:.9rem;line-height:1.3}
-.barre-bas span b{display:block;font-size:1rem;color:var(--or-clair)}
-.barre-bas .btn{padding:12px 20px;font-size:.95rem;white-space:nowrap}
+/* barre collée en bas : seulement sur téléphone */
+.barre-bas{display:none}
 
 @media (max-width:820px){
-  section{padding:48px 0}
-  .hero{padding-top:28px}
-  .marque{margin-bottom:28px}
-  .hero-grid,.offre-grid,.cartes,.liste-etapes{grid-template-columns:1fr}
+  section{padding:46px 0}
+  .hero{padding:36px 0 44px}
+  .hero-grid,.offre-grid,.cartes,.liste-etapes,.situations{grid-template-columns:1fr}
   .hero .btn-grand{width:100%}
-  .offre,.final{border-radius:28px}
-  .final{border-radius:28px 28px 0 0}
+  .nav .btn{display:none}
+  .final{padding:48px 0}
+  body{padding-bottom:76px}
+  .barre-bas{display:block;position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--encre);color:var(--blanc);padding:10px 16px;border-top:1px solid rgba(255,255,255,.2)}
+  .barre-bas .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px}
+  .barre-bas span{font-size:.88rem;line-height:1.3}
+  .barre-bas span b{display:block;font-size:.98rem;color:var(--or-clair)}
+  .barre-bas .btn{min-height:44px;padding:10px 18px;font-size:.95rem;white-space:nowrap}
 }
-@media (max-width:420px){
-  .barre-bas span{font-size:.8rem}
-  .barre-bas .btn{padding:12px 16px;font-size:.88rem}
-}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}
-  .piste{animation:none;width:auto}
-  .defile{overflow-x:auto;scroll-snap-type:x mandatory;-webkit-mask-image:none;mask-image:none}
-  .lot[aria-hidden]{display:none}
-  .bulle{scroll-snap-align:start}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
 </style>
 </head>
 <body>
+<a class="saut" href="#contenu">Aller au contenu</a>
 
-<!-- ========== 1. HAUT DE PAGE ========== -->
-<header class="hero">
-  <div class="wrap">
-    <div class="marque"><img src="logo.png" width="34" height="34" alt="">CimentStock · par DEKOPI GOLD</div>
-    <div class="hero-grid">
-      <div>
-        <h1>Combien de sacs de ciment avez-vous en stock <em>ce soir&nbsp;?</em></h1>
-        <p class="sous">CimentStock vous le dit au sac près. Même sans internet. <strong>400&nbsp;F par jour.</strong></p>
-        <a class="btn btn-grand btn-vert" href="https://wa.me/22891512041?text=Bonjour%2C%20je%20veux%20CimentStock%20pour%20mon%20d%C3%A9p%C3%B4t%20%C3%A0%20...%20(quartier).%20Quand%20pouvez-vous%20venir%20%3F" target="_blank" rel="noopener">Je le veux dans mon dépôt, par WhatsApp</a>
-        <p class="micro">Installé chez vous aujourd'hui. Remboursé si le premier mois ne vous apprend rien.</p>
-        <ul class="puces">
-          <li>Marche sans internet</li>
-          <li>Installé en une journée</li>
-          <li>Vos données restent chez vous</li>
-        </ul>
-      </div>
-      <div>
-        <div class="fenetre">
-          <div class="barre"><i></i><i></i><i></i></div>
-          <img src="cimentstock.jpg" width="960" height="600" alt="Tableau de bord de CimentStock : ventes du jour, argent encaissé, crédits clients et stock disponible en sacs et en tonnes">
-        </div>
-        <p class="legende">Exemple avec des données de test</p>
-      </div>
-    </div>
+<header class="haut">
+  <div class="wrap nav">
+    <a class="logo" href="../index.html"><img src="logo.png" width="40" height="40" alt=""><span>DEKOPI GOLD</span></a>
+    <nav class="fil" aria-label="Fil d'Ariane">
+      <a href="../produits.html">Produits</a><span aria-hidden="true">/</span><span aria-current="page">CimentStock</span>
+    </nav>
+    <a class="btn btn-vert" href="https://wa.me/22891512041?text=Bonjour%2C%20je%20veux%20CimentStock%20pour%20mon%20d%C3%A9p%C3%B4t%20%C3%A0%20...%20(quartier).%20Quand%20pouvez-vous%20venir%20%3F" target="_blank" rel="noopener">WhatsApp<span class="sr"> (s'ouvre dans une nouvelle fenêtre)</span></a>
   </div>
 </header>
 
-<main>
+<!-- ========== 1. HAUT DE PAGE ========== -->
+<div class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <h1>Combien de sacs de ciment <span style="white-space:nowrap">avez-vous</span> en stock <em>ce soir&nbsp;?</em></h1>
+      <p class="sous">CimentStock vous le dit au sac près, même sans internet. <strong>400&nbsp;FCFA par jour.</strong></p>
+      <a class="btn btn-grand btn-vert" href="https://wa.me/22891512041?text=Bonjour%2C%20je%20veux%20CimentStock%20pour%20mon%20d%C3%A9p%C3%B4t%20%C3%A0%20...%20(quartier).%20Quand%20pouvez-vous%20venir%20%3F" target="_blank" rel="noopener">Je le veux dans mon dépôt, par WhatsApp<span class="sr"> (s'ouvre dans une nouvelle fenêtre)</span></a>
+      <p class="micro">Je l'installe chez vous en une journée. Si le premier mois ne vous apprend rien, je vous rembourse.</p>
+      <ul class="puces">
+        <li>Marche sans internet</li>
+        <li>Installé en une journée</li>
+        <li>Vos données restent sur votre ordinateur</li>
+      </ul>
+    </div>
+    <figure class="fen">
+      <img src="../cimentstock.webp" width="960" height="600" fetchpriority="high" alt="Tableau de bord de CimentStock : ventes du jour, argent encaissé, crédits clients et stock disponible en sacs et en tonnes">
+      <figcaption>Exemple avec des données de test</figcaption>
+    </figure>
+  </div>
+</div>
+
+<main id="contenu">
 
 <!-- ========== 2. LE PROBLÈME ========== -->
-<section class="probleme" aria-label="Le problème">
-  <div class="defile">
-    <div class="piste">
-      <div class="lot">
-        <p class="bulle">Vous êtes au chantier, chez un fournisseur, ou chez vous.</p>
-        <p class="bulle">Votre employé vend. Vous ne savez pas ce qui est sorti.</p>
-        <p class="bulle">Le soir, le cahier dit une chose. Le stock en dit une autre.</p>
-        <p class="bulle fin">Et ce maçon qui vous doit de l'argent depuis des semaines : combien, déjà&nbsp;?</p>
-      </div>
-      <div class="lot" aria-hidden="true">
-        <p class="bulle">Vous êtes au chantier, chez un fournisseur, ou chez vous.</p>
-        <p class="bulle">Votre employé vend. Vous ne savez pas ce qui est sorti.</p>
-        <p class="bulle">Le soir, le cahier dit une chose. Le stock en dit une autre.</p>
-        <p class="bulle fin">Et ce maçon qui vous doit de l'argent depuis des semaines : combien, déjà&nbsp;?</p>
-      </div>
-    </div>
+<section class="probleme" aria-labelledby="t-probleme">
+  <div class="wrap">
+    <h2 id="t-probleme">Ce qui se passe quand vous n'êtes pas là</h2>
+    <ul class="situations">
+      <li>Vous êtes au chantier, chez un fournisseur ou chez vous.</li>
+      <li>Votre employé vend. Vous ne savez pas ce qui est sorti.</li>
+      <li>Le soir, le cahier dit une chose et le stock en dit une autre.</li>
+      <li>Ce maçon qui vous doit de l'argent depuis des semaines : combien, déjà&nbsp;?</li>
+    </ul>
   </div>
 </section>
 
-<!-- ========== 3. LES 3 BÉNÉFICES ========== -->
+<!-- ========== 3. CE QUE CIMENTSTOCK MONTRE ========== -->
 <section class="benefices" aria-labelledby="t-benefices">
   <div class="wrap">
-    <h2 id="t-benefices">Trois choses que vous saurez enfin</h2>
+    <h2 id="t-benefices">Ce que CimentStock vous montre</h2>
     <div class="cartes">
       <article class="carte">
-        <div class="n">1</div>
         <h3>Combien il vous reste</h3>
-        <p>Chaque vente et chaque arrivage met le stock à jour, en sacs et en tonnes. Fini le comptage du dimanche.</p>
+        <p>Chaque vente et chaque arrivage met le stock à jour, en sacs et en tonnes. Plus besoin de compter le dimanche.</p>
       </article>
       <article class="carte">
-        <div class="n">2</div>
         <h3>Qui vous doit combien</h3>
-        <p>Chaque client a sa fiche de crédit. Vous voyez le total dû, ce qui a été remboursé, et vous relancez avec le bon montant.</p>
+        <p>Chaque client a sa fiche de crédit : ce qu'il doit, ce qu'il a déjà payé. Vous le relancez avec le bon montant.</p>
       </article>
       <article class="carte">
-        <div class="n">3</div>
         <h3>Ce qui a bougé en votre absence</h3>
-        <p>Chaque vente, chaque annulation et chaque achat est enregistré avec sa date et son heure. En arrivant, vous voyez les ventes du jour et l'argent encaissé.</p>
+        <p>Les ventes, les annulations et les achats sont enregistrés avec leur date et leur heure. En arrivant, vous voyez les ventes du jour et l'argent encaissé.</p>
       </article>
     </div>
   </div>
@@ -252,8 +289,8 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
     <h2 id="t-etapes">Prêt en une journée</h2>
     <ol class="liste-etapes">
       <li><strong>Vous m'écrivez sur WhatsApp</strong><span>Un message suffit. Je vous dis quand je peux passer.</span></li>
-      <li><strong>Je viens chez vous</strong><span>J'installe, je saisis votre stock de départ avec vous et je forme votre employé en 15 minutes.</span></li>
-      <li><strong>Un bilan à 30 jours</strong><span>On regarde ensemble ce que le logiciel vous a montré. S'il ne vous a rien appris, je vous rembourse.</span></li>
+      <li><strong>Je viens chez vous</strong><span>J'installe le logiciel, je saisis votre stock de départ avec vous et je forme votre employé en 15 minutes.</span></li>
+      <li><strong>Bilan à 30 jours</strong><span>On regarde ensemble ce que CimentStock vous a montré. S'il ne vous a rien appris, je vous rembourse.</span></li>
     </ol>
   </div>
 </section>
@@ -261,7 +298,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
 <!-- ========== 5. L'OFFRE ========== -->
 <section class="offre" aria-labelledby="t-offre">
   <div class="wrap">
-    <h2 id="t-offre">Tout est compris</h2>
+    <h2 id="t-offre">Ce que vous avez pour 12&nbsp;000&nbsp;FCFA par mois</h2>
     <div class="offre-grid">
       <div>
         <ul class="inclus">
@@ -273,44 +310,38 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
           <li>Une copie de vos données, et je vous montre comment la refaire</li>
           <li>Bilan à 30 jours, chez vous</li>
         </ul>
-        <p class="garantie"><strong>Ma garantie :</strong> si au bout de 30 jours CimentStock ne vous a pas montré une erreur de stock ou un client qui vous devait de l'argent sans que vous le sachiez, je vous rembourse le mois.</p>
+        <div class="garantie">
+          <h3>Ma garantie</h3>
+          <p>Si au bout de 30 jours CimentStock ne vous a montré ni une erreur de stock, ni un client qui vous devait de l'argent sans que vous le sachiez, je vous rembourse le mois.</p>
+        </div>
       </div>
       <div class="prix-carte">
-        <div class="prix">12&nbsp;000&nbsp;F <small>par mois</small></div>
-        <p class="par-jour">Soit 400&nbsp;F par jour</p>
-        <a class="btn btn-vert" href="https://wa.me/22891512041?text=Bonjour%2C%20je%20veux%20CimentStock%20pour%20mon%20d%C3%A9p%C3%B4t%20%C3%A0%20...%20(quartier).%20Quand%20pouvez-vous%20venir%20%3F" target="_blank" rel="noopener">Réserver mon installation</a>
-        <p class="annuel"><strong>120&nbsp;000&nbsp;F par an</strong> : vous payez 10 mois, vous en avez 12.</p>
-        <a class="btn btn-ligne" href="https://wa.me/22891512041?text=Bonjour%2C%20je%20veux%20CimentStock%20%C3%A0%20l%27ann%C3%A9e%20(120%20000%20F)%20pour%20mon%20d%C3%A9p%C3%B4t%20%C3%A0%20...%20(quartier)." target="_blank" rel="noopener">Je prends l'année</a>
+        <div class="prix">12&nbsp;000&nbsp;FCFA <small>par mois</small></div>
+        <p class="par-jour">Soit 400&nbsp;FCFA par jour</p>
+        <a class="btn btn-vert" href="https://wa.me/22891512041?text=Bonjour%2C%20je%20veux%20CimentStock%20pour%20mon%20d%C3%A9p%C3%B4t%20%C3%A0%20...%20(quartier).%20Quand%20pouvez-vous%20venir%20%3F" target="_blank" rel="noopener">Réserver mon installation<span class="sr"> (s'ouvre dans une nouvelle fenêtre)</span></a>
+        <p class="annuel"><strong>120&nbsp;000&nbsp;FCFA par an</strong> : vous payez 10 mois et vous en avez 12.</p>
+        <a class="btn btn-ligne" href="https://wa.me/22891512041?text=Bonjour%2C%20je%20veux%20CimentStock%20%C3%A0%20l%27ann%C3%A9e%20(120%20000%20F)%20pour%20mon%20d%C3%A9p%C3%B4t%20%C3%A0%20...%20(quartier)." target="_blank" rel="noopener">Je prends l'année<span class="sr"> (s'ouvre dans une nouvelle fenêtre)</span></a>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ========== 6. AVIS CLIENTS ==========
-     VIDE PAR CHOIX : aucun avis n'est inventé. Dès que 3 gérants t'ont donné une phrase,
-     remplace les crochets par leurs vrais mots, puis SUPPRIME l'attribut hidden ci-dessous.
+     ABSENTE PAR CHOIX : aucun avis n'est inventé. Dès que 3 gérants t'ont donné une phrase,
+     ajoute ici une section « Ce que disent les gérants » avec leurs mots exacts :
+       <section class="avis" aria-labelledby="t-avis"> … <blockquote>« phrase exacte »<cite>Prénom, dépôt, quartier</cite></blockquote> … </section>
      Questions à leur poser après 30 jours :
        1. Qu'est-ce que vous avez découvert que vous ne saviez pas ?
        2. Qu'est-ce qui vous a le plus surpris ?
        3. Vous le diriez à un autre gérant avec quels mots ? -->
-<section class="avis" id="avis" aria-labelledby="t-avis" hidden>
-  <div class="wrap">
-    <h2 id="t-avis">Ce que disent les gérants</h2>
-    <div class="cartes">
-      <blockquote>« [Phrase exacte du client 1] »<cite>[Prénom], [nom du dépôt], [quartier]</cite></blockquote>
-      <blockquote>« [Phrase exacte du client 2] »<cite>[Prénom], [nom du dépôt], [quartier]</cite></blockquote>
-      <blockquote>« [Phrase exacte du client 3] »<cite>[Prénom], [nom du dépôt], [quartier]</cite></blockquote>
-    </div>
-  </div>
-</section>
 
 <!-- ========== 7. QUESTIONS ========== -->
 <section class="faq" aria-labelledby="t-faq">
   <div class="wrap">
-    <h2 id="t-faq">Les questions qu'on me pose</h2>
+    <h2 id="t-faq">Questions</h2>
     <details>
       <summary>Mon employé va refuser de s'en servir.</summary>
-      <p>Je le forme chez vous en 15 minutes, devant son poste. Si quelque chose le bloque après, il m'écrit sur WhatsApp et je reviens.</p>
+      <p>Je le forme chez vous en 15 minutes, devant son poste. S'il se bloque ensuite, il m'écrit sur WhatsApp et je reviens.</p>
     </details>
     <details>
       <summary>Et si mon ordinateur tombe en panne&nbsp;?</summary>
@@ -318,11 +349,11 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
     </details>
     <details>
       <summary>Je n'ai pas d'ordinateur dans le dépôt.</summary>
-      <p>CimentStock tourne sur un ordinateur, et vos données restent dessus, pas sur internet. Écrivez-moi sur WhatsApp, on voit ensemble ce qui est possible pour votre dépôt.</p>
+      <p>CimentStock tourne sur un ordinateur, et vos données restent dessus, pas sur internet. Écrivez-moi sur WhatsApp, on verra ce qui est possible pour votre dépôt.</p>
     </details>
     <details>
       <summary>Et si ça ne me sert à rien&nbsp;?</summary>
-      <p>Vous ne perdez rien : si le premier mois ne vous a pas montré une erreur de stock ou un crédit oublié, je vous rembourse.</p>
+      <p>Je vous rembourse le mois : si le premier mois ne vous a montré ni une erreur de stock, ni un crédit oublié, vous ne perdez rien.</p>
     </details>
   </div>
 </section>
@@ -331,12 +362,12 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
 <section class="final" aria-labelledby="t-final">
   <div class="wrap">
     <h2 id="t-final">Chaque soir sans CimentStock, vous ne savez pas.</h2>
-    <!-- À METTRE À JOUR CHAQUE LUNDI : le chiffre et la date doivent rester vrais. -->
-    <p class="places">J'installe 5 dépôts par semaine. Cette semaine (jusqu'au dimanche 22 novembre) : il en reste <strong>5</strong>.</p>
+    <!-- Le compteur « il en reste 5 » et sa date ont été retirés le 19/11/2026 : un chiffre qui doit être refait chaque lundi finit faux. À remettre seulement si Pierre le tient à jour. -->
+    <p class="places">J'installe 5 dépôts par semaine.</p>
     <div>
-      <a class="btn btn-grand btn-vert" href="https://wa.me/22891512041?text=Bonjour%2C%20je%20veux%20CimentStock%20pour%20mon%20d%C3%A9p%C3%B4t%20%C3%A0%20...%20(quartier).%20Quand%20pouvez-vous%20venir%20%3F" target="_blank" rel="noopener">Réserver mon installation par WhatsApp</a>
+      <a class="btn btn-grand btn-vert" href="https://wa.me/22891512041?text=Bonjour%2C%20je%20veux%20CimentStock%20pour%20mon%20d%C3%A9p%C3%B4t%20%C3%A0%20...%20(quartier).%20Quand%20pouvez-vous%20venir%20%3F" target="_blank" rel="noopener">Réserver mon installation par WhatsApp<span class="sr"> (s'ouvre dans une nouvelle fenêtre)</span></a>
     </div>
-    <p class="micro">12&nbsp;000&nbsp;F par mois. Remboursé si le premier mois ne vous apprend rien.</p>
+    <p class="micro">12&nbsp;000&nbsp;FCFA par mois. Remboursé si le premier mois ne vous apprend rien.</p>
   </div>
 </section>
 
@@ -344,16 +375,16 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
 
 <footer>
   <div class="wrap">
-    <span>CimentStock · un logiciel DEKOPI GOLD, Lomé, Togo</span>
-    <a href="https://produits.pierredegboevi.com/">Voir tous nos produits</a>
+    <span>© 2026 DEKOPI GOLD · Lomé, Togo</span>
+    <a href="../produits.html">Voir tous les produits</a>
   </div>
 </footer>
 
-<!-- Barre collée en bas de l'écran pendant tout le défilement -->
+<!-- Barre collée en bas de l'écran, téléphone seulement -->
 <div class="barre-bas">
   <div class="wrap">
-    <span><b>CimentStock · 400&nbsp;F/jour</b>Remboursé si inutile</span>
-    <a class="btn btn-vert" href="https://wa.me/22891512041?text=Bonjour%2C%20je%20veux%20CimentStock%20pour%20mon%20d%C3%A9p%C3%B4t%20%C3%A0%20...%20(quartier).%20Quand%20pouvez-vous%20venir%20%3F" target="_blank" rel="noopener">WhatsApp</a>
+    <span><b>CimentStock</b>400&nbsp;FCFA par jour</span>
+    <a class="btn btn-vert" href="https://wa.me/22891512041?text=Bonjour%2C%20je%20veux%20CimentStock%20pour%20mon%20d%C3%A9p%C3%B4t%20%C3%A0%20...%20(quartier).%20Quand%20pouvez-vous%20venir%20%3F" target="_blank" rel="noopener">WhatsApp<span class="sr"> (s'ouvre dans une nouvelle fenêtre)</span></a>
   </div>
 </div>
 
