@@ -8,11 +8,11 @@
   var piste = document.getElementById("anneau-piste");
   if (!ring || !piste) return;
 
-  // Les dix offres, dans l'ordre de la page Produits (sauf CimentStock et ASSIMETO en tête).
+  // Les dix offres, dans l'ordre de la page Produits (sauf WOE CS et ASSIMETO en tête).
   // fond: true = image petite, affichée entière sur un fond flou plutôt que recadrée.
   var OFFRES = [
-    { id: "cimentstock", img: "cimentstock.webp", alt: "CimentStock : tableau de bord des ventes et du stock",
-      nom: ["CimentStock", "CimentStock"], type: ["Logiciel · Commerce de ciment", "Software · Cement shops"], prix: ["12 000 FCFA / mois", "12,000 FCFA / month"] },
+    { id: "cimentstock", img: "cimentstock.webp", alt: "WOE CS : tableau de bord des ventes et du stock",
+      nom: ["WOE CS", "WOE CS"], type: ["Logiciel · Commerce de ciment", "Software · Cement shops"], prix: ["12 000 FCFA / mois", "12,000 FCFA / month"] },
     { id: "lotusqs", img: "lotusqs.webp", alt: "Lotus QS : tableau de bord d'une quincaillerie",
       nom: ["Lotus QS", "Lotus QS"], type: ["Logiciel · Quincaillerie", "Software · Hardware stores"], prix: ["15 000 FCFA / mois", "15,000 FCFA / month"] },
     { id: "assimeto", img: "assimeto.webp", alt: "ASSIMETO : courses, stock et plats togolais",
