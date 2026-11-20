@@ -320,7 +320,7 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-
       </ul>
     </div>
     <figure class="fen">
-      <img src="tableau.webp" width="1280" height="575" fetchpriority="high" alt="Tableau de bord de Lotus QS : ventes du jour, argent encaissé, crédits clients, ventes du mois avec la marge, alerte de stock bas et dernières ventes">
+      <img src="tableau.webp" width="1280" height="725" fetchpriority="high" alt="Tableau de bord de Lotus QS : ventes du jour, argent encaissé, crédits clients, ventes du mois avec la marge, article le plus vendu, meilleur client, fournisseur au meilleur prix, alerte de stock bas et début des graphiques">
       <figcaption>Exemple avec des données de test</figcaption>
     </figure>
   </div>
@@ -365,6 +365,30 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-
 
     <div class="voir-ligne">
       <div class="voir-texte">
+        <span class="tag">GRAPHIQUES</span>
+        <h3>Vos ventes et votre stock, en images</h3>
+        <p>Le tableau de bord trace les ventes des 30 derniers jours, les ventes du mois par article, les six derniers mois avec la marge, et le stock de chaque article face à son seuil d'alerte. Au-dessus, trois cartes donnent l'article le plus vendu du mois, votre meilleur client et le fournisseur le moins cher. Vous voyez ce qui monte, ce qui baisse et ce qu'il faut racheter.</p>
+      </div>
+      <figure class="voir-img">
+        <img src="graphiques.webp" width="1280" height="1461" loading="lazy" alt="Quatre graphiques du tableau de bord de Lotus QS : ventes des 30 derniers jours en barres, ventes du mois par article en anneau, ventes et marge des six derniers mois, stock de chaque article comparé à son seuil d'alerte">
+        <figcaption>Tableau de bord, données de test</figcaption>
+      </figure>
+    </div>
+
+    <div class="voir-ligne">
+      <div class="voir-texte">
+        <span class="tag">FOURNISSEURS</span>
+        <h3>Le fournisseur le moins cher, article par article</h3>
+        <p>Chaque achat garde le prix payé. Le tableau de bord compare le dernier prix de chaque fournisseur, pour chaque article, et vous dit qui vend le moins cher, et de combien. Seul l'administrateur voit cette partie, parce que ce sont vos prix d'achat.</p>
+      </div>
+      <figure class="voir-img">
+        <img src="prix.webp" width="1280" height="690" loading="lazy" alt="Tableau Meilleur prix d'achat par article : pour chaque article, le fournisseur le moins cher, le prix unitaire et l'écart avec le fournisseur suivant">
+        <figcaption>Meilleur prix d'achat, données de test</figcaption>
+      </figure>
+    </div>
+
+    <div class="voir-ligne">
+      <div class="voir-texte">
         <span class="tag">ARTICLES</span>
         <h3>Chaque article, avec ses deux prix et sa marge</h3>
         <p>Référence, code-barres, catégorie, unité, prix détail, prix gros, coût moyen et marge. Le coût moyen se met à jour tout seul à chaque achat, transport compris. Vous importez ou exportez la liste avec Excel.</p>
@@ -395,7 +419,7 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-
     <p class="intro">Vous essayez avec vos vrais articles et vos vraies ventes.</p>
     <ol class="etapes">
       <li><span class="quand">Jour 1</span><strong>Vous l'installez, ou je viens</strong><span class="t">Téléchargez le dossier sur l'ordinateur de la quincaillerie et lancez l'installation : la notice vous guide pas à pas. Vous préférez que je le fasse ? Je viens, j'importe votre liste d'articles avec le stock de départ et je forme votre vendeur à la vente et au scan.</span></li>
-      <li><span class="quand">Semaine 1</span><strong>Chaque vente compte</strong><span class="t">Chaque vente et chaque achat met le stock à jour. Le soir, vous ouvrez le tableau de bord : ventes du jour, argent encaissé, crédits clients, articles en stock bas.</span></li>
+      <li><span class="quand">Semaine 1</span><strong>Chaque vente compte</strong><span class="t">Chaque vente et chaque achat met le stock à jour. Le soir, vous ouvrez le tableau de bord : ventes du jour, argent encaissé, crédits clients, articles en stock bas, et les graphiques de vos ventes.</span></li>
       <li><span class="quand">Jour 30</span><strong>Vous demandez la clé</strong><span class="t">Dans le menu Licence, copiez le code de votre ordinateur et envoyez-le moi sur WhatsApp. Je vous réponds avec la clé. Vous la collez, vous cliquez sur Activer, et vous continuez à 15&nbsp;000&nbsp;FCFA par mois.</span></li>
     </ol>
     <div class="telecharger">
@@ -410,8 +434,8 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-
     <h2 id="t-contenu">Tout ce que contient Lotus QS</h2>
     <p class="intro">Une quincaillerie ne travaille pas comme un dépôt de ciment. Beaucoup d'articles, des références, des quantités qui ne tombent pas toujours juste : chaque fonction vient de là.</p>
     <div class="fonctions">
-      <div><details><summary>Prix détail et prix gros</summary><p>Chaque article a un prix détail, un prix de gros et la quantité à partir de laquelle le gros s'applique. Le bon prix se met seul à la vente.</p></details><details><summary>Vente au mètre, au kilo, à la pièce</summary><p>Câble au mètre, clous au kilo, robinets à la pièce. Les quantités peuvent avoir des décimales, arrondies à trois chiffres.</p></details><details><summary>Recherche sans accent et scan de code-barres</summary><p>Tapez « robinet » ou « ROBINET », avec ou sans accent. Avec un lecteur de code-barres, vous scannez et l'article s'ajoute à la vente.</p></details><details><summary>Facture PDF avec le montant en lettres</summary><p>Une facture avec le client, les quantités, ce qui est payé et ce qui reste à payer. Prête à imprimer ou à envoyer.</p></details><details><summary>Vente comptant ou à crédit</summary><p>Le client paie tout de suite ou prend à crédit. Dans le second cas, la dette apparaît sur sa fiche, avec un plafond de crédit.</p></details><details><summary>TVA, remise et livraison</summary><p>La TVA de 18 % s'ajoute d'un clic quand il en faut une. Vous pouvez faire une remise et noter l'adresse ou le camion de livraison.</p></details></div>
-      <div><details><summary>Fiche article complète</summary><p>Désignation, référence, code-barres, catégorie, unité, seuil d'alerte. Vingt-deux catégories de quincaillerie sont proposées, et vous pouvez écrire les vôtres.</p></details><details><summary>Import et export Excel</summary><p>Vous avez déjà votre liste d'articles dans Excel&nbsp;? Vous l'importez avec le stock de départ. Vous pouvez aussi tout exporter pour votre comptable.</p></details><details><summary>Achats, fournisseurs et coût moyen</summary><p>À chaque achat, le transport est réparti et le coût moyen est recalculé. Vous voyez ce que vous devez à chaque fournisseur, et votre marge sur chaque article.</p></details><details><summary>Plusieurs magasins, mouvements de stock, inventaire</summary><p>Chaque magasin a son stock. Le stock est la somme des mouvements : achats, ventes, transferts, casse. Personne ne le tape à la main.</p></details><details><summary>Alerte de stock bas</summary><p>Le tableau de bord liste les articles passés sous leur seuil. Vous savez quoi commander avant que le rayon soit vide.</p></details><details><summary>Comptes administrateur et vendeur, sauvegarde chaque jour</summary><p>Chacun a son mot de passe. Une copie des données est faite chaque jour et les 30 dernières sont gardées.</p></details></div>
+      <div><details><summary>Prix détail et prix gros</summary><p>Chaque article a un prix détail, un prix de gros et la quantité à partir de laquelle le gros s'applique. Le bon prix se met seul à la vente.</p></details><details><summary>Vente au mètre, au kilo, à la pièce</summary><p>Câble au mètre, clous au kilo, robinets à la pièce. Les quantités peuvent avoir des décimales, arrondies à trois chiffres.</p></details><details><summary>Recherche sans accent et scan de code-barres</summary><p>Tapez « robinet » ou « ROBINET », avec ou sans accent. Avec un lecteur de code-barres, vous scannez et l'article s'ajoute à la vente.</p></details><details><summary>Facture PDF avec le montant en lettres</summary><p>Une facture avec le client, les quantités, ce qui est payé et ce qui reste à payer. Prête à imprimer ou à envoyer.</p></details><details><summary>Vente comptant ou à crédit</summary><p>Le client paie tout de suite ou prend à crédit. Dans le second cas, la dette apparaît sur sa fiche, avec un plafond de crédit.</p></details><details><summary>TVA, remise et livraison</summary><p>La TVA de 18 % s'ajoute d'un clic quand il en faut une. Vous pouvez faire une remise et noter l'adresse ou le camion de livraison.</p></details><details><summary>Tableau de bord avec graphiques</summary><p>Les ventes des 30 derniers jours, les ventes du mois par article, les six derniers mois avec la marge et le stock face au seuil d'alerte. Les chiffres se mettent à jour à chaque vente.</p></details></div>
+      <div><details><summary>Fiche article complète</summary><p>Désignation, référence, code-barres, catégorie, unité, seuil d'alerte. Vingt-deux catégories de quincaillerie sont proposées, et vous pouvez écrire les vôtres.</p></details><details><summary>Import et export Excel</summary><p>Vous avez déjà votre liste d'articles dans Excel&nbsp;? Vous l'importez avec le stock de départ. Vous pouvez aussi tout exporter pour votre comptable.</p></details><details><summary>Achats, fournisseurs et coût moyen</summary><p>À chaque achat, le transport est réparti et le coût moyen est recalculé. Vous voyez ce que vous devez à chaque fournisseur, et votre marge sur chaque article.</p></details><details><summary>Plusieurs magasins, mouvements de stock, inventaire</summary><p>Chaque magasin a son stock. Le stock est la somme des mouvements : achats, ventes, transferts, casse. Personne ne le tape à la main.</p></details><details><summary>Alerte de stock bas</summary><p>Le tableau de bord liste les articles passés sous leur seuil. Vous savez quoi commander avant que le rayon soit vide.</p></details><details><summary>Article, client et fournisseur en tête</summary><p>L'article le plus vendu du mois, votre meilleur client et le fournisseur qui vous vend le moins cher. Le prix d'achat n'est visible que par l'administrateur.</p></details><details><summary>Comptes administrateur et vendeur, sauvegarde chaque jour</summary><p>Chacun a son mot de passe. Une copie des données est faite chaque jour et les 30 dernières sont gardées.</p></details></div>
     </div>
   </div>
 </section>

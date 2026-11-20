@@ -324,7 +324,7 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-
       </ul>
     </div>
     <figure class="fen">
-      <img src="tableau.webp" width="1280" height="725" fetchpriority="high" alt="Tableau de bord de WOE CS : ventes du jour, argent encaissé, crédits clients, stock en sacs et en tonnes, dernières ventes dont une annulée">
+      <img src="tableau.webp" width="1280" height="725" fetchpriority="high" alt="Tableau de bord de WOE CS : ventes du jour, argent encaissé, crédits clients, ventes du mois avec la marge, produit le plus vendu, meilleur client, fournisseur au meilleur prix, alerte de stock bas et début des graphiques">
       <figcaption>Exemple avec des données de test</figcaption>
     </figure>
   </div>
@@ -371,6 +371,30 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-
 
     <div class="voir-ligne">
       <div class="voir-texte">
+        <span class="tag">GRAPHIQUES</span>
+        <h3>Vos ventes et votre stock, en images</h3>
+        <p>Le tableau de bord trace les ventes des 30 derniers jours, les sacs vendus par produit, les six derniers mois avec la marge, et le stock de chaque produit face à son seuil d'alerte. Au-dessus, trois cartes donnent le produit le plus vendu du mois, votre meilleur client et le fournisseur le moins cher. Vous voyez ce qui monte, ce qui baisse et ce qu'il faut racheter.</p>
+      </div>
+      <figure class="voir-img">
+        <img src="graphiques.webp" width="1280" height="1313" loading="lazy" alt="Quatre graphiques du tableau de bord de WOE CS : ventes des 30 derniers jours en barres, sacs vendus par produit en anneau, ventes et marge des six derniers mois, stock de chaque produit comparé à son seuil d'alerte">
+        <figcaption>Tableau de bord, données de test</figcaption>
+      </figure>
+    </div>
+
+    <div class="voir-ligne">
+      <div class="voir-texte">
+        <span class="tag">FOURNISSEURS</span>
+        <h3>Le fournisseur le moins cher, produit par produit</h3>
+        <p>Chaque achat garde le prix payé. Le tableau de bord compare le dernier prix de chaque fournisseur et vous dit qui vend le moins cher, et de combien. Seul l'administrateur voit cette partie, parce que ce sont vos prix d'achat.</p>
+      </div>
+      <figure class="voir-img">
+        <img src="prix.webp" width="1280" height="315" loading="lazy" alt="Tableau Meilleur prix d'achat par produit : pour chaque produit, le fournisseur le moins cher, le prix du sac et l'écart avec le fournisseur suivant">
+        <figcaption>Meilleur prix d'achat, données de test</figcaption>
+      </figure>
+    </div>
+
+    <div class="voir-ligne">
+      <div class="voir-texte">
         <span class="tag">STOCK</span>
         <h3>Chaque produit, au sac près</h3>
         <p>Sacs, tonnes, coût moyen et valeur de ce qu'il y a dans le dépôt. Le stock est calculé à partir de chaque vente et de chaque arrivage : personne ne le tape à la main. L'inventaire et la casse s'enregistrent aussi.</p>
@@ -414,7 +438,7 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-
     <p class="intro">Vous essayez avec vos vraies ventes. Vous savez quand regarder, et quoi regarder.</p>
     <ol class="etapes">
       <li><span class="quand">Jour 1</span><strong>Vous l'installez, ou je viens</strong><span class="t">Téléchargez le dossier sur l'ordinateur du dépôt, ouvrez-le et lancez l'installation : la notice dans le dossier vous guide pas à pas. Vous préférez que je le fasse&nbsp;? Écrivez-moi, je viens, je saisis votre stock de départ et je forme votre employé en 15 minutes.</span></li>
-      <li><span class="quand">Semaine 1</span><strong>Chaque vente compte</strong><span class="t">Chaque vente et chaque arrivage met le stock à jour. Le soir, vous ouvrez le tableau de bord : ventes du jour, argent encaissé, crédits clients.</span></li>
+      <li><span class="quand">Semaine 1</span><strong>Chaque vente compte</strong><span class="t">Chaque vente et chaque arrivage met le stock à jour. Le soir, vous ouvrez le tableau de bord : ventes du jour, argent encaissé, crédits clients, et les graphiques de vos ventes.</span></li>
       <li><span class="quand">Jour 30</span><strong>Vous demandez la clé</strong><span class="t">Dans le menu Licence, copiez le code de votre ordinateur et envoyez-le moi sur WhatsApp. Je vous réponds avec la clé. Vous la collez, vous cliquez sur Activer, et vous continuez à 12&nbsp;000&nbsp;FCFA par mois.</span></li>
     </ol>
     <div class="telecharger">
@@ -437,6 +461,7 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-
         <details><summary>Annulation tracée</summary><p>Une vente annulée n'est pas effacée. Elle reste dans la liste, marquée « Annulée », avec son numéro et sa date.</p></details>
         <details><summary>Plafond de crédit par client</summary><p>Vous fixez ce que chaque client peut devoir au maximum. Vous voyez où il en est.</p></details>
         <details><summary>Relevé de compte et paiements partiels</summary><p>Chaque client a son relevé. Un paiement en plusieurs fois est réparti sur ses factures les plus anciennes.</p></details>
+        <details><summary>Tableau de bord avec graphiques</summary><p>Les ventes des 30 derniers jours, les sacs vendus par produit, les six derniers mois avec la marge et le stock face au seuil d'alerte. Les chiffres se mettent à jour à chaque vente.</p></details>
       </div>
       <div>
         <details><summary>Achats et coût moyen</summary><p>À chaque arrivage, le transport est réparti sur les sacs et le coût moyen est recalculé. Vous savez combien vous devez à chaque fournisseur.</p></details>
@@ -444,6 +469,7 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-
         <details><summary>Le stock n'est jamais tapé à la main</summary><p>Il est la somme des mouvements : arrivages, ventes, transferts, casse. C'est ce qui empêche le chiffre de dériver.</p></details>
         <details><summary>Encaissements par mode de paiement</summary><p>Espèces, T-Money, Flooz&nbsp;: vous voyez ce qui est entré aujourd'hui, par mode de paiement.</p></details>
         <details><summary>Marge, stock bas et exports Excel</summary><p>La marge brute, ce qui descend sous le seuil, et des exports Excel pour votre comptable ou pour vous.</p></details>
+        <details><summary>Produit, client et fournisseur en tête</summary><p>Le produit le plus vendu du mois, votre meilleur client et le fournisseur qui vous vend le moins cher. Le prix d'achat n'est visible que par l'administrateur.</p></details>
         <details><summary>Trois types de comptes, sauvegarde à votre rythme</summary><p>Vendeur, administrateur et super administrateur, chacun avec son mot de passe. Le super administrateur est le seul à régler les paramètres et la licence. Une copie de vos données est faite automatiquement, chaque jour par défaut&nbsp;: vous choisissez le délai (de 15&nbsp;minutes à un an) et le nombre de copies à garder.</p></details>
       </div>
     </div>
