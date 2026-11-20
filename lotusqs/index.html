@@ -43,18 +43,34 @@
         "name": "DEKOPI GOLD",
         "url": "https://produits.pierredegboevi.com/"
       },
-      "offers": {
-        "@type": "Offer",
-        "price": "15000",
-        "priceCurrency": "XOF",
-        "availability": "https://schema.org/InStock",
-        "priceSpecification": {
-          "@type": "UnitPriceSpecification",
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Au mois, par ordinateur",
           "price": "15000",
           "priceCurrency": "XOF",
-          "unitCode": "MON"
+          "availability": "https://schema.org/InStock",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "15000",
+            "priceCurrency": "XOF",
+            "unitCode": "MON"
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "À l'année, 2 mois offerts, par ordinateur",
+          "price": "150000",
+          "priceCurrency": "XOF",
+          "availability": "https://schema.org/InStock",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "150000",
+            "priceCurrency": "XOF",
+            "unitCode": "ANN"
+          }
         }
-      }
+      ]
     },
     {
       "@type": "BreadcrumbList",
@@ -130,6 +146,8 @@ header.haut{position:sticky;top:0;z-index:40;background:rgba(246,244,250,.95);ba
 .btn-ligne{background:transparent;border-color:var(--encre);color:var(--encre)}
 .btn-ligne:hover{background:var(--encre);color:var(--creme)}
 .micro{font-size:.9rem;margin-top:14px;color:#D6D3F0}
+.offre-an{display:inline-block;margin-top:16px;padding:8px 18px;border:1px solid var(--or);background:rgba(244,168,58,.16);border-radius:99px;color:#fff;font-size:.95rem}
+.offre-an strong{color:var(--or-clair)}
 .actions{display:flex;flex-wrap:wrap;gap:12px}
 .btn-clair{background:transparent;border-color:rgba(255,255,255,.55);color:#fff}
 .btn-clair:hover{background:rgba(255,255,255,.12)}
@@ -243,7 +261,17 @@ details p{padding:0 20px 18px;color:var(--muted)}
 .par-jour{font-weight:600;margin:6px 0 16px}
 .annuel{background:var(--creme);border-radius:10px;padding:14px 16px;margin:18px 0 12px;font-size:.95rem}
 .annuel strong{color:var(--bleu)}
+.formules{display:grid;grid-template-columns:1.2fr 1fr;gap:12px;margin-bottom:18px}
+.formule{position:relative;border:2px solid var(--lait);border-radius:10px;padding:16px 14px 10px;background:var(--blanc)}
+.formule .f-nom{font-weight:600;font-size:.9rem;color:var(--muted);margin-bottom:4px}
+.formule .prix{font-size:1.85rem}
+.formule .prix small{display:block;font-size:.85rem;margin-top:2px}
+.formule .par-jour{margin:8px 0 4px;font-size:.88rem}
+.formule-an{border-color:var(--or);background:#FFF8EC;box-shadow:0 6px 18px rgba(244,168,58,.3)}
+.formule-an .prix{font-size:2.2rem}
+.formule-an .badge{position:absolute;top:-12px;right:10px;background:var(--or);color:var(--encre);font-weight:600;font-size:.78rem;padding:3px 12px;border-radius:99px}
 .prix-carte .btn{width:100%}
+.prix-carte .btn+.btn{margin-top:10px}
 .prix-carte .note{font-size:.85rem;color:var(--muted);margin-top:12px;text-align:center}
 
 .bande-garantie{background:var(--or);color:var(--encre);padding:48px 0}
@@ -262,7 +290,8 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-
 @media (max-width:820px){
   section{padding:38px 0}
   .hero{padding:34px 0 42px}
-  .hero-grid,.offre-grid,.choix-grille,.etapes,.voir-ligne,.modules-grille{grid-template-columns:1fr}
+  .hero-grid,.offre-grid,.choix-grille,.etapes,.voir-ligne,.modules-grille,.formules{grid-template-columns:1fr}
+  .formules{gap:20px}
   .fonctions{grid-template-columns:repeat(2,1fr);gap:10px}
   .fonction{padding:14px 12px}
   .fonction svg{width:24px;height:24px;margin-bottom:8px}
@@ -306,8 +335,8 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-
 
 <div class="ruban">
   <div class="ruban-piste">
-    <ul><li>Essai gratuit 30 jours</li><li>Marche sans internet</li><li>Scan de code-barres</li><li>15 000 FCFA par mois ensuite</li></ul>
-    <ul aria-hidden="true"><li>Essai gratuit 30 jours</li><li>Marche sans internet</li><li>Scan de code-barres</li><li>15 000 FCFA par mois ensuite</li></ul>
+    <ul><li>Essai gratuit 30 jours</li><li>Marche sans internet</li><li>Scan de code-barres</li><li>15 000 FCFA par mois ensuite</li><li>À l'année : 2 mois offerts</li></ul>
+    <ul aria-hidden="true"><li>Essai gratuit 30 jours</li><li>Marche sans internet</li><li>Scan de code-barres</li><li>15 000 FCFA par mois ensuite</li><li>À l'année : 2 mois offerts</li></ul>
   </div>
 </div>
 
@@ -333,7 +362,8 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-
         <a class="btn btn-grand" href="https://github.com/alexcruss/lotusqs-telechargement/releases/latest/download/LotusQS.zip">Télécharger l'essai gratuit de 30 jours</a>
         <a class="btn btn-grand btn-clair" href="https://wa.me/22891512041?text=Bonjour%2C%20je%20veux%20voir%20Lotus%20QS%20dans%20ma%20quincaillerie%20%C3%A0%20...%20%28quartier%29.%20Quand%20pouvez-vous%20venir%20%3F" target="_blank" rel="noopener">Je préfère que vous l'installiez<span class="sr"> (s'ouvre dans une nouvelle fenêtre)</span></a>
       </div>
-      <p class="micro">Gratuit pendant 30 jours, sans rien payer. À télécharger sur l'ordinateur Windows de la quincaillerie (68&nbsp;Mo). Ensuite, vous me demandez la clé et vous continuez à 15&nbsp;000&nbsp;FCFA par mois.</p>
+      <p class="offre-an"><strong>À l'année : 150&nbsp;000&nbsp;FCFA</strong>, 2 mois offerts</p>
+      <p class="micro">Gratuit pendant 30 jours, sans rien payer. À télécharger sur l'ordinateur Windows de la quincaillerie (68&nbsp;Mo). Ensuite, vous me demandez la clé et vous continuez à 15&nbsp;000&nbsp;FCFA par mois, ou à 150&nbsp;000&nbsp;FCFA par an (2 mois offerts).</p>
       <ul class="garanties">
         <li>Marche sans internet</li>
         <li>30 jours gratuits</li>
@@ -554,7 +584,7 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-
 
 <section class="offre" aria-labelledby="t-offre">
   <div class="wrap">
-    <h2 id="t-offre">Ce que vous avez pour 15&nbsp;000&nbsp;FCFA par mois</h2>
+    <h2 id="t-offre">Ce que vous avez pour 15&nbsp;000&nbsp;FCFA par mois, ou 150&nbsp;000&nbsp;FCFA par an</h2>
     <div class="offre-grid">
       <div>
         <ul class="inclus">
@@ -570,9 +600,21 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-
         <p class="ancre">Retrouver une seule erreur de stock ou un seul crédit oublié peut déjà couvrir plusieurs mois de logiciel. Pendant l'essai, c'est ce que vous cherchez, sans rien risquer.</p>
       </div>
       <div class="prix-carte">
-        <div class="prix">15&nbsp;000&nbsp;FCFA <small>par mois</small></div>
-        <p class="par-jour">Soit 500&nbsp;FCFA par jour, par ordinateur</p>
+        <div class="formules">
+          <div class="formule formule-an">
+            <span class="badge">2 mois offerts</span>
+            <p class="f-nom">À l'année</p>
+            <div class="prix">150&nbsp;000 <small>FCFA par an</small></div>
+            <p class="par-jour">Soit 12&nbsp;500&nbsp;FCFA par mois</p>
+          </div>
+          <div class="formule">
+            <p class="f-nom">Au mois</p>
+            <div class="prix">15&nbsp;000 <small>FCFA par mois</small></div>
+            <p class="par-jour">Soit 500&nbsp;FCFA par jour</p>
+          </div>
+        </div>
         <a class="btn" href="https://github.com/alexcruss/lotusqs-telechargement/releases/latest/download/LotusQS.zip">Télécharger l'essai gratuit</a>
+        <a class="btn btn-ligne" href="https://wa.me/22891512041?text=Bonjour%2C%20je%20veux%20Lotus%20QS%20%C3%A0%20l%27ann%C3%A9e%20%28150%20000%20F%29%20pour%20ma%20quincaillerie%20%C3%A0%20...%20%28quartier%29." target="_blank" rel="noopener">Je prends l'année<span class="sr"> (s'ouvre dans une nouvelle fenêtre)</span></a>
         <p class="annuel"><strong>30 jours gratuits</strong> d'abord. Le prix est par ordinateur : un magasin avec deux ordinateurs prend deux licences.</p>
         <p class="annuel"><strong>Modules en option</strong> : Caisse, et Devis et bons de livraison, 8&nbsp;000&nbsp;FCFA chacun, une seule fois.</p>
         <p class="note">Gratuit pendant 30 jours. Vous ne payez que si vous continuez.</p>
@@ -635,7 +677,7 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-
     </details>
     <details>
       <summary>Combien ça coûte&nbsp;?</summary>
-      <p>L'essai est gratuit pendant 30 jours. Ensuite, c'est 15&nbsp;000&nbsp;FCFA par mois et par ordinateur, soit 500&nbsp;FCFA par jour. Les modules en option coûtent 8&nbsp;000&nbsp;FCFA chacun, une seule fois.</p>
+      <p>L'essai est gratuit pendant 30 jours. Ensuite, c'est 15&nbsp;000&nbsp;FCFA par mois et par ordinateur, soit 500&nbsp;FCFA par jour, ou 150&nbsp;000&nbsp;FCFA par an et par ordinateur avec 2 mois offerts. Les modules en option coûtent 8&nbsp;000&nbsp;FCFA chacun, une seule fois.</p>
     </details>
     <details>
       <summary>C'est quoi un module, et combien ça coûte&nbsp;?</summary>
@@ -655,7 +697,7 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-
         <a class="btn btn-grand btn-clair" href="https://wa.me/22891512041?text=Bonjour%2C%20je%20veux%20voir%20Lotus%20QS%20dans%20ma%20quincaillerie%20%C3%A0%20...%20%28quartier%29.%20Quand%20pouvez-vous%20venir%20%3F" target="_blank" rel="noopener">Écrire sur WhatsApp<span class="sr"> (s'ouvre dans une nouvelle fenêtre)</span></a>
       </div>
     </div>
-    <p class="micro">Gratuit pendant 30 jours. Ensuite 15&nbsp;000&nbsp;FCFA par mois.</p>
+    <p class="micro">Gratuit pendant 30 jours. Ensuite 15&nbsp;000&nbsp;FCFA par mois, ou 150&nbsp;000&nbsp;FCFA par an.</p>
   </div>
 </section>
 
@@ -670,7 +712,7 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-
 
 <div class="barre-bas">
   <div class="wrap">
-    <span><b>Essai gratuit 30 jours</b>puis 500&nbsp;FCFA par jour</span>
+    <span><b>Essai gratuit 30 jours</b>puis 500&nbsp;F par jour, ou 150&nbsp;000&nbsp;F l'an</span>
     <a class="btn btn-vert" href="https://wa.me/22891512041?text=Bonjour%2C%20je%20veux%20voir%20Lotus%20QS%20dans%20ma%20quincaillerie%20%C3%A0%20...%20%28quartier%29.%20Quand%20pouvez-vous%20venir%20%3F" target="_blank" rel="noopener">WhatsApp<span class="sr"> (s'ouvre dans une nouvelle fenêtre)</span></a>
   </div>
 </div>
