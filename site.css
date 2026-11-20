@@ -107,6 +107,7 @@ a.carte{text-decoration:none;color:inherit}
 .titre-logo{display:flex;align-items:center;gap:10px}
 .titre-logo img{width:36px;height:36px;border-radius:9px;flex:none}
 .carte .corps .prix{align-self:flex-start;position:relative;background:var(--lait);border-radius:4px 8px 8px 4px;padding:3px 12px 3px 28px;font-size:.88rem;line-height:1.5}
+.carte .corps .prix.prix-an{background:var(--or-clair)}
 .carte .corps .prix::before{content:"";position:absolute;left:10px;top:50%;width:9px;height:9px;margin-top:-4.5px;border-radius:50%;background:var(--blanc);box-shadow:inset 0 0 0 1.5px rgba(18,38,63,.35)}
 /* offre la plus récente : pleine largeur, image à gauche */
 .carte-grande{grid-column:1/-1;flex-direction:row}
