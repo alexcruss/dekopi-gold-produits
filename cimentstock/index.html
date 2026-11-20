@@ -196,6 +196,16 @@ summary::after{content:"+";font-size:1.4rem;line-height:1;color:var(--bleu);flex
 details[open] summary::after{content:"\2212"}
 details p{padding:0 20px 18px;color:var(--muted)}
 
+/* modules facultatifs */
+.modules{background:var(--brume)}
+.modules-grille{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.module{background:var(--blanc);border-radius:var(--rayon);padding:26px 24px;border-top:4px solid var(--or)}
+.module .prix-module{display:inline-block;background:var(--encre);color:var(--or-clair);font-weight:600;font-size:.85rem;padding:4px 14px;border-radius:99px;margin-bottom:14px}
+.module h3{margin-bottom:10px}
+.module p{color:var(--muted)}
+.module p + p{margin-top:10px}
+.modules-note{margin-top:22px;color:var(--muted);max-width:40em}
+
 /* comparaison */
 .compare{background:var(--blanc)}
 .tableau{width:100%;border-collapse:separate;border-spacing:0;border:1px solid var(--lait);border-radius:var(--rayon);overflow:hidden;font-size:.98rem}
@@ -242,7 +252,7 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-
 @media (max-width:820px){
   section{padding:46px 0}
   .hero{padding:34px 0 42px}
-  .hero-grid,.offre-grid,.choix-grille,.etapes,.voir-ligne,.fonctions{grid-template-columns:1fr}
+  .hero-grid,.offre-grid,.choix-grille,.etapes,.voir-ligne,.fonctions,.modules-grille{grid-template-columns:1fr}
   .voir-ligne{gap:18px;padding:22px 0}
   .voir-ligne:nth-child(even) .voir-texte{order:0}
   .hero .btn-grand{width:100%}
@@ -440,6 +450,28 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-
   </div>
 </section>
 
+<section class="modules" aria-labelledby="t-modules">
+  <div class="wrap">
+    <h2 id="t-modules">Deux modules à ajouter quand vous en avez besoin</h2>
+    <p class="intro">WOE CS de base suffit pour vendre, acheter et suivre le stock. Un module ajoute une fonction en plus. Chacun coûte 8&nbsp;000&nbsp;FCFA, une seule fois, par ordinateur. Pendant les 30 jours d'essai, tous les modules sont ouverts : vous les essayez avant de décider.</p>
+    <div class="modules-grille">
+      <article class="module">
+        <span class="prix-module">8&nbsp;000&nbsp;FCFA, une seule fois</span>
+        <h3>Caisse</h3>
+        <p>L'argent en espèces de la journée, sans cahier à côté. Les encaissements des ventes et les paiements aux fournisseurs en espèces s'inscrivent tout seuls. Vous ajoutez le fond de caisse, les dépenses (transport, loyer, salaires, électricité), les apports et les retraits.</p>
+        <p>Le soir, vous comptez les billets et vous saisissez le total. WOE CS vous dit s'il manque de l'argent, et combien. La journée est ensuite figée : on ne peut plus rien y changer. Le Mobile Money, les virements et les chèques restent hors de la caisse.</p>
+      </article>
+      <article class="module">
+        <span class="prix-module">8&nbsp;000&nbsp;FCFA, une seule fois</span>
+        <h3>Devis et bons de livraison</h3>
+        <p>Un client demande le prix de 200 sacs : vous lui sortez un devis en PDF, avec une case « bon pour accord » à signer. Chaque devis a une durée de validité, 15 jours par défaut. S'il accepte, un clic le transforme en vente : les produits, les sacs, les prix et la remise sont repris tels quels.</p>
+        <p>Sur chaque facture, vous imprimez aussi un bon de livraison sans prix : les articles à cocher, et deux signatures, celle de celui qui livre et celle de celui qui reçoit.</p>
+      </article>
+    </div>
+    <p class="modules-note">Vous n'en voulez pas&nbsp;? WOE CS reste complet sans eux. Pour en ajouter un, écrivez-moi sur WhatsApp : je vous envoie une nouvelle clé à coller dans le menu Licence.</p>
+  </div>
+</section>
+
 <!-- ========== 6. COMPARAISON ========== -->
 <section class="compare" aria-labelledby="t-compare">
   <div class="wrap">
@@ -483,6 +515,7 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-
         <a class="btn" href="https://github.com/alexcruss/cimentstock-telechargement/releases/latest/download/CimentStock.zip">Télécharger l'essai gratuit</a>
         <p class="annuel"><strong>120&nbsp;000&nbsp;FCFA par an</strong> : vous payez 10 mois et vous en avez 12.</p>
         <a class="btn btn-ligne" href="https://wa.me/22891512041?text=Bonjour%2C%20je%20veux%20WOE%20CS%20%C3%A0%20l%27ann%C3%A9e%20%28120%20000%20F%29%20pour%20mon%20d%C3%A9p%C3%B4t%20%C3%A0%20...%20%28quartier%29." target="_blank" rel="noopener">Je prends l'année<span class="sr"> (s'ouvre dans une nouvelle fenêtre)</span></a>
+        <p class="annuel"><strong>Modules en option</strong> : Caisse, et Devis et bons de livraison, 8&nbsp;000&nbsp;FCFA chacun, une seule fois.</p>
         <p class="note">Gratuit pendant 30 jours. Vous ne payez que si vous continuez.</p>
       </div>
     </div>
@@ -551,6 +584,10 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-
     <details>
       <summary>Et si ça ne me sert à rien&nbsp;?</summary>
       <p>Vous ne payez rien : l'essai est gratuit. Sans clé, WOE CS passe en consultation et vos données restent à vous.</p>
+    </details>
+    <details>
+      <summary>C'est quoi un module, et combien ça coûte&nbsp;?</summary>
+      <p>Un module ajoute une fonction à WOE CS. Il y en a deux : Caisse, et Devis et bons de livraison. Chacun coûte 8&nbsp;000&nbsp;FCFA, une seule fois, par ordinateur. Pendant l'essai de 30 jours, ils sont tous ouverts. Pour en ajouter un, vous m'écrivez sur WhatsApp : je vous envoie une nouvelle clé que vous collez dans le menu Licence.</p>
     </details>
   </div>
 </section>
