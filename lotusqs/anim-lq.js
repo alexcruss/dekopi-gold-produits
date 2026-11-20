@@ -19,18 +19,18 @@
   gsap.fromTo(".hero .fen", { y: 30 }, { y: 0, duration: 0.9, ease: "power3.out", clearProps: "transform" });
   gsap.fromTo(".hero .coches li", { x: -14 }, { x: 0, duration: 0.6, ease: "power2.out", stagger: 0.1, delay: 0.3, clearProps: "transform" });
 
-  /* 2. Apparition au défilement : on ne cache que ce qui est sous la partie visible au chargement,
-        et seulement si le script tourne (sans JavaScript tout est visible). */
+  /* 2. Apparition au défilement : les blocs restent TOUJOURS visibles (opacité jamais touchée) et glissent
+        de quelques pixels en entrant. Ainsi une capture de la page entière, un lecteur pressé ou un robot voit tout. */
   function cascade(zone, itemsSel, depart, ecart){
     if(!zone || !sousLePli(zone)) return;
     var items = zone.querySelectorAll(itemsSel);
     if(!items.length) return;
-    gsap.set(items, Object.assign({ autoAlpha: 0 }, depart));
+    gsap.set(items, depart);
     ScrollTrigger.create({
       trigger: zone, start: "top 85%", once: true,
       onEnter: function(){
-        gsap.to(items, { autoAlpha: 1, x: 0, y: 0, duration: 0.7, ease: "power2.out",
-          stagger: ecart || 0.12, overwrite: true, clearProps: RENDRE });
+        gsap.to(items, { x: 0, y: 0, duration: 0.7, ease: "power2.out",
+          stagger: ecart || 0.12, overwrite: true, clearProps: "transform" });
       }
     });
   }

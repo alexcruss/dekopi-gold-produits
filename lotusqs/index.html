@@ -71,7 +71,7 @@
 <script src="../anim-tete.js"></script>
 <script defer src="../vendor/gsap.min.js"></script>
 <script defer src="../vendor/ScrollTrigger.min.js"></script>
-<script defer src="anim-lq.js?v=1"></script>
+<script defer src="anim-lq.js?v=3"></script>
 <link rel="apple-touch-icon" href="logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -99,7 +99,7 @@ h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.15;letter-spacing:-.01
 h1{font-size:clamp(2rem,5.5vw,3.4rem)}
 h2{font-size:clamp(1.6rem,3.5vw,2.3rem);margin-bottom:12px}
 h3{font-size:1.25rem}
-section{padding:64px 0}
+section{padding:54px 0}
 .intro{color:var(--muted);max-width:40em;margin-bottom:30px}
 :focus-visible{outline:3px solid var(--or);outline-offset:3px}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
@@ -161,13 +161,17 @@ header.haut{position:sticky;top:0;z-index:40;background:rgba(246,244,250,.95);ba
 .choix-grille{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .choix-carte{display:flex;flex-direction:column;justify-content:space-between;gap:18px;background:var(--blanc);border:1px solid var(--lait);border-top:4px solid var(--or);border-radius:var(--rayon);padding:24px;text-decoration:none;transition:transform .15s, box-shadow .15s}
 .choix-carte:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(27,24,72,.12)}
-.choix-carte h3{margin-bottom:8px}
+.choix-carte{box-shadow:0 6px 18px rgba(0,0,0,.08)}
+.choix-carte h3{margin-bottom:10px;font-size:1.4rem}
 .choix-carte p{color:var(--muted)}
-.choix-carte .go{font-weight:600;color:var(--bleu)}
+.choix-carte .go{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:11px 18px;border-radius:10px;background:var(--encre);color:var(--creme);font-weight:600;text-align:center;transition:background .15s}
+.choix-carte:hover .go{background:var(--bleu)}
+.ico-rond{display:grid;place-items:center;width:52px;height:52px;border-radius:50%;background:var(--or);margin-bottom:14px}
+.ico-rond svg{width:26px;height:26px;fill:none;stroke:var(--encre);stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
 
 /* ce que vous voyez */
 .voir{background:var(--blanc)}
-.voir-ligne{display:grid;grid-template-columns:1fr 1.15fr;gap:40px;align-items:center;padding:30px 0}
+.voir-ligne{display:grid;grid-template-columns:1fr 1.15fr;gap:40px;align-items:center;padding:18px 0}
 .voir-ligne:nth-child(even) .voir-texte{order:2}
 .voir-ligne>*{min-width:0}
 .voir-texte h3{margin-bottom:10px;font-size:1.5rem}
@@ -352,6 +356,7 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-
     <div class="choix-grille">
       <a class="choix-carte" href="https://wa.me/22891512041?text=Bonjour%2C%20mon%20probl%C3%A8me%20%3A%20je%20ne%20sais%20pas%20ce%20qui%20va%20manquer%20en%20rayon.%20Montrez-moi%20Lotus%20QS%20pour%20ma%20quincaillerie%20%C3%A0%20...%20%28quartier%29." target="_blank" rel="noopener">
         <div>
+          <span class="ico-rond"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></span>
           <h3>Combien de ventes perdez-vous parce que le rayon est vide&nbsp;?</h3>
           <p>Un client vient pour 4&nbsp;125&nbsp;F d'articles. Le câble manque, vous le découvrez devant lui. Il prend tout chez le voisin, et il ne revient pas toujours.</p>
         </div>
@@ -359,6 +364,7 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-
       </a>
       <a class="choix-carte" href="https://wa.me/22891512041?text=Bonjour%2C%20mon%20probl%C3%A8me%20%3A%20je%20vends%20au%20m%C3%A8tre%2C%20au%20kilo%20et%20%C3%A0%20la%20pi%C3%A8ce.%20Montrez-moi%20Lotus%20QS%20pour%20ma%20quincaillerie%20%C3%A0%20...%20%28quartier%29." target="_blank" rel="noopener">
         <div>
+          <span class="ico-rond"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="11" x2="8.01" y2="11"/><line x1="12" y1="11" x2="12.01" y2="11"/><line x1="16" y1="11" x2="16.01" y2="11"/><line x1="8" y1="16" x2="8.01" y2="16"/><line x1="12" y1="16" x2="12.01" y2="16"/><line x1="16" y1="16" x2="16.01" y2="16"/></svg></span>
           <h3>2,5 mètres de câble&nbsp;: vous calculez de tête&nbsp;?</h3>
           <p>Le client attend, vous faites le calcul à la main. Une erreur de 500&nbsp;F par-ci par-là, et le soir la caisse ne tombe pas juste.</p>
         </div>
@@ -366,6 +372,7 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-
       </a>
       <a class="choix-carte" href="https://wa.me/22891512041?text=Bonjour%2C%20mon%20probl%C3%A8me%20%3A%20j%27ai%20des%20centaines%20d%27articles%20%C3%A0%20saisir.%20Montrez-moi%20Lotus%20QS%20pour%20ma%20quincaillerie%20%C3%A0%20...%20%28quartier%29." target="_blank" rel="noopener">
         <div>
+          <span class="ico-rond"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="16" y2="17"/><line x1="12" y1="10" x2="12" y2="20"/></svg></span>
           <h3>Combien de jours pour retaper 800 articles&nbsp;?</h3>
           <p>La liste existe déjà dans Excel. Retaper chaque article, son prix et son stock prend des jours de travail. Avec Lotus QS, elle entre d'un coup.</p>
         </div>
@@ -385,7 +392,7 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-
       <div class="voir-texte">
         <span class="tag">GRAPHIQUES</span>
         <h3>Vos ventes et votre stock, en images</h3>
-        <p>Le tableau de bord trace les ventes des 30 derniers jours, les ventes du mois par article, les six derniers mois avec la marge, et le stock de chaque article face à son seuil d'alerte. Au-dessus, trois cartes donnent l'article le plus vendu du mois, votre meilleur client et le fournisseur le moins cher. Vous voyez ce qui monte, ce qui baisse et ce qu'il faut racheter.</p>
+        <p>Les ventes des 30 derniers jours, les ventes du mois par article, les six derniers mois avec la marge, et le stock face au seuil d'alerte. Trois cartes donnent l'article le plus vendu, votre meilleur client et le fournisseur le moins cher.</p>
       </div>
       <figure class="voir-img">
         <img src="graphiques.webp" width="1280" height="1461" loading="lazy" alt="Quatre graphiques du tableau de bord de Lotus QS : ventes des 30 derniers jours en barres, ventes du mois par article en anneau, ventes et marge des six derniers mois, stock de chaque article comparé à son seuil d'alerte">
@@ -397,7 +404,7 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-
       <div class="voir-texte">
         <span class="tag">FOURNISSEURS</span>
         <h3>Le fournisseur le moins cher, article par article</h3>
-        <p>Chaque achat garde le prix payé. Le tableau de bord compare le dernier prix de chaque fournisseur, pour chaque article, et vous dit qui vend le moins cher, et de combien. Seul l'administrateur voit cette partie, parce que ce sont vos prix d'achat.</p>
+        <p>Chaque achat garde le prix payé. Le tableau de bord compare les fournisseurs, article par article, et dit qui vend le moins cher, et de combien. Seul l'administrateur voit cette partie.</p>
       </div>
       <figure class="voir-img">
         <div class="glissant"><img src="prix.webp" width="1280" height="690" loading="lazy" alt="Tableau Meilleur prix d'achat par article : pour chaque article, le fournisseur le moins cher, le prix unitaire et l'écart avec le fournisseur suivant"></div>
@@ -409,7 +416,7 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-
       <div class="voir-texte">
         <span class="tag">ARTICLES</span>
         <h3>Chaque article, avec ses deux prix et sa marge</h3>
-        <p>Référence, code-barres, catégorie, unité, prix détail, prix gros, coût moyen et marge. Le coût moyen se met à jour tout seul à chaque achat, transport compris. Vous importez ou exportez la liste avec Excel.</p>
+        <p>Référence, code-barres, catégorie, unité, prix détail, prix gros, coût moyen et marge. La liste s'importe et s'exporte avec Excel.</p>
       </div>
       <figure class="voir-img">
         <div class="glissant"><img src="articles.webp" width="1280" height="735" loading="lazy" alt="Page Articles et prix de Lotus QS : ciment, peinture, joint, robinet, clous et câble électrique avec catégorie, unité, prix détail, prix gros, coût moyen, marge et seuil d'alerte"></div>
@@ -421,7 +428,7 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-
       <div class="voir-texte">
         <span class="tag">VENTE</span>
         <h3>Une vente en quelques secondes, au mètre ou à la pièce</h3>
-        <p>Vous cherchez l'article ou vous scannez son code-barres. La quantité accepte les décimales : 2,5 mètres de câble, 2 boîtes de clous. Le stock restant s'affiche sous chaque ligne, et le total se calcule seul.</p>
+        <p>Vous cherchez l'article ou vous scannez son code-barres. La quantité accepte les décimales : 2,5 mètres de câble, 2 boîtes de clous. Le total se calcule seul.</p>
       </div>
       <figure class="voir-img">
         <div class="glissant"><img src="vente.webp" width="1280" height="700" loading="lazy" alt="Page Nouvelle vente : 2,5 mètres de câble électrique et 2 boîtes de clous, stock restant sous chaque ligne, total à payer 4 125 F, mode de paiement et bouton Valider la vente"></div>
@@ -436,7 +443,7 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-
     <h2 id="t-suite">30 jours gratuits, puis la clé</h2>
     <p class="intro">Vous essayez avec vos vrais articles et vos vraies ventes.</p>
     <ol class="etapes">
-      <li><span class="quand">Jour 1</span><strong>Vous l'installez, ou je viens</strong><span class="t">Téléchargez le dossier sur l'ordinateur de la quincaillerie et lancez l'installation : la notice vous guide pas à pas. Vous préférez que je le fasse ? Je viens, j'importe votre liste d'articles avec le stock de départ et je forme votre vendeur à la vente et au scan.</span></li>
+      <li><span class="quand">Jour 1</span><strong>Vous l'installez, ou je viens</strong><span class="t">Téléchargez le dossier sur l'ordinateur de la quincaillerie et lancez l'installation, la notice vous guide. Vous préférez que je le fasse ? Je viens, j'importe votre liste d'articles et je forme votre vendeur.</span></li>
       <li><span class="quand">Semaine 1</span><strong>Chaque vente compte</strong><span class="t">Chaque vente et chaque achat met le stock à jour. Le soir, vous ouvrez le tableau de bord : ventes du jour, argent encaissé, crédits clients, articles en stock bas, et les graphiques de vos ventes.</span></li>
       <li><span class="quand">Jour 30</span><strong>Vous demandez la clé</strong><span class="t">Dans le menu Licence, copiez le code de votre ordinateur et envoyez-le moi sur WhatsApp. Je vous réponds avec la clé. Vous la collez, vous cliquez sur Activer, et vous continuez à 15&nbsp;000&nbsp;FCFA par mois.</span></li>
     </ol>
@@ -509,19 +516,17 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-
 <section class="modules" aria-labelledby="t-modules">
   <div class="wrap">
     <h2 id="t-modules">Deux modules à ajouter quand vous en avez besoin</h2>
-    <p class="intro">Lotus QS de base suffit pour vendre, acheter et suivre le stock. Un module ajoute une fonction en plus. Chacun coûte 8&nbsp;000&nbsp;FCFA, une seule fois, par ordinateur. Pendant les 30 jours d'essai, tous les modules sont ouverts : vous les essayez avant de décider.</p>
+    <p class="intro">Lotus QS de base suffit pour vendre, acheter et suivre le stock. Un module ajoute une fonction, pour 8&nbsp;000&nbsp;FCFA une seule fois, par ordinateur. Pendant les 30 jours d'essai, tous les modules sont ouverts.</p>
     <div class="modules-grille">
       <article class="module">
         <span class="prix-module">8&nbsp;000&nbsp;FCFA, une seule fois</span>
         <h3>Caisse</h3>
-        <p>L'argent en espèces de la journée, sans cahier à côté. Les encaissements des ventes et les paiements aux fournisseurs en espèces s'inscrivent tout seuls. Vous ajoutez le fond de caisse, les dépenses (transport, loyer, salaires, électricité), les apports et les retraits.</p>
-        <p>Le soir, vous comptez les billets et vous saisissez le total. Lotus QS vous dit s'il manque de l'argent, et combien. La journée est ensuite figée : on ne peut plus rien y changer. Le Mobile Money, les virements et les chèques restent hors de la caisse.</p>
+        <p>L'argent en espèces de la journée, sans cahier à côté : encaissements, paiements aux fournisseurs, dépenses, apports et retraits. Le soir, vous saisissez le total compté et Lotus QS vous dit s'il manque de l'argent, et combien.</p>
       </article>
       <article class="module">
         <span class="prix-module">8&nbsp;000&nbsp;FCFA, une seule fois</span>
         <h3>Devis et bons de livraison</h3>
-        <p>Un client demande un prix : vous lui sortez un devis en PDF, avec une case « bon pour accord » à signer. Chaque devis a une durée de validité, 15 jours par défaut. S'il accepte, un clic le transforme en vente : les articles, les quantités, les prix et la remise sont repris tels quels.</p>
-        <p>Sur chaque facture, vous imprimez aussi un bon de livraison sans prix : les articles à cocher, et deux signatures, celle de celui qui livre et celle de celui qui reçoit.</p>
+        <p>Un client demande un prix : un devis PDF avec une case « bon pour accord », valable 15 jours par défaut. S'il accepte, un clic le transforme en vente. Sur chaque facture, un bon de livraison sans prix, avec deux signatures.</p>
       </article>
     </div>
     <p class="modules-note">Vous n'en voulez pas&nbsp;? Lotus QS reste complet sans eux. Pour en ajouter un, écrivez-moi sur WhatsApp : je vous envoie une nouvelle clé à coller dans le menu Licence.</p>

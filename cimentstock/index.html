@@ -88,7 +88,7 @@
 <script src="../anim-tete.js"></script>
 <script defer src="../vendor/gsap.min.js"></script>
 <script defer src="../vendor/ScrollTrigger.min.js"></script>
-<script defer src="anim-cs.js?v=2"></script>
+<script defer src="anim-cs.js?v=3"></script>
 <link rel="apple-touch-icon" href="logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -116,7 +116,7 @@ h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.15;letter-spacing:-.01
 h1{font-size:clamp(2rem,5.5vw,3.4rem)}
 h2{font-size:clamp(1.6rem,3.5vw,2.3rem);margin-bottom:12px}
 h3{font-size:1.25rem}
-section{padding:64px 0}
+section{padding:54px 0}
 .intro{color:var(--muted);max-width:40em;margin-bottom:30px}
 :focus-visible{outline:3px solid var(--or);outline-offset:3px}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
@@ -147,6 +147,8 @@ header.haut{position:sticky;top:0;z-index:40;background:rgba(245,243,238,.95);ba
 .btn-ligne{background:transparent;border-color:var(--encre);color:var(--encre)}
 .btn-ligne:hover{background:var(--encre);color:var(--creme)}
 .micro{font-size:.9rem;margin-top:14px;color:#D9E3EF}
+.offre-an{display:inline-block;margin-top:16px;padding:8px 18px;border:1px solid var(--or);background:rgba(244,168,58,.16);border-radius:99px;color:#fff;font-size:.95rem}
+.offre-an strong{color:var(--or-clair)}
 .actions{display:flex;flex-wrap:wrap;gap:12px}
 .btn-clair{background:transparent;border-color:rgba(255,255,255,.55);color:#fff}
 .btn-clair:hover{background:rgba(255,255,255,.12)}
@@ -178,13 +180,17 @@ header.haut{position:sticky;top:0;z-index:40;background:rgba(245,243,238,.95);ba
 .choix-grille{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .choix-carte{display:flex;flex-direction:column;justify-content:space-between;gap:18px;background:var(--blanc);border:1px solid var(--lait);border-top:4px solid var(--or);border-radius:var(--rayon);padding:24px;text-decoration:none;transition:transform .15s, box-shadow .15s}
 .choix-carte:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(18,38,63,.12)}
-.choix-carte h3{margin-bottom:8px}
+.choix-carte{box-shadow:0 6px 18px rgba(0,0,0,.08)}
+.choix-carte h3{margin-bottom:10px;font-size:1.4rem}
 .choix-carte p{color:var(--muted)}
-.choix-carte .go{font-weight:600;color:var(--bleu)}
+.choix-carte .go{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:11px 18px;border-radius:10px;background:var(--encre);color:var(--creme);font-weight:600;text-align:center;transition:background .15s}
+.choix-carte:hover .go{background:var(--bleu)}
+.ico-rond{display:grid;place-items:center;width:52px;height:52px;border-radius:50%;background:var(--or);margin-bottom:14px}
+.ico-rond svg{width:26px;height:26px;fill:none;stroke:var(--encre);stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
 
 /* ce que vous voyez */
 .voir{background:var(--blanc)}
-.voir-ligne{display:grid;grid-template-columns:1fr 1.15fr;gap:40px;align-items:center;padding:30px 0}
+.voir-ligne{display:grid;grid-template-columns:1fr 1.15fr;gap:40px;align-items:center;padding:18px 0}
 .voir-ligne:nth-child(even) .voir-texte{order:2}
 .voir-ligne>*{min-width:0}
 .voir-texte h3{margin-bottom:10px;font-size:1.5rem}
@@ -254,13 +260,14 @@ details p{padding:0 20px 18px;color:var(--muted)}
 .prix{font-family:Fraunces,Georgia,serif;font-size:2.6rem;line-height:1.05;font-weight:700;color:var(--bleu)}
 .prix small{font-family:Poppins,sans-serif;font-size:1rem;font-weight:500;color:var(--muted)}
 .par-jour{font-weight:600;margin:6px 0 16px}
-.formules{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:18px}
+.formules{display:grid;grid-template-columns:1.2fr 1fr;gap:12px;margin-bottom:18px}
 .formule{position:relative;border:2px solid var(--lait);border-radius:10px;padding:16px 14px 10px;background:var(--blanc)}
 .formule .f-nom{font-weight:600;font-size:.9rem;color:var(--muted);margin-bottom:4px}
 .formule .prix{font-size:2rem}
 .formule .prix small{display:block;font-size:.85rem;margin-top:2px}
 .formule .par-jour{margin:8px 0 4px;font-size:.88rem}
-.formule-an{border-color:var(--or);background:#FFF8EC}
+.formule-an{border-color:var(--or);background:#FFF8EC;box-shadow:0 6px 18px rgba(244,168,58,.3)}
+.formule-an .prix{font-size:2.35rem}
 .formule-an .badge{position:absolute;top:-12px;right:10px;background:var(--or);color:var(--encre);font-weight:600;font-size:.78rem;padding:3px 12px;border-radius:99px}
 .prix-carte .btn{width:100%}
 .prix-carte .btn+.btn{margin-top:10px}
@@ -360,6 +367,7 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-
         <a class="btn btn-grand" href="https://github.com/alexcruss/cimentstock-telechargement/releases/latest/download/CimentStock.zip">Télécharger l'essai gratuit de 30 jours</a>
         <a class="btn btn-grand btn-clair" href="https://wa.me/22891512041?text=Bonjour%2C%20je%20veux%20WOE%20CS%20pour%20mon%20d%C3%A9p%C3%B4t%20%C3%A0%20...%20%28quartier%29.%20Quand%20pouvez-vous%20venir%20%3F" target="_blank" rel="noopener">Je préfère que vous l'installiez<span class="sr"> (s'ouvre dans une nouvelle fenêtre)</span></a>
       </div>
+      <p class="offre-an"><strong>À l'année : 120&nbsp;000&nbsp;FCFA</strong>, 2 mois offerts</p>
       <p class="micro">Gratuit pendant 30 jours, sans rien payer. À télécharger sur l'ordinateur Windows du dépôt (68&nbsp;Mo). Ensuite, vous me demandez la clé et vous continuez à 12&nbsp;000&nbsp;FCFA par mois, ou à 120&nbsp;000&nbsp;FCFA par an (2 mois offerts).</p>
       <ul class="garanties">
         <li>Marche sans internet</li>
@@ -384,6 +392,7 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-
     <div class="choix-grille">
       <a class="choix-carte" href="https://wa.me/22891512041?text=Bonjour%2C%20mon%20probl%C3%A8me%20%3A%20mon%20stock%20ne%20colle%20jamais.%20Montrez-moi%20WOE%20CS%20pour%20mon%20d%C3%A9p%C3%B4t%20%C3%A0%20...%20%28quartier%29." target="_blank" rel="noopener">
         <div>
+          <span class="ico-rond"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></span>
           <h3>Combien vous a déjà coûté un écart de stock&nbsp;?</h3>
           <p>Vous recomptez le dimanche : 20 sacs de moins que sur le cahier. À 4&nbsp;850&nbsp;F le sac, ce sont 97&nbsp;000&nbsp;F partis, et personne ne sait où.</p>
         </div>
@@ -391,6 +400,7 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-
       </a>
       <a class="choix-carte" href="https://wa.me/22891512041?text=Bonjour%2C%20mon%20probl%C3%A8me%20%3A%20je%20ne%20sais%20plus%20qui%20me%20doit%20combien.%20Montrez-moi%20WOE%20CS%20pour%20mon%20d%C3%A9p%C3%B4t%20%C3%A0%20...%20%28quartier%29." target="_blank" rel="noopener">
         <div>
+          <span class="ico-rond"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></span>
           <h3>Ce maçon vous doit 74&nbsp;000&nbsp;F. Depuis quand&nbsp;?</h3>
           <p>Il a payé 120&nbsp;000&nbsp;F sur 194&nbsp;000&nbsp;F, en deux fois. Au bout d'un mois, le cahier ne dit plus clairement ce qui reste, et lui jure qu'il a tout réglé.</p>
         </div>
@@ -398,6 +408,7 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-
       </a>
       <a class="choix-carte" href="https://wa.me/22891512041?text=Bonjour%2C%20mon%20probl%C3%A8me%20%3A%20je%20ne%20sais%20pas%20ce%20qui%20se%20vend%20quand%20je%20suis%20absent.%20Montrez-moi%20WOE%20CS%20pour%20mon%20d%C3%A9p%C3%B4t%20%C3%A0%20...%20%28quartier%29." target="_blank" rel="noopener">
         <div>
+          <span class="ico-rond"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
           <h3>Votre employé a vendu 40 sacs. Vous en avez vu passer combien&nbsp;?</h3>
           <p>Vous étiez au chantier ou chez un fournisseur. Le soir, vous n'avez que sa parole. Avec WOE CS, chaque vente garde sa date et son heure.</p>
         </div>
@@ -418,7 +429,7 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-
       <div class="voir-texte">
         <span class="tag">GRAPHIQUES</span>
         <h3>Vos ventes et votre stock, en images</h3>
-        <p>Le tableau de bord trace les ventes des 30 derniers jours, les sacs vendus par produit, les six derniers mois avec la marge, et le stock de chaque produit face à son seuil d'alerte. Au-dessus, trois cartes donnent le produit le plus vendu du mois, votre meilleur client et le fournisseur le moins cher. Vous voyez ce qui monte, ce qui baisse et ce qu'il faut racheter.</p>
+        <p>Les ventes des 30 derniers jours, les sacs vendus par produit, les six derniers mois avec la marge, et le stock face au seuil d'alerte. Trois cartes donnent le produit le plus vendu, votre meilleur client et le fournisseur le moins cher.</p>
       </div>
       <figure class="voir-img">
         <img src="graphiques.webp" width="1280" height="1313" loading="lazy" alt="Quatre graphiques du tableau de bord de WOE CS : ventes des 30 derniers jours en barres, sacs vendus par produit en anneau, ventes et marge des six derniers mois, stock de chaque produit comparé à son seuil d'alerte">
@@ -430,7 +441,7 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-
       <div class="voir-texte">
         <span class="tag">FOURNISSEURS</span>
         <h3>Le fournisseur le moins cher, produit par produit</h3>
-        <p>Chaque achat garde le prix payé. Le tableau de bord compare le dernier prix de chaque fournisseur et vous dit qui vend le moins cher, et de combien. Seul l'administrateur voit cette partie, parce que ce sont vos prix d'achat.</p>
+        <p>Chaque achat garde le prix payé. Le tableau de bord compare les fournisseurs et dit qui vend le moins cher, et de combien. Seul l'administrateur voit cette partie.</p>
       </div>
       <figure class="voir-img">
         <div class="glissant"><img src="prix.webp" width="1280" height="315" loading="lazy" alt="Tableau Meilleur prix d'achat par produit : pour chaque produit, le fournisseur le moins cher, le prix du sac et l'écart avec le fournisseur suivant"></div>
@@ -442,7 +453,7 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-
       <div class="voir-texte">
         <span class="tag">STOCK</span>
         <h3>Chaque produit, au sac près</h3>
-        <p>Sacs, tonnes, coût moyen et valeur de ce qu'il y a dans le dépôt. Le stock est calculé à partir de chaque vente et de chaque arrivage : personne ne le tape à la main. L'inventaire et la casse s'enregistrent aussi.</p>
+        <p>Sacs, tonnes, coût moyen et valeur du dépôt. Le stock est calculé à chaque vente et chaque arrivage : personne ne le tape à la main.</p>
       </div>
       <figure class="voir-img">
         <div class="glissant"><img src="stock.webp" width="1280" height="300" loading="lazy" alt="Page Stock de WOE CS : deux produits en sacs et en tonnes, coût moyen, valeur totale du stock, boutons Transfert, Inventaire, Casse et Excel"></div>
@@ -454,7 +465,7 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-
       <div class="voir-texte">
         <span class="tag">CRÉDITS</span>
         <h3>Qui vous doit combien, en un coup d'œil</h3>
-        <p>Chaque client a un plafond de crédit et un relevé de compte. Un seul bouton pour n'afficher que ceux qui doivent. Quand un client paie en plusieurs fois, le paiement est réparti sur ses factures les plus anciennes.</p>
+        <p>Chaque client a un plafond de crédit et un relevé de compte. Un bouton n'affiche que ceux qui doivent.</p>
       </div>
       <figure class="voir-img">
         <div class="glissant"><img src="credits.webp" width="1280" height="340" loading="lazy" alt="Page Clients et crédits : deux clients avec leur crédit autorisé et le montant qu'ils doivent, en orange"></div>
@@ -466,7 +477,7 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-
       <div class="voir-texte">
         <span class="tag">FACTURE</span>
         <h3>Une facture propre, avec le montant en lettres</h3>
-        <p>En un clic, une facture PDF avec le client, la quantité, le prix, ce qui est payé et ce qui reste à payer. Prête à imprimer ou à envoyer. Une vente annulée reste visible, avec son numéro.</p>
+        <p>En un clic, une facture PDF prête à imprimer ou à envoyer, avec ce qui est payé et ce qui reste à payer.</p>
       </div>
       <figure class="voir-img facture-img">
         <div class="glissant"><img src="facture.webp" width="900" height="550" loading="lazy" alt="Facture PDF : Dépôt Démo à Lomé, client Chantier Kossi, 40 sacs, total 194 000 F, payé 120 000 F, reste à payer 74 000 F, montant arrêté en lettres"></div>
@@ -482,7 +493,7 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-
     <h2 id="t-suite">30 jours gratuits, puis la clé</h2>
     <p class="intro">Vous essayez avec vos vraies ventes. Vous savez quand regarder, et quoi regarder.</p>
     <ol class="etapes">
-      <li><span class="quand">Jour 1</span><strong>Vous l'installez, ou je viens</strong><span class="t">Téléchargez le dossier sur l'ordinateur du dépôt, ouvrez-le et lancez l'installation : la notice dans le dossier vous guide pas à pas. Vous préférez que je le fasse&nbsp;? Écrivez-moi, je viens, je saisis votre stock de départ et je forme votre employé en 15 minutes.</span></li>
+      <li><span class="quand">Jour 1</span><strong>Vous l'installez, ou je viens</strong><span class="t">Téléchargez le dossier sur l'ordinateur du dépôt et lancez l'installation, la notice vous guide. Vous préférez que je le fasse&nbsp;? Je viens, je saisis votre stock de départ et je forme votre employé en 15 minutes.</span></li>
       <li><span class="quand">Semaine 1</span><strong>Chaque vente compte</strong><span class="t">Chaque vente et chaque arrivage met le stock à jour. Le soir, vous ouvrez le tableau de bord : ventes du jour, argent encaissé, crédits clients, et les graphiques de vos ventes.</span></li>
       <li><span class="quand">Jour 30</span><strong>Vous demandez la clé</strong><span class="t">Dans le menu Licence, copiez le code de votre ordinateur et envoyez-le moi sur WhatsApp. Je vous réponds avec la clé. Vous la collez, vous cliquez sur Activer, et vous continuez à 12&nbsp;000&nbsp;FCFA par mois.</span></li>
     </ol>
@@ -556,19 +567,17 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-
 <section class="modules" aria-labelledby="t-modules">
   <div class="wrap">
     <h2 id="t-modules">Deux modules à ajouter quand vous en avez besoin</h2>
-    <p class="intro">WOE CS de base suffit pour vendre, acheter et suivre le stock. Un module ajoute une fonction en plus. Chacun coûte 8&nbsp;000&nbsp;FCFA, une seule fois, par ordinateur. Pendant les 30 jours d'essai, tous les modules sont ouverts : vous les essayez avant de décider.</p>
+    <p class="intro">WOE CS de base suffit pour vendre, acheter et suivre le stock. Un module ajoute une fonction, pour 8&nbsp;000&nbsp;FCFA une seule fois, par ordinateur. Pendant les 30 jours d'essai, tous les modules sont ouverts.</p>
     <div class="modules-grille">
       <article class="module">
         <span class="prix-module">8&nbsp;000&nbsp;FCFA, une seule fois</span>
         <h3>Caisse</h3>
-        <p>L'argent en espèces de la journée, sans cahier à côté. Les encaissements des ventes et les paiements aux fournisseurs en espèces s'inscrivent tout seuls. Vous ajoutez le fond de caisse, les dépenses (transport, loyer, salaires, électricité), les apports et les retraits.</p>
-        <p>Le soir, vous comptez les billets et vous saisissez le total. WOE CS vous dit s'il manque de l'argent, et combien. La journée est ensuite figée : on ne peut plus rien y changer. Le Mobile Money, les virements et les chèques restent hors de la caisse.</p>
+        <p>L'argent en espèces de la journée, sans cahier à côté : encaissements, paiements aux fournisseurs, dépenses, apports et retraits. Le soir, vous saisissez le total compté et WOE CS vous dit s'il manque de l'argent, et combien.</p>
       </article>
       <article class="module">
         <span class="prix-module">8&nbsp;000&nbsp;FCFA, une seule fois</span>
         <h3>Devis et bons de livraison</h3>
-        <p>Un client demande le prix de 200 sacs : vous lui sortez un devis en PDF, avec une case « bon pour accord » à signer. Chaque devis a une durée de validité, 15 jours par défaut. S'il accepte, un clic le transforme en vente : les produits, les sacs, les prix et la remise sont repris tels quels.</p>
-        <p>Sur chaque facture, vous imprimez aussi un bon de livraison sans prix : les articles à cocher, et deux signatures, celle de celui qui livre et celle de celui qui reçoit.</p>
+        <p>Un client demande le prix de 200 sacs : un devis PDF avec une case « bon pour accord », valable 15 jours par défaut. S'il accepte, un clic le transforme en vente. Sur chaque facture, un bon de livraison sans prix, avec deux signatures.</p>
       </article>
     </div>
     <p class="modules-note">Vous n'en voulez pas&nbsp;? WOE CS reste complet sans eux. Pour en ajouter un, écrivez-moi sur WhatsApp : je vous envoie une nouvelle clé à coller dans le menu Licence.</p>
@@ -614,16 +623,16 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-
       </div>
       <div class="prix-carte">
         <div class="formules">
-          <div class="formule">
-            <p class="f-nom">Au mois</p>
-            <div class="prix">12&nbsp;000 <small>FCFA par mois</small></div>
-            <p class="par-jour">Soit 400&nbsp;FCFA par jour</p>
-          </div>
           <div class="formule formule-an">
             <span class="badge">2 mois offerts</span>
             <p class="f-nom">À l'année</p>
             <div class="prix">120&nbsp;000 <small>FCFA par an</small></div>
             <p class="par-jour">Soit 10&nbsp;000&nbsp;FCFA par mois</p>
+          </div>
+          <div class="formule">
+            <p class="f-nom">Au mois</p>
+            <div class="prix">12&nbsp;000 <small>FCFA par mois</small></div>
+            <p class="par-jour">Soit 400&nbsp;FCFA par jour</p>
           </div>
         </div>
         <a class="btn" href="https://github.com/alexcruss/cimentstock-telechargement/releases/latest/download/CimentStock.zip">Télécharger l'essai gratuit</a>
@@ -733,7 +742,7 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-
 <!-- Barre collée en bas de l'écran, téléphone seulement -->
 <div class="barre-bas">
   <div class="wrap">
-    <span><b>Essai gratuit 30 jours</b>puis 400&nbsp;FCFA par jour</span>
+    <span><b>Essai gratuit 30 jours</b>puis 400&nbsp;F par jour, ou 120&nbsp;000&nbsp;F l'an</span>
     <a class="btn btn-vert" href="https://wa.me/22891512041?text=Bonjour%2C%20je%20veux%20WOE%20CS%20pour%20mon%20d%C3%A9p%C3%B4t%20%C3%A0%20...%20%28quartier%29.%20Quand%20pouvez-vous%20venir%20%3F" target="_blank" rel="noopener">WhatsApp<span class="sr"> (s'ouvre dans une nouvelle fenêtre)</span></a>
   </div>
 </div>
