@@ -24,13 +24,15 @@
     ".grille > .carte, .etape, .etapes-courtes > div, .avis, .entete, .apropos-grille, .carte-wa, .autres, .chiffres > div, .contact h2"
   ).filter(function(e){ return e.getBoundingClientRect().top > limite; });
   if(cibles.length){
-    gsap.set(cibles, { autoAlpha: 0, y: 28 });
+    /* L'opacité n'est jamais touchée : les blocs restent visibles même si la personne ne défile pas
+       (capture de la page entière, lecteur pressé, robot). Ils glissent seulement de quelques pixels. */
+    gsap.set(cibles, { y: 28 });
     ScrollTrigger.batch(cibles, {
       start: "top 90%",
       once: true,
       onEnter: function(lot){
-        gsap.to(lot, { autoAlpha: 1, y: 0, duration: 0.7, ease: "power2.out", stagger: 0.09,
-          overwrite: true, clearProps: "transform,opacity,visibility" });
+        gsap.to(lot, { y: 0, duration: 0.7, ease: "power2.out", stagger: 0.09,
+          overwrite: true, clearProps: "transform" });
       }
     });
   }
@@ -40,10 +42,11 @@
     var fin = parseInt(n.getAttribute("data-to"), 10);
     var suffixe = n.getAttribute("data-suffix") || "";
     var etat = { v: 0 };
-    n.textContent = "0" + suffixe;
+    /* La vraie valeur reste écrite dans la page : elle ne passe à 0 qu'au moment de compter. */
     ScrollTrigger.create({
       trigger: n, start: "top 90%", once: true,
       onEnter: function(){
+        n.textContent = "0" + suffixe;
         gsap.to(etat, { v: fin, duration: 1.6, delay: i * 0.15, ease: "power2.out",
           onUpdate: function(){ n.textContent = Math.round(etat.v) + suffixe; } });
       }
@@ -53,12 +56,12 @@
   /* 4. Téléphones de Sagesse : chacun monte à son tour depuis le bas de l'image */
   document.querySelectorAll(".sag-phones").forEach(function(zone){
     var tels = zone.querySelectorAll(".tel");
-    gsap.set(tels, { autoAlpha: 0, y: 70 });
+    gsap.set(tels, { y: 70 });
     ScrollTrigger.create({
       trigger: zone, start: "top 92%", once: true,
       onEnter: function(){
-        gsap.to(tels, { autoAlpha: 1, y: 0, duration: 1, ease: "power3.out", stagger: 0.15,
-          delay: zone.closest(".hero") ? 0.6 : 0, clearProps: "transform,opacity,visibility" });
+        gsap.to(tels, { y: 0, duration: 1, ease: "power3.out", stagger: 0.15,
+          delay: zone.closest(".hero") ? 0.6 : 0, clearProps: "transform" });
       }
     });
   });
