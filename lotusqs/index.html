@@ -175,7 +175,9 @@ header.haut{position:sticky;top:0;z-index:40;background:rgba(246,244,250,.95);ba
 .voir-texte .tag{display:inline-block;margin-bottom:10px;font-size:.8rem;font-weight:600;letter-spacing:.04em;color:var(--bleu);background:var(--brume);padding:4px 12px;border-radius:99px}
 .voir-img{margin:0;border:1px solid var(--lait);border-radius:var(--rayon);overflow:hidden;box-shadow:0 12px 30px rgba(27,24,72,.1);background:#fff}
 .voir-img figcaption{padding:8px 12px;font-size:.8rem;color:var(--muted);border-top:1px solid var(--lait)}
-.facture-img{max-width:430px;margin-inline:auto}
+.facture-img{max-width:430px;width:100%;margin-inline:auto}
+.glisse{display:none}
+.exemple{margin-top:16px;font-size:.85rem;color:var(--muted)}
 
 /* chronologie : jour 1, semaine 1, mois 1 */
 .suite{background:var(--brume)}
@@ -187,7 +189,12 @@ header.haut{position:sticky;top:0;z-index:40;background:rgba(246,244,250,.95);ba
 
 /* tout ce que contient WOE CS */
 .contenu{background:var(--creme)}
-.fonctions{display:grid;grid-template-columns:repeat(2,1fr);gap:0 24px}
+.fonctions{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+@media (max-width:1000px){.fonctions{grid-template-columns:repeat(2,1fr)}}
+.fonction{background:var(--blanc);border:1px solid var(--lait);border-radius:var(--rayon);padding:20px 18px}
+.fonction svg{width:28px;height:28px;fill:none;stroke:var(--bleu);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;margin-bottom:10px}
+.fonction h3{font-size:1.08rem;margin-bottom:4px}
+.fonction p{color:var(--muted);font-size:.9rem;line-height:1.45}
 details{background:var(--blanc);border:1px solid var(--lait);border-radius:10px;margin-bottom:10px}
 summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:52px;padding:12px 20px}
 summary::-webkit-details-marker{display:none}
@@ -249,10 +256,20 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-
 .barre-bas{display:none}
 
 @media (max-width:820px){
-  section{padding:46px 0}
+  section{padding:38px 0}
   .hero{padding:34px 0 42px}
-  .hero-grid,.offre-grid,.choix-grille,.etapes,.voir-ligne,.fonctions,.modules-grille{grid-template-columns:1fr}
-  .voir-ligne{gap:18px;padding:22px 0}
+  .hero-grid,.offre-grid,.choix-grille,.etapes,.voir-ligne,.modules-grille{grid-template-columns:1fr}
+  .fonctions{grid-template-columns:repeat(2,1fr);gap:10px}
+  .fonction{padding:14px 12px}
+  .fonction svg{width:24px;height:24px;margin-bottom:8px}
+  .fonction h3{font-size:1rem}
+  .fonction p{font-size:.85rem}
+  /* Les captures larges restent lisibles : on les fait glisser sur le côté au lieu de les écraser */
+  .glissant{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .glissant img{max-width:none;width:640px}
+  .glisse{display:inline}
+  .voir-ligne{gap:14px;padding:10px 0}
+  .intro{margin-bottom:20px}
   .voir-ligne:nth-child(even) .voir-texte{order:0}
   .hero .btn-grand{width:100%}
   .actions{flex-direction:column}
@@ -335,26 +352,27 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-
     <div class="choix-grille">
       <a class="choix-carte" href="https://wa.me/22891512041?text=Bonjour%2C%20mon%20probl%C3%A8me%20%3A%20je%20ne%20sais%20pas%20ce%20qui%20va%20manquer%20en%20rayon.%20Montrez-moi%20Lotus%20QS%20pour%20ma%20quincaillerie%20%C3%A0%20...%20%28quartier%29." target="_blank" rel="noopener">
         <div>
-          <h3>Je ne sais pas ce qui va manquer</h3>
-          <p>Un client demande un article, le rayon est vide. Vous le découvrez devant lui, et vous perdez la vente.</p>
+          <h3>Combien de ventes perdez-vous parce que le rayon est vide&nbsp;?</h3>
+          <p>Un client vient pour 4&nbsp;125&nbsp;F d'articles. Le câble manque, vous le découvrez devant lui. Il prend tout chez le voisin, et il ne revient pas toujours.</p>
         </div>
         <span class="go">Me montrer l'alerte de stock bas →<span class="sr"> (s'ouvre dans une nouvelle fenêtre)</span></span>
       </a>
       <a class="choix-carte" href="https://wa.me/22891512041?text=Bonjour%2C%20mon%20probl%C3%A8me%20%3A%20je%20vends%20au%20m%C3%A8tre%2C%20au%20kilo%20et%20%C3%A0%20la%20pi%C3%A8ce.%20Montrez-moi%20Lotus%20QS%20pour%20ma%20quincaillerie%20%C3%A0%20...%20%28quartier%29." target="_blank" rel="noopener">
         <div>
-          <h3>Je vends au mètre, au kilo, à la pièce</h3>
-          <p>Deux mètres et demi de câble, un kilo de clous, trois robinets. Votre cahier ne sait pas compter les décimales.</p>
+          <h3>2,5 mètres de câble&nbsp;: vous calculez de tête&nbsp;?</h3>
+          <p>Le client attend, vous faites le calcul à la main. Une erreur de 500&nbsp;F par-ci par-là, et le soir la caisse ne tombe pas juste.</p>
         </div>
         <span class="go">Me montrer une vente au mètre →<span class="sr"> (s'ouvre dans une nouvelle fenêtre)</span></span>
       </a>
       <a class="choix-carte" href="https://wa.me/22891512041?text=Bonjour%2C%20mon%20probl%C3%A8me%20%3A%20j%27ai%20des%20centaines%20d%27articles%20%C3%A0%20saisir.%20Montrez-moi%20Lotus%20QS%20pour%20ma%20quincaillerie%20%C3%A0%20...%20%28quartier%29." target="_blank" rel="noopener">
         <div>
-          <h3>J'ai des centaines d'articles à saisir</h3>
-          <p>Retaper toute la quincaillerie prend des jours. Si la liste existe déjà dans Excel, elle peut entrer d'un coup.</p>
+          <h3>Combien de jours pour retaper 800 articles&nbsp;?</h3>
+          <p>La liste existe déjà dans Excel. Retaper chaque article, son prix et son stock prend des jours de travail. Avec Lotus QS, elle entre d'un coup.</p>
         </div>
         <span class="go">Me montrer l'import Excel →<span class="sr"> (s'ouvre dans une nouvelle fenêtre)</span></span>
       </a>
     </div>
+    <p class="exemple">Les chiffres sont des exemples.</p>
   </div>
 </section>
 
@@ -382,8 +400,8 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-
         <p>Chaque achat garde le prix payé. Le tableau de bord compare le dernier prix de chaque fournisseur, pour chaque article, et vous dit qui vend le moins cher, et de combien. Seul l'administrateur voit cette partie, parce que ce sont vos prix d'achat.</p>
       </div>
       <figure class="voir-img">
-        <img src="prix.webp" width="1280" height="690" loading="lazy" alt="Tableau Meilleur prix d'achat par article : pour chaque article, le fournisseur le moins cher, le prix unitaire et l'écart avec le fournisseur suivant">
-        <figcaption>Meilleur prix d'achat, données de test</figcaption>
+        <div class="glissant"><img src="prix.webp" width="1280" height="690" loading="lazy" alt="Tableau Meilleur prix d'achat par article : pour chaque article, le fournisseur le moins cher, le prix unitaire et l'écart avec le fournisseur suivant"></div>
+        <figcaption>Meilleur prix d'achat, données de test<span class="glisse"> · Faites glisser l'image pour voir la suite</span></figcaption>
       </figure>
     </div>
 
@@ -394,8 +412,8 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-
         <p>Référence, code-barres, catégorie, unité, prix détail, prix gros, coût moyen et marge. Le coût moyen se met à jour tout seul à chaque achat, transport compris. Vous importez ou exportez la liste avec Excel.</p>
       </div>
       <figure class="voir-img">
-        <img src="articles.webp" width="1280" height="735" loading="lazy" alt="Page Articles et prix de Lotus QS : ciment, peinture, joint, robinet, clous et câble électrique avec catégorie, unité, prix détail, prix gros, coût moyen, marge et seuil d'alerte">
-        <figcaption>Articles et prix, données de test</figcaption>
+        <div class="glissant"><img src="articles.webp" width="1280" height="735" loading="lazy" alt="Page Articles et prix de Lotus QS : ciment, peinture, joint, robinet, clous et câble électrique avec catégorie, unité, prix détail, prix gros, coût moyen, marge et seuil d'alerte"></div>
+        <figcaption>Articles et prix, données de test<span class="glisse"> · Faites glisser l'image pour voir la suite</span></figcaption>
       </figure>
     </div>
 
@@ -406,8 +424,8 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-
         <p>Vous cherchez l'article ou vous scannez son code-barres. La quantité accepte les décimales : 2,5 mètres de câble, 2 boîtes de clous. Le stock restant s'affiche sous chaque ligne, et le total se calcule seul.</p>
       </div>
       <figure class="voir-img">
-        <img src="vente.webp" width="1280" height="700" loading="lazy" alt="Page Nouvelle vente : 2,5 mètres de câble électrique et 2 boîtes de clous, stock restant sous chaque ligne, total à payer 4 125 F, mode de paiement et bouton Valider la vente">
-        <figcaption>Nouvelle vente, données de test</figcaption>
+        <div class="glissant"><img src="vente.webp" width="1280" height="700" loading="lazy" alt="Page Nouvelle vente : 2,5 mètres de câble électrique et 2 boîtes de clous, stock restant sous chaque ligne, total à payer 4 125 F, mode de paiement et bouton Valider la vente"></div>
+        <figcaption>Nouvelle vente, données de test<span class="glisse"> · Faites glisser l'image pour voir la suite</span></figcaption>
       </figure>
     </div>
   </div>
@@ -434,8 +452,56 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-
     <h2 id="t-contenu">Tout ce que contient Lotus QS</h2>
     <p class="intro">Une quincaillerie ne travaille pas comme un dépôt de ciment. Beaucoup d'articles, des références, des quantités qui ne tombent pas toujours juste : chaque fonction vient de là.</p>
     <div class="fonctions">
-      <div><details><summary>Prix détail et prix gros</summary><p>Chaque article a un prix détail, un prix de gros et la quantité à partir de laquelle le gros s'applique. Le bon prix se met seul à la vente.</p></details><details><summary>Vente au mètre, au kilo, à la pièce</summary><p>Câble au mètre, clous au kilo, robinets à la pièce. Les quantités peuvent avoir des décimales, arrondies à trois chiffres.</p></details><details><summary>Recherche sans accent et scan de code-barres</summary><p>Tapez « robinet » ou « ROBINET », avec ou sans accent. Avec un lecteur de code-barres, vous scannez et l'article s'ajoute à la vente.</p></details><details><summary>Facture PDF avec le montant en lettres</summary><p>Une facture avec le client, les quantités, ce qui est payé et ce qui reste à payer. Prête à imprimer ou à envoyer.</p></details><details><summary>Vente comptant ou à crédit</summary><p>Le client paie tout de suite ou prend à crédit. Dans le second cas, la dette apparaît sur sa fiche, avec un plafond de crédit.</p></details><details><summary>TVA, remise et livraison</summary><p>La TVA de 18 % s'ajoute d'un clic quand il en faut une. Vous pouvez faire une remise et noter l'adresse ou le camion de livraison.</p></details><details><summary>Tableau de bord avec graphiques</summary><p>Les ventes des 30 derniers jours, les ventes du mois par article, les six derniers mois avec la marge et le stock face au seuil d'alerte. Les chiffres se mettent à jour à chaque vente.</p></details></div>
-      <div><details><summary>Fiche article complète</summary><p>Désignation, référence, code-barres, catégorie, unité, seuil d'alerte. Vingt-deux catégories de quincaillerie sont proposées, et vous pouvez écrire les vôtres.</p></details><details><summary>Import et export Excel</summary><p>Vous avez déjà votre liste d'articles dans Excel&nbsp;? Vous l'importez avec le stock de départ. Vous pouvez aussi tout exporter pour votre comptable.</p></details><details><summary>Achats, fournisseurs et coût moyen</summary><p>À chaque achat, le transport est réparti et le coût moyen est recalculé. Vous voyez ce que vous devez à chaque fournisseur, et votre marge sur chaque article.</p></details><details><summary>Plusieurs magasins, mouvements de stock, inventaire</summary><p>Chaque magasin a son stock. Le stock est la somme des mouvements : achats, ventes, transferts, casse. Personne ne le tape à la main.</p></details><details><summary>Alerte de stock bas</summary><p>Le tableau de bord liste les articles passés sous leur seuil. Vous savez quoi commander avant que le rayon soit vide.</p></details><details><summary>Article, client et fournisseur en tête</summary><p>L'article le plus vendu du mois, votre meilleur client et le fournisseur qui vous vend le moins cher. Le prix d'achat n'est visible que par l'administrateur.</p></details><details><summary>Comptes administrateur et vendeur, sauvegarde chaque jour</summary><p>Chacun a son mot de passe. Une copie des données est faite chaque jour et les 30 dernières sont gardées.</p></details></div>
+      <div class="fonction">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/></svg>
+        <h3>Ventes</h3>
+        <p>Prix détail ou gros, au mètre, au kilo, à la pièce.</p>
+      </div>
+      <div class="fonction">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <h3>Recherche et scan</h3>
+        <p>Recherche sans accent, scan de code-barres.</p>
+      </div>
+      <div class="fonction">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+        <h3>Fiches articles</h3>
+        <p>Référence, code-barres, catégories, import et export Excel.</p>
+      </div>
+      <div class="fonction">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        <h3>Crédits et factures</h3>
+        <p>Comptant ou crédit avec plafond, facture PDF, TVA, remise.</p>
+      </div>
+      <div class="fonction">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+        <h3>Stock</h3>
+        <p>Calculé à chaque mouvement, jamais saisi à la main. Plusieurs magasins.</p>
+      </div>
+      <div class="fonction">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+        <h3>Stock bas</h3>
+        <p>Les articles sous leur seuil, avant que le rayon soit vide.</p>
+      </div>
+      <div class="fonction">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        <h3>Tableau de bord</h3>
+        <p>Graphiques des ventes, du stock et des six derniers mois.</p>
+      </div>
+      <div class="fonction">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+        <h3>Les meilleurs</h3>
+        <p>Article le plus vendu, meilleur client, fournisseur le moins cher.</p>
+      </div>
+      <div class="fonction">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        <h3>Achats</h3>
+        <p>Coût moyen recalculé, dette par fournisseur, marge par article.</p>
+      </div>
+      <div class="fonction">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <h3>Comptes et copies</h3>
+        <p>Administrateur et vendeur, copie des données chaque jour.</p>
+      </div>
     </div>
   </div>
 </section>
