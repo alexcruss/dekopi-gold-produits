@@ -226,7 +226,8 @@ details p{padding:0 20px 18px;color:var(--muted)}
 
 /* modules facultatifs */
 .modules{background:var(--brume)}
-.modules-grille{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.modules-grille{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.modules-grille>*{min-width:0}
 .module{background:var(--blanc);border-radius:var(--rayon);padding:26px 24px;border-top:4px solid var(--or)}
 .module .prix-module{display:inline-block;background:var(--encre);color:var(--or-clair);font-weight:600;font-size:.85rem;padding:4px 14px;border-radius:99px;margin-bottom:14px}
 .module h3{margin-bottom:10px}
@@ -560,7 +561,7 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-
 
 <section class="modules" aria-labelledby="t-modules">
   <div class="wrap">
-    <h2 id="t-modules">Deux modules à ajouter quand vous en avez besoin</h2>
+    <h2 id="t-modules">Trois modules à ajouter quand vous en avez besoin</h2>
     <p class="intro">Lotus QS de base suffit pour vendre, acheter et suivre le stock. Un module ajoute une fonction, pour 8&nbsp;000&nbsp;FCFA une seule fois, par ordinateur. Pendant les 30 jours d'essai, tous les modules sont ouverts.</p>
     <div class="modules-grille">
       <article class="module">
@@ -572,6 +573,11 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-
         <span class="prix-module">8&nbsp;000&nbsp;FCFA, une seule fois</span>
         <h3>Devis et bons de livraison</h3>
         <p>Un client demande un prix : un devis PDF avec une case « bon pour accord », valable 15 jours par défaut. S'il accepte, un clic le transforme en vente. Sur chaque facture, un bon de livraison sans prix, avec deux signatures.</p>
+      </article>
+      <article class="module">
+        <span class="prix-module">8&nbsp;000&nbsp;FCFA, une seule fois</span>
+        <h3>États financiers</h3>
+        <p>Pour vous ou pour votre comptable : la liasse du Système Minimal de Trésorerie à déposer à l'OTR, préparée à partir de vos ventes, de vos achats et de votre stock. Un fichier Excel au modèle officiel, de 15 pages, que vous corrigez ligne par ligne avant de l'envoyer.</p>
       </article>
     </div>
     <p class="modules-note">Vous n'en voulez pas&nbsp;? Lotus QS reste complet sans eux. Pour en ajouter un, écrivez-moi sur WhatsApp : je vous envoie une nouvelle clé à coller dans le menu Licence.</p>
@@ -632,7 +638,7 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-
         <a class="btn tel-seul" href="https://wa.me/?text=Lotus%20QS%2C%20essai%20gratuit%20de%2030%20jours%20%C3%A0%20t%C3%A9l%C3%A9charger%20sur%20l%27ordinateur%20de%20la%20quincaillerie%20%3A%20https%3A%2F%2Fproduits.pierredegboevi.com%2Flotusqs%2F" target="_blank" rel="noopener">M'envoyer le lien pour l'ordinateur<span class="sr"> (s'ouvre dans une nouvelle fenêtre)</span></a>
         <a class="btn btn-ligne" href="https://wa.me/22891512041?text=Bonjour%2C%20je%20veux%20Lotus%20QS%20%C3%A0%20l%27ann%C3%A9e%20%28150%20000%20F%29%20pour%20ma%20quincaillerie%20%C3%A0%20...%20%28quartier%29." target="_blank" rel="noopener">Je prends l'année<span class="sr"> (s'ouvre dans une nouvelle fenêtre)</span></a>
         <p class="annuel"><strong>30 jours gratuits</strong> d'abord. Le prix est par ordinateur : un magasin avec deux ordinateurs prend deux licences.</p>
-        <p class="annuel"><strong>Modules en option</strong> : Caisse, et Devis et bons de livraison, 8&nbsp;000&nbsp;FCFA chacun, une seule fois.</p>
+        <p class="annuel"><strong>Modules en option</strong> : Caisse, Devis et bons de livraison, et États financiers, 8&nbsp;000&nbsp;FCFA chacun, une seule fois.</p>
         <p class="note">Gratuit pendant 30 jours. Vous ne payez que si vous continuez.</p>
       </div>
     </div>
@@ -697,7 +703,7 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-
     </details>
     <details>
       <summary>C'est quoi un module, et combien ça coûte&nbsp;?</summary>
-      <p>Un module ajoute une fonction à Lotus QS. Il y en a deux : Caisse, et Devis et bons de livraison. Chacun coûte 8&nbsp;000&nbsp;FCFA, une seule fois, par ordinateur. Pendant l'essai de 30 jours, ils sont tous ouverts. Pour en ajouter un, vous m'écrivez sur WhatsApp : je vous envoie une nouvelle clé que vous collez dans le menu Licence.</p>
+      <p>Un module ajoute une fonction à Lotus QS. Il y en a trois : Caisse, Devis et bons de livraison, et États financiers. Chacun coûte 8&nbsp;000&nbsp;FCFA, une seule fois, par ordinateur. Pendant l'essai de 30 jours, ils sont tous ouverts. Pour en ajouter un, vous m'écrivez sur WhatsApp : je vous envoie une nouvelle clé que vous collez dans le menu Licence.</p>
     </details>
     
   </div>
@@ -728,7 +734,7 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-
     </ol>
     <div class="compt-cta">
       <a class="btn btn-grand btn-vert" href="https://wa.me/22891512041?text=Bonjour%2C%20je%20suis%20comptable.%20Je%20veux%20voir%20la%20liasse%20des%20%C3%A9tats%20financiers%20de%20Lotus%20QS%20pour%20mes%20clients.%20Mon%20cabinet%20est%20%C3%A0%20...%20%28quartier%29." target="_blank" rel="noopener">Je suis comptable, je veux voir la liasse<span class="sr"> (s'ouvre dans une nouvelle fenêtre)</span></a>
-      <p>Le module États financiers s'ajoute à la licence du client. Son tarif se demande sur WhatsApp. Je forme aussi l'équipe du client, comme pour tout autre module.</p>
+      <p>Le module États financiers s'ajoute à la licence du client : 8&nbsp;000&nbsp;FCFA, une seule fois, par ordinateur. Je forme aussi l'équipe du client, comme pour tout autre module.</p>
     </div>
   </div>
 </section>
