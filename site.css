@@ -364,6 +364,7 @@ details.formulaire summary:hover{border-color:var(--or)}
 .anneau-legende h3{font-size:clamp(1.15rem,2.2vw,1.55rem);margin:0}
 .anneau-legende .a-type{flex-basis:100%;margin:0;font-size:.85rem;color:var(--muted)}
 .anneau-legende .a-prix{margin:0;font-size:.88rem;background:var(--lait);border-radius:4px 8px 8px 4px;padding:3px 12px}
+.anneau-legende .a-prix-an{background:var(--or-clair)}
 .anneau-legende .btn{padding:9px 16px;font-size:.88rem}
 .anneau-offres .suite{margin:0;padding:28px 0 40px}
 @media (max-width:640px){

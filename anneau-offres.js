@@ -12,9 +12,11 @@
   // fond: true = image petite, affichée entière sur un fond flou plutôt que recadrée.
   var OFFRES = [
     { id: "cimentstock", img: "cimentstock.webp", alt: "WOE CS : tableau de bord des ventes et du stock",
-      nom: ["WOE CS", "WOE CS"], type: ["Logiciel · Commerce de ciment", "Software · Cement shops"], prix: ["12 000 FCFA / mois", "12,000 FCFA / month"] },
+      nom: ["WOE CS", "WOE CS"], type: ["Logiciel · Commerce de ciment", "Software · Cement shops"], prix: ["12 000 FCFA / mois", "12,000 FCFA / month"],
+      prixAn: ["120 000 FCFA / an · 2 mois offerts", "120,000 FCFA / year · 2 months free"] },
     { id: "lotusqs", img: "lotusqs.webp", alt: "Lotus QS : tableau de bord d'une quincaillerie",
-      nom: ["Lotus QS", "Lotus QS"], type: ["Logiciel · Quincaillerie", "Software · Hardware stores"], prix: ["15 000 FCFA / mois", "15,000 FCFA / month"] },
+      nom: ["Lotus QS", "Lotus QS"], type: ["Logiciel · Quincaillerie", "Software · Hardware stores"], prix: ["15 000 FCFA / mois", "15,000 FCFA / month"],
+      prixAn: ["150 000 FCFA / an · 2 mois offerts", "150,000 FCFA / year · 2 months free"] },
     { id: "assimeto", img: "assimeto.webp", alt: "ASSIMETO : courses, stock et plats togolais",
       nom: ["ASSIMETO", "ASSIMETO"], type: ["Application · Cuisine et courses", "App · Cooking and groceries"], prix: ["Abonnement Flooz / T-Money · prix à fixer", "Flooz / T-Money subscription · price TBD"] },
     { id: "formation-alibaba-pinduoduo", img: "formation-alibaba-pinduoduo.webp", alt: "Affiche de la formation Alibaba et Pinduoduo : 10 000 F seulement",
@@ -41,6 +43,7 @@
 
   var elNum = document.getElementById("a-num"), elNom = document.getElementById("a-nom"),
       elType = document.getElementById("a-type"), elPrix = document.getElementById("a-prix"),
+      elPrixAn = document.getElementById("a-prix-an"),
       elLien = document.getElementById("a-lien");
   var reduit = window.matchMedia("(prefers-reduced-motion: reduce)");
 
@@ -90,6 +93,17 @@
       p[0].setAttribute("data-fr", p[1][0]); p[0].setAttribute("data-en", p[1][1]);
       p[0].textContent = p[1][langue()];
     });
+    // Seconde étiquette (formule annuelle) : seulement pour les offres qui en ont une, sinon masquée.
+    if (elPrixAn) {
+      if (o.prixAn) {
+        elPrixAn.setAttribute("data-fr", o.prixAn[0]); elPrixAn.setAttribute("data-en", o.prixAn[1]);
+        elPrixAn.textContent = o.prixAn[langue()];
+        elPrixAn.hidden = false;
+      } else {
+        elPrixAn.hidden = true;
+        elPrixAn.removeAttribute("data-fr"); elPrixAn.removeAttribute("data-en");
+      }
+    }
     elLien.href = "produits.html#" + o.id;
   }
 
