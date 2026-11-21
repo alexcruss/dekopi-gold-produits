@@ -234,6 +234,15 @@ details p{padding:0 20px 18px;color:var(--muted)}
 .module p + p{margin-top:10px}
 .modules-note{margin-top:22px;color:var(--muted);max-width:40em}
 
+.comptables{background:var(--creme)}
+.compt-grille{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.compt-grille>*{min-width:0}
+.compt-grille + .etapes{margin-top:22px}
+.compt-cta{margin-top:28px;display:flex;flex-wrap:wrap;gap:14px 22px;align-items:center}
+.compt-cta p{color:var(--muted);max-width:34em}
+.lien-compt{display:inline-flex;align-items:center;min-height:44px;color:var(--or-clair);text-decoration:underline;text-underline-offset:3px;font-weight:500}
+@media (max-width:820px){.compt-grille{grid-template-columns:1fr}.compt-cta .btn{width:100%}}
+
 /* comparaison */
 .compare{background:var(--blanc)}
 .tableau{width:100%;border-collapse:separate;border-spacing:0;border:1px solid var(--lait);border-radius:var(--rayon);overflow:hidden;font-size:.98rem}
@@ -368,6 +377,7 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-
       </div>
       <p class="offre-an"><strong>À l'année : 150&nbsp;000&nbsp;FCFA</strong>, 2 mois offerts</p>
       <p class="micro">Gratuit pendant 30 jours, sans rien payer. À télécharger sur l'ordinateur Windows de la quincaillerie (68&nbsp;Mo). Ensuite, vous me demandez la clé et vous continuez à 15&nbsp;000&nbsp;FCFA par mois, ou à 150&nbsp;000&nbsp;FCFA par an (2 mois offerts).</p>
+      <p class="micro"><a class="lien-compt" href="#comptables">Vous êtes comptable ? Voyez ce que ça change pour vous</a></p>
       <ul class="garanties">
         <li>Marche sans internet</li>
         <li>30 jours gratuits</li>
@@ -690,6 +700,36 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-
       <p>Un module ajoute une fonction à Lotus QS. Il y en a deux : Caisse, et Devis et bons de livraison. Chacun coûte 8&nbsp;000&nbsp;FCFA, une seule fois, par ordinateur. Pendant l'essai de 30 jours, ils sont tous ouverts. Pour en ajouter un, vous m'écrivez sur WhatsApp : je vous envoie une nouvelle clé que vous collez dans le menu Licence.</p>
     </details>
     
+  </div>
+</section>
+
+<section class="comptables" id="comptables" aria-labelledby="t-compt">
+  <div class="wrap">
+    <h2 id="t-compt">Vous êtes comptable ? La liasse de votre client arrive déjà remplie</h2>
+    <p class="intro">Pour un petit contribuable au Système Minimal de Trésorerie, la liasse de l'OTR se refait chaque année à partir de cahiers, de reçus et de relevés. Si votre client tient ses ventes, ses achats et sa caisse dans Lotus QS toute l'année, le module États financiers prépare la liasse à partir de ces écritures.</p>
+    <div class="compt-grille">
+      <article class="module">
+        <h3>Plus de ressaisie en fin d'exercice</h3>
+        <p>Les recettes sont les encaissements du client, les achats sont les paiements aux fournisseurs. Les autres dépenses viennent de la caisse, par catégorie (module Caisse), ou se saisissent à la main. Le stock est valorisé au coût moyen à la date de clôture, les créances et les dettes sont les soldes à cette date. L'exercice précédent est recalculé de la même façon.</p>
+      </article>
+      <article class="module">
+        <h3>Le modèle officiel de l'OTR</h3>
+        <p>La liasse de 15 pages est le modèle de l'OTR lui-même, rempli sans toucher aux cadres, aux fusions ni aux formules : fiche du contribuable, bilan, compte de résultat, notes, immobilisations. Vous recevez un fichier Excel.</p>
+      </article>
+      <article class="module">
+        <h3>Vous gardez la main</h3>
+        <p>Chaque ligne se corrige à la main avant de générer le fichier, et le programme signale les champs obligatoires manquants. Le nom du cabinet, son adresse et son numéro d'inscription à l'Ordre se renseignent dans la fiche du contribuable. Vous relisez et vous signez : le module prépare la liasse, il ne dépose rien.</p>
+      </article>
+    </div>
+    <ol class="etapes">
+      <li><span class="quand">Au départ</span><strong>Votre client essaie</strong><span class="t">Il télécharge Lotus QS, ou je viens l'installer chez lui. Les 30 jours d'essai sont gratuits et tous les modules sont ouverts, États financiers compris.</span></li>
+      <li><span class="quand">Toute l'année</span><strong>Il enregistre</strong><span class="t">Chaque vente, chaque achat, chaque paiement. Vous n'avez rien à faire.</span></li>
+      <li><span class="quand">À la clôture</span><strong>Vous recevez la liasse</strong><span class="t">Il ouvre États financiers, remplit la fiche du contribuable, vérifie les chiffres et vous envoie le fichier Excel. Ou vous le sortez ensemble sur son ordinateur.</span></li>
+    </ol>
+    <div class="compt-cta">
+      <a class="btn btn-grand btn-vert" href="https://wa.me/22891512041?text=Bonjour%2C%20je%20suis%20comptable.%20Je%20veux%20voir%20la%20liasse%20des%20%C3%A9tats%20financiers%20de%20Lotus%20QS%20pour%20mes%20clients.%20Mon%20cabinet%20est%20%C3%A0%20...%20%28quartier%29." target="_blank" rel="noopener">Je suis comptable, je veux voir la liasse<span class="sr"> (s'ouvre dans une nouvelle fenêtre)</span></a>
+      <p>Le module États financiers s'ajoute à la licence du client. Son tarif se demande sur WhatsApp. Je forme aussi l'équipe du client, comme pour tout autre module.</p>
+    </div>
   </div>
 </section>
 
