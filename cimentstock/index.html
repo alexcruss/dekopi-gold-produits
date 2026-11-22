@@ -284,6 +284,11 @@ details p{padding:0 20px 18px;color:var(--muted)}
 .prix-carte .btn+.btn{margin-top:10px}
 .annuel{background:var(--creme);border-radius:10px;padding:14px 16px;margin:18px 0 12px;font-size:.95rem}
 .annuel strong{color:var(--bleu)}
+.avis-bande{background:var(--blanc)}
+.avis{border-left:4px solid var(--or);padding:4px 0 4px 20px;max-width:760px;margin:18px 0 0}
+.avis>p{font-size:clamp(1.1rem,2.4vw,1.35rem);line-height:1.5;color:var(--encre)}
+.avis-qui{margin-top:14px;font-size:.95rem;color:var(--muted)}
+.avis-qui b{color:var(--encre);font-weight:600}
 .prix-carte .note{font-size:.85rem;color:var(--muted);margin-top:12px;text-align:center}
 
 .bande-garantie{background:var(--or);color:var(--encre);padding:48px 0}
@@ -676,15 +681,17 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-
 </section>
 
 <!-- ========== 8. AVIS CLIENTS ==========
-     ABSENTE PAR CHOIX : aucun avis n'est inventé. Dès que 3 gérants t'ont donné une phrase,
-     ajoute ici une section « Ce que disent les gérants » (avant les questions) avec leurs mots exacts,
-     leur prénom, leur dépôt et leur quartier. Ce qui rend un avis crédible (comme chez Woofilab) :
-     un cas précis, un avant/après, et même un petit bémol.
-       <section class="avis" aria-labelledby="t-avis"> … <blockquote>« phrase exacte »<cite>Prénom, dépôt, quartier</cite></blockquote> … </section>
-     Questions à leur poser après 30 jours :
-       1. Qu'est-ce que vous avez découvert que vous ne saviez pas ?
-       2. Qu'est-ce qui vous a le plus surpris ?
-       3. Vous le diriez à un autre gérant avec quels mots ? -->
+     Mots exacts du gérant, avec son accord. Pour en ajouter : un autre <blockquote class="avis"> dans la même section.
+     Questions à poser après 30 jours : qu'avez-vous découvert que vous ne saviez pas ? qu'est-ce qui vous a surpris ? comment le diriez-vous à un autre gérant ? -->
+<section class="avis-bande" aria-labelledby="t-avis">
+  <div class="wrap">
+    <h2 id="t-avis">Ce que dit un gérant</h2>
+    <blockquote class="avis">
+      <p>« Le logiciel me facilite énormément la vie. Il va me permettre de gérer notre dépôt de ciment et surtout de montrer notre professionnalisme aux clients. »</p>
+      <div class="avis-qui"><b>Maxwell</b>, gérant d'un dépôt de ciment à Zanguéra<br>Je lui ai installé WOE CS, il a pris l'abonnement annuel.</div>
+    </blockquote>
+  </div>
+</section>
 
 <!-- ========== 9. QUESTIONS ========== -->
 <section class="faq" aria-labelledby="t-faq">
