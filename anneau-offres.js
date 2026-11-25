@@ -8,7 +8,7 @@
   var piste = document.getElementById("anneau-piste");
   if (!ring || !piste) return;
 
-  // Les onze offres, dans l'ordre de la page Produits (sauf WOE CS et ASSIMETO en tête).
+  // Les douze offres, dans l'ordre de la page Produits (sauf WOE CS et ASSIMETO en tête).
   // fond: true = image petite, affichée entière sur un fond flou plutôt que recadrée.
   var OFFRES = [
     { id: "cimentstock", img: "cimentstock.webp", alt: "WOE CS : tableau de bord des ventes et du stock",
@@ -27,6 +27,8 @@
       nom: ["Automatisation sur mesure", "Custom automation"], type: ["Service · Excel, VBA, Access", "Service · Excel, VBA, Access"], prix: ["Diagnostic gratuit, puis devis", "Free diagnosis, then quote"] },
     { id: "site-vitrine", img: "site-vitrine.webp", alt: "Les sites BrendaSTYLE et Dongshoes dans des fenêtres de navigateur",
       nom: ["Site vitrine pour votre commerce", "Showcase website for your shop"], type: ["Service · Site vitrine", "Service · Showcase website"], prix: ["Sur devis · livré en 3 jours", "On quote · delivered in 3 days"] },
+    { id: "bot-telegram", img: "service-bot-telegram.webp", alt: "Affiche du service : mettez votre site à jour depuis Telegram, 15 000 F CFA", fond: "#12263F",
+      nom: ["Mise en place de votre bot Telegram", "Telegram bot setup for your site"], type: ["Service · Bot Telegram", "Service · Telegram bot"], prix: ["15 000 FCFA · mise en place", "15,000 FCFA · setup"] },
     { id: "garde-la-flamme", img: "garde-la-flamme.webp", alt: "Affiche du guide Garde la flamme, même à distance",
       nom: ["Garde la flamme, même à distance", "Keep the flame alive, even from afar"], type: ["Guide PDF", "PDF guide"], prix: ["4 900 FCFA · paiement sur Chariow", "4,900 FCFA · payment on Chariow"] },
     { id: "formation-solimi", img: "solimi-affiche.webp", alt: "Affiche Solimi : votre carte prépayée est enfin disponible", fond: "#0a6bb3",
@@ -37,7 +39,7 @@
       nom: ["CGI et LPF du Togo, à jour 2025", "Togo CGI and LPF, updated for 2025"], type: ["Documents PDF · version 2025", "PDF documents · 2025 version"], prix: ["500 FCFA chacun · 1 000 FCFA les deux", "500 FCFA each · 1,000 FCFA for both"] }
   ];
 
-  var N = OFFRES.length;          // 11 panneaux : environ 32,7° chacun
+  var N = OFFRES.length;          // 12 panneaux : 30° chacun
   var pas = 360 / N;
   var DEG_PAR_PX = 0.3;           // le défilement fait tourner l'anneau de 0,3° par pixel : un tour = 1 200 px
   var rayon = 0, PW = 0, panneaux = [];
