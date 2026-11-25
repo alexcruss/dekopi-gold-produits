@@ -8,7 +8,7 @@
   var piste = document.getElementById("anneau-piste");
   if (!ring || !piste) return;
 
-  // Les dix offres, dans l'ordre de la page Produits (sauf WOE CS et ASSIMETO en tête).
+  // Les onze offres, dans l'ordre de la page Produits (sauf WOE CS et ASSIMETO en tête).
   // fond: true = image petite, affichée entière sur un fond flou plutôt que recadrée.
   var OFFRES = [
     { id: "cimentstock", img: "cimentstock.webp", alt: "WOE CS : tableau de bord des ventes et du stock",
@@ -31,11 +31,13 @@
       nom: ["Garde la flamme, même à distance", "Keep the flame alive, even from afar"], type: ["Guide PDF", "PDF guide"], prix: ["4 900 FCFA · paiement sur Chariow", "4,900 FCFA · payment on Chariow"] },
     { id: "formation-solimi", img: "solimi-affiche.webp", alt: "Affiche Solimi : votre carte prépayée est enfin disponible", fond: "#0a6bb3",
       nom: ["Savoir utiliser la carte Solimi", "How to use the Solimi card"], type: ["Formation · YouTube et visio", "Training · YouTube and video call"], prix: ["500 FCFA · YouTube ou visio", "500 FCFA · YouTube or video call"] },
+    { id: "formation-bot-telegram", img: "formation-bot-telegram.webp", alt: "Affiche de la formation : créez le bot Telegram de votre site, 10 000 F CFA", fond: "#12263F",
+      nom: ["Mettre son site à jour depuis Telegram", "Update your website from Telegram"], type: ["Formation · Guide PDF et vidéo", "Training · PDF guide and video"], prix: ["10 000 FCFA", "10,000 FCFA"] },
     { id: "cgi-lpf", img: "cahier-fiscal.webp", alt: "Cahier fiscal : principales dispositions de la loi de finances 2026", fond: "#12263F",
       nom: ["CGI et LPF du Togo, à jour 2025", "Togo CGI and LPF, updated for 2025"], type: ["Documents PDF · version 2025", "PDF documents · 2025 version"], prix: ["500 FCFA chacun · 1 000 FCFA les deux", "500 FCFA each · 1,000 FCFA for both"] }
   ];
 
-  var N = OFFRES.length;          // 10 panneaux : 36° chacun
+  var N = OFFRES.length;          // 11 panneaux : environ 32,7° chacun
   var pas = 360 / N;
   var DEG_PAR_PX = 0.3;           // le défilement fait tourner l'anneau de 0,3° par pixel : un tour = 1 200 px
   var rayon = 0, PW = 0, panneaux = [];
