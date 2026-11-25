@@ -19,8 +19,8 @@
       prixAn: ["150 000 FCFA / an · 2 mois offerts", "150,000 FCFA / year · 2 months free"] },
     { id: "assimeto", img: "assimeto.webp", alt: "ASSIMETO : courses, stock et plats togolais",
       nom: ["ASSIMETO", "ASSIMETO"], type: ["Application · Cuisine et courses", "App · Cooking and groceries"], prix: ["Abonnement Flooz / T-Money · prix à fixer", "Flooz / T-Money subscription · price TBD"] },
-    { id: "formation-alibaba-pinduoduo", img: "formation-alibaba-pinduoduo.webp", alt: "Affiche de la formation Alibaba et Pinduoduo : 10 000 F seulement",
-      nom: ["Commander sur Alibaba et Pinduoduo", "Ordering on Alibaba and Pinduoduo"], type: ["Formation pratique · Alibaba et Pinduoduo", "Hands-on training · Alibaba and Pinduoduo"], prix: ["10 000 FCFA", "10,000 FCFA"] },
+    { id: "formation-bot-telegram", img: "formation-bot-telegram.webp", alt: "Affiche de la formation : créez le bot Telegram de votre site, 10 000 F CFA", fond: "#12263F",
+      nom: ["Mettre son site à jour depuis Telegram", "Update your website from Telegram"], type: ["Formation · Guide PDF et vidéo", "Training · PDF guide and video"], prix: ["10 000 FCFA", "10,000 FCFA"] },
     { id: "sagesse", img: "sagesse.jpg", alt: "Application Sagesse : citations, auteurs et favoris",
       nom: ["Sagesse", "Sagesse"], type: ["Application mobile · Citations", "Mobile app · Quotes"], prix: ["Prix à confirmer", "Price to be confirmed"] },
     { id: "automatisation", img: "automatisation.webp", alt: "Un tableau Excel dont les PDF sont générés par une macro VBA",
@@ -31,8 +31,8 @@
       nom: ["Garde la flamme, même à distance", "Keep the flame alive, even from afar"], type: ["Guide PDF", "PDF guide"], prix: ["4 900 FCFA · paiement sur Chariow", "4,900 FCFA · payment on Chariow"] },
     { id: "formation-solimi", img: "solimi-affiche.webp", alt: "Affiche Solimi : votre carte prépayée est enfin disponible", fond: "#0a6bb3",
       nom: ["Savoir utiliser la carte Solimi", "How to use the Solimi card"], type: ["Formation · YouTube et visio", "Training · YouTube and video call"], prix: ["500 FCFA · YouTube ou visio", "500 FCFA · YouTube or video call"] },
-    { id: "formation-bot-telegram", img: "formation-bot-telegram.webp", alt: "Affiche de la formation : créez le bot Telegram de votre site, 10 000 F CFA", fond: "#12263F",
-      nom: ["Mettre son site à jour depuis Telegram", "Update your website from Telegram"], type: ["Formation · Guide PDF et vidéo", "Training · PDF guide and video"], prix: ["10 000 FCFA", "10,000 FCFA"] },
+    { id: "formation-alibaba-pinduoduo", img: "formation-alibaba-pinduoduo.webp", alt: "Affiche de la formation Alibaba et Pinduoduo : 10 000 F seulement",
+      nom: ["Commander sur Alibaba et Pinduoduo", "Ordering on Alibaba and Pinduoduo"], type: ["Formation pratique · Alibaba et Pinduoduo", "Hands-on training · Alibaba and Pinduoduo"], prix: ["10 000 FCFA", "10,000 FCFA"] },
     { id: "cgi-lpf", img: "cahier-fiscal.webp", alt: "Cahier fiscal : principales dispositions de la loi de finances 2026", fond: "#12263F",
       nom: ["CGI et LPF du Togo, à jour 2025", "Togo CGI and LPF, updated for 2025"], type: ["Documents PDF · version 2025", "PDF documents · 2025 version"], prix: ["500 FCFA chacun · 1 000 FCFA les deux", "500 FCFA each · 1,000 FCFA for both"] }
   ];
